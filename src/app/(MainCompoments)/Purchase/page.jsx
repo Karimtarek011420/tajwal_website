@@ -211,7 +211,7 @@ export default function page() {
               </div>
             </div>
             <div className=" col-md-4">
-              <div className="bg-white shadow-lg rounded-2 mb-3 py-5 px-2">
+              <div className="bg-white shadow-lg rounded-2 mb-3 pb-5 pt-4 px-2">
                 <p className=" px-1   purchasepachagesum">المجموع</p>
                 <div className=" d-flex purchasepachage justify-content-between align-items-center my-1 px-2 py-2 ">
                   <p className="my-0 ">
@@ -256,7 +256,7 @@ export default function page() {
                   </p>
                 </div>
               </div>
-              <div className="bg-white shadow-lg rounded-2  py-2 px-4 ">
+              <div className="bg-white shadow-lg rounded-2  py-4 px-4 ">
                 <p className="p1 disacount">كود الخصم</p>
                 <p className="p1 disacount">
                   لديك كود خصم؟ ادخلها في الخانة التالية و اضغط تطبيق
