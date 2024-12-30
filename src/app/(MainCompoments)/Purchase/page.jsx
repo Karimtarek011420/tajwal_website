@@ -271,6 +271,70 @@ export default function page() {
                 </div>
               </div>
             </div>
+            <div className=" col-md-4">
+              <div className="bg-white shadow-lg rounded-2  pb-4 pt-2 px-4 mb-3  ">
+                <div className="compatibility-check">
+                  <h5 className="title">تأكيد التحقق من توافق هاتفك</h5>
+                  <div className="form-check d-flex align-items-center pt-2">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="compatibilityCheckbox"
+                      style={{}}
+                    />
+                    <p >
+                      أوافق انني اطلعت على <span  style={{color:'#336279' , fontWeight:'600'}}>قائمة الهواتف المتوافقة</span>،
+                      وتأكدت من توافق هاتفي.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white shadow-lg rounded-2  pb-5 pt-4 px-2">
+                <p className=" px-1   purchasepachagesum">المجموع</p>
+                <div className=" d-flex purchasepachage justify-content-between align-items-center my-1 px-2 py-2 ">
+                  <p className="my-0 ">
+                    شريحة -
+                    {selectedPackage.operator.coverages
+                      .map((coverage) => coverage.name)
+                      .join(", ")}
+                  </p>
+                  <div>
+                    <button onClick={incrementQuantity} className="btn">
+                      +
+                    </button>
+                    <span
+                      style={{
+                        fontSize: "8px",
+                        fontWeight: "600",
+                        backgroundColor: "#fff",
+                        padding: "6px 10px",
+                      }}
+                    >
+                      {quantity}
+                    </span>
+                    <button onClick={decrementQuantity} className="btn">
+                      -
+                    </button>
+                  </div>
+                  <p className="my-0"> {selectedPackage.price} ر.س</p>
+                </div>
+                <div className="d-flex justify-content-end">
+                  <p className="purchasepachage purchasepachagewidth px-4 py-1 my-2 w-100">
+                    المجموع : <span className="me-5">{totalPrice} ر.س</span>
+                  </p>
+                </div>
+                <div className="d-flex justify-content-end">
+                  <p className="purchasepachage purchasepachagewidth px-5 py-1 my-1 w-100">
+                    الخصم : <span className="me-5">kkk</span>
+                  </p>
+                </div>
+                <div className="d-flex justify-content-end">
+                  <p className="purchasepachage purchasepachagewidth px-5 py-1 my-1 boldall w-100">
+                    الإجمالى الكلى :<span className="me-4">kkk</span>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

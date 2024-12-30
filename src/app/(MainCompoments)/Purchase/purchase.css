@@ -83,11 +83,16 @@
   margin-left: 10px; /* مسافة بين الزر والحقل */
   width: 200px; /* عرض أصغر */
 }
-.discount-input::placeholder{
+.discount-input::placeholder {
   font-size: 10px !important;
   font-weight: 300;
-  color: #B6BCC3;
+  color: #b6bcc3;
   text-align: center;
+}
+.discount-input:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 0 transparent !important;
+  border: none !important;
 }
 
 .apply-btn {
@@ -98,4 +103,51 @@
   color: #ffffff;
   font-weight: 600;
   border: none;
+}
+.compatibility-check {
+  margin: 20px auto;
+  padding: 10px;
+  max-width: 500px;
+  border-radius: 8px; /* زوايا مستديرة */
+}
+
+.compatibility-check p {
+  font-size: 10px !important;
+  font-weight: 300 !important;
+  margin-right: 30px !important;
+  margin-top: 5px;
+}
+
+.compatibility-check .title {
+  font-size: 12px;
+  font-weight: 400;
+  color: #626e7b;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* مسافة بين الشيك بوكس والنص */
+}
+.form-check-input:checked {
+  accent-color: #336279 !important; /* تغيير لون علامة الصح إلى الأصفر عند التعليم */
+}
+
+.form-check-input {
+  width: 30px; /* حجم أصغر للشيك بوكس */
+  height: 30px;
+  accent-color: red !important; /* لون علامة الصح الأحمر */
+  cursor: pointer;
+  background-color: #F9F9F9; /* إزالة الخلفية */
+  border:none; /* لون الحدود */
+  border-radius: 4px; /* زوايا مستديرة */
+}
+.form-check-input:focus{
+  box-shadow: none;
+  outline: none;
+}
+
+.form-check-input:checked {
+  background-color: #F9F9F9 !important; /* إزالة الخلفية عند التعليم */
+  border-color: firebrick; /* لون الإطار عند التعليم */
 }
