@@ -1,22 +1,17 @@
 "use client";
-
-import { createContext, useState, useEffect } from "react";
-
+import { createContext, useEffect, useState } from "react";
 export const authtoken = createContext();
-
 export default function AuthTokenProvider({ children }) {
-  const [token, setToken] = useState(null);
-
+  const [token, settoken] = useState(null);
   useEffect(() => {
-    // Ensure this code runs only in the browser
-    if (typeof window !== "undefined") {
-      const storedToken = localStorage.getItem("token");
-      setToken(storedToken);
+    const token = localStorage.getItem("token");
+    if (token) {
+      settoken(token);
     }
   }, []);
 
   return (
-    <authtoken.Provider value={{ token, setToken }}>
+    <authtoken.Provider value={{ settoken, token }}>
       {children}
     </authtoken.Provider>
   );
