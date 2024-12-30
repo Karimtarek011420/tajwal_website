@@ -9,13 +9,13 @@ const NotFoundPage = () => {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const value = localStorage.getItem("someKey");
+      const value = localStorage.getItem("token");
       setStoredValue(value);
     }
   }, []);
 
   return (
-    <div>
+    <div className=" d-flex justify-content-center align-items-center py-5">
       <h1>الصفحة غير موجودة</h1>
       {storedValue && <p>القيمة المخزنة: {storedValue}</p>}
     </div>
