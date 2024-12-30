@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import imageResetpassword from "@/assets/images/ChangePassword.svg";
 import "./resetpass.css";
@@ -9,16 +9,24 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { TailSpin } from "react-loader-spinner";
 
-const resetPasswordPage = () => {
+const ResetPasswordPage = () => {
   const router = useRouter();
   const [errorMessage, setErrorMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showrePassword, setreShowPassword] = useState(false);
   const [loading, setloading] = useState(false);
-  const phonenumber =
-    typeof window !== "undefined" ? localStorage.getItem("phonepass") : null;
-  const otp =
-    typeof window !== "undefined" ? localStorage.getItem("passOtp") : null;
+  const [phonenumber, setPhonenumber] = useState("");
+  const [otp, setOtp] = useState("");
+
+  useEffect(() => {
+    // التحقق من بيئة المتصفح
+    if (typeof window !== "undefined") {
+      const phone = localStorage.getItem("phonepass") || "";
+      const otpCode = localStorage.getItem("passOtp") || "";
+      setPhonenumber(phone);
+      setOtp(otpCode);
+    }
+  }, []);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -47,7 +55,6 @@ const resetPasswordPage = () => {
           style: {
             backgroundColor: "#4b87a4",
             color: "white",
-            position: "top-right",
           },
         });
         localStorage.clear();
@@ -62,7 +69,7 @@ const resetPasswordPage = () => {
 
   const handleSubmitpass = useFormik({
     initialValues: {
-      otp: otp,
+      otp,
       phone_number: phonenumber,
       password: "",
       confirm_password: "",
@@ -188,4 +195,4 @@ const resetPasswordPage = () => {
   );
 };
 
-export default resetPasswordPage;
+export default ResetPasswordPage;
