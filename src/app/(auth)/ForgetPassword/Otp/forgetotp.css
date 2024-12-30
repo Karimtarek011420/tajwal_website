@@ -1,0 +1,76 @@
+/* General Styles */
+.forgetOtp {
+    width: 100%;
+    max-width: 500px; /* Limit max-width for large screens */
+    margin: 0 auto; /* Center the container */
+  }
+  
+  .forgetOtp input:focus {
+    outline: 0 !important;
+    box-shadow: 0 0 0 0 transparent !important;
+  }
+  .forgetOtp input {
+    background-color: #f9f9f9 !important;
+    border: none !important;
+    border-radius: 5px !important;
+    padding: 15px 20px !important;
+  }
+  .forgetOtp input::placeholder {
+    font-size: 12px !important;
+  }
+  .forgetOtp .btnsendback{
+    color: #4b87a4 !important;
+    border: none !important;
+    background-color: transparent;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+  }
+  .forgetOtp button.follow {
+    background-color: #4b87a4 !important;
+    padding: 10px 100px; /* Adjust button padding */
+    color: #f1f3f6;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    border-radius: 5px;
+    border: none;
+  }
+  .forgetOtp button.back {
+    background-color: #626E7B !important;
+  }
+  .forgetOtp .p_registerOtp p {
+    color: #626e7b !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+  }
+  .forgetOtp .imgcover {
+      width: 240px !important;
+      height: 260px !important;
+  }
+  
+  /* Responsive Adjustments */
+  @media screen and (max-width: 992px) {
+    .forgetOtp {
+      padding: 0 15px;
+    }
+    .forgetOtp button.follow {
+      padding: 10px 50px;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .forgetOtp input {
+      padding: 10px 12px !important;
+    }
+    .forgetOtp button.follow {
+      font-size: 12px;
+      padding: 10px 40px;
+    }
+    .forgetOtp .p_registerOtp p {
+      font-size: 11px !important;
+    }
+    .forgetOtp img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  
