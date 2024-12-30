@@ -64,46 +64,83 @@
 .Purchasedateils .disacount.p2 {
   color: #b6bcc3;
 }
+/* التصميم الأساسي */
 .discount-container {
-  background-color: #f9f9f9; /* اللون الرمادي */
-  border-radius: 8px; /* زوايا مستديرة */
+  background-color: #f9f9f9;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%; /* العرض الكامل */
-  max-width: 400px; /* عرض أقصى */
-  margin: 10px auto; /* توسيط */
+  width: 100%;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 8px; /* مسافات داخلية للتنسيق */
+  gap: 10px; /* مسافات بين العناصر */
 }
 
 .discount-input {
-  border: none; /* إزالة الحدود */
-  background-color: #fff; /* لون الخلفية الأبيض */
-  border-radius: 8px; /* زوايا مستديرة */
-  padding: 10px; /* مسافات داخلية */
-  margin-left: 10px; /* مسافة بين الزر والحقل */
-  width: 200px; /* عرض أصغر */
+  border: none;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  width: calc(100% - 120px); /* ترك مساحة للزر */
+  font-size: 14px;
+  box-sizing: border-box;
 }
+
 .discount-input::placeholder {
-  font-size: 10px !important;
+  font-size: 12px;
   font-weight: 300;
   color: #b6bcc3;
   text-align: center;
 }
+
 .discount-input:focus {
-  outline: none !important;
-  box-shadow: 0 0 0 0 transparent !important;
-  border: none !important;
+  outline: none;
+  box-shadow: none;
 }
 
 .apply-btn {
-  border-radius: 5px; /* زوايا مستديرة */
-  padding: 10px 35px !important; /* مسافات داخلية للزر */
-  font-size: 10px; /* حجم النص */
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 12px;
   background-color: #336279;
   color: #ffffff;
   font-weight: 600;
   border: none;
+  white-space: nowrap; /* منع التفاف النص */
 }
+
+/* استجابة للشاشات الصغيرة */
+@media (max-width: 600px) {
+  .discount-container {
+    flex-direction: column; /* تحويل الاتجاه إلى عمودي */
+    align-items: stretch; /* توسيع العناصر لتملأ العرض */
+    gap: 15px; /* زيادة المسافة بين العناصر */
+  }
+
+  .discount-input {
+    width: 100%; /* ملء العرض بالكامل */
+  }
+
+  .apply-btn {
+    width: 100%; /* ملء العرض بالكامل */
+    text-align: center; /* توسيط النص */
+  }
+}
+
+/* استجابة للشاشات الأصغر من 350 بكسل */
+@media (max-width: 350px) {
+  .discount-input::placeholder {
+    font-size: 10px;
+  }
+
+  .apply-btn {
+    font-size: 10px;
+    padding: 8px;
+  }
+}
+
 .compatibility-check {
   margin: 20px auto;
   padding: 10px;
@@ -133,33 +170,16 @@
   accent-color: #336279 !important; /* تغيير لون علامة الصح إلى الأصفر عند التعليم */
 }
 
-.form-check-input {
-  width: 30px; /* حجم أصغر للشيك بوكس */
-  height: 30px;
-  accent-color: red !important; /* لون علامة الصح الأحمر */
-  cursor: pointer;
-  background-color: #F9F9F9; /* إزالة الخلفية */
-  border:none; /* لون الحدود */
-  border-radius: 4px; /* زوايا مستديرة */
-}
-.form-check-input:focus{
+.form-check-input:focus {
   box-shadow: none;
   outline: none;
 }
 .form-check-input {
   width: 30px;
   height: 30px;
-  accent-color: #336279; /* تغيير لون علامة الصح إلى #336279 */
+  accent-color: #336279 !important; /* تغيير لون علامة الصح إلى #336279 */
   cursor: pointer;
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
   border: none;
   border-radius: 4px;
 }
-
-.form-check-input:checked {
-  background-color: #F9F9F9; /* إزالة الخلفية عند التحديد */
-  border-color: firebrick; /* لون الإطار عند التحديد */
-}
-
-
-

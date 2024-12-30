@@ -55,7 +55,7 @@ export default function page() {
         </div>
         <div className=" container py-5">
           <div className=" row gy-3">
-            <div className=" col-md-4">
+            <div className="col-lg-4 col-md-6 col-sm-12">
               <div className="cardpurchase  bg-white shadow-lg rounded-2 position-relative">
                 <div className=" countydtailsup d-flex justify-content-around align-items-center position-absolute ">
                   <div>
@@ -221,7 +221,7 @@ export default function page() {
                 </div>
               </div>
             </div>
-            <div className=" col-md-4">
+            <div className="col-lg-4 col-md-6 col-sm-12">
               <div className="bg-white shadow-lg rounded-2 mb-3 pb-5 pt-4 px-2">
                 <p className=" px-1   purchasepachagesum">المجموع</p>
                 <div className=" d-flex purchasepachage justify-content-between align-items-center my-1 px-2 py-2 ">
@@ -267,22 +267,22 @@ export default function page() {
                   </p>
                 </div>
               </div>
-              <div className="bg-white shadow-lg rounded-2  py-4 px-4 ">
+              <div className="bg-white shadow-lg rounded-2 py-4 px-4">
                 <p className="p1 disacount">كود الخصم</p>
                 <p className="p1 disacount">
-                  لديك كود خصم؟ ادخلها في الخانة التالية و اضغط تطبيق
+                  لديك كود خصم؟ ادخلها في الخانة التالية واضغط تطبيق
                 </p>
-                <div className="discount-container d-flex align-items-center justify-content-between p-2">
+                <div className="discount-container">
                   <input
                     type="text"
-                    className=" discount-input"
+                    className="discount-input"
                     placeholder="ادخل كود الخصم"
                   />
-                  <button className=" apply-btn">تطبيق</button>
+                  <button className="apply-btn">تطبيق</button>
                 </div>
               </div>
             </div>
-            <div className=" col-md-4">
+            <div className="col-lg-4 col-md-6 col-sm-12">
               <div className="bg-white shadow-lg rounded-2  pb-1 pt-1 px-4 mb-1  ">
                 <div className="compatibility-check">
                   <h5 className="title">تأكيد التحقق من توافق هاتفك</h5>
@@ -303,7 +303,16 @@ export default function page() {
                 </div>
               </div>
               <div className=" bg-white shadow-lg rounded-2 pb-2 pt-2 px-2 ">
-                <p className="px-1 " style={{fontSize:'12px', fontWeight:'400' , color:'#626E7B'}}>وسيلة الدفع</p>
+                <p
+                  className="px-1 "
+                  style={{
+                    fontSize: "12px",
+                    fontWeight: "400",
+                    color: "#626E7B",
+                  }}
+                >
+                  وسيلة الدفع
+                </p>
                 <div className="container">
                   <div className="row mb-3 justify-content-center">
                     <div className="col-6 d-flex justify-content-center">
@@ -329,11 +338,23 @@ export default function page() {
                       <Image src={Tamara3} width={125} height={34} alt="visa" />
                     </div>
                   </div>
-                  <div className=" my-2 d-flex justify-content-center align-items-center">
-                    <Image src={Apple} alt="pay" width={290} height={34}/>
-                  </div>
-                  <div className=" my-2 d-flex justify-content-center align-items-center">
-                    <Image src={google} alt="pay" width={290} height={34}/>
+                  <div>
+                    <div className="my-2 d-flex justify-content-center align-items-center">
+                      <Image
+                        src={Apple}
+                        alt="pay"
+                        className="img-fluid"
+                        style={{ maxWidth: "100%", height: "auto" }}
+                      />
+                    </div>
+                    <div className="my-2 d-flex justify-content-center align-items-center">
+                      <Image
+                        src={google}
+                        alt="pay"
+                        className="img-fluid"
+                        style={{ maxWidth: "100%", height: "auto" }}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
