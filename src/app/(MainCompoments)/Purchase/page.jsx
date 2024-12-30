@@ -8,6 +8,14 @@ import icon2 from "@/assets/images/Icon2.svg";
 import icon3 from "@/assets/images/icon3dark.svg";
 import icon4 from "@/assets/images/icon4.svg";
 import icon5 from "@/assets/images/icon5dark.svg";
+import mada from "@/assets/images/Mada.svg";
+import Visa from "@/assets/images/Visa.svg";
+import Tabby from "@/assets/images/Tabby.svg";
+import Tamara from "@/assets/images/Tamara.svg";
+import Tabby2 from "@/assets/images/Tabby2.svg";
+import Tamara3 from "@/assets/images/Tamara3.svg";
+import Apple from "@/assets/images/ApplePay.svg";
+import google from "@/assets/images/google.svg";
 import Image from "next/image";
 
 export default function page() {
@@ -275,10 +283,10 @@ export default function page() {
               </div>
             </div>
             <div className=" col-md-4">
-              <div className="bg-white shadow-lg rounded-2  pb-4 pt-2 px-4 mb-3  ">
+              <div className="bg-white shadow-lg rounded-2  pb-1 pt-1 px-4 mb-1  ">
                 <div className="compatibility-check">
                   <h5 className="title">تأكيد التحقق من توافق هاتفك</h5>
-                  <div className="form-check d-flex align-items-center pt-2">
+                  <div className="form-check d-flex align-items-center pt-1">
                     <input
                       className="form-check-input custom-checkbox"
                       type="checkbox"
@@ -289,54 +297,44 @@ export default function page() {
                       <span style={{ color: "#336279", fontWeight: "600" }}>
                         قائمة الهواتف المتوافقة
                       </span>
-                      ، وتأكدت من توافق هاتفي. 
+                      ، وتأكدت من توافق هاتفي.
                     </p>
                   </div>
                 </div>
               </div>
-              <div className="bg-white shadow-lg rounded-2  pb-5 pt-4 px-2">
-                <p className=" px-1   purchasepachagesum">وسيلة الدفع </p>
-                <div className=" d-flex purchasepachage justify-content-between align-items-center my-1 px-2 py-2 ">
-                  <p className="my-0 ">
-                    شريحة -
-                    {selectedPackage.operator.coverages
-                      .map((coverage) => coverage.name)
-                      .join(", ")}
-                  </p>
-                  <div>
-                    <button onClick={incrementQuantity} className="btn">
-                      +
-                    </button>
-                    <span
-                      style={{
-                        fontSize: "8px",
-                        fontWeight: "600",
-                        backgroundColor: "#fff",
-                        padding: "6px 10px",
-                      }}
-                    >
-                      {quantity}
-                    </span>
-                    <button onClick={decrementQuantity} className="btn">
-                      -
-                    </button>
+              <div className=" bg-white shadow-lg rounded-2 pb-2 pt-2 px-2 ">
+                <p className="px-1 " style={{fontSize:'12px', fontWeight:'400' , color:'#626E7B'}}>وسيلة الدفع</p>
+                <div className="container">
+                  <div className="row mb-3 justify-content-center">
+                    <div className="col-6 d-flex justify-content-center">
+                      <Image src={mada} width={125} height={34} alt="visa" />
+                    </div>
+                    <div className="col-6 d-flex justify-content-center">
+                      <Image src={Visa} width={125} height={34} alt="visa" />
+                    </div>
                   </div>
-                  <p className="my-0"> {selectedPackage.price} ر.س</p>
-                </div>
-                <div className="d-flex justify-content-end">
-                  <p className="purchasepachage purchasepachagewidth px-4 py-1 my-2 w-100">
-                    المجموع : <span className="me-5">{totalPrice} ر.س</span>
-                  </p>
-                </div>
-                <div className="d-flex justify-content-end">
-                  <p className="purchasepachage purchasepachagewidth px-5 py-1 my-1 w-100">
-                    الخصم : <span className="me-5">kkk</span>
-                  </p>
-                </div>
-                <div className="d-flex justify-content-end">
-                  <p className="purchasepachage purchasepachagewidth px-5 py-1 my-1 boldall w-100">
-                    الإجمالى الكلى :<span className="me-4">kkk</span>
-                  </p>
+                  <div className="row mb-3 justify-content-center">
+                    <div className="col-6 d-flex justify-content-center">
+                      <Image src={Tabby} width={125} height={34} alt="visa" />
+                    </div>
+                    <div className="col-6 d-flex justify-content-center">
+                      <Image src={Tamara} width={125} height={34} alt="visa" />
+                    </div>
+                  </div>
+                  <div className="row mb-4 justify-content-center">
+                    <div className="col-6 d-flex justify-content-center">
+                      <Image src={Tabby2} width={125} height={34} alt="visa" />
+                    </div>
+                    <div className="col-6 d-flex justify-content-center">
+                      <Image src={Tamara3} width={125} height={34} alt="visa" />
+                    </div>
+                  </div>
+                  <div className=" my-2 d-flex justify-content-center align-items-center">
+                    <Image src={Apple} alt="pay" width={290} height={34}/>
+                  </div>
+                  <div className=" my-2 d-flex justify-content-center align-items-center">
+                    <Image src={google} alt="pay" width={290} height={34}/>
+                  </div>
                 </div>
               </div>
             </div>
