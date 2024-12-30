@@ -146,8 +146,20 @@
   box-shadow: none;
   outline: none;
 }
+.form-check-input {
+  width: 30px;
+  height: 30px;
+  accent-color: #336279; /* تغيير لون علامة الصح إلى #336279 */
+  cursor: pointer;
+  background-color: #F9F9F9;
+  border: none;
+  border-radius: 4px;
+}
 
 .form-check-input:checked {
-  background-color: #F9F9F9 !important; /* إزالة الخلفية عند التعليم */
-  border-color: firebrick; /* لون الإطار عند التعليم */
+  background-color: #F9F9F9; /* إزالة الخلفية عند التحديد */
+  border-color: firebrick; /* لون الإطار عند التحديد */
 }
+
+
+

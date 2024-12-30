@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import "./purchase.css";
 import { usePackage } from "@/app/_Compontents/PackageContext/PackageContext";
 import icon1 from "@/assets/images/Icon1dark.svg";
@@ -27,7 +27,10 @@ export default function page() {
   const decrementQuantity = () => {
     if (quantity > 1) setQuantity(quantity - 1);
   };
-  const totalPrice = (selectedPackage.price * quantity).toFixed(2);
+  const totalPrice = useMemo(
+    () => (selectedPackage?.price * quantity).toFixed(2),
+    [selectedPackage, quantity]
+  );
 
   return (
     <>
@@ -277,20 +280,22 @@ export default function page() {
                   <h5 className="title">تأكيد التحقق من توافق هاتفك</h5>
                   <div className="form-check d-flex align-items-center pt-2">
                     <input
-                      className="form-check-input"
+                      className="form-check-input custom-checkbox"
                       type="checkbox"
                       id="compatibilityCheckbox"
-                      style={{}}
                     />
-                    <p >
-                      أوافق انني اطلعت على <span  style={{color:'#336279' , fontWeight:'600'}}>قائمة الهواتف المتوافقة</span>،
-                      وتأكدت من توافق هاتفي.
+                    <p>
+                      أوافق انني اطلعت على{" "}
+                      <span style={{ color: "#336279", fontWeight: "600" }}>
+                        قائمة الهواتف المتوافقة
+                      </span>
+                      ، وتأكدت من توافق هاتفي. 
                     </p>
                   </div>
                 </div>
               </div>
               <div className="bg-white shadow-lg rounded-2  pb-5 pt-4 px-2">
-                <p className=" px-1   purchasepachagesum">المجموع</p>
+                <p className=" px-1   purchasepachagesum">وسيلة الدفع </p>
                 <div className=" d-flex purchasepachage justify-content-between align-items-center my-1 px-2 py-2 ">
                   <p className="my-0 ">
                     شريحة -
