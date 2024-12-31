@@ -4,6 +4,7 @@ import "./globals.css";
 import { readex } from "@/assets/font";
 import AuthTokenProvider from "./_Compontents/Authtoken/Authtoken";
 import { PackageProvider } from "./_Compontents/PackageContext/PackageContext";
+import { Toaster } from "react-hot-toast";
 
 export const metadata = {
   title: "Tajwal",
@@ -18,7 +19,10 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${readex.className} antialiased`}>
         <AuthTokenProvider>
-          <PackageProvider>{children}</PackageProvider>
+          <PackageProvider>
+            <Toaster />
+            {children}
+          </PackageProvider>
         </AuthTokenProvider>
       </body>
     </html>

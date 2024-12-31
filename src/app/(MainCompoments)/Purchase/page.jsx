@@ -39,6 +39,7 @@ export default function page() {
       </div>
     );
   }
+  console.log(selectedPackage)
 
   return (
     <>
