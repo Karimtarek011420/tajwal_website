@@ -360,12 +360,9 @@ export default function page() {
               <div className="bg-white shadow-lg rounded-2  pb-1 pt-1 px-4 mb-1  ">
                 <div className="compatibility-check">
                   <h5 className="title">تأكيد التحقق من توافق هاتفك</h5>
-                  <div className="form-check d-flex align-items-center pt-1">
-                    <input
-                      className="form-check-input custom-checkbox"
-                      type="checkbox"
-                      id="compatibilityCheckbox"
-                    />
+                  <label class="custom-checkbox pt-1 d-flex justify-content-center align-items-center">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
                     <p>
                       أوافق انني اطلعت على{" "}
                       <span style={{ color: "#336279", fontWeight: "600" }}>
@@ -373,7 +370,7 @@ export default function page() {
                       </span>
                       ، وتأكدت من توافق هاتفي.
                     </p>
-                  </div>
+                  </label>
                 </div>
               </div>
               <div className=" bg-white shadow-lg rounded-2 pb-2 pt-2 px-2 ">

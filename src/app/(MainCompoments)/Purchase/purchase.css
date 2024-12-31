@@ -2,6 +2,40 @@
   background-color: #f9f9f9;
   padding: 20px;
 }
+.custom-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.custom-checkbox .checkmark {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  position: relative;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkmark {
+  background-color:#F9F9F9; /* اللون الذي تريده */
+}
+
+.custom-checkbox .checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 6px;
+  top: 2px;
+  width: 8px;
+  height: 20px;
+  border: solid #336279;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+  display: block;
+}
 .Purchasedateils .country-list-linkslist {
   cursor: pointer;
   transition: all 2s; /* Fixed transition shorthand */
@@ -148,7 +182,7 @@
   border-radius: 8px; /* زوايا مستديرة */
 }
 
-.compatibility-check p {
+.custom-checkbox p {
   font-size: 10px !important;
   font-weight: 300 !important;
   margin-right: 30px !important;
@@ -159,27 +193,4 @@
   font-size: 12px;
   font-weight: 400;
   color: #626e7b;
-}
-
-.form-check {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* مسافة بين الشيك بوكس والنص */
-}
-.form-check-input:checked {
-  accent-color: #336279 !important; /* تغيير لون علامة الصح إلى الأصفر عند التعليم */
-}
-
-.form-check-input:focus {
-  box-shadow: none;
-  outline: none;
-}
-.form-check-input {
-  width: 30px;
-  height: 30px;
-  accent-color: #336279 !important; /* تغيير لون علامة الصح إلى #336279 */
-  cursor: pointer;
-  background-color: #f9f9f9;
-  border: none;
-  border-radius: 4px;
 }
