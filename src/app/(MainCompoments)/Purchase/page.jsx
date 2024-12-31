@@ -18,12 +18,14 @@ import google from "@/assets/images/google.svg";
 import Image from "next/image";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { TailSpin } from "react-loader-spinner";
 
 export default function page() {
   const { selectedPackage } = usePackage();
   const [quantity, setQuantity] = useState(1); // عداد الشرائح
   const [discountData, setDiscountData] = useState(null); // لتخزين بيانات الخصم
   const [couponCode, setCouponCode] = useState(""); // كود الخصم
+  const [loading, setloading] = useState(false); // كود الخصم
   const incrementQuantity = useCallback(() => setQuantity((q) => q + 1), []);
   const decrementQuantity = useCallback(
     () => setQuantity((q) => (q > 1 ? q - 1 : q)),
@@ -33,10 +35,9 @@ export default function page() {
     () => (selectedPackage?.price * quantity).toFixed(2),
     [selectedPackage, quantity]
   );
-  const totalPriceAll = discountData
-  ? discountData.new_price
-  : totalPrice;
+  const totalPriceAll = discountData ? discountData.new_price : totalPrice;
   const fetchDiscount = async () => {
+    setloading(true);
     try {
       const { data } = await axios.post(
         "https://api.tajwal.co/api/v1/coupon_check",
@@ -50,7 +51,7 @@ export default function page() {
         },
         {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem('token')}`,
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
             Accept: "application/json",
           },
         }
@@ -63,12 +64,13 @@ export default function page() {
         });
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
       toast.error("   كود الخصم غير صالح!", {
         duration: 1500,
         style: { backgroundColor: "#4b87a4", color: "white" },
       });
     }
+    setloading(false);
   };
 
   if (!selectedPackage) {
@@ -300,15 +302,23 @@ export default function page() {
                   </p>
                 </div>
                 <div className="d-flex justify-content-end">
-                  {discountData?<p className="purchasepachage purchasepachagewidth px-5 py-1 my-1 w-100">
-                    الخصم : <span className="me-5">{ totalPrice*discountData.percentage/100} ر.س</span>
-                  </p>:<p className="purchasepachage purchasepachagewidth px-5 py-1 my-1 w-100">
-                    الخصم : <span className="me-5"></span>
-                  </p>}
+                  {discountData ? (
+                    <p className="purchasepachage purchasepachagewidth px-5 py-1 my-1 w-100">
+                      الخصم :{" "}
+                      <span className="me-5">
+                        {(totalPrice * discountData.percentage) / 100} ر.س
+                      </span>
+                    </p>
+                  ) : (
+                    <p className="purchasepachage purchasepachagewidth px-5 py-1 my-1 w-100">
+                      الخصم : <span className="me-5"></span>
+                    </p>
+                  )}
                 </div>
                 <div className="d-flex justify-content-end">
                   <p className="purchasepachage purchasepachagewidth px-3 py-1 my-1 boldall w-100">
-                    الإجمالى الكلى :<span className="me-4">{totalPriceAll} ر.س</span>
+                    الإجمالى الكلى :
+                    <span className="me-4">{totalPriceAll} ر.س</span>
                   </p>
                 </div>
               </div>
@@ -328,7 +338,17 @@ export default function page() {
                     onChange={(e) => setCouponCode(e.target.value)}
                   />
                   <button onClick={fetchDiscount} className="apply-btn">
-                    تطبيق
+                    {loading ? (
+                      <TailSpin
+                        visible={true}
+                        height="25"
+                        width="25"
+                        color="#fff"
+                        ariaLabel="tail-spin-loading"
+                      />
+                    ) : (
+                      "تطبيق"
+                    )}
                   </button>
                 </div>
               </div>
