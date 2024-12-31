@@ -1,9 +1,8 @@
 "use client";
-import React, { useMemo, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import "./purchase.css";
 import { usePackage } from "@/app/_Compontents/PackageContext/PackageContext";
 import icon1 from "@/assets/images/Icon1dark.svg";
-
 import icon2 from "@/assets/images/Icon2.svg";
 import icon3 from "@/assets/images/icon3dark.svg";
 import icon4 from "@/assets/images/icon4.svg";
@@ -21,6 +20,15 @@ import Image from "next/image";
 export default function page() {
   const { selectedPackage } = usePackage();
   const [quantity, setQuantity] = useState(1); // عداد الشرائح
+  const incrementQuantity = useCallback(() => setQuantity((q) => q + 1), []);
+  const decrementQuantity = useCallback(
+    () => setQuantity((q) => (q > 1 ? q - 1 : q)),
+    []
+  );
+  const totalPrice = useMemo(
+    () => (selectedPackage?.price * quantity).toFixed(2),
+    [selectedPackage, quantity]
+  );
 
   if (!selectedPackage) {
     return (
@@ -31,14 +39,6 @@ export default function page() {
       </div>
     );
   }
-  const incrementQuantity = () => setQuantity(quantity + 1);
-  const decrementQuantity = () => {
-    if (quantity > 1) setQuantity(quantity - 1);
-  };
-  const totalPrice = useMemo(
-    () => (selectedPackage?.price * quantity).toFixed(2),
-    [selectedPackage, quantity]
-  );
 
   return (
     <>
