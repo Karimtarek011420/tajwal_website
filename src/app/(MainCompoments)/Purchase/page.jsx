@@ -39,6 +39,7 @@ export default function page() {
     () => (discountData ? discountData.new_price : totalPrice),
     [discountData, totalPrice]
   );
+ 
   const fetchDiscount = async () => {
     setloading(true);
     try {
@@ -59,6 +60,7 @@ export default function page() {
           },
         }
       );
+
       if (data.status === true) {
         setDiscountData(data.data);
         toast.success("تم تطبيق الخصم بنجاح!", {
@@ -340,7 +342,7 @@ export default function page() {
                     value={couponCode}
                     onChange={(e) => setCouponCode(e.target.value)}
                   />
-                  <button onClick={fetchDiscount} className="apply-btn">
+                  <button onClick={fetchDiscount} className="apply-btn" disabled={!couponCode || loading}>
                     {loading ? (
                       <TailSpin
                         visible={true}
@@ -360,7 +362,7 @@ export default function page() {
               <div className="bg-white shadow-lg rounded-2  pb-1 pt-1 px-4 mb-1  ">
                 <div className="compatibility-check">
                   <h5 className="title">تأكيد التحقق من توافق هاتفك</h5>
-                  <label class="custom-checkbox pt-1 d-flex justify-content-center align-items-center">
+                  <label className="custom-checkbox pt-1 d-flex justify-content-center align-items-center">
                     <input type="checkbox" />
                     <span className="checkmark"></span>
                     <p>
