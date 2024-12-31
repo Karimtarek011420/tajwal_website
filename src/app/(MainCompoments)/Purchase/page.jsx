@@ -362,7 +362,7 @@ export default function page() {
                   <h5 className="title">تأكيد التحقق من توافق هاتفك</h5>
                   <label class="custom-checkbox pt-1 d-flex justify-content-center align-items-center">
                     <input type="checkbox" />
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                     <p>
                       أوافق انني اطلعت على{" "}
                       <span style={{ color: "#336279", fontWeight: "600" }}>
