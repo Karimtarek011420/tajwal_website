@@ -35,7 +35,10 @@ export default function page() {
     () => (selectedPackage?.price * quantity).toFixed(2),
     [selectedPackage, quantity]
   );
-  const totalPriceAll = discountData ? discountData.new_price : totalPrice;
+  const totalPriceAll = useMemo(
+    () => (discountData ? discountData.new_price : totalPrice),
+    [discountData, totalPrice]
+  );
   const fetchDiscount = async () => {
     setloading(true);
     try {
