@@ -185,7 +185,7 @@
 .custom-checkbox p {
   font-size: 10px !important;
   font-weight: 300 !important;
-  margin-right: 30px !important;
+  margin-right: 15px !important;
   margin-top: 5px;
 }
 
@@ -194,9 +194,31 @@
   font-weight: 400;
   color: #626e7b;
 }
+/* الصور تكون متجاوبة أكثر */
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* تحسين التصميم للشاشات الصغيرة */
+@media (max-width: 530px) {
+  .payement img {
+    width: 100% !important; /* الصور تأخذ عرض العنصر بالكامل */
+    height:40px !important;
+  }
+
+  .payement {
+    padding: 5px; /* فراغ بين العناصر */
+  }
+}
+
 @media (max-width: 350px) {
-  .rounded-2 img {
-    width: 100% !important; /* الصور بحجم كامل العرض */
-    max-width: 150px; /* لتحديد الحد الأقصى */
+  .payement img {
+    width: 90% !important; /* تقليل الحجم لتناسب الشاشات الصغيرة جدًا */
+    height:40px !important;
+  }
+
+  .payement {
+    padding: 5px; /* تقليل المسافات بين العناصر */
   }
 }

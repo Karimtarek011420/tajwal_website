@@ -444,7 +444,7 @@ export default function page() {
               </div>
             </div>
             <div className="col-lg-4 col-md-6 col-sm-12">
-              <div className="bg-white shadow-lg rounded-2  pb-1 pt-1 px-4 mb-1  ">
+              <div className="bg-white shadow-lg rounded-2  pb-3 pt-1 px-4 mb-2  ">
                 <div className="compatibility-check">
                   <h5 className="title">تأكيد التحقق من توافق هاتفك</h5>
                   <label className="custom-checkbox pt-lg-1 d-flex justify-content-center align-items-center">
@@ -460,7 +460,7 @@ export default function page() {
                   </label>
                 </div>
               </div>
-              <div className=" bg-white shadow-lg rounded-2 pb-2 pt-2 px-2 ">
+              <div className=" bg-white shadow-lg rounded-2 pb-4 pt-2 px-2 ">
                 <p
                   className="px-1 "
                   style={{
@@ -472,7 +472,7 @@ export default function page() {
                   وسيلة الدفع
                 </p>
                 <div className="container py-1">
-                  <div className="row justify-content-center gy-3">
+                  <div className="row justify-content-center gy-2">
                     {paymentMethods?.map((method, index) => {
                       const isLastTwo = index >= paymentMethods.length - 2; // تحقق إذا كانت الصورة من الصور الأخيرة
                       return (
@@ -486,12 +486,12 @@ export default function page() {
                         >
                           <div
                             style={{ cursor: "pointer" }}
-                            className="d-flex justify-content-center align-items-center rounded-2"
+                            className="d-flex justify-content-center align-items-center payement"
                             onClick={() => handlePayment(method.id,method.paymentWay)}
                           >
                             <Image
                               src={method.icon}
-                              width={isLastTwo ? 250 : 150} // الصور الأخيرة بحجم أكبر
+                              width={isLastTwo ? 300 : 150} // الصور الأخيرة بحجم أكبر
                               height={35}
                               alt={method.name}
                             />
