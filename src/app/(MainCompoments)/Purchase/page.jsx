@@ -7,7 +7,7 @@ import icon2 from "@/assets/images/Icon2.svg";
 import icon3 from "@/assets/images/icon3dark.svg";
 import icon4 from "@/assets/images/icon4.svg";
 import icon5 from "@/assets/images/icon5dark.svg";
-import mada from "@/assets/images/Mada.svg";
+import Express from "@/assets/images/Mada.svg";
 import Visa from "@/assets/images/Visa.svg";
 import Tabby from "@/assets/images/Tabby.svg";
 import Tamara from "@/assets/images/Tamara.svg";
@@ -21,12 +21,12 @@ import toast from "react-hot-toast";
 import { TailSpin } from "react-loader-spinner";
 
 export default function page() {
-  const { selectedPackage } = usePackage();
+  const { selectedPackage, setSelectedPackagepur } = usePackage();
   const [quantity, setQuantity] = useState(1); // عداد الشرائح
   const [discountData, setDiscountData] = useState(null); // لتخزين بيانات الخصم
   const [couponCode, setCouponCode] = useState(""); // كود الخصم
   const [loading, setloading] = useState(false); //  الخصم
-  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState(null);
+
   const incrementQuantity = useCallback(() => setQuantity((q) => q + 1), []);
   const decrementQuantity = useCallback(
     () => setQuantity((q) => (q > 1 ? q - 1 : q)),
@@ -80,46 +80,83 @@ export default function page() {
   };
   const paymentMethods = [
     {
-      id: 1,
-      name: "mada",
-      icon: mada,
+      id: 6,
+      name: "express",
+      icon: Express,
+      paymentWay: "myfatoorah",
     },
     {
       id: 2,
       name: "visa",
-      icon: Visa, // Local image
+      icon: Visa,
+      paymentWay: "myfatoorah",
+    },
+    {
+      id: 12,
+      name: "stcpay",
+      icon: Tabby, // Local image
+      paymentWay: "myfatoorah",
     },
     {
       id: 3,
-      name: "stcpay",
-      icon: Tabby, // Local image
-    },
-    {
-      id: 4,
       name: "Tamara",
       icon: Tamara, // Local image
+      paymentWay: "myfatoorah",
     },
     {
       id: 5,
       name: "tabby",
       icon: Tabby2, // Local image
+      paymentWay: "tabby",
     },
     {
-      id: 6,
+      id: 22,
       name: "Tamara3",
       icon: Tamara3, // Local image
+      paymentWay: "tamara",
     },
     {
-      id: 7,
+      id: 11,
       name: "Apple",
       icon: Apple, // Local image
+      paymentWay: "myfatoorah",
     },
     {
-      id: 8,
+      id: 16,
       name: "goolge",
       icon: google, // Local image
+      paymentWay: "myfatoorah",
     },
   ];
+
+  const handlePayment = async (methodId, paymentWay) => {
+    try {
+      const { data } = await axios.post(
+        "https://api.tajwal.co/api/v1/submitOrder",
+        {
+          paymentMethodId: methodId,
+          quantity,
+          package_id: selectedPackage.id,
+          type: selectedPackage.type,
+          country: selectedPackage.operator.countries
+            .map((country) => country.country_code)
+            .join(", "),
+          paymentWay,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            Accept: "application/json",
+          },
+        }
+      );
+      if (data.status === true) {
+        window.open(data.data.invoiceURL, "_self");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   if (!selectedPackage) {
     return (
@@ -130,6 +167,7 @@ export default function page() {
       </div>
     );
   }
+  localStorage.setItem("package", JSON.stringify(selectedPackage));
 
   console.log(selectedPackage);
 
@@ -152,7 +190,7 @@ export default function page() {
               <div className="cardpurchase  bg-white shadow-lg rounded-2 position-relative">
                 <div className=" countydtailsup d-flex justify-content-around align-items-center position-absolute ">
                   <div>
-                    {selectedPackage.operator.countries.map((country) => {
+                    {selectedPackage.operator?.countries?.map((country) => {
                       return (
                         <Image
                           key={country.country_code}
@@ -202,8 +240,8 @@ export default function page() {
                     </div>
                     <div>
                       <p className="my-0">
-                        {selectedPackage.operator.coverages
-                          .map((coverage) => coverage.name)
+                        {selectedPackage.operator?.coverages
+                          ?.map((coverage) => coverage.name)
                           .join(", ")}
                       </p>
                     </div>
@@ -305,7 +343,7 @@ export default function page() {
                     </div>
                     <div>
                       <p className="my-0">
-                        {selectedPackage.operator.rechargeability === true
+                        {selectedPackage.operator?.rechargeability === true
                           ? "نعم"
                           : "لا"}
                       </p>
@@ -449,6 +487,7 @@ export default function page() {
                           <div
                             style={{ cursor: "pointer" }}
                             className="d-flex justify-content-center align-items-center rounded-2"
+                            onClick={() => handlePayment(method.id,method.paymentWay)}
                           >
                             <Image
                               src={method.icon}
