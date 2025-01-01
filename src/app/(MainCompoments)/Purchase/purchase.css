@@ -17,7 +17,7 @@
 }
 
 .custom-checkbox input[type="checkbox"]:checked + .checkmark {
-  background-color:#F9F9F9; /* اللون الذي تريده */
+  background-color: #f9f9f9; /* اللون الذي تريده */
 }
 
 .custom-checkbox .checkmark::after {
@@ -193,4 +193,10 @@
   font-size: 12px;
   font-weight: 400;
   color: #626e7b;
+}
+@media (max-width: 350px) {
+  .rounded-2 img {
+    width: 100% !important; /* الصور بحجم كامل العرض */
+    max-width: 150px; /* لتحديد الحد الأقصى */
+  }
 }

@@ -26,7 +26,6 @@ export default function page() {
   const [discountData, setDiscountData] = useState(null); // لتخزين بيانات الخصم
   const [couponCode, setCouponCode] = useState(""); // كود الخصم
   const [loading, setloading] = useState(false); //  الخصم
-  const [paymentMethods, setPaymentMethods] = useState([]);
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState(null);
   const incrementQuantity = useCallback(() => setQuantity((q) => q + 1), []);
   const decrementQuantity = useCallback(
@@ -79,28 +78,48 @@ export default function page() {
     }
     setloading(false);
   };
-  const fetchPaymentMethods = async () => {
-    try {
-      const { data } = await axios.get(
-        "https://api.tajwal.co/api/v1/payment_methods",
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-            Accept: "application/json",
-          },
-        }
-      );
-      setPaymentMethods(data.data);
-    } catch (error) {
-      toast.error("      حصل خطا ما حاول مرة اخرى!", {
-        duration: 1500,
-        style: { backgroundColor: "#4b87a4", color: "white" },
-      });
-    }
-  };
-  useEffect(() => {
-    fetchPaymentMethods();
-  }, []);
+  const paymentMethods = [
+    {
+      id: 1,
+      name: "mada",
+      icon: mada,
+    },
+    {
+      id: 2,
+      name: "visa",
+      icon: Visa, // Local image
+    },
+    {
+      id: 3,
+      name: "stcpay",
+      icon: Tabby, // Local image
+    },
+    {
+      id: 4,
+      name: "Tamara",
+      icon: Tamara, // Local image
+    },
+    {
+      id: 5,
+      name: "tabby",
+      icon: Tabby2, // Local image
+    },
+    {
+      id: 6,
+      name: "Tamara3",
+      icon: Tamara3, // Local image
+    },
+    {
+      id: 7,
+      name: "Apple",
+      icon: Apple, // Local image
+    },
+    {
+      id: 8,
+      name: "goolge",
+      icon: google, // Local image
+    },
+  ];
 
   if (!selectedPackage) {
     return (
@@ -414,17 +433,28 @@ export default function page() {
                 >
                   وسيلة الدفع
                 </p>
-                <div className="container py-3">
-                  <div className="row mb-3 justify-content-center g-4">
-                    {paymentMethods?.map((method) => {
+                <div className="container py-1">
+                  <div className="row justify-content-center gy-3">
+                    {paymentMethods?.map((method, index) => {
+                      const isLastTwo = index >= paymentMethods.length - 2; // تحقق إذا كانت الصورة من الصور الأخيرة
                       return (
-                        <div key={method.PaymentMethodId} className=" col-md-6">
-                          <div className="d-flex justify-content-center p-2 bg-light rounded-2">
+                        <div
+                          key={method.id}
+                          className={`${
+                            isLastTwo
+                              ? "col-12"
+                              : "col-lg-6 col-md-6 col-sm-6 col-12"
+                          }`}
+                        >
+                          <div
+                            style={{ cursor: "pointer" }}
+                            className="d-flex justify-content-center align-items-center rounded-2"
+                          >
                             <Image
-                              src={method.ImageUrl}
-                              width={125}
-                              height={34}
-                              alt={method.PaymentMethodEn}
+                              src={method.icon}
+                              width={isLastTwo ? 250 : 150} // الصور الأخيرة بحجم أكبر
+                              height={35}
+                              alt={method.name}
                             />
                           </div>
                         </div>
