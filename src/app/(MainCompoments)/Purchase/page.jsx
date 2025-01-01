@@ -1,5 +1,5 @@
 "use client";
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import "./purchase.css";
 import { usePackage } from "@/app/_Compontents/PackageContext/PackageContext";
 import icon1 from "@/assets/images/Icon1dark.svg";
@@ -25,7 +25,9 @@ export default function page() {
   const [quantity, setQuantity] = useState(1); // عداد الشرائح
   const [discountData, setDiscountData] = useState(null); // لتخزين بيانات الخصم
   const [couponCode, setCouponCode] = useState(""); // كود الخصم
-  const [loading, setloading] = useState(false); // كود الخصم
+  const [loading, setloading] = useState(false); //  الخصم
+  const [paymentMethods, setPaymentMethods] = useState([]);
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState(null);
   const incrementQuantity = useCallback(() => setQuantity((q) => q + 1), []);
   const decrementQuantity = useCallback(
     () => setQuantity((q) => (q > 1 ? q - 1 : q)),
@@ -39,7 +41,7 @@ export default function page() {
     () => (discountData ? discountData.new_price : totalPrice),
     [discountData, totalPrice]
   );
- 
+
   const fetchDiscount = async () => {
     setloading(true);
     try {
@@ -77,6 +79,28 @@ export default function page() {
     }
     setloading(false);
   };
+  const fetchPaymentMethods = async () => {
+    try {
+      const { data } = await axios.get(
+        "https://api.tajwal.co/api/v1/payment_methods",
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            Accept: "application/json",
+          },
+        }
+      );
+      setPaymentMethods(data.data);
+    } catch (error) {
+      toast.error("      حصل خطا ما حاول مرة اخرى!", {
+        duration: 1500,
+        style: { backgroundColor: "#4b87a4", color: "white" },
+      });
+    }
+  };
+  useEffect(() => {
+    fetchPaymentMethods();
+  }, []);
 
   if (!selectedPackage) {
     return (
@@ -342,7 +366,11 @@ export default function page() {
                     value={couponCode}
                     onChange={(e) => setCouponCode(e.target.value)}
                   />
-                  <button onClick={fetchDiscount} className="apply-btn" disabled={!couponCode || loading}>
+                  <button
+                    onClick={fetchDiscount}
+                    className="apply-btn d-flex justify-content-center align-items-center"
+                    disabled={!couponCode || loading}
+                  >
                     {loading ? (
                       <TailSpin
                         visible={true}
@@ -362,7 +390,7 @@ export default function page() {
               <div className="bg-white shadow-lg rounded-2  pb-1 pt-1 px-4 mb-1  ">
                 <div className="compatibility-check">
                   <h5 className="title">تأكيد التحقق من توافق هاتفك</h5>
-                  <label className="custom-checkbox pt-1 d-flex justify-content-center align-items-center">
+                  <label className="custom-checkbox pt-lg-1 d-flex justify-content-center align-items-center">
                     <input type="checkbox" />
                     <span className="checkmark"></span>
                     <p>
@@ -386,48 +414,22 @@ export default function page() {
                 >
                   وسيلة الدفع
                 </p>
-                <div className="container">
-                  <div className="row mb-3 justify-content-center">
-                    <div className="col-6 d-flex justify-content-center">
-                      <Image src={mada} width={125} height={34} alt="visa" />
-                    </div>
-                    <div className="col-6 d-flex justify-content-center">
-                      <Image src={Visa} width={125} height={34} alt="visa" />
-                    </div>
-                  </div>
-                  <div className="row mb-3 justify-content-center">
-                    <div className="col-6 d-flex justify-content-center">
-                      <Image src={Tabby} width={125} height={34} alt="visa" />
-                    </div>
-                    <div className="col-6 d-flex justify-content-center">
-                      <Image src={Tamara} width={125} height={34} alt="visa" />
-                    </div>
-                  </div>
-                  <div className="row mb-4 justify-content-center">
-                    <div className="col-6 d-flex justify-content-center">
-                      <Image src={Tabby2} width={125} height={34} alt="visa" />
-                    </div>
-                    <div className="col-6 d-flex justify-content-center">
-                      <Image src={Tamara3} width={125} height={34} alt="visa" />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="my-2 d-flex justify-content-center align-items-center">
-                      <Image
-                        src={Apple}
-                        alt="pay"
-                        className="img-fluid"
-                        style={{ maxWidth: "100%", height: "auto" }}
-                      />
-                    </div>
-                    <div className="my-2 d-flex justify-content-center align-items-center">
-                      <Image
-                        src={google}
-                        alt="pay"
-                        className="img-fluid"
-                        style={{ maxWidth: "100%", height: "auto" }}
-                      />
-                    </div>
+                <div className="container py-3">
+                  <div className="row mb-3 justify-content-center g-4">
+                    {paymentMethods?.map((method) => {
+                      return (
+                        <div key={method.PaymentMethodId} className=" col-md-6">
+                          <div className="d-flex justify-content-center p-2 bg-light rounded-2">
+                            <Image
+                              src={method.ImageUrl}
+                              width={125}
+                              height={34}
+                              alt={method.PaymentMethodEn}
+                            />
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>

@@ -16,7 +16,7 @@ export default function AuthTokenProvider({ children }) {
   }, []);
 
   if (loading) {
-    return <div className=" d-flex justify-content-center align-items-center py-5">Loading...</div>; // عرض شاشة تحميل مؤقتة
+    return <div className=" d-flex justify-content-center align-items-center py-5 vh-100">Loading...</div>; // عرض شاشة تحميل مؤقتة
   }
 
   return (
