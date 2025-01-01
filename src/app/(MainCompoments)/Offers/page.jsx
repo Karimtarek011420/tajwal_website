@@ -1,6 +1,7 @@
 import React from "react";
 import "./offers.css";
 import axios from "axios";
+import Image from "next/image";
 export default async function page() {
   const fetchOffers = async () => {
     const { data } = await axios.get(
@@ -11,10 +12,9 @@ export default async function page() {
         },
       }
     );
-    return data;
+    return data.data;
   };
   const Alloffers = await fetchOffers();
-  console.log(Alloffers)
   return (
     <>
       <div className="offers position-relative py-5">
@@ -29,7 +29,27 @@ export default async function page() {
           </ul>
         </div>
         <div className=" container py-5 ">
-          <div className=" row gy-4"></div>
+          <div className=" row gy-4">
+            {Alloffers?.map((offer, index) => {
+              return (
+                <div key={index} className="col-md-4">
+                  <div
+                    className="offer rounded-5 shadow-sm"
+                    style={{ cursor: "pointer" }}
+                  >
+                    <img
+                      src={offer.image}
+                      alt="imageoofer"
+                      className=" w-100"
+                    />
+                    <div className=" pt-5 pb-3 d-flex justify-content-center align-items-center">
+                      <button className="btnoffer">تفاصيل العرض</button>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </>

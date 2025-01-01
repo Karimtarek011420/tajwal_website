@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["sa.myfatoorah.com"], // أضف النطاق هنا
+    domains: ['api.tajwal.co'], // أضف النطاق هنا
   },
 };
 export default nextConfig;

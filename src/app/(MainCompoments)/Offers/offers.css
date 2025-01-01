@@ -19,3 +19,12 @@
   z-index: 2;
 }
 /* header  */
+.offers .btnoffer{
+  border: none;
+  font-size: 12px !important;
+  font-weight: 400;
+  color: #fff;
+  background-color: #336279;
+  padding: 10px 50px;
+  border-radius: 3px;
+}
