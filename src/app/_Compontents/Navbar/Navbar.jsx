@@ -77,7 +77,11 @@ export default function Navbar() {
           </div>
         </Link>
         <ul className="dropdown-menu py-2 ">
-          <DropdownItem href="/accountInformation" text="معلومات الحساب" className="btnlist" />
+          <DropdownItem
+            href="/accountInformation"
+            text="معلومات الحساب"
+            className="btnlist"
+          />
           <DropdownItem href="#" text="الطلبات السابقة" className="btnlist" />
           <DropdownItem
             text="تسجيل الخروج"
@@ -165,7 +169,12 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-white" href="#">
+                <Link
+                  className={`nav-link text-white ${
+                    pathName === "/Offers" ? "active" : ""
+                  }`}
+                  href="/Offers"
+                >
                   العروض
                 </Link>
               </li>
