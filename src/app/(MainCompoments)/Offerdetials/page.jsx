@@ -11,7 +11,7 @@ const OfferDetails = () => {
       <h1>تفاصيل العرض</h1>
       <iframe
         src={offer_url}
-        style={{ width: "100%", height: "80vh", border: "none" }}
+        style={{ width: "50%", height: "80vh", border: "none" }}
         title="Offer Details"
       />
     </div>
