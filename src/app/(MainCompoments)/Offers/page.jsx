@@ -1,7 +1,6 @@
 import React from "react";
 import "./offers.css";
 import axios from "axios";
-import Image from "next/image";
 export default async function page() {
   const fetchOffers = async () => {
     const { data } = await axios.get(

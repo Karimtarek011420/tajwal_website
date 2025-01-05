@@ -1,7 +1,15 @@
-.offers {
-  background-color: #f9f9f9;
-  padding: 20px;
+.offer {
+  border-radius: 15px 15px 0 0; /* حواف دائرية من الأعلى فقط */
+  overflow: hidden; /* للتأكد أن الصورة لا تخرج عن الحواف */
+  background-color: #fff;
 }
+
+.offer img {
+  display: block; /* إزالة الفراغات أسفل الصورة */
+  width: 100%; /* جعل الصورة تغطي العرض بالكامل */
+  border-radius: 15px 15px 0 0; /* نفس الحواف الدائرية للصورة */
+}
+
 .offers .country-list-linkslist {
   cursor: pointer;
   transition: all 2s; /* Fixed transition shorthand */
@@ -19,7 +27,7 @@
   z-index: 2;
 }
 /* header  */
-.offers .btnoffer{
+.offers .btnoffer {
   border: none;
   font-size: 12px !important;
   font-weight: 400;
