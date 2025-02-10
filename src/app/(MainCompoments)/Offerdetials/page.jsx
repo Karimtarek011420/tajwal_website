@@ -26,7 +26,7 @@ const OfferDetails = () => {
           loading="lazy"
           style={{
             width: "100%",
-            height: "100vh",
+            height: "110vh",
             border: "none",
             overflow: "hidden" 
           }}
