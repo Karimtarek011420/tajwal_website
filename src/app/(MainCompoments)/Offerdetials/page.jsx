@@ -1,19 +1,35 @@
 "use client";
-
 import { useSearchParams } from "next/navigation";
-
+import "./offerdetilas.css";
 const OfferDetails = () => {
   const searchParams = useSearchParams();
   const offer_url = searchParams.get("offer_url");
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>تفاصيل العرض</h1>
-      <iframe
-        src={offer_url}
-        style={{ width: "50%", height: "80vh", border: "none" }}
-        title="Offer Details"
-      />
+    <div className="offers position-relative py-5">
+      <div className="position-absolute country-list w-100">
+        <ul className="list-unstyled d-flex justify-content-center align-items-center">
+          <li
+            className="country-list-linkslist bg-white mx-lg-2"
+            style={{ color: "#336279" }}
+          >
+            <span> تفاصيل العرض</span>
+          </li>
+        </ul>
+      </div>
+      <div className=" container py-5  d-flex justify-content-center align-items-center">
+        <iframe
+          src={offer_url}
+          loading="lazy"
+          style={{
+            width: "60%",
+            height: "80vh",
+            border: "none",
+            scrollBehavior: "unset",
+          }}
+          title="Offer Details"
+        />
+      </div>
     </div>
   );
 };
