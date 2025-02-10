@@ -50,6 +50,7 @@ export default async function CountryHeader() {
                           src={country.image}
                           width={60}
                           height={40}
+                          loading="lazy"
                           alt="img-country"
                         />
                         <p className="text-black mb-0 ms-lg-4 px-lg-3 countryname">

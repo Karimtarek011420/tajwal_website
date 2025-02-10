@@ -70,6 +70,7 @@ export default async function CountryHeader() {
                         width={60}
                         height={40}
                         alt={`علم ${country.title}`}
+                        loading="lazy"
                       />
                       <p className="text-black mb-0 ms-lg-4 px-lg-3 countryname">
                         {country.title}
