@@ -17,15 +17,18 @@ const OfferDetails = () => {
           </li>
         </ul>
       </div>
-      <div className=" container py-5  d-flex justify-content-center align-items-center">
+      <div
+        className="container py-5 d-flex justify-content-center align-items-center"
+        style={{ width: "100vw", height: "100vh", overflow: "hidden" }}
+      >
         <iframe
           src={offer_url}
           loading="lazy"
           style={{
-            width: "60%",
-            height: "80vh",
+            width: "100%",
+            height: "100vh",
             border: "none",
-            scrollBehavior: "unset",
+            overflow: "hidden" 
           }}
           title="Offer Details"
         />

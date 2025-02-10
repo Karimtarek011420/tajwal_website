@@ -19,6 +19,7 @@ export default function OffersPage() {
         }
       );
       setOffers(data.data);
+      console.log(data.data);
     } catch (err) {
       console.error(err);
     }
@@ -27,10 +28,14 @@ export default function OffersPage() {
   useEffect(() => {
     fetchOffers();
   }, []);
-
-  const handleClick = (offerUrl) => {
-    router.push(`/Offerdetials?offer_url=${(offerUrl)}`);
+  const handleClick = (offer) => {
+    if (offer.offer_url) {
+      router.push(`/Offerdetials?offer_url=${offer.offer_url}`);
+    } else {
+      router.push(`/Countries/${offer.country_id}`);
+    }
   };
+
   return (
     <div className="offers position-relative py-5">
       <div className="position-absolute country-list w-100">
@@ -61,7 +66,7 @@ export default function OffersPage() {
                 <div className="pt-5 pb-3 d-flex justify-content-center align-items-center">
                   <button
                     className="btnoffer"
-                    onClick={() => handleClick(offer.offer_url)}
+                    onClick={() => handleClick(offer)}
                   >
                     تفاصيل العرض
                   </button>
