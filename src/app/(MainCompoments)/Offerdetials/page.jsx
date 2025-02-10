@@ -25,8 +25,8 @@ const OfferDetails = () => {
           src={offer_url}
           loading="lazy"
           style={{
-            width: "100%",
-            height: "110vh",
+            width: "60%",
+            height: "100vh",
             border: "none",
             overflow: "hidden" 
           }}
