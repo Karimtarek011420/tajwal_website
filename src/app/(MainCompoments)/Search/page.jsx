@@ -65,7 +65,7 @@ export default function SearchResults() {
         {results.map((country) => (
           <div key={country.country_code} className="col-md-3 mb-4">
             <div className="bg-white shadow-sm text-center">
-              <Link href={`/Countries/${country.country_code}`}>
+              <Link href={country.type ==="local" ?`/Countries/${country.country_code}`:`/continents/${country.country_code}`}>
                 <div className="d-flex justify-content-between align-items-center p-3">
                   <div className="country-flag d-flex justify-content-center align-items-center" >
                     <Image
