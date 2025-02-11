@@ -1,10 +1,14 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import arrow from "../../../assets/images/arrow.svg";
 import "./country.css";
 import axios from "axios";
-export default async function CountryHeader() {
+import { usePathname } from "next/navigation";
+export default function CountryHeader() {
+  const [countries, setCountry] = useState(null);
+  const pathname = usePathname(); // الحصول على المسار الحالي
   const getCountry = async () => {
     const { data } = await axios.get(
       "https://api.tajwal.co/api/v1/countries/home_countries",
@@ -14,25 +18,47 @@ export default async function CountryHeader() {
         },
       }
     );
-    return data.data;
+    setCountry(data.data);
   };
-  const countries = await getCountry();
-  
+  useEffect(() => {
+    getCountry();
+  }, []);
 
   return (
     <div className="countryheader position-relative  py-5">
       <div className="position-absolute country-list w-100">
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
-          <li
-            className="country-list-links bg-white mx-2"
-            style={{ color: "#336279" }}
+          <Link
+            href={"/Countries"}
+            className={`country-list-links mx-2 ${
+              pathname === "/Countries" ? "active" : "bg-transparent"
+            }`}
+            style={{
+              color: pathname === "/Countries" ? " #285060" : "#ffffff",
+            }}
           >
             دولية
-          </li>
-          <Link href="" className="country-list-links text-white mx-2">
+          </Link>
+          <Link
+            href="/continents"
+            className={`country-list-links mx-2 ${
+              pathname === "/continents" ? "active" : ""
+            }`}
+            style={{
+              color: pathname === "/continents" ? " #285060" : "#ffffff",
+            }}
+          >
             قارية
           </Link>
-          <Link href="" className="country-list-links text-white mx-2">
+          <Link
+            href=""
+            className={`country-list-links mx-2 ${
+              pathname === "/global" ? "active" : ""
+            }`}
+            style={{
+              color: pathname === "/global" ? " #285060" : "#ffffff",
+            }}
+          >
             عالمية
           </Link>
         </ul>
