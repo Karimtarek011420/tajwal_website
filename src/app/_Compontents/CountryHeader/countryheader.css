@@ -3,7 +3,7 @@
   padding: 20px 0;
 }
 
-.countryheader .country-list {
+.countryheader .country-listbegin {
   position: absolute;
   left: 50%;
   top: -50px;
@@ -11,7 +11,7 @@
   z-index: 2;
 }
 
-.country-list .country-list-links {
+.country-listbegin .country-list-links {
   cursor: pointer;
   border-radius: 5px;
   padding: 15px 80px;
@@ -21,7 +21,7 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.country-list .country-list-links:hover {
+.country-listbegin .country-list-links:hover {
   background-color: #f9f9f9;
   color: #336279 !important;
 }
@@ -59,7 +59,7 @@
     font-size: 16px;
   }
 
-  .country-list .country-list-links {
+  .country-listbegin .country-list-links {
     padding: 12px 40px;
     font-size: 14px;
   }
@@ -71,11 +71,11 @@
     padding: 15px;
   }
 
-  .country-list {
+  .country-listbegin {
     top: -40px;
   }
 
-  .country-list .country-list-links {
+  .country-listbegin .country-list-links {
     padding: 10px 20px;
     font-size: 12px;
     margin: 5px 10px;
@@ -94,7 +94,7 @@
 
 /* الشاشات الصغيرة جدًا (350px أو أقل) */
 @media (max-width: 350px) {
-  .country-list .country-list-links {
+  .country-listbegin .country-list-links {
     padding: 8px 15px;
     font-size: 12px;
   }
