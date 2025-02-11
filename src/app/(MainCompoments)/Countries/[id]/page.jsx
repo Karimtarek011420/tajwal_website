@@ -73,6 +73,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
     setSelectedPackagepur(selectedPackage);
     router.push("/Purchase");
   };
+  
 
   return (
     <div className="countrydetials position-relative py-5">
@@ -192,11 +193,8 @@ export default function DetailsCountry({ params: paramsPromise }) {
                                 <p className="mx-2 my-0">التغطية</p>
                               </div>
                               <div>
-                                <p className="my-0">
-                                  {operator.coverages
-                                    .map((coverage) => coverage.name)
-                                    .join(", ")}
-                                </p>
+                                {console.log()}
+                              <p className="my-0">{operator.coverages[0].name}</p>
                               </div>
                             </div>
                             <div
@@ -391,9 +389,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                   {
                     icon: icon1dark,
                     label: "التغطية",
-                    value: selectedPackage.operator.coverages
-                      .map((c) => c.name)
-                      .join(", "),
+                    value: selectedPackage.operator.coverages[0].name,
                   },
                   {
                     icon: icon2dark,
@@ -450,18 +446,16 @@ export default function DetailsCountry({ params: paramsPromise }) {
               <div className="col-md-4">
                 <p className="textmodelp">
                   دول التغطية{" "}
-                  <span className="mx-1">
-                    ({selectedPackage.operator.coverages.length} دولة)
-                  </span>
+                  {/* <span className="mx-1">
+                    ({ selectedPackage.operator.coverages()} دولة)
+                  </span> */}
                 </p>
                 <div className="d-flex justify-content-between align-items-center w-100 rounded-2 bg-white shadow-sm p-lg-3 p-2">
                   <p
                     style={{ fontSize: "10px" }}
                     className="text-center mb-0 textmodelp"
                   >
-                    {selectedPackage.operator.coverages
-                      .map((c) => c.name)
-                      .join(", ")}
+                     {selectedPackage.operator.coverages[0].name}
                   </p>
                   <span className="d-flex">
                     {selectedPackage.operator.countries.map(
