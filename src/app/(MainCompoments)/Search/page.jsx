@@ -63,7 +63,7 @@ export default function SearchResults() {
 
       <div className="row">
         {results.map((country) => (
-          <div key={country.country_code} className="col-md-3">
+          <div key={country.country_code} className="col-md-3 mb-4">
             <div className="bg-white shadow-sm text-center">
               <Link href={`/Countries/${country.country_code}`}>
                 <div className="d-flex justify-content-between align-items-center p-3">
