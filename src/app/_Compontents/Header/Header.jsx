@@ -33,6 +33,7 @@ export default function Header() {
                 placeholder="ابحث"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
+                onBlur={() => setSearchTerm("")} // تفريغ الإدخال عند فقدان التركيز
               />
             </div>
           </div>
