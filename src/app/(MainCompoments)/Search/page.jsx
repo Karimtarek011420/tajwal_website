@@ -29,10 +29,16 @@ export default function SearchResults() {
         }
       )
       .then(({ data }) => {
-        setResults(data.data || []);
+        if (data.data && data.data.length > 0) {
+          setResults(data.data);
+        } else {
+          setResults([]); // تأكيد أن النتائج فارغة
+          setError("لا توجد نتائج بحث");
+        }
       })
-      .catch((err) => {
-        setError(err.response?.data?.message || "حدث خطأ أثناء البحث");
+      .catch(() => {
+        setResults([]); // في حال الخطأ، تأكد من أن النتائج فارغة
+        setError("لا توجد نتائج بحث");
       })
       .finally(() => {
         setLoading(false);
@@ -41,10 +47,21 @@ export default function SearchResults() {
 
   return (
     <main className="container py-5">
+      {/* <span className="text-center text-body-secondary mb-3">
+        نتائج البحث عن: {searchTerm}
+      </span> */}
+
+      {loading && (
+        <p className="text-white text-body-secondary mb-3 text-center">
+          جاري البحث...
+        </p>
+      )}
+
+      {error && !loading && results.length === 0 && (
+        <p className="text-body-secondary text-center">لا توجد نتائج بحث</p>
+      )}
+
       <div className="row">
-        <span className="text-center  text-body-secondary mb-3">نتائج البحث عن: {searchTerm}</span>
-        {loading && <p className="text-white text-body-secondary mb-3 text-center">جاري البحث...</p>}
-        {error && <p className="text-red text-center">{error}</p>}
         {results.map((country) => (
           <div key={country.country_code} className="col-md-3">
             <div className="bg-white shadow-sm text-center">
