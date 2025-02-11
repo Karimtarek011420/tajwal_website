@@ -24,7 +24,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
   const { id } = params;
   const router = useRouter();
   const [data, setData] = useState(null);
-  const [selectedDay, setSelectedDay] = useState("1");
+  const [selectedDay, setSelectedDay] = useState(null);
   const [selectedPackage, setSelectedPackage] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { setSelectedPackagepur } = usePackage(); // استخدام السياق
@@ -44,6 +44,14 @@ export default function DetailsCountry({ params: paramsPromise }) {
       console.error("Error fetching country details:", error);
     }
   };
+  useEffect(() => {
+    if (data && Array.isArray(data) && data.length > 0) {
+      const firstCountry = data[0]; // الحصول على أول دولة
+      if (firstCountry.days && firstCountry.days.length > 0) {
+        setSelectedDay(firstCountry.days[0]); // تعيين أول قيمة في مصفوفة الأيام
+      }
+    }
+  }, [data]); // يتم تشغيل هذا عند تغيير البيانات
 
   useEffect(() => {
     if (id) getCountryDetails();
