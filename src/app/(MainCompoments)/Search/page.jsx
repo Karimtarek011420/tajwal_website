@@ -41,11 +41,10 @@ export default function SearchResults() {
 
   return (
     <main className="container py-5">
-      <h2 className="text-center text-white">نتائج البحث عن: {searchTerm}</h2>
-      {loading && <p className="text-white text-center">جاري البحث...</p>}
-      {error && <p className="text-red text-center">{error}</p>}
-
       <div className="row">
+        <span className="text-center  text-body-secondary mb-3">نتائج البحث عن: {searchTerm}</span>
+        {loading && <p className="text-white text-body-secondary mb-3 text-center">جاري البحث...</p>}
+        {error && <p className="text-red text-center">{error}</p>}
         {results.map((country) => (
           <div key={country.country_code} className="col-md-3">
             <div className="bg-white shadow-sm text-center">
