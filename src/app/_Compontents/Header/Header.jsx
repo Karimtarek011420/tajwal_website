@@ -1,8 +1,18 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import "./header.css";
 import Navbar from "../Navbar/Navbar";
+import { useRouter } from "next/navigation";
 
 export default function Header() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const router = useRouter();
+  useEffect(() => {
+    if (searchTerm.trim()) {
+      router.push(`/Search?query=${encodeURIComponent(searchTerm)}`);
+    }
+  }, [searchTerm, router]);
+
   return (
     <>
       <main className="home py-2 pb-5">
@@ -17,7 +27,12 @@ export default function Header() {
               <button className="search-button" aria-label="Search">
                 <i className="fas fa-search"></i>
               </button>
-              <input type="text" placeholder="ابحث" />
+              <input
+                type="text"
+                placeholder="ابحث"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
             </div>
           </div>
         </div>
