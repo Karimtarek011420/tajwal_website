@@ -58,7 +58,7 @@ export default function SearchResults() {
       )}
 
       {error && !loading && results.length === 0 && (
-        <p className="text-body-secondary text-center">لا توجد نتائج بحث</p>
+        <p className="text-body-secondary text-center" style={{minHeight:'30vh'}}>لا توجد نتائج بحث</p>
       )}
 
       <div className="row">
@@ -67,7 +67,7 @@ export default function SearchResults() {
             <div className="bg-white shadow-sm text-center">
               <Link href={`/Countries/${country.country_code}`}>
                 <div className="d-flex justify-content-between align-items-center p-3">
-                  <div className="country-flag d-flex justify-content-center align-items-center">
+                  <div className="country-flag d-flex justify-content-center align-items-center" >
                     <Image
                       src={country.image}
                       width={60}
