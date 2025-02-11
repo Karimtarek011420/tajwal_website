@@ -370,10 +370,10 @@ export default function DetailsCountry({ params: paramsPromise }) {
                     })}
                   </div> */}
                   <div>
-                    {selectedPackage.operator.countries.map((country) => {
+                    {selectedPackage.operator.countries.map((countryop) => {
                       return (
                         <p
-                          key={country.country_code}
+                          key={countryop.country_code}
                           className=" py-lg-3  d-inline"
                           style={{
                             color: "#575050",
@@ -381,7 +381,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                             fontWeight: "400",
                           }}
                         >
-                          {country.title}
+                          {countryop.title}
                         </p>
                       );
                     })}
