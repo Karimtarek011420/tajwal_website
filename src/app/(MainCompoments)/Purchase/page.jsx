@@ -151,14 +151,12 @@ export default function page() {
           },
         }
       );
-      console.log(data)
       if (data.status === true) {
         window.open(data.data.invoiceURL, "_self");
       }
     } catch (error) {
       console.error(error);
     }
-    
   };
 
   if (!selectedPackage) {
@@ -190,19 +188,16 @@ export default function page() {
           <div className=" row gy-3">
             <div className="col-lg-4 col-md-6 col-sm-12">
               <div className="cardpurchase  bg-white shadow-lg rounded-2 position-relative">
-                <div className=" countydtailsup d-flex justify-content-around align-items-center position-absolute ">
+                <div className=" countydtailsup d-flex  justify-content-between align-items-center position-absolute ">
                   <div>
-                    {selectedPackage.operator?.countries?.map((country) => {
-                      return (
-                        <Image
-                          key={country.country_code}
-                          src={country.image}
-                          height={58}
-                          width={80}
-                          alt={country.title}
-                        />
-                      );
-                    })}
+                    {selectedPackage.image && (
+                      <Image
+                        src={selectedPackage.image}
+                        width={58}
+                        height={80}
+                        alt={selectedPackage.title}
+                      />
+                    )}
                   </div>
                   <div>
                     <span
@@ -241,11 +236,7 @@ export default function page() {
                       <p className="mx-2 my-0">التغطية</p>
                     </div>
                     <div>
-                      <p className="my-0">
-                        {selectedPackage.operator?.coverages
-                          ?.map((coverage) => coverage.name)
-                          .join(", ")}
-                      </p>
+                      <p className="my-0">{selectedPackage.title}</p>
                     </div>
                   </div>
                   <div
@@ -358,12 +349,7 @@ export default function page() {
               <div className="bg-white shadow-lg rounded-2 mb-3 pb-5 pt-4 px-2">
                 <p className=" px-1   purchasepachagesum">المجموع</p>
                 <div className=" d-flex purchasepachage justify-content-between align-items-center my-1 px-2 py-2 ">
-                  <p className="my-0 ">
-                    شريحة -
-                    {selectedPackage.operator.coverages
-                      .map((coverage) => coverage.name)
-                      .join(", ")}
-                  </p>
+                  <p className="my-0 ">شريحة -{selectedPackage.title}</p>
                   <div>
                     <button onClick={incrementQuantity} className="btn">
                       +
@@ -416,7 +402,6 @@ export default function page() {
                   لديك كود خصم؟ ادخلها في الخانة التالية واضغط تطبيق
                 </p>
                 <div className="discount-container">
-                 
                   <input
                     id="couponCode"
                     name="couponCode"
@@ -490,7 +475,9 @@ export default function page() {
                           <div
                             style={{ cursor: "pointer" }}
                             className="d-flex justify-content-center align-items-center payement"
-                            onClick={() => handlePayment(method.id,method.paymentWay)}
+                            onClick={() =>
+                              handlePayment(method.id, method.paymentWay)
+                            }
                           >
                             <Image
                               src={method.icon}

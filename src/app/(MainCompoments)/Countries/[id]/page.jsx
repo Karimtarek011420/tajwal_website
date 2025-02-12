@@ -70,7 +70,12 @@ export default function DetailsCountry({ params: paramsPromise }) {
     setIsModalOpen(false);
   };
   const handlePurchase = () => {
-    setSelectedPackagepur(selectedPackage);
+    setSelectedPackagepur({ 
+      ...selectedPackage, 
+      title: data[0]?.title, 
+      image: data[0]?.image 
+    });
+    // setSelectedPackagepur(selectedPackage);
     router.push("/Purchase");
   };
   

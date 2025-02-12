@@ -72,7 +72,11 @@ export default function DetailsCountry({ params: paramsPromise }) {
     setIsModalOpen(false);
   };
   const handlePurchase = () => {
-    setSelectedPackagepur(selectedPackage);
+    setSelectedPackagepur({
+      ...selectedPackage,
+      title: data[0]?.title,
+      image: data[0]?.image,
+    });
     router.push("/Purchase");
   };
 
@@ -901,11 +905,10 @@ export default function DetailsCountry({ params: paramsPromise }) {
                                     <Typography
                                       sx={{
                                         px: 1,
-                                        fontSize:11
-
+                                        fontSize: 11,
                                       }}
                                     >
-                                      <span  key={coverage.name}>
+                                      <span key={coverage.name}>
                                         {coverage.networks
                                           .map((network) => network.name)
                                           .join(", ")}
