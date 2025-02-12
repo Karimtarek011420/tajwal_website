@@ -18,7 +18,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { usePackage } from "@/app/_Compontents/PackageContext/PackageContext";
-
+import { Modal, Box, Button, Typography } from "@mui/material";
 export default function DetailsCountry({ params: paramsPromise }) {
   const params = use(paramsPromise);
   const { id } = params;
@@ -28,6 +28,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
   const [selectedPackage, setSelectedPackage] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { setSelectedPackagepur } = usePackage(); // استخدام السياق
+  const [open, setOpen] = useState(false);
 
   const getCountryDetails = async () => {
     try {
@@ -141,6 +142,32 @@ export default function DetailsCountry({ params: paramsPromise }) {
                         >
                           <div className=" countydtailsup d-flex justify-content-around align-items-center position-absolute ">
                             <div>
+                              <Button
+                                variant="contained"
+                                onClick={() => setOpen(true)}
+                              >
+                                فتح المودال
+                              </Button>
+                              <Modal open={open} onClose={() => setOpen(false)}>
+                                <Box
+                                  sx={{
+                                    width: 300,
+                                    bgcolor: "white",
+                                    p: 4,
+                                    mx: "auto",
+                                    mt: "30vh",
+                                    borderRadius: 2,
+                                  }}
+                                >
+                                  <Typography variant="h6">
+                                    العنوان هنا
+                                  </Typography>
+                                  <Typography>هذا هو محتوى المودال.</Typography>
+                                  <Button onClick={() => setOpen(false)}>
+                                    إغلاق
+                                  </Button>
+                                </Box>
+                              </Modal>
                               {/* {operator.countries.map((country) => {
                                 return (
                                   <Image
