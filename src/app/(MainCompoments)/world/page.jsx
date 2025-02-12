@@ -3,22 +3,18 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import arrow from "../../../assets/images/arrow.svg";
-import "./continents.css";
+import "./world.css";
 import axios from "axios";
 import { usePathname } from "next/navigation";
 export default function CountryHeader() {
   const [countries, setCountry] = useState(null);
   const pathname = usePathname(); // الحصول على المسار الحالي
-
   const getCountry = async () => {
-    const { data } = await axios.get(
-      "https://api.tajwal.co/api/v1/continents",
-      {
-        headers: {
-          Accept: "application/json",
-        },
-      }
-    );
+    const { data } = await axios.get("https://api.tajwal.co/api/v1/world", {
+      headers: {
+        Accept: "application/json",
+      },
+    });
     setCountry(data.data);
   };
   useEffect(() => {
@@ -45,16 +41,19 @@ export default function CountryHeader() {
             className={`country-list-links mx-2 ${
               pathname === "/continents" ? "active" : ""
             }`}
+            style={{
+              color: pathname === "/continents" ? " #285060" : "#ffffff",
+            }}
           >
             قارية
           </Link>
           <Link
-            href="/world"
+            href=""
             className={`country-list-links mx-2 ${
-              pathname === "/global" ? "active" : ""
+              pathname === "/world" ? "active" : ""
             }`}
             style={{
-              color: pathname === "/global" ? " #285060" : "#ffffff",
+              color: pathname === "/world" ? " #285060" : "#ffffff",
             }}
           >
             عالمية
@@ -67,7 +66,7 @@ export default function CountryHeader() {
             return (
               <div key={country.country_code} className="col-md-3">
                 <div className="bg-white shadow-sm text-center">
-                  <Link href={`/continents/${country.country_code}`}>
+                  <Link href={`/Countries/${country.country_code}`}>
                     <div className="d-flex justify-content-between align-items-center p-3">
                       <div className="country-flag d-flex justify-content-center align-items-center">
                         <Image

@@ -51,12 +51,12 @@ export default function CountryHeader() {
             قارية
           </Link>
           <Link
-            href=""
+            href="/world"
             className={`country-list-links mx-2 ${
-              pathname === "/global" ? "active" : ""
+              pathname === "/world" ? "active" : ""
             }`}
             style={{
-              color: pathname === "/global" ? " #285060" : "#ffffff",
+              color: pathname === "/world" ? " #285060" : "#ffffff",
             }}
           >
             عالمية

@@ -32,7 +32,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
   const getCountryDetails = async () => {
     try {
       const response = await axios.get(
-        `https://api.tajwal.co/api/v1/countrie/${id}`,
+        `https://api.tajwal.co/api/v1/world/${id}`,
         {
           headers: {
             Accept: "application/json",
