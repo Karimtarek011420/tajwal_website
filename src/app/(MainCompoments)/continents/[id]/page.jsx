@@ -845,7 +845,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                         <p className="mx-2 my-0 textmodelpsecond">الشبكة</p>
                       </div>
                       <div>
-                        <p className="my-0 textmodelpsecond">
+                        {/* <p className="my-0 textmodelpsecond">
                           {selectedPackage.operator.coverages.map(
                             (coverage) => (
                               <span key={coverage.name}>
@@ -855,7 +855,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                               </span>
                             )
                           )}
-                        </p>
+                        </p> */}
                       </div>
                     </div>
                   </div>
