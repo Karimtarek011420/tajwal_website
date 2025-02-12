@@ -193,7 +193,7 @@ export default function page() {
                     {selectedPackage.image && (
                       <Image
                         src={selectedPackage.image}
-                        width={58}
+                        width={80}
                         height={80}
                         alt={selectedPackage.title}
                       />
