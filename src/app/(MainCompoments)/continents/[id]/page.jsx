@@ -142,43 +142,12 @@ export default function DetailsCountry({ params: paramsPromise }) {
                         >
                           <div className=" countydtailsup d-flex justify-content-around align-items-center position-absolute ">
                             <div>
-                              <Button
-                                variant="contained"
-                                onClick={() => setOpen(true)}
-                              >
-                                فتح المودال
-                              </Button>
-                              <Modal open={open} onClose={() => setOpen(false)}>
-                                <Box
-                                  sx={{
-                                    width: 300,
-                                    bgcolor: "white",
-                                    p: 4,
-                                    mx: "auto",
-                                    mt: "30vh",
-                                    borderRadius: 2,
-                                  }}
-                                >
-                                  <Typography variant="h6">
-                                    العنوان هنا
-                                  </Typography>
-                                  <Typography>هذا هو محتوى المودال.</Typography>
-                                  <Button onClick={() => setOpen(false)}>
-                                    إغلاق
-                                  </Button>
-                                </Box>
-                              </Modal>
-                              {/* {operator.countries.map((country) => {
-                                return (
-                                  <Image
-                                    key={country.country_code}
-                                    src={country.image}
-                                    height={58}
-                                    width={80}
-                                    alt={country.title}
-                                  />
-                                );
-                              })} */}
+                              <Image
+                                src={country.image}
+                                width={80}
+                                height={35}
+                                alt={country.title}
+                              />
                             </div>
                             <div>
                               <span
@@ -219,11 +188,90 @@ export default function DetailsCountry({ params: paramsPromise }) {
                                 <p className="mx-2 my-0">التغطية</p>
                               </div>
                               <div>
-                                <p className="my-0">
-                                  {operator.coverages
-                                    .map((coverage) => coverage.name)
-                                    .join(", ")}
-                                </p>
+                                <Button
+                                  variant="contained"
+                                  onClick={() => setOpen(true)}
+                                  sx={{
+                                    backgroundColor: "#336279",
+                                  }}
+                                >
+                                  {operator.countries.length} دولة
+                                </Button>
+                                <Modal
+                                  open={open}
+                                  onClose={() => setOpen(false)}
+                                  BackdropProps={{
+                                    sx: {
+                                      backgroundColor: "rgba(0, 0, 0, 0.2)", // تعديل شفافية الخلفية
+                                    },
+                                  }}
+                                >
+                                  <Box
+                                    sx={{
+                                      width: "90%", // يجعل المودال متجاوبًا على الشاشات الصغيرة
+                                      maxWidth: 500, // الحد الأقصى للعرض
+                                      bgcolor: "white",
+                                      p: 4,
+                                      mx: "auto",
+                                      mt: "10vh",
+                                      borderRadius: 2,
+                                      boxShadow:
+                                        "0px 4px 10px rgba(0, 0, 0, 0.3)", // ظل خفيف
+                                    }}
+                                  >
+                                    <Typography variant="h6">
+                                      دول التغطية
+                                    </Typography>
+
+                                    {/* جعل الدول تظهر بجانب بعضها */}
+                                    <Box
+                                      sx={{
+                                        display: "flex",
+                                        flexWrap: "wrap",
+                                        gap: 2,
+                                        mt: 2,
+                                      }}
+                                    >
+                                      {operator.countries.map((countery) => (
+                                        <Box
+                                          key={countery.country_code}
+                                          sx={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            gap: 1,
+                                            border: "1px solid #ddd", // إطار خفيف حول كل عنصر
+                                            borderRadius: 2,
+                                            p: 1,
+                                          }}
+                                        >
+                                          <Image
+                                            src={countery.image}
+                                            height={20}
+                                            width={20}
+                                            alt={countery.title}
+                                          />
+                                          <Typography>
+                                            {countery.title}
+                                          </Typography>
+                                        </Box>
+                                      ))}
+                                    </Box>
+
+                                    <Button
+                                      onClick={() => setOpen(false)}
+                                      sx={{
+                                        mt: 2,
+                                        px: 5,
+                                        backgroundColor: "#336279",
+                                        color: "#ffffff",
+                                        border: "1px solid #336279",
+                                        width: "100%", // جعل الزر بعرض الشاشة في الشاشات الصغيرة
+                                      }}
+                                    >
+                                      إغلاق
+                                    </Button>
+                                  </Box>
+                                </Modal>
                               </div>
                             </div>
                             <div
