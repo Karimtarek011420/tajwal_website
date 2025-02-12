@@ -870,7 +870,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                               bgcolor: "white",
                               p: 2,
                               mx: "auto",
-                              mt: "8vh",
+                              mt: "5vh",
                               borderRadius: 2,
                               boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)", // ظل خفيف
                             }}
@@ -883,7 +883,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                                 display: "flex",
                                 flexWrap: "wrap",
                                 gap: 1,
-                                mt: 2,
+                                mt: 1,
                               }}
                             >
                               {selectedPackage.operator.coverages.map(
@@ -901,9 +901,11 @@ export default function DetailsCountry({ params: paramsPromise }) {
                                     <Typography
                                       sx={{
                                         px: 1,
+                                        fontSize:11
+
                                       }}
                                     >
-                                      <span key={coverage.name}>
+                                      <span  key={coverage.name}>
                                         {coverage.networks
                                           .map((network) => network.name)
                                           .join(", ")}
@@ -930,20 +932,6 @@ export default function DetailsCountry({ params: paramsPromise }) {
                           </Box>
                         </Modal>
                       </div>
-                      {/* <div>
-                        {console.log(selectedPackage.operator)}
-                        <p className="my-0 textmodelpsecond">
-                          {selectedPackage.operator.coverages.map(
-                            (coverage) => (
-                              <span key={coverage.name}>
-                                {coverage.networks
-                                  .map((network) => network.name)
-                                  .join(", ")}
-                              </span>
-                            )
-                          )}
-                        </p>
-                      </div> */}
                     </div>
                   </div>
                   <div>
