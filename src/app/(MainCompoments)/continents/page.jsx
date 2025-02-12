@@ -49,7 +49,7 @@ export default function CountryHeader() {
             قارية
           </Link>
           <Link
-            href="/world"
+            href=""
             className={`country-list-links mx-2 ${
               pathname === "/global" ? "active" : ""
             }`}

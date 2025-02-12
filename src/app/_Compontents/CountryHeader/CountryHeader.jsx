@@ -50,7 +50,7 @@ export default async function CountryHeader() {
           <Link href="/continents" className="country-list-links text-white mx-2">
             قارية
           </Link>
-          <Link href="/world" className="country-list-links text-white mx-2">
+          <Link href="" className="country-list-links text-white mx-2">
             عالمية
           </Link>
         </ul>
