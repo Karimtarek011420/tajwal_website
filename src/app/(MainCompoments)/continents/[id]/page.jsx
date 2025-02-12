@@ -417,10 +417,10 @@ export default function DetailsCountry({ params: paramsPromise }) {
             </div>
             <div className=" d-flex justify-content-center align-items-center pt-5">
               <Link
-                href="/Countries "
+                href="/continents "
                 className=" countryshow text-white  px-5 py-3"
               >
-                عرض جميع الدول
+                عرض جميع القارات
               </Link>
             </div>
           </div>
