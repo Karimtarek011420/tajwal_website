@@ -136,6 +136,7 @@ export default function page() {
         {
           paymentMethodId: methodId,
           quantity,
+          coupon_code: couponCode,
           package_id: selectedPackage.id,
           type: selectedPackage.type,
           country: selectedPackage.operator.countries
@@ -150,12 +151,14 @@ export default function page() {
           },
         }
       );
+      console.log(data)
       if (data.status === true) {
         window.open(data.data.invoiceURL, "_self");
       }
     } catch (error) {
       console.error(error);
     }
+    
   };
 
   if (!selectedPackage) {
@@ -170,7 +173,6 @@ export default function page() {
   localStorage.setItem("package", JSON.stringify(selectedPackage));
 
   console.log(selectedPackage);
-
   return (
     <>
       <div className="Purchasedateils position-relative py-5">
@@ -414,6 +416,7 @@ export default function page() {
                   لديك كود خصم؟ ادخلها في الخانة التالية واضغط تطبيق
                 </p>
                 <div className="discount-container">
+                 
                   <input
                     id="couponCode"
                     name="couponCode"
