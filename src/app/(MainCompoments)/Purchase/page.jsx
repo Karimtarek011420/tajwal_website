@@ -15,6 +15,7 @@ import Tabby2 from "@/assets/images/Tabby2.svg";
 import Tamara3 from "@/assets/images/Tamara3.svg";
 import Apple from "@/assets/images/ApplePay.svg";
 import google from "@/assets/images/google.svg";
+import invaildpayment from "@/assets/images/invaildpayment.svg";
 import Image from "next/image";
 import axios from "axios";
 import toast from "react-hot-toast";
@@ -26,6 +27,7 @@ export default function page() {
   const [discountData, setDiscountData] = useState(null); // لتخزين بيانات الخصم
   const [couponCode, setCouponCode] = useState(""); // كود الخصم
   const [loading, setloading] = useState(false); //  الخصم
+  const [isChecked, setIsChecked] = useState(false);
 
   const incrementQuantity = useCallback(() => setQuantity((q) => q + 1), []);
   const decrementQuantity = useCallback(
@@ -436,7 +438,11 @@ export default function page() {
                 <div className="compatibility-check">
                   <h5 className="title">تأكيد التحقق من توافق هاتفك</h5>
                   <label className="custom-checkbox pt-lg-1 d-flex justify-content-center align-items-center">
-                    <input type="checkbox" />
+                    <input
+                      type="checkbox"
+                      checked={isChecked}
+                      onChange={() => setIsChecked(!isChecked)}
+                    />
                     <span className="checkmark"></span>
                     <p>
                       أوافق انني اطلعت على{" "}
@@ -448,50 +454,74 @@ export default function page() {
                   </label>
                 </div>
               </div>
-              <div className=" bg-white shadow-lg rounded-2 pb-4 pt-2 px-2 ">
-                <p
-                  className="px-1 "
-                  style={{
-                    fontSize: "12px",
-                    fontWeight: "400",
-                    color: "#626E7B",
-                  }}
-                >
-                  وسيلة الدفع
-                </p>
-                <div className="container py-1">
-                  <div className="row justify-content-center gy-2">
-                    {paymentMethods?.map((method, index) => {
-                      const isLastTwo = index >= paymentMethods.length - 2; // تحقق إذا كانت الصورة من الصور الأخيرة
-                      return (
-                        <div
-                          key={method.id}
-                          className={`${
-                            isLastTwo
-                              ? "col-12"
-                              : "col-lg-6 col-md-6 col-sm-6 col-12"
-                          }`}
-                        >
+
+              {isChecked ? (
+                <div className=" bg-white shadow-lg rounded-2 pb-4 pt-2 px-2 ">
+                  <p
+                    className="px-1 "
+                    style={{
+                      fontSize: "12px",
+                      fontWeight: "400",
+                      color: "#626E7B",
+                    }}
+                  >
+                    وسيلة الدفع
+                  </p>
+                  <div className="container py-1">
+                    <div className="row justify-content-center gy-2">
+                      {paymentMethods?.map((method, index) => {
+                        const isLastTwo = index >= paymentMethods.length - 2; // تحقق إذا كانت الصورة من الصور الأخيرة
+                        return (
                           <div
-                            style={{ cursor: "pointer" }}
-                            className="d-flex justify-content-center align-items-center payement"
-                            onClick={() =>
-                              handlePayment(method.id, method.paymentWay)
-                            }
+                            key={method.id}
+                            className={`${
+                              isLastTwo
+                                ? "col-12"
+                                : "col-lg-6 col-md-6 col-sm-6 col-12"
+                            }`}
                           >
-                            <Image
-                              src={method.icon}
-                              width={isLastTwo ? 300 : 150} // الصور الأخيرة بحجم أكبر
-                              height={35}
-                              alt={method.name}
-                            />
+                            <div
+                              style={{ cursor: "pointer" }}
+                              className="d-flex justify-content-center align-items-center payement"
+                              onClick={() =>
+                                handlePayment(method.id, method.paymentWay)
+                              }
+                            >
+                              <Image
+                                src={method.icon}
+                                width={isLastTwo ? 300 : 150} // الصور الأخيرة بحجم أكبر
+                                height={35}
+                                alt={method.name}
+                              />
+                            </div>
                           </div>
-                        </div>
-                      );
-                    })}
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <div className=" bg-white shadow-lg rounded-2 pb-4 pt-2 px-2 ">
+                  <p
+                    className="px-1 "
+                    style={{
+                      fontSize: "12px",
+                      fontWeight: "400",
+                      color: "#626E7B",
+                    }}
+                  >
+                    وسيلة الدفع
+                  </p>
+                  <div className=" d-flex justify-content-center  align-items-center">
+                    <Image
+                      src={invaildpayment}
+                      width={400} // الصور الأخيرة بحجم أكبر
+                      height={220}
+                      alt="invaildpayment"
+                    />
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
