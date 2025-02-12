@@ -211,9 +211,9 @@ export default function DetailsCountry({ params: paramsPromise }) {
                                       width: "90%", // يجعل المودال متجاوبًا على الشاشات الصغيرة
                                       maxWidth: 500, // الحد الأقصى للعرض
                                       bgcolor: "white",
-                                      p: 4,
+                                      p: 2,
                                       mx: "auto",
-                                      mt: "10vh",
+                                      mt: "8vh",
                                       borderRadius: 2,
                                       boxShadow:
                                         "0px 4px 10px rgba(0, 0, 0, 0.3)", // ظل خفيف
@@ -228,7 +228,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                                       sx={{
                                         display: "flex",
                                         flexWrap: "wrap",
-                                        gap: 2,
+                                        gap: 1,
                                         mt: 2,
                                       }}
                                     >
@@ -238,10 +238,9 @@ export default function DetailsCountry({ params: paramsPromise }) {
                                           sx={{
                                             display: "flex",
                                             alignItems: "center",
-                                            gap: 1,
                                             border: "1px solid #ddd", // إطار خفيف حول كل عنصر
                                             borderRadius: 2,
-                                            p: 1,
+                                            px: 1,
                                           }}
                                         >
                                           <Image
@@ -250,7 +249,11 @@ export default function DetailsCountry({ params: paramsPromise }) {
                                             width={20}
                                             alt={countery.title}
                                           />
-                                          <Typography>
+                                          <Typography
+                                            sx={{
+                                              px: 1,
+                                            }}
+                                          >
                                             {countery.title}
                                           </Typography>
                                         </Box>
@@ -265,7 +268,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                                         backgroundColor: "#336279",
                                         color: "#ffffff",
                                         border: "1px solid #336279",
-                                        width: "100%", // جعل الزر بعرض الشاشة في الشاشات الصغيرة
+                                        // جعل الزر بعرض الشاشة في الشاشات الصغيرة
                                       }}
                                     >
                                       إغلاق
