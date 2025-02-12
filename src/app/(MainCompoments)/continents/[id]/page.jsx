@@ -232,32 +232,34 @@ export default function DetailsCountry({ params: paramsPromise }) {
                                         mt: 2,
                                       }}
                                     >
-                                      {operator.countries.map((countery) => (
-                                        <Box
-                                          key={countery.country_code}
-                                          sx={{
-                                            display: "flex",
-                                            alignItems: "center",
-                                            border: "1px solid #ddd", // إطار خفيف حول كل عنصر
-                                            borderRadius: 2,
-                                            px: 1,
-                                          }}
-                                        >
-                                          <Image
-                                            src={countery.image}
-                                            height={20}
-                                            width={20}
-                                            alt={countery.title}
-                                          />
-                                          <Typography
+                                      {operator.countries.map(
+                                        (countery, index) => (
+                                          <Box
+                                            key={`${countery.country_code}-bbbbb-${index}`}
                                             sx={{
+                                              display: "flex",
+                                              alignItems: "center",
+                                              border: "1px solid #ddd", // إطار خفيف حول كل عنصر
+                                              borderRadius: 2,
                                               px: 1,
                                             }}
                                           >
-                                            {countery.title}
-                                          </Typography>
-                                        </Box>
-                                      ))}
+                                            <Image
+                                              src={countery.image}
+                                              height={20}
+                                              width={20}
+                                              alt={countery.title}
+                                            />
+                                            <Typography
+                                              sx={{
+                                                px: 1,
+                                              }}
+                                            >
+                                              {countery.title}
+                                            </Typography>
+                                          </Box>
+                                        )
+                                      )}
                                     </Box>
 
                                     <Button
@@ -431,11 +433,97 @@ export default function DetailsCountry({ params: paramsPromise }) {
                 style={{ backgroundColor: "#336279" }}
               ></i>
             </button>
-
             <div className="row gy-1 py-lg-3 justify-content-center align-items-center modal-contentmedia">
-              {/* عرض الدول وعناوينها */}
               <div className="col-md-4 text-center">
                 <div>
+                  <Button
+                    variant="contained"
+                    onClick={() => setOpen(true)}
+                    sx={{
+                      backgroundColor: "#336279",
+                    }}
+                  >
+                    {selectedPackage.operator.countries.length} دولة
+                  </Button>
+                  <Modal
+                    open={open}
+                    onClose={() => setOpen(false)}
+                    BackdropProps={{
+                      sx: {
+                        backgroundColor: "rgba(0, 0, 0, 0.2)", // تعديل شفافية الخلفية
+                      },
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        width: "90%", // يجعل المودال متجاوبًا على الشاشات الصغيرة
+                        maxWidth: 500, // الحد الأقصى للعرض
+                        bgcolor: "white",
+                        p: 2,
+                        mx: "auto",
+                        mt: "8vh",
+                        borderRadius: 2,
+                        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)", // ظل خفيف
+                      }}
+                    >
+                      <Typography variant="h6">دول التغطية</Typography>
+
+                      {/* جعل الدول تظهر بجانب بعضها */}
+                      <Box
+                        sx={{
+                          display: "flex",
+                          flexWrap: "wrap",
+                          gap: 1,
+                          mt: 2,
+                        }}
+                      >
+                        {selectedPackage.operator.countries.map(
+                          (countery, index) => (
+                            <Box
+                              key={`${countery.country_code}-title-${index}`}
+                              sx={{
+                                display: "flex",
+                                alignItems: "center",
+                                border: "1px solid #ddd", // إطار خفيف حول كل عنصر
+                                borderRadius: 2,
+                                px: 1,
+                              }}
+                            >
+                              <Image
+                                src={countery.image}
+                                height={20}
+                                width={20}
+                                alt={countery.title}
+                              />
+                              <Typography
+                                sx={{
+                                  px: 1,
+                                }}
+                              >
+                                {countery.title}
+                              </Typography>
+                            </Box>
+                          )
+                        )}
+                      </Box>
+
+                      <Button
+                        onClick={() => setOpen(false)}
+                        sx={{
+                          mt: 2,
+                          px: 5,
+                          backgroundColor: "#336279",
+                          color: "#ffffff",
+                          border: "1px solid #336279",
+                          // جعل الزر بعرض الشاشة في الشاشات الصغيرة
+                        }}
+                      >
+                        إغلاق
+                      </Button>
+                    </Box>
+                  </Modal>
+                </div>
+                {/* <div>
                   {selectedPackage.operator.countries.map((country, index) => (
                     <Image
                       key={`${country.country_code}-${index}`} // حل مشكلة المفاتيح المتكررة
@@ -460,67 +548,186 @@ export default function DetailsCountry({ params: paramsPromise }) {
                       {country.title}
                     </p>
                   ))}
-                </div>
+                </div> */}
               </div>
-
-              {/* تفاصيل الباقة */}
               <div className="col-md-8">
-                {[
-                  {
-                    icon: icon1dark,
-                    label: "التغطية",
-                    value: selectedPackage.operator.coverages
-                      .map((c) => c.name)
-                      .join(", "),
-                  },
-                  {
-                    icon: icon2dark,
-                    label: "البيانات",
-                    value:
-                      selectedPackage.amount === -1
-                        ? "لا محدود"
-                        : `${selectedPackage.amount / 1000} غيغا بايت`,
-                  },
-                  {
-                    icon: icon3dark,
-                    label: "الصلاحية",
-                    value: `${selectedPackage.day} ${
-                      selectedPackage.day <= 10 ? "أيام" : "يوم"
-                    }`,
-                  },
-                  {
-                    icon: icon4dark,
-                    label: "السعر",
-                    value: `${selectedPackage.price} ر.س`,
-                  },
-                  {
-                    icon: icon5dark,
-                    label: "قابلة للتجديد",
-                    value: selectedPackage.operator.rechargeability
-                      ? "نعم"
-                      : "لا",
-                  },
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="d-flex justify-content-between align-items-center text-center rounded-2 mt-2 contentsimmodel"
-                  >
+                <div>
+                  <div className="d-flex justify-content-between align-items-center text-center  rounded-2 mt-3 contentsimmodel ">
                     <div className="d-flex align-items-center justify-content-center">
                       <Image
-                        src={item.icon}
+                        src={icon1dark}
                         width={16}
                         height={16}
-                        alt={item.label}
+                        alt="iconcountry"
                       />
-                      <p className="mx-2 my-0 contentsimmodelp">{item.label}</p>
+                      <p className="mx-2 my-0 contentsimmodelp">التغطية</p>
                     </div>
-                    <p className="my-0 contentsimmodelp">{item.value}</p>
+                    <div>
+                      <Button
+                        variant="contained"
+                        onClick={() => setOpen(true)}
+                        sx={{
+                          backgroundColor: "#336279",
+                        }}
+                      >
+                        {selectedPackage.operator.countries.length} دولة
+                      </Button>
+                      <Modal
+                        open={open}
+                        onClose={() => setOpen(false)}
+                        BackdropProps={{
+                          sx: {
+                            backgroundColor: "rgba(0, 0, 0, 0.2)", // تعديل شفافية الخلفية
+                          },
+                        }}
+                      >
+                        <Box
+                          sx={{
+                            width: "90%", // يجعل المودال متجاوبًا على الشاشات الصغيرة
+                            maxWidth: 500, // الحد الأقصى للعرض
+                            bgcolor: "white",
+                            p: 2,
+                            mx: "auto",
+                            mt: "8vh",
+                            borderRadius: 2,
+                            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)", // ظل خفيف
+                          }}
+                        >
+                          <Typography variant="h6">دول التغطية</Typography>
+
+                          {/* جعل الدول تظهر بجانب بعضها */}
+                          <Box
+                            sx={{
+                              display: "flex",
+                              flexWrap: "wrap",
+                              gap: 1,
+                              mt: 2,
+                            }}
+                          >
+                            {selectedPackage.operator.countries.map(
+                              (countery, index) => (
+                                <Box
+                                  key={`${countery.country_code}-flag-${index}`}
+                                  sx={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    border: "1px solid #ddd", // إطار خفيف حول كل عنصر
+                                    borderRadius: 2,
+                                    px: 1,
+                                  }}
+                                >
+                                  <Image
+                                    src={countery.image}
+                                    height={20}
+                                    width={20}
+                                    alt={countery.title}
+                                  />
+                                  <Typography
+                                    sx={{
+                                      px: 1,
+                                    }}
+                                  >
+                                    {countery.title}
+                                  </Typography>
+                                </Box>
+                              )
+                            )}
+                          </Box>
+
+                          <Button
+                            onClick={() => setOpen(false)}
+                            sx={{
+                              mt: 2,
+                              px: 5,
+                              backgroundColor: "#336279",
+                              color: "#ffffff",
+                              border: "1px solid #336279",
+                              // جعل الزر بعرض الشاشة في الشاشات الصغيرة
+                            }}
+                          >
+                            إغلاق
+                          </Button>
+                        </Box>
+                      </Modal>
+                    </div>
                   </div>
-                ))}
+                  <div className="d-flex justify-content-between align-items-center text-center  rounded-2 mt-2 bg-white contentsimmodel">
+                    <div className="d-flex align-items-center justify-content-center">
+                      <Image
+                        src={icon2dark}
+                        width={13}
+                        height={16}
+                        alt="iconcountry"
+                        className=" text-white"
+                      />
+                      <p className="mx-2 my-0 contentsimmodelp">البيانات</p>
+                    </div>
+                    <div>
+                      <p className="my-0 contentsimmodelp">
+                        {selectedPackage.amount === -1
+                          ? "لا محدود"
+                          : `${selectedPackage.amount / 1000} غيغا بايت`}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="d-flex justify-content-between align-items-center text-center  rounded-2 mt-2 contentsimmodel">
+                    <div className="d-flex align-items-center justify-content-center">
+                      <Image
+                        src={icon3dark}
+                        width={13}
+                        height={16}
+                        alt="iconcountry"
+                        className=" text-white"
+                      />
+                      <p className="mx-2 my-0 contentsimmodelp">الصلاحية</p>
+                    </div>
+                    <div>
+                      <p className="my-0 contentsimmodelp">
+                        {selectedPackage.day}{" "}
+                        {selectedPackage.day <= 10 ? "أيام" : "يوم"}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="d-flex justify-content-between align-items-center text-center  rounded-2 mt-2 bg-white contentsimmodel">
+                    <div className="d-flex align-items-center justify-content-center">
+                      <Image
+                        src={icon4dark}
+                        width={13}
+                        height={16}
+                        alt="iconcountry"
+                        className="text-white"
+                      />
+                      <p className="mx-2 my-0 contentsimmodelp">السعر</p>
+                    </div>
+                    <div>
+                      <p className="my-0 contentsimmodelp">
+                        {selectedPackage.price} ر.س
+                      </p>
+                    </div>
+                  </div>
+                  <div className="d-flex justify-content-between align-items-center text-center  rounded-2 mt-2 contentsimmodel">
+                    <div className="d-flex align-items-center justify-content-center">
+                      <Image
+                        src={icon5dark}
+                        width={16}
+                        height={16}
+                        alt="iconcountry"
+                      />
+                      <p className="mx-2 my-0 contentsimmodelp">
+                        قابلة للتجديد
+                      </p>
+                    </div>
+                    <div>
+                      <p className="my-0 contentsimmodelp">
+                        {selectedPackage.operator.rechargeability === true
+                          ? "نعم"
+                          : "لا"}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-
-            {/* الدول المغطاة */}
             <div
               className="row gy-1 py-lg-2 mt-lg-2 mt-1 pt-1"
               style={{ backgroundColor: "#F9F9F9" }}
@@ -529,100 +736,239 @@ export default function DetailsCountry({ params: paramsPromise }) {
                 <p className="textmodelp">
                   دول التغطية{" "}
                   <span className="mx-1">
-                    ({selectedPackage.operator.coverages.length} دولة)
+                    ( {selectedPackage.operator.countries.length} دولة)
                   </span>
                 </p>
-                <div className="d-flex justify-content-between align-items-center w-100 rounded-2 bg-white shadow-sm p-lg-3 p-2">
-                  <p
-                    style={{ fontSize: "10px" }}
-                    className="text-center mb-0 textmodelp"
+                <div>
+                  <Button
+                    variant="contained"
+                    onClick={() => setOpen(true)}
+                    sx={{
+                      backgroundColor: "#336279",
+                    }}
                   >
-                    {selectedPackage.operator.coverages
-                      .map((c) => c.name)
-                      .join(", ")}
-                  </p>
-                  <span className="d-flex">
-                    {selectedPackage.operator.countries.map(
-                      (country, index) => (
-                        <Image
-                          key={`${country.country_code}-flag-${index}`}
-                          src={country.image}
-                          height={20}
-                          width={28}
-                          alt={country.title}
-                        />
-                      )
-                    )}
-                  </span>
+                    {selectedPackage.operator.countries.length} دولة
+                  </Button>
+                  <Modal
+                    open={open}
+                    onClose={() => setOpen(false)}
+                    BackdropProps={{
+                      sx: {
+                        backgroundColor: "rgba(0, 0, 0, 0.2)",  
+                      },
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        width: "90%", 
+                        maxWidth: 500, 
+                        bgcolor: "white",
+                        p: 2,
+                        mx: "auto",
+                        mt: "8vh",
+                        borderRadius: 2,
+                        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)", 
+                      }}
+                    >
+                      <Typography variant="h6">دول التغطية</Typography>
+
+                      
+                      <Box
+                        sx={{
+                          display: "flex",
+                          flexWrap: "wrap",
+                          gap: 1,
+                          mt: 2,
+                        }}
+                      >
+                        {console.log(selectedPackage.operator.countries)}
+                        {selectedPackage.operator.countries.map(
+                          (countery, index) => (
+                            <Box
+                            key={`${countery.country_code}-kkk-${index}`}
+                              sx={{
+                                display: "flex",
+                                alignItems: "center",
+                                border: "1px solid #ddd", // إطار خفيف حول كل عنصر
+                                borderRadius: 2,
+                                px: 1,
+                              }}
+                            >
+                              <Image
+                                src={countery.image}
+                                height={20}
+                                width={20}
+                                alt={countery.title}
+                              />
+                              <Typography
+                                sx={{
+                                  px: 1,
+                                }}
+                              >
+                                {countery.title}
+                              </Typography>
+                            </Box>
+                          )
+                        )}
+                      </Box>
+
+                      <Button
+                        onClick={() => setOpen(false)}
+                        sx={{
+                          mt: 2,
+                          px: 5,
+                          backgroundColor: "#336279",
+                          color: "#ffffff",
+                          border: "1px solid #336279",
+                          // جعل الزر بعرض الشاشة في الشاشات الصغيرة
+                        }}
+                      >
+                        إغلاق
+                      </Button>
+                    </Box>
+                  </Modal>
                 </div>
               </div>
-
-              {/* معلومات إضافية */}
-              <div className="col-md-8">
+              <div className="col-md-8 ">
                 <p className="textmodelp">معلومات إضافية</p>
-                <div className="w-100 rounded-2 bg-white shadow-sm p-1">
-                  {[
-                    {
-                      icon: icon6m,
-                      label: "الشبكة",
-                      value: selectedPackage.operator.coverages
-                        .map((c) => c.networks.map((n) => n.name).join(", "))
-                        .join(", "),
-                    },
-                    {
-                      icon: icon6m,
-                      label: "نوع الباقة",
-                      value: selectedPackage.operator.plan_type,
-                    },
-                    {
-                      icon: icon6m,
-                      label: "سياسة التفعيل",
-                      value: selectedPackage.operator.activation_policy,
-                    },
-                    {
-                      icon: icon5dark,
-                      label: "امكانية شحن الرصيد",
-                      value: selectedPackage.operator.rechargeability
-                        ? "نعم"
-                        : "لا",
-                    },
-                    { icon: iconip, label: "توجيه IP", value: "لا" },
-                    { icon: icon6m, label: "معلومات اخرى", value: "" },
-                  ].map((item, index) => (
-                    <div
-                      key={index}
-                      className="d-flex justify-content-between align-items-center text-center px-lg-3 px-1 py-1 mt-lg-2"
-                    >
-                      <div className="d-flex align-items-center justify-content-center">
+                <div className=" w-100  rounded-2 bg-white shadow-sm p-1">
+                  <div>
+                    <div className="d-flex justify-content-between align-items-center text-center px-lg-3 px-1 py-lg-1  mt-lg-2">
+                      <div className="d-flex align-items-center justify-content-center ">
                         <Image
-                          src={item.icon}
+                          src={icon6m}
                           width={11}
                           height={11}
-                          alt={item.label}
+                          alt="iconcountry"
+                          className=" text-white"
                         />
-                        <p className="mx-2 my-0 textmodelpsecond">
-                          {item.label}
+                        <p className="mx-2 my-0 textmodelpsecond">الشبكة</p>
+                      </div>
+                      <div>
+                        <p className="my-0 textmodelpsecond">
+                          {selectedPackage.operator.coverages.map(
+                            (coverage) => (
+                              <span key={coverage.name}>
+                                {coverage.networks
+                                  .map((network) => network.name)
+                                  .join(", ")}
+                              </span>
+                            )
+                          )}
                         </p>
                       </div>
-                      <p className="my-0 textmodelpsecond">{item.value}</p>
                     </div>
-                  ))}
+                  </div>
+                  <div>
+                    <div className="d-flex justify-content-between align-items-center text-center px-lg-3 px-1 py-1  mt-lg-2">
+                      <div className="d-flex align-items-center justify-content-center ">
+                        <Image
+                          src={icon6m}
+                          width={11}
+                          height={11}
+                          alt="iconcountry"
+                          className=" text-white"
+                        />
+                        <p className="mx-2 my-0 textmodelpsecond">نوع الباقة</p>
+                      </div>
+                      <div>
+                        <p className="my-0 textmodelpsecond">
+                          {selectedPackage.operator.plan_type}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="d-flex justify-content-between align-items-center text-center  px-lg-3 px-1 py-1  mt-lg-2">
+                      <div className="d-flex align-items-center justify-content-center">
+                        <Image
+                          src={icon6m}
+                          width={11}
+                          height={11}
+                          alt="iconcountry"
+                          className=" text-white"
+                        />
+                        <p className="mx-2 my-0 textmodelpsecond">
+                          سياسة التفعيل
+                        </p>
+                      </div>
+                      <div>
+                        <p className="my-0 textmodelpsecond">
+                          {selectedPackage.operator.activation_policy}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="d-flex justify-content-between align-items-center text-center px-lg-3 px-1 py-1  mt-lg-2">
+                      <div className="d-flex align-items-center justify-content-center textmodelpsecond">
+                        <Image
+                          src={icon5dark}
+                          width={10}
+                          height={10}
+                          alt="iconcountry"
+                          className=" text-white"
+                        />
+                        <p className="mx-2 my-0 textmodelpsecond">
+                          امكانية شحن الرصيد
+                        </p>
+                      </div>
+                      <div>
+                        <p className="my-0 textmodelpsecond">
+                          {selectedPackage.operator.rechargeability === true
+                            ? "نعم "
+                            : " لا"}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="d-flex justify-content-between align-items-center text-center px-lg-3 px-1 py-1  mt-lg-2">
+                      <div className="d-flex align-items-center justify-content-center">
+                        <Image
+                          src={iconip}
+                          width={11}
+                          height={11}
+                          alt="iconcountry"
+                          className=" text-white"
+                        />
+                        <p className="mx-2 my-0 textmodelpsecond">توجيه IP</p>
+                      </div>
+                      <div>
+                        <p className="my-0 textmodelpsecond">لا</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="d-flex justify-content-between align-items-center text-center px-lg-3 px-1 py-1  mt-lg-2">
+                      <div className="d-flex align-items-center justify-content-center">
+                        <Image
+                          src={icon6m}
+                          width={11}
+                          height={11}
+                          alt="iconcountry"
+                          className=" text-white"
+                        />
+                        <p className="mx-2 my-0 textmodelpsecond">
+                          معلومات اخرى
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-
-            {/* زر الشراء */}
-            <div className="bg-white d-flex justify-content-between align-items-center">
+            <div className="bg-white d-flex justify-content-between  align-items-center">
               <button
                 style={{
-                  padding: "10px",
+                  padding: "10px ",
                   backgroundColor: "#626E7B",
                   color: "#fff",
                   border: "none",
                   borderRadius: "5px",
                   cursor: "pointer",
                 }}
-                className="px-5 py-lg-2 py-1 mx-3"
+                className=" px-5 py-lg-2 py-1 mx-3"
                 onClick={handlePurchase}
               >
                 شراء
