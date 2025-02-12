@@ -29,6 +29,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { setSelectedPackagepur } = usePackage(); // استخدام السياق
   const [open, setOpen] = useState(false);
+  const [opennet, setOpennet] = useState(false);
 
   const getCountryDetails = async () => {
     try {
@@ -754,25 +755,24 @@ export default function DetailsCountry({ params: paramsPromise }) {
                     onClose={() => setOpen(false)}
                     BackdropProps={{
                       sx: {
-                        backgroundColor: "rgba(0, 0, 0, 0.2)",  
+                        backgroundColor: "rgba(0, 0, 0, 0.2)",
                       },
                     }}
                   >
                     <Box
                       sx={{
-                        width: "90%", 
-                        maxWidth: 500, 
+                        width: "90%",
+                        maxWidth: 500,
                         bgcolor: "white",
                         p: 2,
                         mx: "auto",
                         mt: "8vh",
                         borderRadius: 2,
-                        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)", 
+                        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
                       }}
                     >
                       <Typography variant="h6">دول التغطية</Typography>
 
-                      
                       <Box
                         sx={{
                           display: "flex",
@@ -785,7 +785,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                         {selectedPackage.operator.countries.map(
                           (countery, index) => (
                             <Box
-                            key={`${countery.country_code}-kkk-${index}`}
+                              key={`${countery.country_code}-kkk-${index}`}
                               sx={{
                                 display: "flex",
                                 alignItems: "center",
@@ -844,9 +844,95 @@ export default function DetailsCountry({ params: paramsPromise }) {
                         />
                         <p className="mx-2 my-0 textmodelpsecond">الشبكة</p>
                       </div>
-                      <div>
+                      <div className="textmodelpsecond">
+                        <Button
+                          variant="contained"
+                          onClick={() => setOpennet(true)}
+                          sx={{
+                            backgroundColor: "#336279",
+                          }}
+                        >
+                          عرض
+                        </Button>
+                        <Modal
+                          open={opennet}
+                          onClose={() => setOpennet(false)}
+                          BackdropProps={{
+                            sx: {
+                              backgroundColor: "rgba(0, 0, 0, 0.2)", // تعديل شفافية الخلفية
+                            },
+                          }}
+                        >
+                          <Box
+                            sx={{
+                              width: "90%", // يجعل المودال متجاوبًا على الشاشات الصغيرة
+                              maxWidth: 500, // الحد الأقصى للعرض
+                              bgcolor: "white",
+                              p: 2,
+                              mx: "auto",
+                              mt: "8vh",
+                              borderRadius: 2,
+                              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)", // ظل خفيف
+                            }}
+                          >
+                            <Typography variant="h6">الشبكة</Typography>
+
+                            {/* جعل الدول تظهر بجانب بعضها */}
+                            <Box
+                              sx={{
+                                display: "flex",
+                                flexWrap: "wrap",
+                                gap: 1,
+                                mt: 2,
+                              }}
+                            >
+                              {selectedPackage.operator.coverages.map(
+                                (coverage, index) => (
+                                  <Box
+                                    key={`${coverage.country_code}-flag-${index}`}
+                                    sx={{
+                                      display: "flex",
+                                      alignItems: "center",
+                                      border: "1px solid #ddd", // إطار خفيف حول كل عنصر
+                                      borderRadius: 2,
+                                      px: 1,
+                                    }}
+                                  >
+                                    <Typography
+                                      sx={{
+                                        px: 1,
+                                      }}
+                                    >
+                                      <span key={coverage.name}>
+                                        {coverage.networks
+                                          .map((network) => network.name)
+                                          .join(", ")}
+                                      </span>
+                                    </Typography>
+                                  </Box>
+                                )
+                              )}
+                            </Box>
+
+                            <Button
+                              onClick={() => setOpennet(false)}
+                              sx={{
+                                mt: 2,
+                                px: 5,
+                                backgroundColor: "#336279",
+                                color: "#ffffff",
+                                border: "1px solid #336279",
+                                // جعل الزر بعرض الشاشة في الشاشات الصغيرة
+                              }}
+                            >
+                              إغلاق
+                            </Button>
+                          </Box>
+                        </Modal>
+                      </div>
+                      {/* <div>
                         {console.log(selectedPackage.operator)}
-                        {/* <p className="my-0 textmodelpsecond">
+                        <p className="my-0 textmodelpsecond">
                           {selectedPackage.operator.coverages.map(
                             (coverage) => (
                               <span key={coverage.name}>
@@ -856,8 +942,8 @@ export default function DetailsCountry({ params: paramsPromise }) {
                               </span>
                             )
                           )}
-                        </p> */}
-                      </div>
+                        </p>
+                      </div> */}
                     </div>
                   </div>
                   <div>
