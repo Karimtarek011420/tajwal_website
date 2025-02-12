@@ -27,6 +27,7 @@ export default function DetailsCountry() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { setSelectedPackagepur } = usePackage(); // استخدام السياق
   const [open, setOpen] = useState(false);
+  const [openbox, setOpenbox] = useState(false);
   const [opennet, setOpennet] = useState(false);
 
   const getCountryDetails = async () => {
@@ -448,7 +449,7 @@ export default function DetailsCountry() {
                 <div>
                   <Button
                     variant="contained"
-                    onClick={() => setOpen(true)}
+                    onClick={() => setOpenbox(true)}
                     sx={{
                       backgroundColor: "#336279",
                     }}
@@ -456,8 +457,8 @@ export default function DetailsCountry() {
                     {selectedPackage.operator.countries.length} دولة
                   </Button>
                   <Modal
-                    open={open}
-                    onClose={() => setOpen(false)}
+                    open={openbox}
+                    onClose={() => setOpenbox(false)}
                     BackdropProps={{
                       sx: {
                         backgroundColor: "rgba(0, 0, 0, 0.2)", // تعديل شفافية الخلفية
@@ -485,6 +486,16 @@ export default function DetailsCountry() {
                           flexWrap: "wrap",
                           gap: 1,
                           mt: 2,
+                          overflowY: "auto", // تفعيل السكرول في جميع الشاشات
+                          paddingRight: "4px", // تحسين شكل السكرول
+
+                          // تحديد أقصى ارتفاع لكل الأجهزة
+                          maxHeight: {
+                            xs: "250px",
+                            sm: "300px",
+                            md: "350px",
+                            lg: "400px",
+                          },
                         }}
                       >
                         {selectedPackage.operator.countries.map(
@@ -518,7 +529,7 @@ export default function DetailsCountry() {
                       </Box>
 
                       <Button
-                        onClick={() => setOpen(false)}
+                        onClick={() => setOpenbox(false)}
                         sx={{
                           mt: 2,
                           px: 5,
@@ -533,32 +544,6 @@ export default function DetailsCountry() {
                     </Box>
                   </Modal>
                 </div>
-                {/* <div>
-                  {selectedPackage.operator.countries.map((country, index) => (
-                    <Image
-                      key={`${country.country_code}-${index}`} // حل مشكلة المفاتيح المتكررة
-                      src={country.image}
-                      height={54}
-                      width={75}
-                      alt={country.title}
-                    />
-                  ))}
-                </div>
-                <div>
-                  {selectedPackage.operator.countries.map((country, index) => (
-                    <p
-                      key={`${country.country_code}-title-${index}`}
-                      className="py-lg-3"
-                      style={{
-                        color: "#575050",
-                        fontSize: "13px",
-                        fontWeight: "700",
-                      }}
-                    >
-                      {country.title}
-                    </p>
-                  ))}
-                </div> */}
               </div>
               <div className="col-md-8">
                 <div>
@@ -575,7 +560,7 @@ export default function DetailsCountry() {
                     <div>
                       <Button
                         variant="contained"
-                        onClick={() => setOpen(true)}
+                        onClick={() => setOpenbox(true)}
                         sx={{
                           backgroundColor: "#336279",
                         }}
@@ -583,8 +568,8 @@ export default function DetailsCountry() {
                         {selectedPackage.operator.countries.length} دولة
                       </Button>
                       <Modal
-                        open={open}
-                        onClose={() => setOpen(false)}
+                        open={openbox}
+                        onClose={() => setOpenbox(false)}
                         BackdropProps={{
                           sx: {
                             backgroundColor: "rgba(0, 0, 0, 0.2)", // تعديل شفافية الخلفية
@@ -612,6 +597,16 @@ export default function DetailsCountry() {
                               flexWrap: "wrap",
                               gap: 1,
                               mt: 2,
+                              overflowY: "auto", // تفعيل السكرول في جميع الشاشات
+                              paddingRight: "4px", // تحسين شكل السكرول
+
+                              // تحديد أقصى ارتفاع لكل الأجهزة
+                              maxHeight: {
+                                xs: "250px",
+                                sm: "300px",
+                                md: "350px",
+                                lg: "400px",
+                              },
                             }}
                           >
                             {selectedPackage.operator.countries.map(
@@ -645,7 +640,7 @@ export default function DetailsCountry() {
                           </Box>
 
                           <Button
-                            onClick={() => setOpen(false)}
+                            onClick={() => setOpenbox(false)}
                             sx={{
                               mt: 2,
                               px: 5,
@@ -752,7 +747,7 @@ export default function DetailsCountry() {
                 <div>
                   <Button
                     variant="contained"
-                    onClick={() => setOpen(true)}
+                    onClick={() => setOpenbox(true)}
                     sx={{
                       backgroundColor: "#336279",
                     }}
@@ -760,8 +755,8 @@ export default function DetailsCountry() {
                     {selectedPackage.operator.countries.length} دولة
                   </Button>
                   <Modal
-                    open={open}
-                    onClose={() => setOpen(false)}
+                    open={openbox}
+                    onClose={() => setOpenbox(false)}
                     BackdropProps={{
                       sx: {
                         backgroundColor: "rgba(0, 0, 0, 0.2)",
@@ -788,9 +783,18 @@ export default function DetailsCountry() {
                           flexWrap: "wrap",
                           gap: 1,
                           mt: 2,
+                          overflowY: "auto", // تفعيل السكرول في جميع الشاشات
+                          paddingRight: "4px", // تحسين شكل السكرول
+
+                          // تحديد أقصى ارتفاع لكل الأجهزة
+                          maxHeight: {
+                            xs: "250px",
+                            sm: "300px",
+                            md: "350px",
+                            lg: "400px",
+                          },
                         }}
                       >
-                        {console.log(selectedPackage.operator.countries)}
                         {selectedPackage.operator.countries.map(
                           (countery, index) => (
                             <Box
@@ -822,7 +826,7 @@ export default function DetailsCountry() {
                       </Box>
 
                       <Button
-                        onClick={() => setOpen(false)}
+                        onClick={() => setOpenbox(false)}
                         sx={{
                           mt: 2,
                           px: 5,
@@ -892,7 +896,17 @@ export default function DetailsCountry() {
                                 display: "flex",
                                 flexWrap: "wrap",
                                 gap: 1,
-                                mt: 1,
+                                mt: 2,
+                                overflowY: "auto", // تفعيل السكرول في جميع الشاشات
+                                paddingRight: "4px", // تحسين شكل السكرول
+
+                                // تحديد أقصى ارتفاع لكل الأجهزة
+                                maxHeight: {
+                                  xs: "250px",
+                                  sm: "300px",
+                                  md: "350px",
+                                  lg: "400px",
+                                },
                               }}
                             >
                               {selectedPackage.operator.coverages.map(
