@@ -1,14 +1,14 @@
 /* General Styles */
-.register {
+.registertajwal {
   width: 100%;
   max-width: 500px; /* Limit max-width for large screens */
   margin: 0 auto; /* Center the container */
 }
-.register .imageregister {
+.registertajwal .imageregister {
   width: 260px !important;
   height: 213px !important;
 }
-.register .phone-input-field {
+.registertajwal .phone-input-field {
   width: 100% !important;
   background-color: transparent !important;
   border: none !important;
@@ -16,21 +16,21 @@
   background-color: #f9f9f9 !important;
   border-radius: 5px !important;
 }
-.register input:focus {
+.registertajwal input:focus {
   outline: 0 !important;
   box-shadow: 0 0 0 0 transparent !important;
 }
-.register input {
+.registertajwal input {
   background-color: #f9f9f9 !important;
   border: none !important;
   border-radius: 5px !important;
   padding: 15px 20px !important;
 }
-.register input::placeholder {
+.registertajwal input::placeholder {
   font-size: 12px !important;
 }
-.register button.follow {
-  background-color: #4b87a4 !important;
+.registertajwal button.follow {
+  background-color: var(--primary-color) !important;
   padding: 10px 100px; /* Adjust button padding */
   color: #f1f3f6;
   font-size: 13px;
@@ -38,7 +38,7 @@
   border-radius: 5px;
   border: none;
 }
-.register .p_register p {
+.registertajwal .p_register p {
   color: #626e7b !important;
   font-size: 12px !important;
   font-weight: 400 !important;
@@ -46,27 +46,27 @@
 
 /* Responsive Adjustments */
 @media screen and (max-width: 992px) {
-  .register {
+  .registertajwal {
     padding: 0 15px;
   }
-  .register button.follow {
+  .registertajwal button.follow {
     padding: 10px 50px;
   }
 }
 
 @media screen and (max-width: 576px) {
-  .register input,
-  .register .phone-input-field {
+  .registertajwal input,
+  .registertajwal .phone-input-field {
     padding: 10px 12px !important;
   }
-  .register button.follow {
+  .registertajwal button.follow {
     font-size: 12px;
     padding: 10px 40px;
   }
-  .register .p_register p {
+  .registertajwal .p_register p {
     font-size: 11px;
   }
-  .register img {
+  .registertajwal img {
     max-width: 100%;
     height: auto;
   }

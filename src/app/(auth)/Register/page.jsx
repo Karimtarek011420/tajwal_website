@@ -118,7 +118,7 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="container register pt-5 pb-4">
+    <div className="container registertajwal pt-5 pb-4">
       <div className="text-center mb-5">
         <Image
           src={RegisterUser}
