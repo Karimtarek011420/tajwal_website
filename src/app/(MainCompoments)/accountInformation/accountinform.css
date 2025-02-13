@@ -105,6 +105,7 @@ button.follow:focus , button.followclose:focus{
   border: none !important;
   outline: none !important;
   box-shadow: 0 0 0 0 transparent !important;
+  color: #ffffff !important;
 }
 .swal-small-popup {
   max-width: 300px;
