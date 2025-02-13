@@ -1,5 +1,6 @@
 "use client";
 import { createContext, useEffect, useState } from "react";
+import { TailSpin } from "react-loader-spinner";
 
 export const authtoken = createContext();
 
@@ -16,7 +17,16 @@ export default function AuthTokenProvider({ children }) {
   }, []);
 
   if (loading) {
-    return <div className=" d-flex justify-content-center align-items-center py-5 vh-100">Loading...</div>; // عرض شاشة تحميل مؤقتة
+    return <div className=" d-flex justify-content-center align-items-center py-5 vh-100"><TailSpin
+    visible={true}
+    height="80"
+    width="80"
+    color="#336279"
+    ariaLabel="tail-spin-loading"
+    radius="1"
+    wrapperStyle={{}}
+    wrapperClass=""
+    /></div>; // عرض شاشة تحميل مؤقتة
   }
 
   return (
