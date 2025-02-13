@@ -6,7 +6,7 @@
   }
   .forgetpass .forgetpassreset_p {
     background-color: #F1F3F6 !important;
-    color: #336279 !important;
+    color: var(--primary-color) !important;
     font-size: 17px !important;
     font-weight: 500 !important;
   }
@@ -37,13 +37,13 @@
     font-size: 12px !important;
   }
   .forgetpass .loginpass{
-    color: #4B87A4;
+    color:var(--primary-color);
     font-size: 12px !important;
     font-weight: 400 !important;
-    border-bottom: 1px solid #4B87A4;
+    border-bottom: 1px solid var(--primary-color);
   }
   .forgetpass button.follow {
-    background-color: #4b87a4 !important;
+    background-color: var(--primary-color) !important;
     padding: 10px 100px; /* Adjust button padding */
     color: #f1f3f6;
     font-size: 13px;
