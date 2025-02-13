@@ -24,10 +24,10 @@
   content: "";
   position: absolute;
   display: none;
-  left: 6px;
-  top: 2px;
+  left: 9px;
+  top: 1px;
   width: 8px;
-  height: 20px;
+  height: 24px;
   border: solid #336279;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
