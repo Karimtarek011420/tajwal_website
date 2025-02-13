@@ -20,6 +20,7 @@ import { useRouter } from "next/navigation";
 import { usePackage } from "@/app/_Compontents/PackageContext/PackageContext";
 import { authtoken } from "@/app/_Compontents/Authtoken/Authtoken";
 import toast from "react-hot-toast";
+import { API_BASE_URL } from "@/app/utils/config";
 
 export default function DetailsCountry({ params: paramsPromise }) {
   const params = use(paramsPromise);
@@ -35,7 +36,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
   const getCountryDetails = async () => {
     try {
       const response = await axios.get(
-        `https://api.tajwal.co/api/v1/countrie/${id}`,
+        `${API_BASE_URL}/countrie/${id}`,
         {
           headers: {
             Accept: "application/json",

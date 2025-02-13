@@ -5,6 +5,7 @@ import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
 import arrow from "../../../assets/images/arrow.svg";
+import { API_BASE_URL } from "@/app/utils/config";
 
 export default function SearchResults() {
   const searchParams = useSearchParams();
@@ -20,7 +21,7 @@ export default function SearchResults() {
 
     axios
       .post(
-        "https://api.tajwal.co/api/v1/country/search",
+        `${API_BASE_URL}/country/search`,
         { key: searchTerm },
         {
           headers: {

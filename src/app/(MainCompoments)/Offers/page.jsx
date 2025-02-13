@@ -4,6 +4,7 @@ import "./offers.css";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { API_BASE_URL } from "@/app/utils/config";
 
 export default function OffersPage() {
   const [offers, setOffers] = useState(null);
@@ -12,7 +13,7 @@ export default function OffersPage() {
   const fetchOffers = async () => {
     try {
       const { data } = await axios.get(
-        "https://api.tajwal.co/api/v1/slid_offer",
+        `${API_BASE_URL}/slid_offer`,
         {
           headers: {
             Accept: "application/json",

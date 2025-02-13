@@ -19,6 +19,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { usePackage } from "@/app/_Compontents/PackageContext/PackageContext";
 import { Modal, Box, Button, Typography } from "@mui/material";
+import { API_BASE_URL } from "@/app/utils/config";
 export default function DetailsCountry() {
   const router = useRouter();
   const [data, setData] = useState(null);
@@ -32,7 +33,7 @@ export default function DetailsCountry() {
 
   const getCountryDetails = async () => {
     try {
-      const response = await axios.get(`https://api.tajwal.co/api/v1/world`, {
+      const response = await axios.get(`${API_BASE_URL}/world`, {
         headers: {
           Accept: "application/json",
         },

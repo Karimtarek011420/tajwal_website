@@ -1,11 +1,12 @@
 import axios from "axios";
 import Swal from "sweetalert2";
+import { API_BASE_URL } from "../utils/config";
 
 // A refactored logoutApi function
 export const logoutApi = async (
   token,
   settoken,
-  logoutUrl = "https://api.tajwal.co/api/v1/logout"
+  logoutUrl = `${API_BASE_URL}/logout`
 ) => {
   try {
     const { data } = await axios.get(logoutUrl, {

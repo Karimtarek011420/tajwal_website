@@ -19,6 +19,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { usePackage } from "@/app/_Compontents/PackageContext/PackageContext";
 import { Modal, Box, Button, Typography } from "@mui/material";
+import { API_BASE_URL } from "@/app/utils/config";
 export default function DetailsCountry({ params: paramsPromise }) {
   const params = use(paramsPromise);
   const { id } = params;
@@ -34,7 +35,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
   const getCountryDetails = async () => {
     try {
       const response = await axios.get(
-        `https://api.tajwal.co/api/v1/continents/${id}`,
+        `${API_BASE_URL}/continents/${id}`,
         {
           headers: {
             Accept: "application/json",

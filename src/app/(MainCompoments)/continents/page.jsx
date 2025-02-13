@@ -6,13 +6,14 @@ import arrow from "../../../assets/images/arrow.svg";
 import "./continents.css";
 import axios from "axios";
 import { usePathname } from "next/navigation";
+import { API_BASE_URL } from "@/app/utils/config";
 export default function CountryHeader() {
   const [countries, setCountry] = useState(null);
   const pathname = usePathname(); // الحصول على المسار الحالي
 
   const getCountry = async () => {
     const { data } = await axios.get(
-      "https://api.tajwal.co/api/v1/continents",
+      `${API_BASE_URL}/continents`,
       {
         headers: {
           Accept: "application/json",

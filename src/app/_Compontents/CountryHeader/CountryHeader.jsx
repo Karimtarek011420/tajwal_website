@@ -4,12 +4,13 @@ import Link from "next/link";
 import arrow from "../../../assets/images/arrow.svg";
 import "./countryheader.css";
 import axios from "axios";
+import { API_BASE_URL } from "@/app/utils/config";
 
 // دالة لجلب البيانات من الـ API
 const getCountry = async () => {
   try {
     const { data } = await axios.get(
-      "https://api.tajwal.co/api/v1/countries/home_countries",
+      `${API_BASE_URL}/countries/home_countries`,
       {
         headers: {
           Accept: "application/json",

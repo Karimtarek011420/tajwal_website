@@ -10,6 +10,7 @@ import Swal from "sweetalert2";
 import { TailSpin } from "react-loader-spinner";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
+import { API_BASE_URL } from "@/app/utils/config";
 
 export default function AccountInformation() {
   const [user, setUser] = useState(() => {
@@ -46,7 +47,7 @@ export default function AccountInformation() {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://api.tajwal.co/api/v1/create_phone_change_otp",
+        `${API_BASE_URL}/create_phone_change_otp`,
         { phone_number: phoneNumber },
         {
           headers: {
@@ -75,7 +76,7 @@ export default function AccountInformation() {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://api.tajwal.co/api/v1/update_phone",
+        `${API_BASE_URL}/update_phone`,
         { otp, phone_number: phoneNumber },
         {
           headers: {
@@ -102,7 +103,7 @@ export default function AccountInformation() {
   const updateProfile = async (updatedData) => {
     try {
       const response = await axios.patch(
-        "https://api.tajwal.co/api/v1/profile",
+        `${API_BASE_URL}/profile`,
         updatedData,
         {
           headers: {

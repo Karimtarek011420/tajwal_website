@@ -20,6 +20,7 @@ import Image from "next/image";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { TailSpin } from "react-loader-spinner";
+import { API_BASE_URL } from "@/app/utils/config";
 
 export default function page() {
   const { selectedPackage, setSelectedPackagepur } = usePackage();
@@ -47,7 +48,7 @@ export default function page() {
     setloading(true);
     try {
       const { data } = await axios.post(
-        "https://api.tajwal.co/api/v1/coupon_check",
+        `${API_BASE_URL}/coupon_check`,
         {
           quantity,
           package_id: selectedPackage.id,
@@ -134,7 +135,7 @@ export default function page() {
   const handlePayment = async (methodId, paymentWay) => {
     try {
       const { data } = await axios.post(
-        "https://api.tajwal.co/api/v1/submitOrder",
+        `${API_BASE_URL}/submitOrder`,
         {
           paymentMethodId: methodId,
           quantity,
@@ -172,7 +173,7 @@ export default function page() {
   }
   localStorage.setItem("package", JSON.stringify(selectedPackage));
 
-  console.log(selectedPackage);
+  console.log(selectedPackage.id);
   return (
     <>
       <div className="Purchasedateils position-relative py-5">

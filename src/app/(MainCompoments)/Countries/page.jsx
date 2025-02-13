@@ -6,12 +6,13 @@ import arrow from "../../../assets/images/arrow.svg";
 import "./country.css";
 import axios from "axios";
 import { usePathname } from "next/navigation";
+import { API_BASE_URL } from "@/app/utils/config";
 export default function CountryHeader() {
   const [countries, setCountry] = useState(null);
   const pathname = usePathname(); // الحصول على المسار الحالي
   const getCountry = async () => {
     const { data } = await axios.get(
-      "https://api.tajwal.co/api/v1/countries/home_countries",
+      `${API_BASE_URL}/countries/home_countries`,
       {
         headers: {
           Accept: "application/json",
