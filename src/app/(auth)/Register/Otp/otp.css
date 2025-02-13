@@ -19,14 +19,14 @@
   font-size: 12px !important;
 }
 .registerotp .btnsendback{
-  color: #4b87a4 !important;
+  color: var(--primary-color) !important;
   border: none !important;
   background-color: transparent;
   font-size: 12px !important;
   font-weight: 600 !important;
 }
 .registerotp button.follow {
-  background-color: #4b87a4 !important;
+  background-color: var(--primary-color) !important;
   padding: 10px 100px; /* Adjust button padding */
   color: #f1f3f6;
   font-size: 13px !important;
@@ -38,7 +38,7 @@
   background-color: #626E7B !important;
 }
 .registerotp .p_registerOtp p {
-  color: #626e7b !important;
+  color: var(--auth-color) !important;
   font-size: 12px !important;
   font-weight: 400 !important;
 }

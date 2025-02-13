@@ -3,6 +3,7 @@
   --foreground: #171717;
   --primary-color:  #336279; /* اللون الرئيسي */
   --secondary-color:#575050; /* اللون الفرعي */
+  --auth-color:#626e7b; /* اللون الفرعي */
 }
 html,
 body {
