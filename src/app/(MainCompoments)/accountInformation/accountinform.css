@@ -49,7 +49,7 @@
   visibility: visible;
 }
 
-.modal-content {
+.modalaccountInformation .modal-content {
   background: white;
   padding: 20px;
   border-radius: 8px;
@@ -72,14 +72,14 @@
 }
 
 /* Modal Buttons */
-.modal-content button {
+.modalaccountInformation .modal-content button {
   margin-top: 10px;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
-button.follow {
+.modalaccountInformation button.follow {
   background-color: var(--primary-color) !important;
   padding: 10px 100px; /* Adjust button padding */
   color: #f1f3f6;
@@ -88,7 +88,7 @@ button.follow {
   border-radius: 5px;
   border: none;
 }
-button.followclose {
+.modalaccountInformation button.followclose {
   background-color: var(--auth-color) !important;
   padding: 10px 100px; /* Adjust button padding */
   color: #f1f3f6;
@@ -97,11 +97,11 @@ button.followclose {
   border-radius: 5px;
   border: none;
 }
-.modal-content input:focus {
+.modalaccountInformation .modal-content input:focus {
   outline: 0 !important;
   box-shadow: 0 0 0 0 transparent !important;
 }
-button.follow:focus , button.followclose:focus{
+.modalaccountInformation button.follow:focus , button.followclose:focus{
   border: none !important;
   outline: none !important;
   box-shadow: 0 0 0 0 transparent !important;
