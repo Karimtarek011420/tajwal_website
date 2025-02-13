@@ -2,7 +2,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import logonavbar from "../../../assets/images/logonavbar.svg";
 import { authtoken } from "../Authtoken/Authtoken";
 import "./navbar.css";
@@ -34,6 +34,7 @@ export default function Navbar() {
   const pathName = usePathname();
   const { token, settoken } = useContext(authtoken);
   const [user, setUser] = useState(null);
+  const router = useRouter();
 
   // تحميل Bootstrap JS
   useEffect(() => {
@@ -48,10 +49,11 @@ export default function Navbar() {
     }
   }, []);
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     if (token) {
-      logoutApi(token, settoken);
+      await logoutApi(token, settoken); // انتظر تسجيل الخروج قبل التوجيه
     }
+    router.push("/"); // انتقل إلى الصفحة الرئيسية بعد تسجيل الخروج
   };
 
   // روابط المستخدم المسجل
