@@ -434,7 +434,13 @@ export default function page() {
               </div>
             </div>
             <div className="col-lg-4 col-md-6 col-sm-12">
-              <div className="bg-white shadow-lg rounded-2  pb-3 pt-1 px-4 mb-2  ">
+              <div
+                className="bg-white shadow-lg rounded-2  pb-2 pt-1 px-4 mb-2  "
+                style={{
+                  border: isChecked ? "1px solid #336279" : "1px solid #dc3545", // أخضر عند التحديد - أحمر عند عدم التحديد
+                  transition: "border 0.3s ease-in-out", // انتقال سلس
+                }}
+              >
                 <div className="compatibility-check">
                   <h5 className="title">تأكيد التحقق من توافق هاتفك</h5>
                   <label className="custom-checkbox pt-lg-1 d-flex justify-content-center align-items-center">
@@ -443,7 +449,15 @@ export default function page() {
                       checked={isChecked}
                       onChange={() => setIsChecked(!isChecked)}
                     />
-                    <span className="checkmark"></span>
+                    <span
+                      className="checkmark"
+                      style={{
+                        border: isChecked
+                          ? "1px solid #336279"
+                          : "1px solid #dc3545", // أخضر عند التحديد - أحمر عند عدم التحديد
+                        transition: "border 0.3s ease-in-out", // انتقال سلس
+                      }}
+                    ></span>
                     <p>
                       أوافق انني اطلعت على{" "}
                       <span style={{ color: "#336279", fontWeight: "600" }}>
@@ -503,7 +517,7 @@ export default function page() {
               ) : (
                 <div className=" bg-white shadow-lg rounded-2 pb-4 pt-2 px-2 ">
                   <p
-                    className="px-1 "
+                    className="p-2 "
                     style={{
                       fontSize: "12px",
                       fontWeight: "400",
