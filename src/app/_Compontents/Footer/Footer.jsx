@@ -95,13 +95,13 @@ const Footer = () => {
                   <Link href="/sign-up">تسجيل</Link>
                 </li>
                 <li className="col">
-                  <Link href="/login">الدول</Link>
+                  <Link href="/Countries">الدول</Link>
                 </li>
                 <li className="col">
                   <Link href="/login">خدمة العملاء</Link>
                 </li>
                 <li className="col">
-                  <Link href="/login">العروض</Link>
+                  <Link href="/Offers">العروض</Link>
                 </li>
               </ul>
             </div>
