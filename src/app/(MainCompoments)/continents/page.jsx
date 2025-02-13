@@ -33,7 +33,7 @@ export default function CountryHeader() {
           <Link
             href={"/Countries"}
             className={`country-list-links mx-2 ${
-              pathname === "/Countries" ? "active" : "bg-transparent"
+              pathname === "/Countries" ? "active1" : "bg-transparent"
             }`}
             style={{
               color: pathname === "/Countries" ? " #285060" : "#ffffff",
@@ -44,18 +44,21 @@ export default function CountryHeader() {
           <Link
             href="/continents"
             className={`country-list-links mx-2 ${
-              pathname === "/continents" ? "active" : ""
+              pathname === "/continents" ? "active1" : "bg-transparent"
             }`}
+            style={{
+              color: pathname === "/continents" ? " #285060" : "#ffffff",
+            }}
           >
             قارية
           </Link>
           <Link
             href="/world"
             className={`country-list-links mx-2 ${
-              pathname === "/global" ? "active" : ""
+              pathname === "/world" ? "active1" : "bg-transparent"
             }`}
             style={{
-              color: pathname === "/global" ? " #285060" : "#ffffff",
+              color: pathname === "/world" ? " #285060" : "#ffffff",
             }}
           >
             عالمية

@@ -67,16 +67,16 @@
 
 /* الموبايل */
 @media (max-width: 767px) {
-  .countryheader {
+  .countryheader .countryheader {
     padding: 15px;
   }
 
-  .country-list {
+  .countryheader .country-listbegin {
     top: -40px;
   }
 
   .country-list .country-list-links {
-    padding: 10px 20px;
+    padding: 14px 25px;
     font-size: 12px;
     margin: 5px 10px;
   }
@@ -86,9 +86,10 @@
     padding: 8px 15px;
   }
 
-  .countryname {
+  .countryheader .countryname {
     font-size: 14px;
     margin-left: 10px;
+    margin-right: 8px !important;
   }
 }
 
@@ -114,19 +115,18 @@
   }
 }
 @media (min-width: 767px) and (max-width: 1200px) {
-    .countryheader .row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  
-    .countryheader .col-md-3 {
-      flex: 0 0 50%; /* عرض العنصر يكون 50% من عرض الحاوية */
-      max-width: 50%;
-    }
-  
-    .countryheader .col-md-3.text-center {
-      text-align: center;
-    }
+  .countryheader .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
-  
+
+  .countryheader .col-md-3 {
+    flex: 0 0 50%; /* عرض العنصر يكون 50% من عرض الحاوية */
+    max-width: 50%;
+  }
+
+  .countryheader .col-md-3.text-center {
+    text-align: center;
+  }
+}
