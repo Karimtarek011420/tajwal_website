@@ -19,6 +19,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { usePackage } from "@/app/_Compontents/PackageContext/PackageContext";
 import { authtoken } from "@/app/_Compontents/Authtoken/Authtoken";
+import toast from "react-hot-toast";
 
 export default function DetailsCountry({ params: paramsPromise }) {
   const params = use(paramsPromise);
@@ -80,7 +81,13 @@ export default function DetailsCountry({ params: paramsPromise }) {
     if (token) {
       router.push("/Purchase");
     } else {
-      router.push("/Login");
+      toast.success(" سجل دخول الى تجوال!", {
+        duration: 1500,
+        style: { backgroundColor: "#4b87a4", color: "white" },
+      });
+      setTimeout(()=>{
+        router.push("/Login");
+      },800)
     }
   };
 
