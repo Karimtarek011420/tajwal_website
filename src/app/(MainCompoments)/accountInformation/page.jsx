@@ -253,13 +253,10 @@ export default function AccountInformation() {
   };
 
   return (
-    <div className="countryheader position-relative py-5">
+    <div className="accountInformation position-relative py-5">
       <div className="position-absolute country-list w-100">
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
-          <li
-            className="country-list-links bg-white mx-2"
-            style={{ color: "#336279" }}
-          >
+          <li className="country-list-links bg-white mx-2 accountInformationp">
             معلومات الحساب
           </li>
         </ul>
@@ -455,7 +452,7 @@ export default function AccountInformation() {
         </div>
         {modalData.field && (
           <div
-            className={`modal ${modalData.field ? "modal-visible" : ""}`}
+            className={`modalaccountInformation ${modalData.field ? "modal-visible" : ""}`}
             onClick={(e) => {
               // إذا تم النقر على منطقة خارجية (مودال فقط)، يتم إغلاق النافذة.
               if (e.target.classList.contains("modal")) {
@@ -464,7 +461,7 @@ export default function AccountInformation() {
             }}
           >
             <div className="modal-content">
-              <h6 className="modal-title">تغيير {modalData.field}</h6>
+              <h6 className="modal-title mb-2 accountInformationp">تغيير {modalData.field}</h6>
 
               {/* عرض إدخال التغيير حسب نوع الحقل */}
               {modalData.field === "phone_number" ? (
@@ -529,7 +526,7 @@ export default function AccountInformation() {
               </div>
               <button
                 onClick={() => setModalData({ field: "", value: "", otp: "" })}
-                className="follow form-control"
+                className="followclose form-control "
               >
                 إغلاق
               </button>

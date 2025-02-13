@@ -1,20 +1,23 @@
 /* General Styles */
-.countryheader {
+.accountInformation {
   background-color: #f9f9f9;
   padding: 20px;
 }
-.cardinfo li.active {
+.accountInformation .cardinfo li.active {
   font-weight: 500;
 }
 
-.countryheader .country-list {
+.accountInformation .country-list {
   left: 50%;
   top: -50px;
   transform: translateX(-50%);
   z-index: 2;
 }
+.accountInformation .accountInformationp{
+  color: var(--primary-color);
+}
 
-.country-list .country-list-links {
+.accountInformation .country-list .country-list-links {
   cursor: pointer;
   transition: all 2s; /* Fixed transition shorthand */
   border-radius: 5px;
@@ -25,7 +28,7 @@
 }
 
 /* Modal Styles */
-.modal {
+.modalaccountInformation {
   position: fixed;
   top: 0;
   left: 0;
@@ -77,7 +80,16 @@
   cursor: pointer;
 }
 button.follow {
-  background-color: #4b87a4 !important;
+  background-color: var(--primary-color) !important;
+  padding: 10px 100px; /* Adjust button padding */
+  color: #f1f3f6;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 5px;
+  border: none;
+}
+button.followclose {
+  background-color: var(--auth-color) !important;
   padding: 10px 100px; /* Adjust button padding */
   color: #f1f3f6;
   font-size: 13px;
@@ -98,7 +110,7 @@ button.follow {
 .swal-small-title {
   font-size: 16px;
   font-weight: bold;
-  color: #336279;
+  color: var(--primary-color);
 }
 
 .swal-small-content {
@@ -118,7 +130,7 @@ button.follow {
 }
 .swal-small-button {
   font-size: 14px;
-  background-color: #336279;
+  background-color: var(--primary-color);
   color: #fff;
   border-radius: 5px;
   padding: 8px 15px;
@@ -126,7 +138,7 @@ button.follow {
 }
 
 .swal-small-button:hover {
-  background-color: #285068;
+  background-color: var(--primary-color);
 }
 
 .modal-content input {
@@ -177,7 +189,7 @@ button.follow {
   color: white !important;
   font-size: 10px;
   font-weight: 300;
-  background-color: #4b87a4;
+  background-color: var(--primary-color);
   padding: 5px 30px;
   border-radius: 5px;
 }
