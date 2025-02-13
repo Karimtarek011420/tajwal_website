@@ -1,5 +1,5 @@
 "use client";
-import React, { use, useEffect, useState } from "react";
+import React, { use, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import icon1 from "@/assets/images/Icon1.svg";
 import icon1dark from "@/assets/images/Icon1dark.svg";
@@ -18,6 +18,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { usePackage } from "@/app/_Compontents/PackageContext/PackageContext";
+import { authtoken } from "@/app/_Compontents/Authtoken/Authtoken";
 
 export default function DetailsCountry({ params: paramsPromise }) {
   const params = use(paramsPromise);
@@ -28,6 +29,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
   const [selectedPackage, setSelectedPackage] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { setSelectedPackagepur } = usePackage(); // استخدام السياق
+  const { token, settoken } = useContext(authtoken);
 
   const getCountryDetails = async () => {
     try {
@@ -70,15 +72,17 @@ export default function DetailsCountry({ params: paramsPromise }) {
     setIsModalOpen(false);
   };
   const handlePurchase = () => {
-    setSelectedPackagepur({ 
-      ...selectedPackage, 
-      title: data[0]?.title, 
-      image: data[0]?.image 
+    setSelectedPackagepur({
+      ...selectedPackage,
+      title: data[0]?.title,
+      image: data[0]?.image,
     });
-    // setSelectedPackagepur(selectedPackage);
-    router.push("/Purchase");
+    if (token) {
+      router.push("/Purchase");
+    } else {
+      router.push("/Login");
+    }
   };
-  
 
   return (
     <div className="countrydetials position-relative py-5">
@@ -199,7 +203,9 @@ export default function DetailsCountry({ params: paramsPromise }) {
                               </div>
                               <div>
                                 {console.log(operator.coverages)}
-                              <p className="my-0">{operator.coverages[0].name}</p>
+                                <p className="my-0">
+                                  {operator.coverages[0].name}
+                                </p>
                               </div>
                             </div>
                             <div
@@ -460,7 +466,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                     style={{ fontSize: "10px" }}
                     className="text-center mb-0 textmodelp"
                   >
-                     {selectedPackage.operator.coverages[0].name}
+                    {selectedPackage.operator.coverages[0].name}
                   </p>
                   <span className="d-flex">
                     {selectedPackage.operator.countries.map(
