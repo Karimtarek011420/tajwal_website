@@ -50,6 +50,11 @@ export const logoutApi = async (
       showConfirmButton: true,
       background: "#E14F72",
       color: "white",
+      customClass: {
+        popup: "small-swal-logout",
+        title: "small-title-logout", 
+        confirmButton: "custom-confirm-button-logout",
+      },
     });
 
     // Log the error for debugging
