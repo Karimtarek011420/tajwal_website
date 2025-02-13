@@ -189,7 +189,7 @@ export default function page() {
         <div className=" container py-5">
           <div className=" row gy-3">
             <div className="col-lg-4 col-md-6 col-sm-12">
-              <div className="cardpurchase  bg-white shadow-lg rounded-2 position-relative">
+              <div className="cardpurchase  bg-white shadow-sm rounded-2 position-relative">
                 <div className=" countydtailsup d-flex  justify-content-between align-items-center position-absolute ">
                   <div>
                     {selectedPackage.image && (
@@ -348,7 +348,7 @@ export default function page() {
               </div>
             </div>
             <div className="col-lg-4 col-md-6 col-sm-12">
-              <div className="bg-white shadow-lg rounded-2 mb-3 pb-5 pt-4 px-2">
+              <div className="bg-white shadow-sm rounded-2 mb-3 pb-5 pt-4 px-2">
                 <p className=" px-1   purchasepachagesum">المجموع</p>
                 <div className=" d-flex purchasepachage justify-content-between align-items-center my-1 px-2 py-2 ">
                   <p className="my-0 ">شريحة -{selectedPackage.title}</p>
@@ -398,7 +398,7 @@ export default function page() {
                   </p>
                 </div>
               </div>
-              <div className="bg-white shadow-lg rounded-2 py-4 px-4">
+              <div className="bg-white shadow-sm rounded-2 py-4 px-4">
                 <p className="p1 disacount">كود الخصم</p>
                 <p className="p1 disacount">
                   لديك كود خصم؟ ادخلها في الخانة التالية واضغط تطبيق
@@ -435,7 +435,7 @@ export default function page() {
             </div>
             <div className="col-lg-4 col-md-6 col-sm-12">
               <div
-                className="bg-white shadow-lg rounded-2  pb-2 pt-1 px-4 mb-2  "
+                className="bg-white shadow-sm rounded-2  pb-2 pt-1 px-4 mb-2  "
                 style={{
                   border: isChecked ? "1px solid #336279" : "1px solid #dc3545", // أخضر عند التحديد - أحمر عند عدم التحديد
                   transition: "border 0.3s ease-in-out", // انتقال سلس
@@ -470,7 +470,7 @@ export default function page() {
               </div>
 
               {isChecked ? (
-                <div className=" bg-white shadow-lg rounded-2 pb-4 pt-2 px-2 ">
+                <div className=" bg-white shadow-sm rounded-2 pb-4 pt-2 px-2 ">
                   <p
                     className="px-1 "
                     style={{
@@ -515,7 +515,7 @@ export default function page() {
                   </div>
                 </div>
               ) : (
-                <div className=" bg-white shadow-lg rounded-2 pb-4 pt-2 px-2 ">
+                <div className=" bg-white shadow-sm rounded-2 pb-4 pt-2 px-2 ">
                   <p
                     className="p-2 "
                     style={{
