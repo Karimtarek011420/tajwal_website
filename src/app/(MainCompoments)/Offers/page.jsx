@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import "./offers.css";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function OffersPage() {
   const [offers, setOffers] = useState(null);
@@ -57,9 +58,11 @@ export default function OffersPage() {
                 className="offer rounded-5 shadow-sm"
                 style={{ cursor: "pointer" }}
               >
-                <img
+                <Image
                   src={offer.image}
                   alt="offer_image"
+                  width={414}
+                  height={207}
                   className="w-100"
                   loading="lazy"
                 />
