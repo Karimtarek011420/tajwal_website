@@ -10,7 +10,6 @@ export default function Header() {
   useEffect(() => {
     if (searchTerm.trim()) {
       router.push(`/Search?query=${encodeURIComponent(searchTerm)}`);
-      // setSearchTerm("");
     }
   }, [searchTerm, router]);
 
