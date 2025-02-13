@@ -4,7 +4,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 export default function Loadingsearch() {
   return (
-    <div className=" container  py-5">
+    <div className=" container  py-5 d-flex justify-content-center">
       <div className=" row gy-4">
         {Array.from({ length: 6 }).map((_, index) => (
           <div key={index} className="col-md-4">
