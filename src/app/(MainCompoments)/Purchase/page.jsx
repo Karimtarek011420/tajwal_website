@@ -477,7 +477,7 @@ export default function page() {
                             className={`${
                               isLastTwo
                                 ? "col-12"
-                                : "col-lg-6 col-md-6 col-sm-6 col-12"
+                                : "col-lg-6 col-md-6 col-sm-6 col-12  mx-0 px-0"
                             }`}
                           >
                             <div
@@ -489,8 +489,8 @@ export default function page() {
                             >
                               <Image
                                 src={method.icon}
-                                width={isLastTwo ? 300 : 150} // الصور الأخيرة بحجم أكبر
-                                height={35}
+                                width={isLastTwo ? 370 : 220} // الصور الأخيرة بحجم أكبر
+                                height={40}
                                 alt={method.name}
                               />
                             </div>
