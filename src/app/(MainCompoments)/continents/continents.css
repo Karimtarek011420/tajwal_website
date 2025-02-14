@@ -1,19 +1,19 @@
-.countryheader {
+.continentsheader {
   background-color: #f9f9f9;
   padding: 20px 0;
 }
-.countryheader .country-list {
+.continentsheader .country-list {
   position: absolute;
   left: 50%;
   top: -50px;
   transform: translateX(-50%);
   z-index: 2;
 }
-.country-list .active1 {
+.continentsheader .country-list .active1 {
   background-color: white !important;
-  color: #336279 !important; /* لون أخضر عند التفعيل */
+  color: var(--primary-color) !important; /* لون أخضر عند التفعيل */
 }
-.country-list .country-list-links {
+.continentsheader .country-list .country-list-links {
   cursor: pointer;
   border-radius: 5px;
   padding: 15px 80px;
@@ -22,7 +22,7 @@
   font-weight: 500;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-.countryshow {
+.continentsheader .countryshow {
   background-color: #575050;
   padding: 15px 100px !important;
   font-size: 17px;
@@ -31,43 +31,43 @@
   color: #ffffff;
   transition: background-color 0.3s ease;
 }
-.countryshow:hover {
-  background-color: #285060;
+.continentsheader .countryshow:hover {
+  background-color: var(--primary-color);
 }
-.countryname {
+.continentsheader .countryname {
   color: #626e7b;
   font-size: 20px;
   font-weight: 300;
 }
 /* الشاشات الكبيرة */
 @media (min-width: 992px) {
-  .countryname {
+  .continentsheader .countryname {
     font-size: 18px;
   }
 }
 @media (min-width: 767px) and (max-width: 1200px) {
-  .countryheader .row {
+  .continentsheader .row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
 
-  .countryheader .col-md-3 {
+  .continentsheader .col-md-3 {
     flex: 0 0 50%; /* عرض العنصر يكون 50% من عرض الحاوية */
     max-width: 50%;
   }
 
-  .countryheader .col-md-3.text-center {
+  .continentsheader .col-md-3.text-center {
     text-align: center;
   }
 }
 /* التابلت */
 @media (max-width: 991px) and (min-width: 768px) {
-  .countryname {
+ .continentsheader .countryname {
     font-size: 16px;
   }
 
-  .country-list .country-list-links {
+.continentsheader  .country-list .country-list-links {
     padding: 12px 40px;
     font-size: 14px;
   }
@@ -75,26 +75,26 @@
 
 /* الموبايل */
 @media (max-width: 767px) {
-  .countryheader .countryheader {
+  .continentsheader .continentsheader {
     padding: 15px;
   }
 
-  .countryheader .country-listbegin {
+  .continentsheader .country-listbegin {
     top: -40px;
   }
 
-  .country-list .country-list-links {
+ .continentsheader .country-list .country-list-links {
     padding: 14px 25px;
     font-size: 12px;
     margin: 5px 10px;
   }
 
-  .countryshow {
+.continentsheader  .countryshow {
     font-size: 14px;
     padding: 8px 15px;
   }
 
-  .countryheader .countryname {
+  .continentsheader .countryname {
     font-size: 14px;
     margin-left: 10px;
     margin-right: 8px !important;
@@ -103,21 +103,21 @@
 
 /* الشاشات الصغيرة جدًا (350px أو أقل) */
 @media (max-width: 350px) {
-  .country-list .country-list-links {
+ .continentsheader .country-list .country-list-links {
     padding: 8px 15px;
     font-size: 12px;
   }
 
-  .countryshow {
+ .continentsheader .countryshow {
     padding: 15px 50px !important;
     font-size: 12px;
   }
 
-  .countryname {
+ .continentsheader .countryname {
     font-size: 12px;
   }
 
-  .country-flag img {
+.continentsheader  .country-flag img {
     width: 50px;
     height: 30px;
   }

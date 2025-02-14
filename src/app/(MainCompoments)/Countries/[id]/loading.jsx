@@ -7,7 +7,7 @@ export default function Loadingdtails() {
     <div className="countrydetials position-relative py-5">
       <div className="container">
         <Skeleton height={50} width="100%" count={1} className="mb-4" />
-        <div className="d-flex flex-wrap gap-4">
+        <div className="d-flex flex-wrap gap-4 justify-content-center align-items-center">
           {Array.from({ length: 4 }).map((_, index) => (
             <Skeleton
               key={index}
