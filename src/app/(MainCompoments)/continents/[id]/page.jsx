@@ -90,7 +90,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
               <ul className="list-unstyled d-flex justify-content-center align-items-center">
                 <li
                   className="country-list-linkslist bg-white mx-lg-2"
-                  style={{ color: "#336279" }}
+                  style={{ color: " var(--primary-color)" }}
                 >
                   <Image
                     src={country.image}
@@ -111,8 +111,8 @@ export default function DetailsCountry({ params: paramsPromise }) {
                     className="btn-day mx-1 my-2 px-3 py-1 rounded-1"
                     style={{
                       backgroundColor:
-                        selectedDay === day ? "#336279" : "transparent",
-                      color: selectedDay === day ? "#fff" : "#336279",
+                        selectedDay === day ? " var(--primary-color)" : "transparent",
+                      color: selectedDay === day ? "#fff" : " var(--primary-color)",
                     }}
                   >
                     {day} {day <= 10 ? "أيام" : "يوم"}

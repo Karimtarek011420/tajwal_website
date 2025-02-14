@@ -19,7 +19,7 @@
   z-index: 2;
 }
 .countrydetials .btnesim {
-  border: 1px solid #336279 !important ;
+  border: 1px solid  var(--primary-color) !important ;
 }
 .countrydetials .countydtailsup {
   top: -20px;
@@ -30,7 +30,7 @@
 .btn-day {
   min-width: 80px; /* عرض الزر الأدنى */
   text-align: center;
-  border: 1px solid #336279; /* حدود الزر */
+  border: 1px solid  var(--primary-color); /* حدود الزر */
   transition: background-color 0.3s, color 0.3s; /* تأثير الانتقال */
   font-size: 0.9rem; /* حجم النص */
 }
