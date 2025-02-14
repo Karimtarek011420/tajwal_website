@@ -31,7 +31,7 @@ export default function CountryHeader() {
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
           <Link
             href={"/Countries"}
-            className={`country-list-links mx-2 ${
+            className={`country-list-links mx-2 bg-white ${
               pathname === "/Countries" ? "active1" : "bg-transparent"
             }`}
             style={{
