@@ -89,7 +89,7 @@ export default function Navbar() {
             text="تسجيل الخروج"
             customColor="#E14F72"
             onClick={handleLogout}
-            className="btnlist"
+            className="btnlist logoutmobile"
           />
         </ul>
       </li>
