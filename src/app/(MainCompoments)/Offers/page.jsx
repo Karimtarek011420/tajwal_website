@@ -12,14 +12,11 @@ export default function OffersPage() {
   const router = useRouter();
   const fetchOffers = async () => {
     try {
-      const { data } = await axios.get(
-        `${API_BASE_URL}/slid_offer`,
-        {
-          headers: {
-            Accept: "application/json",
-          },
-        }
-      );
+      const { data } = await axios.get(`${API_BASE_URL}/slid_offer`, {
+        headers: {
+          Accept: "application/json",
+        },
+      });
       setOffers(data.data);
       console.log(data.data);
     } catch (err) {
@@ -40,11 +37,11 @@ export default function OffersPage() {
 
   return (
     <div className="offers position-relative py-5">
-      <div className="position-absolute country-list w-100">
+      <div className="position-absolute country-listbeginall w-100">
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
           <li
-            className="country-list-linkslist bg-white mx-lg-2"
-            style={{ color: "#336279" }}
+            className="country-list-links bg-white mx-lg-2"
+            style={{ color: "var(--primary-color)" }}
           >
             <span>العروض</span>
           </li>
