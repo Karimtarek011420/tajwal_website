@@ -70,7 +70,7 @@ li a.nav-link {
   .offcanvas-header .btn-close:focus {
     border: none !important;
     outline: none !important;
-    box-shadow:  0 0 0 0  transparent !important;
+    box-shadow: 0 0 0 0 transparent !important;
   }
   .offcanvas .nav-item a,
   .nav-item button {
@@ -86,15 +86,16 @@ li a.nav-link {
   .nav-item button:hover {
     color: var(--primary-color) !important;
   }
+
   .offcanvas .nav-item .dropdown-item span {
     font-size: 12px !important;
     color: var(--secondary-color) !important;
   }
-  .offcanvas .nav-item a.resgister{
+  .offcanvas .nav-item a.resgister {
     color: black !important;
     padding: 7px 40px !important;
   }
-  .offcanvas .nav-item a.resgister:hover{
+  .offcanvas .nav-item a.resgister:hover {
     color: black !important;
   }
 
