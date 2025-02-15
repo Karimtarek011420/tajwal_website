@@ -32,7 +32,7 @@
   font-size: 12px !important;
   font-weight: 400;
   color: #fff;
-  background-color: #336279;
+  background-color: var(--primary-color);
   padding: 10px 50px;
   border-radius: 3px;
 }
