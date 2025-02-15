@@ -1,15 +1,7 @@
-:root {
-  --hover-bg-color: #f8f9fa;
-  --hover-text-color: var(--primary-color);
-  --active-text-color: red;
-  --shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  --border-radius: 10px;
-}
-
 .resgister {
   background-color: var(--primary-color) !important;
   padding: 6px 30px !important;
-  border-radius: var(--border-radius);
+  border-radius: 10px;
 }
 
 li a.nav-link {
@@ -22,8 +14,8 @@ li a.nav-link {
 }
 
 .dropdown-menu {
-  box-shadow: var(--shadow);
-  border-radius: var(--border-radius);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 .nav-link.dropdown-toggle {
@@ -40,14 +32,13 @@ li a.nav-link {
 }
 
 .dropdown-item:hover {
-  background-color: var(--hover-bg-color);
-  color: var(--hover-text-color);
+  background-color: #f8f9fa;
+  color: var(--primary-color);
 }
 
 .dropdown-item:active,
 .dropdown-item.active {
   background-color: transparent !important;
-  color: var(--active-text-color) !important;
   font-weight: bold;
 }
 
@@ -89,8 +80,8 @@ li a.nav-link {
     width: auto;
     text-align: center;
     margin-top: 10px;
-    box-shadow: var(--shadow);
-    border-radius: var(--border-radius);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
     z-index: 1050;
   }
 

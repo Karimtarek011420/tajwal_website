@@ -16,7 +16,7 @@ const DropdownItem = ({ href, text, onClick, customColor }) => (
       href={href || "#"}
       onClick={onClick}
       style={{
-        color: customColor || "#575050",
+        color: customColor || "var(--secondary-color)",
         padding: "10px",
         fontSize: "12px",
         fontWeight: "300",
