@@ -254,7 +254,7 @@ export default function AccountInformation() {
 
   return (
     <div className="accountInformation position-relative py-5">
-      <div className="position-absolute country-list w-100">
+      <div className="position-absolute country-listbeginall w-100">
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
           <li className="country-list-links bg-white mx-2 accountInformationp">
             معلومات الحساب

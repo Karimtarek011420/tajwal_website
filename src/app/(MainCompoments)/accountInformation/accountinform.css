@@ -1,30 +1,11 @@
 /* General Styles */
-.accountInformation {
-  background-color: #f9f9f9;
-  padding: 20px;
-}
+
 .accountInformation .cardinfo li.active {
   font-weight: 500;
 }
 
-.accountInformation .country-list {
-  left: 50%;
-  top: -50px;
-  transform: translateX(-50%);
-  z-index: 2;
-}
-.accountInformation .accountInformationp{
+.accountInformation .accountInformationp {
   color: var(--primary-color);
-}
-
-.accountInformation .country-list .country-list-links {
-  cursor: pointer;
-  transition: all 2s; /* Fixed transition shorthand */
-  border-radius: 5px;
-  padding: 15px 80px;
-  margin: 0 20px;
-  font-size: 17px;
-  font-weight: 500;
 }
 
 /* Modal Styles */
@@ -101,7 +82,8 @@
   outline: 0 !important;
   box-shadow: 0 0 0 0 transparent !important;
 }
-.modalaccountInformation button.follow:focus , button.followclose:focus{
+.modalaccountInformation button.follow:focus,
+button.followclose:focus {
   border: none !important;
   outline: none !important;
   box-shadow: 0 0 0 0 transparent !important;
@@ -124,7 +106,7 @@
   color: #575050;
   text-align: center;
 }
-.inputchange{
+.inputchange {
   width: 100% !important;
   background-color: transparent !important;
   border: none !important;
