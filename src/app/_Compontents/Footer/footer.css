@@ -1,6 +1,6 @@
 .footer {
   background-color: #d9dee44d;
-  color: #575050;
+  color: var(--secondary-color);
 }
 .footer .tajwalh {
   font-size: 12px !important;
@@ -11,7 +11,7 @@
   font-weight: 300;
 }
 .allfooter {
-  background-color: #626e7b;
+  background-color: var(--auth-color);
 }
 .allfooter .tajwalall {
   font-size: 10px !important;
