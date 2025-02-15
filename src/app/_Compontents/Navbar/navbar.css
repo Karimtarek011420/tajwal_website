@@ -1,13 +1,9 @@
 :root {
-  --secondary-color: #333;
   --hover-bg-color: #f8f9fa;
   --hover-text-color: var(--primary-color);
   --active-text-color: red;
   --shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   --border-radius: 10px;
-  --font-small: 12px;
-  --font-medium: 14px;
-  --font-large: 20px;
 }
 
 .resgister {
@@ -39,7 +35,7 @@ li a.nav-link {
 .dropdown-item {
   font-size: var(--font-small) !important;
   padding: 8px;
-  color: var(--secondary-color);
+  color: #333;
   transition: color 0.3s, background-color 0.3s;
 }
 
@@ -99,11 +95,11 @@ li a.nav-link {
   }
 
   .dropdown-menu .btnlist {
-    font-size: var(--font-medium) !important;
+    font-size: 14px !important;
   }
 
   .resgister {
-    font-size: var(--font-medium) !important;
+    font-size: 14px !important;
     padding: 6px 20px !important;
   }
 
@@ -131,7 +127,7 @@ li a.nav-link {
 @media screen and (max-width: 700px) {
   .resgister {
     width: fit-content !important;
-    font-size: var(--font-medium) !important;
+    font-size: 14px !important;
   }
 }
 

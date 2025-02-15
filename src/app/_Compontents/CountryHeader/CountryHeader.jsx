@@ -40,11 +40,11 @@ export default async function CountryHeader() {
   return (
     <div className="countryheader position-relative py-5">
       {/* قائمة الروابط */}
-      <div className="position-absolute country-listbegin w-100">
+      <div className="position-absolute country-listbeginall w-100">
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
           <li
             className="country-list-links bg-white mx-2"
-            style={{ color: "#336279" }}
+            style={{ color: "var(--primary-color)" }}
           >
             دولية
           </li>
@@ -85,7 +85,6 @@ export default async function CountryHeader() {
           ))}
         </div>
       </div>
-
       {/* زر عرض جميع الدول */}
       <div className="d-flex justify-content-center align-items-center pt-5">
         <Link href="/Countries" className="countryshow text-white px-5 py-3">

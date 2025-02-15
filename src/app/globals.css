@@ -4,6 +4,9 @@
   --primary-color: #336279; /* اللون الرئيسي */
   --secondary-color: #575050; /* اللون الفرعي */
   --auth-color: #626e7b; /* اللون الفرعي */
+  --font-large: 20px;
+  --font-medium: 17px;
+  --font-small: 14px;
 }
 html,
 body {
@@ -48,6 +51,26 @@ a {
   border-radius: 8px !important; /* تعديل الحواف */
   border: none !important; /* إزالة الحدود */
 }
+.country-listbeginall {
+  position: absolute;
+  left: 50%;
+  top: -50px;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.country-listbeginall .country-list-links {
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 15px 80px;
+  margin: 0 20px;
+  font-size:var(--font-medium);
+  font-weight: 500 !important;
+  transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+.country-listbeginall .country-list-links:hover {
+  background-color: #f9f9f9 !important;
+  color: var(--primary-color) !important;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -59,5 +82,29 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .countryheader .country-listbeginall .country-list-links {
+    padding: 12px 40px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 767px) {
+  .countryheader .country-listbeginall {
+    top: -40px;
+  }
+
+  .countryheader .country-listbeginall .country-list-links {
+    padding: 8px 20px;
+    font-size: 15px !important;
+    margin: 5px 10px;
+  }
+}
+
+@media (max-width: 350px) {
+  .countryheader .country-listbeginall .country-list-links {
+    padding: 8px 15px;
+    font-size: 12px;
   }
 }

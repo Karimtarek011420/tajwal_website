@@ -1,48 +1,21 @@
-.countryheader {
-  background-color: #f9f9f9;
-  padding: 20px 0;
-}
-
-.countryheader .country-listbegin {
-  position: absolute;
-  left: 50%;
-  top: -50px;
-  transform: translateX(-50%);
-  z-index: 2;
-}
-
-.countryheader .country-listbegin .country-list-links {
-  cursor: pointer;
-  border-radius: 5px;
-  padding: 15px 80px;
-  margin: 0 20px;
-  font-size: 17px;
-  font-weight: 500;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.countryheader .country-listbegin .country-list-links:hover {
-  background-color: #f9f9f9;
-  color: var(--primary-color) !important;
+.countryheader .countryname {
+  color: var(--auth-color) !important ;
+  font-size: var(--font-large) !important;
+  font-weight: 300 !important;
 }
 
 .countryheader .countryshow {
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-color) !important;
   padding: 15px 100px !important;
-  font-size: 17px;
-  font-weight: 200;
-  border-radius: 10px;
-  color: #ffffff;
-  transition: background-color 0.3s ease;
+  font-size: var(--font-medium) !important;
+  font-weight: 300 !important;
+  border-radius: 10px !important;
+  color: #ffffff !important;
+  transition: background-color 0.3s ease !important;
 }
 
 .countryheader .countryshow:hover {
-  background-color: var(--primary-color);
-}
-.countryheader .countryname {
-  color: #626e7b;
-  font-size: 20px;
-  font-weight: 300;
+  background-color: var(--primary-color) !important;
 }
 
 /* الشاشات الكبيرة */
@@ -53,14 +26,9 @@
 }
 
 /* التابلت */
-@media (max-width: 991px) and (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .countryheader .countryname {
     font-size: 16px;
-  }
-
-  .countryheader .country-listbegin .country-list-links {
-    padding: 12px 40px;
-    font-size: 14px;
   }
 }
 @media (min-width: 767px) and (max-width: 1200px) {
@@ -82,48 +50,33 @@
 /* الموبايل */
 @media (max-width: 767px) {
   .countryheader .countryheader {
-    padding: 15px;
-  }
-
-  .countryheader .country-listbegin {
-    top: -40px;
-  }
-
-  .countryheader .country-listbegin .country-list-links {
-    padding: 10px 20px;
-    font-size: 12px;
-    margin: 5px 10px;
+    padding: 15px !important;
   }
 
   .countryheader .countryshow {
-    font-size: 14px;
-    padding: 8px 15px;
+    font-size: 12px !important;
+    padding: 14px 70px !important;
   }
 
   .countryheader .countryname {
-    font-size: 14px;
-    margin-left: 10px;
+    font-size: 15px !important;
+    margin-left: 10px !important;
     margin-right: 8px !important;
   }
 }
 
 @media (max-width: 350px) {
-  .countryheader .country-listbegin .country-list-links {
-    padding: 8px 15px;
-    font-size: 12px;
-  }
-
   .countryheader .countryshow {
     padding: 15px 50px !important;
-    font-size: 12px;
+    font-size: 12px !important;
   }
 
   .countryheader .countryname {
-    font-size: 12px;
+    font-size: 12px !important;
   }
 
   .countryheader .country-flag img {
-    width: 50px;
-    height: 30px;
+    width: 50px !important;
+    height: 30px !important;
   }
 }

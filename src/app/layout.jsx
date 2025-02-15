@@ -1,10 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import "./globals.css";
 import { readex } from "@/assets/font";
 import AuthTokenProvider from "./_Compontents/Authtoken/Authtoken";
 import { PackageProvider } from "./_Compontents/PackageContext/PackageContext";
 import { Toaster } from "react-hot-toast";
+import "./globals.css";
 
 export const metadata = {
   title: "Tajwal",
