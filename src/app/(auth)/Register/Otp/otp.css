@@ -18,7 +18,7 @@
 .registerotp input::placeholder {
   font-size: 12px !important;
 }
-.registerotp .btnsendback{
+.registerotp .btnsendback {
   color: var(--primary-color) !important;
   border: none !important;
   background-color: transparent;
@@ -35,7 +35,7 @@
   border: none;
 }
 .registerotp button.back {
-  background-color: #626E7B !important;
+  background-color: var(--auth-color) !important;
 }
 .registerotp .p_registerOtp p {
   color: var(--auth-color) !important;
@@ -43,8 +43,8 @@
   font-weight: 400 !important;
 }
 .registerotp .imgcover {
-    width: 240px !important;
-    height: 260px !important;
+  width: 240px !important;
+  height: 260px !important;
 }
 
 /* Responsive Adjustments */

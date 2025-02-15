@@ -46,7 +46,7 @@
   border: none;
 }
 .login .p-login p {
-  color: #626e7b !important;
+  color: var(--auth-color) !important;
   font-size: 12px !important;
 }
 

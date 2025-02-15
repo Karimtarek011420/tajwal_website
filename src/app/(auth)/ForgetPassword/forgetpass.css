@@ -7,7 +7,7 @@
   .forgetpass .forgetpassreset_p {
     background-color: #F1F3F6 !important;
     color: var(--primary-color) !important;
-    font-size: 17px !important;
+    font-size: var(--font-medium) !important;
     font-weight: 500 !important;
   }
   .forgetpass .forgetpassimage {
@@ -52,7 +52,7 @@
     border: none;
   }
   .forgetpass .p-login p {
-    color: #626e7b !important;
+    color: var(--auth-color) !important;
     font-size: 12px !important;
   }
   
