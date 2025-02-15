@@ -7,11 +7,11 @@ const OfferDetails = () => {
 
   return (
     <div className="offers position-relative py-5">
-      <div className="position-absolute country-list w-100">
+      <div className="position-absolute country-listbeginall w-100">
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
           <li
-            className="country-list-linkslist bg-white mx-lg-2"
-            style={{ color: "#336279" }}
+            className="country-list-links bg-white mx-lg-2"
+            style={{ color: "var(--primary-color)" }}
           >
             <span> تفاصيل العرض</span>
           </li>
@@ -28,7 +28,7 @@ const OfferDetails = () => {
             width: "60%",
             height: "100vh",
             border: "none",
-            overflow: "hidden" 
+            overflow: "hidden",
           }}
           title="Offer Details"
         />
