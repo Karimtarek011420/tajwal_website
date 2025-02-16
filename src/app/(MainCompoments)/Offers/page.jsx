@@ -8,6 +8,7 @@ import { API_BASE_URL } from "@/app/utils/config";
 
 export default function OffersPage() {
   const [offers, setOffers] = useState(null);
+  const [error, setError] = useState(null); // تخزين الخطأ
 
   const router = useRouter();
   const fetchOffers = async () => {
@@ -18,9 +19,9 @@ export default function OffersPage() {
         },
       });
       setOffers(data.data);
-      console.log(data.data);
+      setError(null);
     } catch (err) {
-      console.error(err);
+      setError("حدث خطأ أثناء تحميل البيانات. يرجى المحاولة لاحقًا.");
     }
   };
 
@@ -49,6 +50,10 @@ export default function OffersPage() {
       </div>
 
       <div className="container py-5">
+        <div>
+          {error && <p className="text-danger text-center">{error}</p>}{" "}
+          {/* عرض الخطأ إن وجد */}
+        </div>
         <div className="row gy-4">
           {offers?.map((offer, index) => (
             <div key={index} className="col-md-4">
