@@ -51,7 +51,7 @@ export default function OffersPage() {
 
       <div className="container py-5">
         <div>
-          {error && <p className="text-danger text-center">{error}</p>}{" "}
+          {error && <p className="text-danger text-center" style={{minHeight:'30vh'}}>{error}</p>}{" "}
           {/* عرض الخطأ إن وجد */}
         </div>
         <div className="row gy-4">

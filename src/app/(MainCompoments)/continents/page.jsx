@@ -72,7 +72,7 @@ export default function CountryHeader() {
       </div>
       <div className="px-5">
         <div className="d-flex justify-content-center">
-          {error && <p className="text-danger text-center py-5">{error}</p>}{" "}
+          {error && <p className="text-danger text-center py-5" style={{minHeight:'30vh'}}>{error}</p>}{" "}
         </div>
         <div className="row gy-4">
           {countries?.map((country) => {

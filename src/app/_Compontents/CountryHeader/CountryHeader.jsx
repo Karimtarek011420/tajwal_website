@@ -29,7 +29,10 @@ export default async function CountryHeader() {
 
   if (!countries.length) {
     return (
-      <div className="error-message text-center py-5">
+      <div
+        className="error-message text-center py-5"
+        style={{ minHeight: "30vh" }}
+      >
         <p className="text-danger">
           حدث خطأ أثناء جلب البيانات. حاول مجددًا لاحقًا.
         </p>
@@ -48,7 +51,10 @@ export default async function CountryHeader() {
           >
             دولية
           </li>
-          <Link href="/continents" className="country-list-links text-white mx-2">
+          <Link
+            href="/continents"
+            className="country-list-links text-white mx-2"
+          >
             قارية
           </Link>
           <Link href="/world" className="country-list-links text-white mx-2">
