@@ -161,14 +161,13 @@ button.followclose:focus {
 
 .cardinfo ul li {
   padding-bottom: 10px;
-  color: #626e7b;
+  color: #626e7b !important;
   font-size: 17px !important;
   font-weight: 300 !important;
   transition: color 0.3s ease, font-weight 0.3s ease;
 }
 
 .cardinfo .active {
-  color: #626e7b !important;
   font-weight: 500 !important;
 }
 
