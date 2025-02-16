@@ -36,7 +36,7 @@ export default function CountryHeader() {
               pathname === "/Countries" ? "active1" : "bg-transparent"
             }`}
             style={{
-              color: pathname === "/Countries" ? " #285060" : "#ffffff",
+              color: pathname === "/Countries" ? "var(--primary-color)" : "#ffffff",
             }}
           >
             دولية
@@ -47,7 +47,7 @@ export default function CountryHeader() {
               pathname === "/continents" ? "active1" : "bg-transparent"
             }`}
             style={{
-              color: pathname === "/continents" ? " #285060" : "#ffffff",
+              color: pathname === "/continents" ? "var(--primary-color)" : "#ffffff",
             }}
           >
             قارية
