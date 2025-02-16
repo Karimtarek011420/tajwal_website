@@ -28,7 +28,7 @@ export default function CountryHeader() {
 
   return (
     <div className="continentsheader position-relative  py-5">
-      <div className="position-absolute country-list w-100">
+      <div className="position-absolute country-listbeginall w-100">
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
           <Link
             href={"/Countries"}
