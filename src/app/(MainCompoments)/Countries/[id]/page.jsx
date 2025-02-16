@@ -98,7 +98,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
               <ul className="list-unstyled d-flex justify-content-center align-items-center">
                 <li
                   className="country-list-links bg-white mx-lg-2"
-                  style={{ color: "#336279" }}
+                  style={{ color: "var(--primary-color)" }}
                 >
                   <Image
                     src={country.image}
@@ -119,8 +119,11 @@ export default function DetailsCountry({ params: paramsPromise }) {
                     className="btn-day mx-1 my-2 px-3 py-1 rounded-1"
                     style={{
                       backgroundColor:
-                        selectedDay === day ? "#336279" : "transparent",
-                      color: selectedDay === day ? "#fff" : "#336279",
+                        selectedDay === day
+                          ? "var(--primary-color)"
+                          : "transparent",
+                      color:
+                        selectedDay === day ? "#fff" : "var(--primary-color)",
                     }}
                   >
                     {day} {day <= 10 ? "أيام" : "يوم"}
@@ -149,7 +152,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                             boxShadow: "0 5px 5px rgba(0,0,0,0.1)",
                             background:
                               pkg.amount === -1
-                                ? "linear-gradient(to top, #336279, #5EB5DF)" // تدرج لوني للحزم غير المحدودة
+                                ? "linear-gradient(to top, var(--primary-color), #5EB5DF)" // تدرج لوني للحزم غير المحدودة
                                 : "white", // تدرج لوني للحزم المحدودة
                           }}
                           className=" position-relative"
@@ -192,7 +195,9 @@ export default function DetailsCountry({ params: paramsPromise }) {
                                 backgroundColor:
                                   pkg.amount === -1 ? "#F1F3F666" : "#F1F3F666",
                                 color:
-                                  pkg.amount === -1 ? "#FFFFFF" : "#626E7B",
+                                  pkg.amount === -1
+                                    ? "#FFFFFF"
+                                    : "var( --auth-color)",
                                 fontSize: "12px",
                                 fontWeight: "400",
                               }}
@@ -219,7 +224,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                                 backgroundColor:
                                   pkg.amount === -1 ? "#F1F3F666" : "#fff",
                                 color:
-                                  pkg.amount === -1 ? "#FFFFFF" : "#626E7B",
+                                  pkg.amount === -1 ? "#FFFFFF" : "var( --auth-color)",
                                 fontSize: "12px",
                                 fontWeight: "400",
                               }}
@@ -248,7 +253,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                                 backgroundColor:
                                   pkg.amount === -1 ? "#F1F3F666" : "#F1F3F666",
                                 color:
-                                  pkg.amount === -1 ? "#FFFFFF" : "#626E7B",
+                                  pkg.amount === -1 ? "#FFFFFF" : "var( --auth-color)",
                                 fontSize: "12px",
                                 fontWeight: "400",
                               }}
@@ -275,7 +280,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                                 backgroundColor:
                                   pkg.amount === -1 ? "#F1F3F666" : "#fff",
                                 color:
-                                  pkg.amount === -1 ? "#FFFFFF" : "#626E7B",
+                                  pkg.amount === -1 ? "#FFFFFF" : "var( --auth-color)",
                                 fontSize: "12px",
                                 fontWeight: "400",
                               }}
@@ -300,7 +305,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                                 backgroundColor:
                                   pkg.amount === -1 ? "#F1F3F666" : "#F1F3F666",
                                 color:
-                                  pkg.amount === -1 ? "#FFFFFF" : "#626E7B",
+                                  pkg.amount === -1 ? "#FFFFFF" : "var( --auth-color)",
                                 fontSize: "12px",
                                 fontWeight: "400",
                               }}
@@ -328,11 +333,11 @@ export default function DetailsCountry({ params: paramsPromise }) {
                                 style={{
                                   backgroundColor: "transparent",
                                   padding: "10px 60px",
-                                  color: pkg.amount === -1 ? "#fff" : "#336279",
+                                  color: pkg.amount === -1 ? "#fff" : "var(--primary-color)",
                                   border:
                                     pkg.amount === -1
                                       ? "2px #fff solid"
-                                      : "2px #336279 solid",
+                                      : "2px var(--primary-color) solid",
                                   borderRadius: "5px",
                                   cursor: "pointer",
                                   marginTop: "10px",
@@ -364,7 +369,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
             <button className="closeModal" onClick={closeModal}>
               <i
                 className="fa-solid fa-xmark text-white fs-6 p-3 rounded-2"
-                style={{ backgroundColor: "#336279" }}
+                style={{ backgroundColor: "var(--primary-color)" }}
               ></i>
             </button>
 
@@ -388,7 +393,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                       key={`${country.country_code}-title-${index}`}
                       className="py-lg-3"
                       style={{
-                        color: "#575050",
+                        color: "var(--secondary-color)",
                         fontSize: "13px",
                         fontWeight: "700",
                       }}
@@ -548,7 +553,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
               <button
                 style={{
                   padding: "10px",
-                  backgroundColor: "#626E7B",
+                  backgroundColor: "var( --auth-color)",
                   color: "#fff",
                   border: "none",
                   borderRadius: "5px",
@@ -562,7 +567,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
               <div
                 className="p-lg-2 p-1"
                 style={{
-                  color: "#575050",
+                  color: "var(--secondary-color)",
                   fontSize: "17px",
                   fontWeight: "700",
                 }}
