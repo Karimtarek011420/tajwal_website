@@ -27,7 +27,7 @@ export default function CountryHeader() {
 
   return (
     <div className="countryheader position-relative  py-5">
-      <div className="position-absolute country-list w-100">
+      <div className="position-absolute country-listbeginall w-100">
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
           <Link
             href={"/Countries"}
@@ -35,7 +35,7 @@ export default function CountryHeader() {
               pathname === "/Countries" ? "active1" : "bg-transparent"
             }`}
             style={{
-              color: pathname === "/Countries" ? " #285060" : "#ffffff",
+              color: pathname === "/Countries" ? "var(--primary-color)" : "#ffffff",
             }}
           >
             دولية
@@ -46,7 +46,7 @@ export default function CountryHeader() {
               pathname === "/continents" ? "active1" : "bg-transparent"
             }`}
             style={{
-              color: pathname === "/continents" ? " #285060" : "#ffffff",
+              color: pathname === "/continents" ? "var(--primary-color)" : "#ffffff",
             }}
           >
             قارية
@@ -57,7 +57,7 @@ export default function CountryHeader() {
               pathname === "/world" ? "active1" : "bg-transparent"
             }`}
             style={{
-              color: pathname === "/world" ? " #285060" : "#ffffff",
+              color: pathname === "/world" ? "var(--primary-color)" : "#ffffff",
             }}
           >
             عالمية
