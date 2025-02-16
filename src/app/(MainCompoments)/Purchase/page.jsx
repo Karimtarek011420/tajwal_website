@@ -224,7 +224,7 @@ export default function page() {
                     className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
                     style={{
                       backgroundColor: "#F1F3F666",
-                      color: "#626E7B",
+                      color: "var(--auth-color)",
                       fontSize: "12px",
                       fontWeight: "400",
                     }}
@@ -246,7 +246,7 @@ export default function page() {
                     className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
                     style={{
                       backgroundColor: "#fff",
-                      color: "#626E7B",
+                      color: "var(--auth-color)",
                       fontSize: "12px",
                       fontWeight: "400",
                     }}
@@ -273,7 +273,7 @@ export default function page() {
                     className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
                     style={{
                       backgroundColor: "#F1F3F666",
-                      color: "#626E7B",
+                      color: "var(--auth-color)",
 
                       fontSize: "12px",
                       fontWeight: "400",
@@ -300,7 +300,7 @@ export default function page() {
                     className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
                     style={{
                       backgroundColor: "#fff",
-                      color: "#626E7B",
+                      color: "var(--auth-color)",
                       fontSize: "12px",
                       fontWeight: "400",
                     }}
@@ -323,7 +323,7 @@ export default function page() {
                     className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
                     style={{
                       backgroundColor: "#F1F3F666",
-                      color: "#626E7B",
+                      color: "var(--auth-color)",
                       fontSize: "12px",
                       fontWeight: "400",
                     }}
@@ -438,7 +438,9 @@ export default function page() {
               <div
                 className="bg-white shadow-sm rounded-2  pb-2 pt-1 px-4 mb-2  "
                 style={{
-                  border: isChecked ? "1px solid #336279" : "1px solid #dc3545", // أخضر عند التحديد - أحمر عند عدم التحديد
+                  border: isChecked
+                    ? "1px solid var(--primary-color)"
+                    : "1px solid #dc3545", // أخضر عند التحديد - أحمر عند عدم التحديد
                   transition: "border 0.3s ease-in-out", // انتقال سلس
                 }}
               >
@@ -454,14 +456,14 @@ export default function page() {
                       className="checkmark"
                       style={{
                         border: isChecked
-                          ? "1px solid #336279"
+                          ? "1px solid var(--primary-color)"
                           : "1px solid #dc3545", // أخضر عند التحديد - أحمر عند عدم التحديد
                         transition: "border 0.3s ease-in-out", // انتقال سلس
                       }}
                     ></span>
                     <p>
                       أوافق انني اطلعت على{" "}
-                      <span style={{ color: "#336279", fontWeight: "600" }}>
+                      <span style={{ color: "var(--primary-color)", fontWeight: "600" }}>
                         قائمة الهواتف المتوافقة
                       </span>
                       ، وتأكدت من توافق هاتفي.
@@ -473,11 +475,11 @@ export default function page() {
               {isChecked ? (
                 <div className=" bg-white shadow-sm rounded-2 pb-4 pt-2 px-2 ">
                   <p
-                    className="px-1 "
+                    className="px-1  "
                     style={{
                       fontSize: "12px",
                       fontWeight: "400",
-                      color: "#626E7B",
+                      color: "var(--auth-color)",
                     }}
                   >
                     وسيلة الدفع
@@ -522,7 +524,7 @@ export default function page() {
                     style={{
                       fontSize: "12px",
                       fontWeight: "400",
-                      color: "#626E7B",
+                      color: "var(--auth-color)",
                     }}
                   >
                     وسيلة الدفع
