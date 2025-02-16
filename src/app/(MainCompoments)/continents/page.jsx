@@ -9,18 +9,21 @@ import { usePathname } from "next/navigation";
 import { API_BASE_URL } from "@/app/utils/config";
 export default function CountryHeader() {
   const [countries, setCountry] = useState(null);
+  const [error, setError] = useState(null); // تخزين الخطأ
   const pathname = usePathname(); // الحصول على المسار الحالي
 
   const getCountry = async () => {
-    const { data } = await axios.get(
-      `${API_BASE_URL}/continents`,
-      {
+    try {
+      const { data } = await axios.get(`${API_BASE_URL}/continents`, {
         headers: {
           Accept: "application/json",
         },
-      }
-    );
-    setCountry(data.data);
+      });
+      setCountry(data.data); // تعيين البيانات في state
+      setError(null);
+    } catch (error) {
+      setError("حدث خطأ أثناء تحميل البيانات. يرجى المحاولة لاحقًا.");
+    }
   };
   useEffect(() => {
     getCountry();
@@ -36,7 +39,8 @@ export default function CountryHeader() {
               pathname === "/Countries" ? "active1" : "bg-transparent"
             }`}
             style={{
-              color: pathname === "/Countries" ? "var(--primary-color)" : "#ffffff",
+              color:
+                pathname === "/Countries" ? "var(--primary-color)" : "#ffffff",
             }}
           >
             دولية
@@ -47,7 +51,8 @@ export default function CountryHeader() {
               pathname === "/continents" ? "active1" : "bg-transparent"
             }`}
             style={{
-              color: pathname === "/continents" ? "var(--primary-color)" : "#ffffff",
+              color:
+                pathname === "/continents" ? "var(--primary-color)" : "#ffffff",
             }}
           >
             قارية
@@ -66,6 +71,9 @@ export default function CountryHeader() {
         </ul>
       </div>
       <div className="px-5">
+        <div className="d-flex justify-content-center">
+          {error && <p className="text-danger text-center py-5">{error}</p>}{" "}
+        </div>
         <div className="row gy-4">
           {countries?.map((country) => {
             return (
