@@ -29,7 +29,7 @@ const RegisterOtpPage = () => {
     setloading(true);
     try {
       const { data } = await axios.post(
-        "https://api.tajwal.co/api/v1/verify_otp",
+        `${API_BASE_URL}/verify_otp`,
         values,
         {
           headers: {
