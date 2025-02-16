@@ -34,14 +34,11 @@ export default function DetailsCountry({ params: paramsPromise }) {
 
   const getCountryDetails = async () => {
     try {
-      const response = await axios.get(
-        `${API_BASE_URL}/continents/${id}`,
-        {
-          headers: {
-            Accept: "application/json",
-          },
-        }
-      );
+      const response = await axios.get(`${API_BASE_URL}/continents/${id}`, {
+        headers: {
+          Accept: "application/json",
+        },
+      });
       setData(response.data?.data); // تأكد من وجود البيانات
     } catch (error) {
       console.error("Error fetching country details:", error);
@@ -86,10 +83,10 @@ export default function DetailsCountry({ params: paramsPromise }) {
       {Array.isArray(data) &&
         data.map((country) => (
           <div key={country.country_code}>
-            <div className="position-absolute country-list w-100">
+            <div className="position-absolute country-listbeginall w-100">
               <ul className="list-unstyled d-flex justify-content-center align-items-center">
                 <li
-                  className="country-list-linkslist bg-white mx-lg-2"
+                  className="country-list-links bg-white mx-lg-2"
                   style={{ color: " var(--primary-color)" }}
                 >
                   <Image
@@ -111,8 +108,11 @@ export default function DetailsCountry({ params: paramsPromise }) {
                     className="btn-day mx-1 my-2 px-3 py-1 rounded-1"
                     style={{
                       backgroundColor:
-                        selectedDay === day ? " var(--primary-color)" : "transparent",
-                      color: selectedDay === day ? "#fff" : " var(--primary-color)",
+                        selectedDay === day
+                          ? " var(--primary-color)"
+                          : "transparent",
+                      color:
+                        selectedDay === day ? "#fff" : " var(--primary-color)",
                     }}
                   >
                     {day} {day <= 10 ? "أيام" : "يوم"}

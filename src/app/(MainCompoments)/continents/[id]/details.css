@@ -1,25 +1,5 @@
-/* General Styles */
-.countrydetials {
-  background-color: #f9f9f9;
-  padding: 20px;
-}
-.country-list .country-list-linkslist {
-  cursor: pointer;
-  transition: all 2s; /* Fixed transition shorthand */
-  border-radius: 5px;
-  padding: 15px 80px;
-  margin: 0 20px;
-  font-size: 17px;
-  font-weight: 500;
-}
-.countrydetials .country-list {
-  left: 50%;
-  top: -55px;
-  transform: translateX(-50%);
-  z-index: 2;
-}
 .countrydetials .btnesim {
-  border: 1px solid  var(--primary-color) !important ;
+  border: 1px solid var(--primary-color) !important ;
 }
 .countrydetials .countydtailsup {
   top: -20px;
@@ -30,7 +10,7 @@
 .btn-day {
   min-width: 80px; /* عرض الزر الأدنى */
   text-align: center;
-  border: 1px solid  var(--primary-color); /* حدود الزر */
+  border: 1px solid var(--primary-color); /* حدود الزر */
   transition: background-color 0.3s, color 0.3s; /* تأثير الانتقال */
   font-size: 0.9rem; /* حجم النص */
 }
@@ -74,20 +54,20 @@
   padding: 11px;
 }
 .countrydetials .modal-content .contentsimmodelp {
-  color: #626e7b;
+  color: var(--auth-color);
   font-size: 12px;
   font-weight: 400;
 }
 
 .countrydetials .textmodelp {
-  color: #575050;
+  color: var(--secondary-color);
   font-size: 14px;
   font-weight: 400;
 }
 .countrydetials .textmodelpsecond {
   font-size: 10px;
   font-weight: 400;
-  color: #626e7b;
+  color: var(--auth-color);
 }
 
 @media screen and (max-width: 600px) {
@@ -115,24 +95,7 @@
     font-size: 0.8rem; /* تقليل حجم النص للشاشات الصغيرة */
     padding: 0.5rem; /* تقليل الحشو */
   }
-  .country-list .country-list-linkslist {
-    cursor: pointer;
-    transition: all 2s; /* Fixed transition shorthand */
-    border-radius: 5px;
-    padding: 15px 30px;
-    margin: 0 5px;
-    font-size: 17px;
-    font-weight: 300;
-  }
-  .country-list-linkslist {
-    font-size: 0.85rem; /* تقليل حجم النص للشاشات الصغيرة */
-    min-width: 120px; /* تقليل العرض الأدنى */
-    padding: 0.5rem; /* تقليل الحشو */
-  }
 
-  .country-list {
-    padding: 1rem 0; /* تحسين المسافات للشاشات الصغيرة */
-  }
   .modal-content {
     width: 300px !important;
   }
@@ -151,7 +114,7 @@
   .countrydetials .textmodelpsecond {
     font-size: 10px !important;
     font-weight: 400;
-    color: #626e7b;
+    color: var(--auth-color);
   }
 }
 
@@ -160,9 +123,5 @@
     font-size: 10px !important;
     font-weight: 300 !important ;
     padding: 5px !important;
-  }
-  .countrydetials .textmodelpsecond {
-    font-size: 10px !important;
-    color: #626e7b;
   }
 }
