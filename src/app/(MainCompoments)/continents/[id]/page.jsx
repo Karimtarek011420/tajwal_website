@@ -31,6 +31,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
   const { setSelectedPackagepur } = usePackage(); // استخدام السياق
   const [open, setOpen] = useState(false);
   const [opennet, setOpennet] = useState(false);
+  const [error, setError] = useState(null); // تخزين الخطأ
 
   const getCountryDetails = async () => {
     try {
@@ -40,8 +41,9 @@ export default function DetailsCountry({ params: paramsPromise }) {
         },
       });
       setData(response.data?.data); // تأكد من وجود البيانات
+      setError(null);
     } catch (error) {
-      console.error("Error fetching country details:", error);
+      setError("حدث خطأ أثناء تحميل البيانات. يرجى المحاولة لاحقًا.");
     }
   };
   useEffect(() => {
@@ -80,6 +82,10 @@ export default function DetailsCountry({ params: paramsPromise }) {
 
   return (
     <div className="countrydetials position-relative py-5">
+      <div>
+        {error && <p className="text-danger text-center">{error}</p>}{" "}
+        {/* عرض الخطأ إن وجد */}
+      </div>
       {Array.isArray(data) &&
         data.map((country) => (
           <div key={country.country_code}>
