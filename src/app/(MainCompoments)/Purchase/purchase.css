@@ -28,7 +28,7 @@
   top: 1px;
   width: 8px;
   height: 24px;
-  border: solid #336279;
+  border: solid  var(--primary-color);
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
@@ -36,22 +36,7 @@
 .custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
   display: block;
 }
-.Purchasedateils .country-list-linkslist {
-  cursor: pointer;
-  transition: all 2s; /* Fixed transition shorthand */
-  border-radius: 5px;
-  padding: 15px 80px;
-  margin: 0 20px;
-  font-size: 17px;
-  font-weight: 500;
-}
 
-.Purchasedateils .country-list {
-  left: 50%;
-  top: -55px;
-  transform: translateX(-50%);
-  z-index: 2;
-}
 .cardpurchase .countydtailsup {
   top: -40px;
   width: 95%;
@@ -62,7 +47,7 @@
   min-height: 50vh !important;
 }
 .Purchasedateils .purchasepachage {
-  color: #626e7b !important;
+  color: var(--auth-color) !important;
   font-weight: 300 !important;
   font-size: 10px !important;
   background-color: #f9f9f9 !important;
@@ -73,13 +58,13 @@
 .Purchasedateils .purchasepachagesum {
   font-size: 12px !important;
   font-weight: 400 !important;
-  color: #626e7b !important;
+  color: var(--auth-color) !important;
 }
 .Purchasedateils .purchasepachage .btn {
   font-size: 7px;
   font-weight: 600;
   padding: 3px 6px;
-  background-color: #336279;
+  background-color: var(--primary-color);
   color: #fff;
 }
 .Purchasedateils .boldall {
@@ -94,7 +79,7 @@
   font-weight: 400 !important;
 }
 .Purchasedateils .disacount.p1 {
-  color: #626e7b;
+  color: var(--auth-color);
 }
 .Purchasedateils .disacount.p2 {
   color: #b6bcc3;
@@ -139,7 +124,7 @@
   border-radius: 5px;
   padding: 10px 20px;
   font-size: 12px;
-  background-color: #336279;
+  background-color: var(--primary-color);
   color: #ffffff;
   font-weight: 600;
   border: none;
@@ -193,7 +178,7 @@
 .compatibility-check .title {
   font-size: 12px;
   font-weight: 400;
-  color: #626e7b;
+  color: var(--auth-color);
 }
 /* الصور تكون متجاوبة أكثر */
 .responsive-image {
