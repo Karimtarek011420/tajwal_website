@@ -305,7 +305,10 @@ export default function AccountInformation() {
                     </li>
                   </Link>
                   <Link href={"#"} onClick={handleLogout}>
-                    <li style={{ color: "#E14F72" }} aria-label="Logout">
+                    <li
+                      className="accountInformationlogout"
+                      aria-label="Logout"
+                    >
                       تسجيل الخروج
                     </li>
                   </Link>
@@ -452,7 +455,9 @@ export default function AccountInformation() {
         </div>
         {modalData.field && (
           <div
-            className={`modalaccountInformation ${modalData.field ? "modal-visible" : ""}`}
+            className={`modalaccountInformation ${
+              modalData.field ? "modal-visible" : ""
+            }`}
             onClick={(e) => {
               // إذا تم النقر على منطقة خارجية (مودال فقط)، يتم إغلاق النافذة.
               if (e.target.classList.contains("modal")) {
@@ -461,7 +466,9 @@ export default function AccountInformation() {
             }}
           >
             <div className="modal-content">
-              <h6 className="modal-title mb-2 accountInformationp">تغيير {modalData.field}</h6>
+              <h6 className="modal-title mb-2 accountInformationp">
+                تغيير {modalData.field}
+              </h6>
 
               {/* عرض إدخال التغيير حسب نوع الحقل */}
               {modalData.field === "phone_number" ? (
