@@ -1,9 +1,19 @@
 "use client";
 import { useSearchParams } from "next/navigation";
+import { useState, useEffect } from "react";
 import "./offerdetilas.css";
+
 const OfferDetails = () => {
   const searchParams = useSearchParams();
   const offer_url = searchParams.get("offer_url");
+  const [error, setError] = useState(null); // تخزين الخطأ
+
+  useEffect(() => {
+    // التحقق من صحة الرابط
+    if (!offer_url || !/^https?:\/\//.test(offer_url)) {
+      setError("الرابط غير صالح أو مفقود.");
+    }
+  }, [offer_url]);
 
   return (
     <div className="offers position-relative py-5">
@@ -17,21 +27,31 @@ const OfferDetails = () => {
           </li>
         </ul>
       </div>
+
       <div
         className="container py-5 d-flex justify-content-center align-items-center"
         style={{ width: "100vw", height: "100vh", overflow: "hidden" }}
       >
-        <iframe
-          src={offer_url}
-          loading="lazy"
-          style={{
-            width: "60%",
-            height: "100vh",
-            border: "none",
-            overflow: "hidden",
-          }}
-          title="Offer Details"
-        />
+        {error ? (
+          <div className="alert alert-danger" role="alert">
+            {error}
+          </div>
+        ) : (
+          <iframe
+            src={offer_url}
+            loading="lazy"
+            style={{
+              width: "60%",
+              height: "100vh",
+              border: "none",
+              overflow: "hidden",
+            }}
+            title="Offer Details"
+            onError={() =>
+              setError("حدث خطأ أثناء تحميل العرض، حاول مرة أخرى.")
+            }
+          />
+        )}
       </div>
     </div>
   );
