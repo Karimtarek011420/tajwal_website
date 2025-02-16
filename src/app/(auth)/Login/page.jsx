@@ -12,6 +12,7 @@ import { useRouter } from "next/navigation";
 import { TailSpin } from "react-loader-spinner";
 import Link from "next/link";
 import { authtoken } from "@/app/_Compontents/Authtoken/Authtoken";
+import { API_BASE_URL } from "@/app/utils/config";
 
 const LoginPage = () => {
   const router = useRouter();
@@ -63,7 +64,7 @@ const LoginPage = () => {
       setLoading(true);
       setErrorMessage("");
       const { data } = await axios.post(
-        "https://api.tajwal.co/api/v1/login",
+        `${API_BASE_URL}/login`,
         {
           phone_number: phoneNumber,
           password,

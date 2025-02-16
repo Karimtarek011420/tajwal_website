@@ -8,6 +8,7 @@ import { useFormik } from "formik";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { TailSpin } from "react-loader-spinner";
+import { API_BASE_URL } from "@/app/utils/config";
 
 const ResetPasswordPage = () => {
   const router = useRouter();
@@ -40,7 +41,7 @@ const ResetPasswordPage = () => {
     setloading(true);
     try {
       const { data } = await axios.post(
-        "https://api.tajwal.co/api/v1/reset_password",
+        `${API_BASE_URL}/reset_password`,
         values,
         {
           headers: {

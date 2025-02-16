@@ -9,6 +9,7 @@ import { useFormik } from "formik";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { TailSpin } from "react-loader-spinner";
+import { API_BASE_URL } from "@/app/utils/config";
 
 const RegisterOtpPage = () => {
   const router = useRouter();
@@ -88,7 +89,7 @@ const RegisterOtpPage = () => {
       setCounter(30);
       setIsDisabled(true);
       const { data } = await axios.post(
-        "https://api.tajwal.co/api/v1/create_otp",
+        `${API_BASE_URL}/create_otp`,
         { phone_number: phonenumber },
         {
           headers: {

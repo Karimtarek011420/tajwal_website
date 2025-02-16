@@ -11,6 +11,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { TailSpin } from "react-loader-spinner";
+import { API_BASE_URL } from "@/app/utils/config";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -28,16 +29,12 @@ export default function RegisterPage() {
   const apiRegister = async (values) => {
     setloading(true);
     try {
-      const { data } = await axios.post(
-        "https://api.tajwal.co/api/v1/register",
-        values,
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-        }
-      );
+      const { data } = await axios.post(`${API_BASE_URL}/register`, values, {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
       console.log(data);
       if (data.success === true) {
         toast.success(data.message, {

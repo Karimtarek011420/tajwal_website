@@ -9,6 +9,7 @@ import { useFormik } from "formik";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { TailSpin } from "react-loader-spinner";
+import { API_BASE_URL } from "@/app/utils/config";
 
 const forgetOtpPage = () => {
   const router = useRouter();
@@ -28,7 +29,7 @@ const forgetOtpPage = () => {
     setloading(true);
     try {
       const { data } = await axios.post(
-        "https://api.tajwal.co/api/v1/verify_otp",
+        `${API_BASE_URL}/verify_otp`,
         values,
         {
           headers: {

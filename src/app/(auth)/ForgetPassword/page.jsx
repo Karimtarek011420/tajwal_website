@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import { TailSpin } from "react-loader-spinner";
 import { useFormik } from "formik";
 import Image from "next/image";
+import { API_BASE_URL } from "@/app/utils/config";
 
 const ForgetpassPage = () => {
   const router = useRouter();
@@ -20,7 +21,7 @@ const ForgetpassPage = () => {
     setErrorMessage("");
     try {
       const { data } = await axios.post(
-        "https://api.tajwal.co/api/v1/create_otp",
+        `${API_BASE_URL}/create_otp`,
         { phone_number: values.phone_number },
         {
           headers: {
