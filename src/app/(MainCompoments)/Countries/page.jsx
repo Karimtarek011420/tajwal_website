@@ -10,16 +10,22 @@ import { API_BASE_URL } from "@/app/utils/config";
 export default function CountryHeader() {
   const [countries, setCountry] = useState(null);
   const pathname = usePathname(); // الحصول على المسار الحالي
+  const [error, setError] = useState(null); // تخزين الخطأ
   const getCountry = async () => {
-    const { data } = await axios.get(
-      `${API_BASE_URL}/countries/home_countries`,
-      {
-        headers: {
-          Accept: "application/json",
-        },
-      }
-    );
-    setCountry(data.data);
+    try {
+      const { data } = await axios.get(
+        `${API_BASE_URL}/countries/home_countries`,
+        {
+          headers: {
+            Accept: "application/json",
+          },
+        }
+      );
+      setCountry(data.data);
+      setError(null)
+    } catch (error) {
+      setError("حدث خطأ أثناء تحميل البيانات. يرجى المحاولة لاحقًا.");
+    }
   };
   useEffect(() => {
     getCountry();
@@ -35,7 +41,8 @@ export default function CountryHeader() {
               pathname === "/Countries" ? "active1" : "bg-transparent"
             }`}
             style={{
-              color: pathname === "/Countries" ? "var(--primary-color)" : "#ffffff",
+              color:
+                pathname === "/Countries" ? "var(--primary-color)" : "#ffffff",
             }}
           >
             دولية
@@ -46,7 +53,8 @@ export default function CountryHeader() {
               pathname === "/continents" ? "active1" : "bg-transparent"
             }`}
             style={{
-              color: pathname === "/continents" ? "var(--primary-color)" : "#ffffff",
+              color:
+                pathname === "/continents" ? "var(--primary-color)" : "#ffffff",
             }}
           >
             قارية
@@ -65,6 +73,10 @@ export default function CountryHeader() {
         </ul>
       </div>
       <div className="px-5">
+        <div>
+          {error && <p className="text-danger text-center">{error}</p>}{" "}
+          {/* عرض الخطأ إن وجد */}
+        </div>
         <div className="row gy-4">
           {countries?.map((country) => {
             return (

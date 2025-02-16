@@ -32,6 +32,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { setSelectedPackagepur } = usePackage(); // استخدام السياق
   const { token, settoken } = useContext(authtoken);
+  const [error, setError] = useState(null); // تخزين الخطأ
 
   const getCountryDetails = async () => {
     try {
@@ -41,8 +42,9 @@ export default function DetailsCountry({ params: paramsPromise }) {
         },
       });
       setData(response.data?.data); // تأكد من وجود البيانات
+      setError(null);
     } catch (error) {
-      console.error("Error fetching country details:", error);
+      setError("حدث خطأ أثناء تحميل البيانات. يرجى المحاولة لاحقًا.");
     }
   };
   useEffect(() => {
@@ -91,6 +93,10 @@ export default function DetailsCountry({ params: paramsPromise }) {
 
   return (
     <div className="countrydetials position-relative py-5">
+      <div>
+        {error && <p className="text-danger text-center">{error}</p>}{" "}
+        {/* عرض الخطأ إن وجد */}
+      </div>
       {Array.isArray(data) &&
         data.map((country) => (
           <div key={country.country_code}>
@@ -224,7 +230,9 @@ export default function DetailsCountry({ params: paramsPromise }) {
                                 backgroundColor:
                                   pkg.amount === -1 ? "#F1F3F666" : "#fff",
                                 color:
-                                  pkg.amount === -1 ? "#FFFFFF" : "var( --auth-color)",
+                                  pkg.amount === -1
+                                    ? "#FFFFFF"
+                                    : "var( --auth-color)",
                                 fontSize: "12px",
                                 fontWeight: "400",
                               }}
@@ -253,7 +261,9 @@ export default function DetailsCountry({ params: paramsPromise }) {
                                 backgroundColor:
                                   pkg.amount === -1 ? "#F1F3F666" : "#F1F3F666",
                                 color:
-                                  pkg.amount === -1 ? "#FFFFFF" : "var( --auth-color)",
+                                  pkg.amount === -1
+                                    ? "#FFFFFF"
+                                    : "var( --auth-color)",
                                 fontSize: "12px",
                                 fontWeight: "400",
                               }}
@@ -280,7 +290,9 @@ export default function DetailsCountry({ params: paramsPromise }) {
                                 backgroundColor:
                                   pkg.amount === -1 ? "#F1F3F666" : "#fff",
                                 color:
-                                  pkg.amount === -1 ? "#FFFFFF" : "var( --auth-color)",
+                                  pkg.amount === -1
+                                    ? "#FFFFFF"
+                                    : "var( --auth-color)",
                                 fontSize: "12px",
                                 fontWeight: "400",
                               }}
@@ -305,7 +317,9 @@ export default function DetailsCountry({ params: paramsPromise }) {
                                 backgroundColor:
                                   pkg.amount === -1 ? "#F1F3F666" : "#F1F3F666",
                                 color:
-                                  pkg.amount === -1 ? "#FFFFFF" : "var( --auth-color)",
+                                  pkg.amount === -1
+                                    ? "#FFFFFF"
+                                    : "var( --auth-color)",
                                 fontSize: "12px",
                                 fontWeight: "400",
                               }}
@@ -333,7 +347,10 @@ export default function DetailsCountry({ params: paramsPromise }) {
                                 style={{
                                   backgroundColor: "transparent",
                                   padding: "10px 60px",
-                                  color: pkg.amount === -1 ? "#fff" : "var(--primary-color)",
+                                  color:
+                                    pkg.amount === -1
+                                      ? "#fff"
+                                      : "var(--primary-color)",
                                   border:
                                     pkg.amount === -1
                                       ? "2px #fff solid"
