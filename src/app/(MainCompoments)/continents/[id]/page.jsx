@@ -1,5 +1,5 @@
 "use client";
-import React, { use, useEffect, useState } from "react";
+import React, { use, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import icon1 from "@/assets/images/Icon1.svg";
 import icon1dark from "@/assets/images/Icon1dark.svg";
@@ -20,6 +20,7 @@ import { useRouter } from "next/navigation";
 import { usePackage } from "@/app/_Compontents/PackageContext/PackageContext";
 import { Modal, Box, Button, Typography } from "@mui/material";
 import { API_BASE_URL } from "@/app/utils/config";
+import { authtoken } from "@/app/_Compontents/Authtoken/Authtoken";
 export default function DetailsCountry({ params: paramsPromise }) {
   const params = use(paramsPromise);
   const { id } = params;
@@ -32,6 +33,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
   const [open, setOpen] = useState(false);
   const [opennet, setOpennet] = useState(false);
   const [error, setError] = useState(null); // تخزين الخطأ
+  const { token, settoken } = useContext(authtoken);
 
   const getCountryDetails = async () => {
     try {
@@ -77,13 +79,27 @@ export default function DetailsCountry({ params: paramsPromise }) {
       title: data[0]?.title,
       image: data[0]?.image,
     });
-    router.push("/Purchase");
+    if (token) {
+      router.push("/Purchase");
+    } else {
+      toast.success(" سجل دخول الى تجوال!", {
+        duration: 1500,
+        style: { backgroundColor: "#4b87a4", color: "white" },
+      });
+      setTimeout(() => {
+        router.push("/Login");
+      }, 800);
+    }
   };
 
   return (
     <div className="countrydetials position-relative py-5">
       <div>
-        {error && <p className="text-danger text-center" style={{minHeight:'30vh'}}>{error}</p>}{" "}
+        {error && (
+          <p className="text-danger text-center" style={{ minHeight: "30vh" }}>
+            {error}
+          </p>
+        )}{" "}
         {/* عرض الخطأ إن وجد */}
       </div>
       {Array.isArray(data) &&
