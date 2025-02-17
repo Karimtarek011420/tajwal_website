@@ -14,6 +14,10 @@ import Numberslides from "@/assets/images/Numberslides.svg";
 import PlaybackSpeed from "@/assets/images/PlaybackSpeed.svg";
 import invoiceways from "@/assets/images/invoiceways.svg";
 import TravelBag from "@/assets/images/TravelBag.svg";
+import appstoreqr from "@/assets/images/appstoreqr.svg";
+import googleplayqr from "@/assets/images/googleplayqr.svg";
+import appStore1 from "@/assets/images/appStore1.svg";
+import googlePlay2 from "@/assets/images/googlePlay2.svg";
 
 import Image from "next/image";
 import withAuth from "@/app/utils/withAuth";
@@ -212,7 +216,47 @@ function pagesucess({ params: paramsPromise }) {
                     </div>
                   </Link>
                 </div>
-                
+              </div>
+              <div className=" mt-5">
+                <h6 className="tajwalh text-center py-2">حمل التطبيق</h6>
+                <div className=" d-flex justify-content-center align-items-center   ">
+                  <div className=" mx-4">
+                    <Image
+                      src={googleplayqr}
+                      className=""
+                      width={50}
+                      height={50}
+                      alt="QR code for Google Play Download"
+                    />
+                  </div>
+                  <div className=" mx-4">
+                    <Image
+                      src={appstoreqr}
+                      width={50}
+                      height={50}
+                      alt="QR code for  App Store Download"
+                    />
+                  </div>
+                </div>
+                <div className="  d-flex justify-content-center align-items-center  mt-2">
+                  <div className="mx-2">
+                    <Image
+                      src={googlePlay2}
+                      width={75}
+                      height={25}
+                      alt="Google Play"
+                    />
+                  </div>
+
+                  <div className=" mx-2">
+                    <Image
+                      src={appStore1}
+                      width={75}
+                      height={25}
+                      alt="App Store"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>

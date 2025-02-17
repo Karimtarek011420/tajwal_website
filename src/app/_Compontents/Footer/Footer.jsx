@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import "./footer.css";
-import Footerlogo from "../../../assets/images/footerHero.svg";
-import appstoreqr from "../../../assets/images/appstoreqr.svg";
-import googleplayqr from "../../../assets/images/googleplayqr.svg";
-import appStore1 from "../../../assets/images/appStore1.svg";
-import googlePlay2 from "../../../assets/images/googlePlay2.svg";
+import Footerlogo from "@/assets/images/footerHero.svg";
+import appstoreqr from "@/assets/images/appstoreqr.svg";
+import googleplayqr from "@/assets/images/googleplayqr.svg";
+import appStore1 from "@/assets/images/appStore1.svg";
+import googlePlay2 from "@/assets/images/googlePlay2.svg";
 
 const Footer = () => {
   return (
