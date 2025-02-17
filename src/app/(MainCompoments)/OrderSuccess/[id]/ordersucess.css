@@ -3,3 +3,16 @@
   font-weight: 400 !important;
   color: var(--auth-color);
 }
+.ordersucess .wayesim {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: var(--auth-color) !important;
+}
+.ordersucess .wayesimp {
+  font-size: 10px !important;
+  font-weight: 300 !important;
+  color: var(--auth-color) !important;
+}
+.ordersucess .wayslink {
+  background-color: var(--primary-color);
+}

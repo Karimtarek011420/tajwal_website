@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import arrow from "../../../assets/images/arrow.svg";
+import arrow from "@/assets/images/arrow.svg";
 import "./countryheader.css";
 import axios from "axios";
 import { API_BASE_URL } from "@/app/utils/config";
