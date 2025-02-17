@@ -186,7 +186,12 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-white" href="#">
+                <Link
+                  className={`nav-link text-white ${
+                    pathName === "/ContactUS" ? "active" : ""
+                  }`}
+                  href="/ContactUS"
+                >
                   اتصل بنا
                 </Link>
               </li>
