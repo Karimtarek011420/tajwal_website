@@ -21,8 +21,9 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { TailSpin } from "react-loader-spinner";
 import { API_BASE_URL } from "@/app/utils/config";
+import withAuth from "@/app/utils/withAuth";
 
-export default function page() {
+ function pagepurchase() {
   const { selectedPackage, setSelectedPackagepur } = usePackage();
   const [quantity, setQuantity] = useState(1); // عداد الشرائح
   const [discountData, setDiscountData] = useState(null); // لتخزين بيانات الخصم
@@ -547,3 +548,4 @@ export default function page() {
     </>
   );
 }
+export default withAuth(pagepurchase)
