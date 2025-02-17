@@ -48,6 +48,10 @@ export default function page({ params: paramsPromise }) {
           <div>
             <Image src={ordersucess} width={99} height={99} alt="ordersucess" />
           </div>
+          <div className=" row gy-2">
+            <div className=" col-md-4"></div>
+            <div className=" col-md-4 offset-4"></div>
+          </div>
         </div>
       </div>
     </>
