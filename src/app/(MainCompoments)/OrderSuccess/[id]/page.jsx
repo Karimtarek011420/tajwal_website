@@ -4,6 +4,9 @@ import axios from "axios";
 import React, { use, useEffect, useState } from "react";
 import "./ordersucess.css";
 import ordersucess from "@/assets/images/ordersucess.svg";
+import numberorder from "@/assets/images/numberorder.svg";
+import price from "@/assets/images/icon4.svg";
+
 import Image from "next/image";
 export default function page({ params: paramsPromise }) {
   const params = use(paramsPromise);
@@ -43,13 +46,57 @@ export default function page({ params: paramsPromise }) {
               <span>تم تأكيد طلبك بنجاح</span>
             </li>
           </ul>
-        </div>
-        <div className="container py-5">
-          <div>
+          <div className=" d-flex justify-content-center align-items-center">
             <Image src={ordersucess} width={99} height={99} alt="ordersucess" />
           </div>
-          <div className=" row gy-2">
-            <div className=" col-md-4"></div>
+        </div>
+        <div className="container py-5">
+          <div className=" row gy-2 py-5">
+            <div className=" col-md-4">
+              <p className=" ordersucessdetilas px-5 ">تفاصيل الطلب</p>
+              <div className="d-flex justify-content-between align-items-center text-center p-3 rounded-3 m-2 mt-3 bg-white shadow-sm ordersucessdetilas">
+                <div className="d-flex align-items-center justify-content-center ">
+                  <Image
+                    src={numberorder}
+                    width={13}
+                    height={16}
+                    alt="iconcountry"
+                  />
+                  <p className="mx-1 my-0">رقم الطلب</p>
+                </div>
+                <div>
+                  <p className="my-0">6666</p>
+                </div>
+              </div>
+              <div className="d-flex justify-content-between align-items-center text-center p-3 rounded-3 m-2 mt-3 bg-white shadow-sm ordersucessdetilas">
+                <div className="d-flex align-items-center justify-content-center ">
+                  <Image
+                    src={price}
+                    width={13}
+                    height={16}
+                    alt="price"
+                  />
+                  <p className="mx-1 my-0">اجمالي الطلب</p>
+                </div>
+                <div>
+                  <p className="my-0"> 99 ر.س</p>
+                </div>
+              </div>
+              <div className="d-flex justify-content-between align-items-center text-center p-3 rounded-3 m-2 mt-3 bg-white shadow-sm ordersucessdetilas">
+                <div className="d-flex align-items-center justify-content-center ">
+                  <Image
+                    src={price}
+                    width={13}
+                    height={16}
+                    alt="price"
+                  />
+                  <p className="mx-1 my-0">اجمالي الطلب</p>
+                </div>
+                <div>
+                  <p className="my-0"> 99 ر.س</p>
+                </div>
+              </div>
+            </div>
             <div className=" col-md-4 offset-4"></div>
           </div>
         </div>
