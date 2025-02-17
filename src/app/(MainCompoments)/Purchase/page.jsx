@@ -146,6 +146,7 @@ export default function page() {
             .map((country) => country.country_code)
             .join(", "),
           paymentWay,
+          web_success_url:'http://localhost:3000/OrderSuccess/'
         },
         {
           headers: {
