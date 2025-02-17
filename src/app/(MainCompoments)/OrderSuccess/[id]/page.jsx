@@ -8,7 +8,8 @@ import numberorder from "@/assets/images/numberorder.svg";
 import price from "@/assets/images/icon4.svg";
 
 import Image from "next/image";
-export default function page({ params: paramsPromise }) {
+import withAuth from "@/app/utils/withAuth";
+ function pagesucess({ params: paramsPromise }) {
   const params = use(paramsPromise);
   const { id } = params;
   const [data, setData] = useState(null);
@@ -104,3 +105,4 @@ export default function page({ params: paramsPromise }) {
     </>
   );
 }
+export default withAuth(pagesucess)
