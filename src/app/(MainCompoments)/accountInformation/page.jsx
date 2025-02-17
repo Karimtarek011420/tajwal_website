@@ -11,8 +11,9 @@ import { TailSpin } from "react-loader-spinner";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
 import { API_BASE_URL } from "@/app/utils/config";
+import withAuth from "@/app/utils/withAuth";
 
-export default function AccountInformation() {
+ function AccountInformation() {
   const [user, setUser] = useState(() => {
     try {
       return JSON.parse(localStorage.getItem("user")) || {};
@@ -546,3 +547,5 @@ export default function AccountInformation() {
     </div>
   );
 }
+
+export default withAuth(AccountInformation)
