@@ -19,8 +19,8 @@ export default function page({ params: paramsPromise }) {
           },
         }
       );
-      console.log(data)
-      setData(data); // تأكد من وجود البيانات
+      console.log(data);
+      setData(data);
     } catch (error) {
       console.log(error);
     }
