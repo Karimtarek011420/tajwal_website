@@ -12,6 +12,8 @@ import Coverage from "@/assets/images/Icon1dark.svg";
 import Validity from "@/assets/images/icon3dark.svg";
 import Numberslides from "@/assets/images/Numberslides.svg";
 import PlaybackSpeed from "@/assets/images/PlaybackSpeed.svg";
+import invoiceways from "@/assets/images/invoiceways.svg";
+import TravelBag from "@/assets/images/TravelBag.svg";
 
 import Image from "next/image";
 import withAuth from "@/app/utils/withAuth";
@@ -148,23 +150,69 @@ function pagesucess({ params: paramsPromise }) {
                   بأمكانك تثبيت الشريحة بأي من الثلاث طرق المذكور في صفحة “طرق
                   تثبيت الشريحة”
                 </p>
-                <div className=" p-2 wayslink rounded-3 mx-4">
+                <div className=" p-2 wayslink rounded-3 mx-5">
                   <Link href="">
                     <div className="d-flex justify-content-between align-items-center ">
-                      <div className="country-flag d-flex justify-content-center align-items-center">
+                      <div className="country-flag d-flex justify-content-center align-items-center p-1">
                         <Image
-                          src={arrow}
-                          width={20}
-                          height={20}
+                          src={PlaybackSpeed}
+                          width={16}
+                          height={16}
                           alt="arrow"
                           loading="lazy"
                         />
-                        <p className="text-black mb-0 ms-lg-4 px--2 "></p>
+                        <p className="text-black mb-0 ms-lg-4 px-3 text-white  wayslinkp">
+                          {" "}
+                          طرق تثبيت الشريحة
+                        </p>
                       </div>
-                      <i class="fa-solid fa-chevron-left text-white"></i>
+                      <i className="fa-solid fa-chevron-left text-white p-1"></i>
                     </div>
                   </Link>
                 </div>
+              </div>
+              <div className=" d-flex mt-5  ">
+                <div className=" px-5 py-2 wayslink rounded-3 ms-3  w-50 ">
+                  <Link href="">
+                    <div className="">
+                      <div className=" d-flex justify-content-center align-items-center text-center">
+                        <Image
+                          src={invoiceways}
+                          width={16}
+                          height={16}
+                          alt="arrow"
+                          loading="lazy"
+                          className="m-1"
+                        />
+                        <p className=" p-1 mb-0  text-white  wayslinkp">
+                          {" "}
+                          الفاتورة
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+                <div className=" px-5 py-2 wayslink rounded-3 ms-3  w-50 ">
+                  <Link href="">
+                    <div className="">
+                      <div className=" d-flex justify-content-center align-items-center text-center">
+                        <Image
+                          src={TravelBag}
+                          width={16}
+                          height={16}
+                          alt="arrow"
+                          loading="lazy"
+                          className="m-1"
+                        />
+                        <p className=" p-1 mb-0  text-white  wayslinkp">
+                          {" "}
+                          الشريحة
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+                
               </div>
             </div>
           </div>

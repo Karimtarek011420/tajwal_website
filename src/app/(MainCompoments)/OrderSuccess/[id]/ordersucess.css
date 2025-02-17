@@ -16,3 +16,7 @@
 .ordersucess .wayslink {
   background-color: var(--primary-color);
 }
+.ordersucess .wayslink .wayslinkp {
+  font-size: 10px !important;
+  font-weight: 400 !important;
+}
