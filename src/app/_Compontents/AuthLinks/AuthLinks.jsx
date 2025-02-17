@@ -1,8 +1,8 @@
 import Image from "next/image";
 import "./authlinks.css";
-import xauth from "../../../assets/images/xauth.svg";
-import google from "../../../assets/images/googleauth.svg";
-import appleauth from "../../../assets/images/appleauth.svg";
+import xauth from "@/assets/images/xauth.svg";
+import google from "@/assets/images/googleauth.svg";
+import appleauth from "@/assets/images/appleauth.svg";
 import Link from "next/link";
 
 const AuthLinks = () => {

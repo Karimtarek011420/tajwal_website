@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import logonavbar from "../../../assets/images/logonavbar.svg";
+import logonavbar from "@/assets/images/logonavbar.svg";
 import { authtoken } from "../Authtoken/Authtoken";
 import "./navbar.css";
 import { logoutApi } from "@/app/Hookshelp/logout";
