@@ -141,19 +141,19 @@ export default function ContactUS() {
           <div className=" col-md-6"></div>
           <div className=" col-md-3">
             <div className=" bg-white shadow-sm rounded-2 pt-3 pb-4  ContactUSp">
-              <p className=" px-3 " > الإدارة المالية</p>
+              <p className=" px-3 "> الإدارة المالية</p>
               <div className="  d-flex justify-content-center align-items-center">
                 <div
                   className=" d-flex   justify-content-end   align-items-center w-75 "
                   style={{ backgroundColor: "#F1F3F6" }}
                 >
                   <a
-                    href="mailto:help@tajwal.co"
+                    href="mailto:finance@tajwal.co"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="ps-5 "
                   >
-                    help@tajwal.co
+                    finance@tajwal.co
                   </a>
                   <Image
                     src={emailcontect}
@@ -169,13 +169,13 @@ export default function ContactUS() {
                   style={{ backgroundColor: "#F1F3F6" }}
                 >
                   <a
-                    href="tel:+966505105224"
+                    href="tel:+966505123456"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="ps-5"
                     dir="ltr"
                   >
-                    966 505 10 5224
+                    966 505 12 3456
                   </a>
                   <Image
                     src={phonecontect}
@@ -186,7 +186,10 @@ export default function ContactUS() {
                 </div>
               </div>
             </div>
-            <div className=" bg-white shadow-sm rounded-2 pt-3 pb-4  ContactUSp" style={{marginTop:"100px"}}>
+            <div
+              className=" bg-white shadow-sm rounded-2 pt-3 pb-4  ContactUSp"
+              style={{ marginTop: "100px" }}
+            >
               <p className=" px-3 ">الإدارة العامة</p>
               <div className="  d-flex justify-content-center align-items-center">
                 <div
@@ -194,12 +197,12 @@ export default function ContactUS() {
                   style={{ backgroundColor: "#F1F3F6" }}
                 >
                   <a
-                    href="mailto:help@tajwal.co"
+                    href="mailto:info@tajwal.co"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="ps-5 "
                   >
-                    help@tajwal.co
+                    info@tajwal.co
                   </a>
                   <Image
                     src={emailcontect}
@@ -215,13 +218,13 @@ export default function ContactUS() {
                   style={{ backgroundColor: "#F1F3F6" }}
                 >
                   <a
-                    href="tel:+966505105224"
+                    href="tel:+966505123456"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="ps-5"
                     dir="ltr"
                   >
-                    966 505 10 5224
+                    966 505 12 3456{" "}
                   </a>
                   <Image
                     src={phonecontect}
