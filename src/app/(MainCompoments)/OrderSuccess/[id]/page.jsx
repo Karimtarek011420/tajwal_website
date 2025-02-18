@@ -51,7 +51,7 @@ function pagesucess({ params: paramsPromise }) {
     apiDetialsOrder();
   }, []);
   if (loading) {
-    return <p className="text-center py-5" style={{minHeight:'50vh'}}>جارٍ تحميل البيانات...</p>;
+    return <p className="text-center py-5" style={{minHeight:'30vh'}}>جارٍ تحميل البيانات...</p>;
   }
 
   return (
