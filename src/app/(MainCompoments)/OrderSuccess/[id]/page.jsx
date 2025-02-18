@@ -39,7 +39,7 @@ function pagesucess({ params: paramsPromise }) {
         }
       );
       console.log(data.data);
-      setData(data.data);
+      setData(data?.data);
     } catch (error) {
       console.log(error);
     }
@@ -78,8 +78,14 @@ function pagesucess({ params: paramsPromise }) {
                   />
                   <p className="mx-1 my-0">رقم الطلب</p>
                 </div>
+
                 <div>
-                  <p className="my-0">6666</p>
+                  {data?.esims?.map((esim) => (
+                    <p className="my-0" key={esim.id}>
+                      {" "}
+                      {esim.order_group_id}
+                    </p>
+                  ))}
                 </div>
               </div>
               <div className="d-flex justify-content-between align-items-center text-center p-3 rounded-3 m-2 mt-3 bg-white shadow-sm ordersucessdetilas">
@@ -88,7 +94,7 @@ function pagesucess({ params: paramsPromise }) {
                   <p className="mx-1 my-0">اجمالي الطلب</p>
                 </div>
                 <div>
-                  <p className="my-0"> 99 ر.س</p>
+                  <p className="my-0">{data?.invoice_value} ر.س</p>
                 </div>
               </div>
               <div className="d-flex justify-content-between align-items-center text-center p-3 rounded-3 m-2 mt-3 bg-white shadow-sm ordersucessdetilas">
@@ -102,7 +108,7 @@ function pagesucess({ params: paramsPromise }) {
                   <p className="mx-1 my-0">تاريخ الطلب</p>
                 </div>
                 <div>
-                  <p className="my-0">62626772</p>
+                <p className="my-0">{data?.created_at}</p>
                 </div>
               </div>
               <div className="d-flex justify-content-between align-items-center text-center p-3 rounded-3 m-2 mt-3 bg-white shadow-sm ordersucessdetilas">
@@ -111,7 +117,7 @@ function pagesucess({ params: paramsPromise }) {
                   <p className="mx-1 my-0">وسيلة الدفع</p>
                 </div>
                 <div>
-                  <p className="my-0">62626772</p>
+                <p className="my-0">{data?.payment_method}</p>
                 </div>
               </div>
               <div className="d-flex justify-content-between align-items-center text-center p-3 rounded-3 m-2 mt-3 bg-white shadow-sm ordersucessdetilas">
@@ -120,7 +126,9 @@ function pagesucess({ params: paramsPromise }) {
                   <p className="mx-1 my-0">التغطية</p>
                 </div>
                 <div>
-                  <p className="my-0">62626772</p>
+                {data?.esims?.map((esim) => (
+                    <p className="my-0" key={esim.id}> {esim.country_name}</p>
+                  ))}
                 </div>
               </div>
               <div className="d-flex justify-content-between align-items-center text-center p-3 rounded-3 m-2 mt-3 bg-white shadow-sm ordersucessdetilas">
@@ -134,7 +142,7 @@ function pagesucess({ params: paramsPromise }) {
                   <p className="mx-1 my-0">عدد الشرائح</p>
                 </div>
                 <div>
-                  <p className="my-0">62626772</p>
+                <p className="my-0">{data?.esims_count}</p>
                 </div>
               </div>
               <div className="d-flex justify-content-between align-items-center text-center p-3 rounded-3 m-2 mt-3 bg-white shadow-sm ordersucessdetilas">
@@ -143,7 +151,9 @@ function pagesucess({ params: paramsPromise }) {
                   <p className="mx-1 my-0">الصلاحية</p>
                 </div>
                 <div>
-                  <p className="my-0">62626772</p>
+                {data?.esims?.map((esim) => (
+                    <p className="my-0" key={esim.id}> {esim.package.day} {esim.package.day <= 10 ? "أيام" : "يوم"}</p>
+                  ))}
                 </div>
               </div>
             </div>
