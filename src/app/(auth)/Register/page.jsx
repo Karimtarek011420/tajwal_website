@@ -125,7 +125,7 @@ export default function RegisterPage() {
           alt="Register User"
         />
       </div>
-      <div className="bg-white shadow-lg rounded-4 px-4 py-3">
+      <div className="bg-white shadow-sm rounded-4 px-4 py-3">
         <form onSubmit={handleForm.handleSubmit}>
           <div className="mb-4 mt-5">
             <input
