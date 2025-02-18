@@ -56,6 +56,11 @@ export default function RegisterPage() {
     } catch (error) {
       if (error.status === 422) {
         if (
+          error.response.data.message === "The email has already been taken."
+        ) {
+          setErrorMessage("  البريد الإلكترونى مستخدم من قبل");
+        }
+        if (
           error.response.data.message ===
             "The phone number has already been taken. (and 2 more errors)" ||
           error.response.data.message ===
@@ -64,11 +69,7 @@ export default function RegisterPage() {
           setErrorMessage("رقم الجوال مستخدم من قبل");
           console.log("ll");
         }
-        if (
-          error.response.data.message === "The email has already been taken."
-        ) {
-          setErrorMessage("  البريد الإلكترونى مستخدم من قبل");
-        }
+       
       }
     }
     setloading(false);

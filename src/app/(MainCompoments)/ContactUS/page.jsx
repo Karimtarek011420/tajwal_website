@@ -138,7 +138,12 @@ export default function ContactUS() {
               </div>
             </div>
           </div>
-          <div className=" col-md-6"></div>
+          <div className=" col-md-6">
+            <div className=" bg-white shadow-sm">
+              
+
+            </div>
+          </div>
           <div className=" col-md-3">
             <div className=" bg-white shadow-sm rounded-2 pt-3 pb-4  ContactUSp">
               <p className=" px-3 "> الإدارة المالية</p>
