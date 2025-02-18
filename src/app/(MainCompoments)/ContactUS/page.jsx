@@ -63,14 +63,19 @@ export default function ContactUS() {
       const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
       const PHONE_REGEX = /\+\d{11,15}/;
 
-      if (!regexName.test(values.first_name)) {
-        errors.first_name = "الرجاء إدخال الاسم بشكل صحيح";
+      if (!regexName.test(values.name)) {
+        errors.name = "الرجاء إدخال الاسم بشكل صحيح";
       }
       if (!regexEmail.test(values.email)) {
         errors.email = "الرجاء إدخال البريد الإلكتروني بشكل صحيح";
       }
-      if (!PHONE_REGEX.test(values.phone_number)) {
-        errors.phone_number = "الرجاء إدخال رقم الجوال بشكل صحيح";
+      if (!PHONE_REGEX.test(values.phone)) {
+        errors.phone = "الرجاء إدخال رقم الجوال بشكل صحيح";
+      }
+      if (!values.message || values.message.trim() === "") {
+        errors.message = "الرجاء إدخال محتوى الرسالة";
+      } else if (values.message.length < 10) {
+        errors.message = "يجب أن تحتوي الرسالة على 10 أحرف على الأقل";
       }
 
       return errors;
@@ -227,7 +232,11 @@ export default function ContactUS() {
                         aria-label="name"
                       />
                       {handleForm.errors.name && handleForm.touched.name ? (
-                        <div className="alert alert-danger my-2" role="alert">
+                        <div
+                          className="alert alert-danger my-2"
+                          role="alert"
+                          style={{ fontSize: "10px" }}
+                        >
                           {handleForm.errors.name}
                         </div>
                       ) : null}
@@ -247,7 +256,11 @@ export default function ContactUS() {
                       />
                       {handleForm.errors.subject &&
                       handleForm.touched.subject ? (
-                        <div className="alert alert-danger my-2" role="alert">
+                        <div
+                          className="alert alert-danger my-2"
+                          role="alert"
+                          style={{ fontSize: "10px" }}
+                        >
                           {handleForm.errors.subject}
                         </div>
                       ) : null}
@@ -267,7 +280,11 @@ export default function ContactUS() {
                         required
                       />
                       {handleForm.errors.email && handleForm.touched.email ? (
-                        <div className="alert alert-danger my-2" role="alert">
+                        <div
+                          className="alert alert-danger my-2"
+                          role="alert"
+                          style={{ fontSize: "10px" }}
+                        >
                           {handleForm.errors.email}
                         </div>
                       ) : null}
@@ -290,6 +307,7 @@ export default function ContactUS() {
                           className="alert alert-danger my-2"
                           dir="rtl"
                           role="alert"
+                          style={{ fontSize: "10px" }}
                         >
                           {handleForm.errors.phone}
                         </div>
@@ -301,7 +319,6 @@ export default function ContactUS() {
                       value={handleForm.values.message}
                       onChange={handleForm.handleChange}
                       onBlur={handleForm.handleBlur}
-                      typeof="message"
                       id="message"
                       aria-label="message"
                       placeholder="محتوى الرسالة"
@@ -312,6 +329,7 @@ export default function ContactUS() {
                         className="alert alert-danger my-2"
                         dir="rtl"
                         role="alert"
+                        style={{ fontSize: "10px" }}
                       >
                         {handleForm.errors.message}
                       </div>
@@ -327,6 +345,7 @@ export default function ContactUS() {
                 <div className="d-flex justify-content-start align-items-center m-5 ">
                   <button
                     type="submit"
+                    disabled={!handleForm.dirty || !handleForm.isValid}
                     className="follow mt-3"
                   >
                     {loading ? (
