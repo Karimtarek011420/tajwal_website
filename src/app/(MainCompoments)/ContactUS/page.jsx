@@ -78,7 +78,7 @@ export default function ContactUS() {
   });
 
   const handlePhoneNumberChange = (value) => {
-    handleForm.setFieldValue("phone_number", value);
+    handleForm.setFieldValue("phone", value);
   };
   return (
     <div className="ContactUS position-relative py-5">
@@ -282,7 +282,7 @@ export default function ContactUS() {
                         onBlur={handleForm.handleBlur}
                         placeholder="رقم الجوال"
                         className="phone-input-field"
-                        aria-label="phone_number"
+                        aria-label="phone"
                         required
                       />
                       {handleForm.errors.phone && handleForm.touched.phone ? (
@@ -326,7 +326,6 @@ export default function ContactUS() {
                 </div>
                 <div className="d-flex justify-content-start align-items-center m-5 ">
                   <button
-                    disabled={!handleForm.dirty || !handleForm.isValid}
                     type="submit"
                     className="follow mt-3"
                   >
