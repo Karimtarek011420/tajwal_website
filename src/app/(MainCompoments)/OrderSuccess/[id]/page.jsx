@@ -51,8 +51,14 @@ function pagesucess({ params: paramsPromise }) {
     apiDetialsOrder();
   }, []);
   if (loading) {
-    return <p className="text-center py-5" style={{minHeight:'30vh'}}>جارٍ تحميل البيانات...</p>;
+    return (
+      <p className="text-center py-5" style={{ minHeight: "30vh" }}>
+        جارٍ تحميل البيانات...
+      </p>
+    );
   }
+  const apiDate = data?.created_at;
+  const formattedDate = new Date(apiDate).toISOString().split("T")[0];
 
   return (
     <>
@@ -109,7 +115,7 @@ function pagesucess({ params: paramsPromise }) {
                   <p className="mx-1 my-0">تاريخ الطلب</p>
                 </div>
                 <div>
-                  <p className="my-0">{data?.created_at}</p>
+                  <p className="my-0">{formattedDate}</p>
                 </div>
               </div>
               <div className="d-flex justify-content-between align-items-center text-center p-3 rounded-3 m-2 mt-3 bg-white shadow-sm ordersucessdetilas">
