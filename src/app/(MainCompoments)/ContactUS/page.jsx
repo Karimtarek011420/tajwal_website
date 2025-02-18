@@ -35,14 +35,6 @@ export default function ContactUS() {
       console.log(data);
       if (data.success === true) {
         setsucessMessage(true);
-        // toast.success(data.message, {
-        //   duration: 1500,
-        //   style: {
-        //     backgroundColor: "#4b87a4",
-        //     color: "white",
-        //     position: "top-right",
-        //   },
-        // });
       }
       console.log(data);
     } catch (error) {
