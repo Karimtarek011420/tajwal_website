@@ -13,7 +13,6 @@ import axios from "axios";
 import { TailSpin } from "react-loader-spinner";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
-
 export default function ContactUS() {
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setloading] = useState(false);
@@ -242,30 +241,36 @@ export default function ContactUS() {
                       ) : null}
                     </div>
                   </div>
-                  <div className=" col-md-6">
+                  <div className="col-md-6">
                     <div className="mb-4">
-                      <input
-                        type="text"
+                      <select
                         value={handleForm.values.subject}
                         onChange={handleForm.handleChange}
                         onBlur={handleForm.handleBlur}
-                        className="form-control"
                         id="subject"
-                        placeholder="subject"
-                        aria-label="subject"
-                      />
+                        className="form-control"
+                        style={{ fontSize: "14px" }}
+                      >
+                        <option value="" disabled>
+                          سبب التواصل
+                        </option>
+                        <option value="subject1">الموضوع 1</option>
+                        <option value="subject2">الموضوع 2</option>
+                        <option value="subject3">الموضوع 3</option>
+                      </select>
                       {handleForm.errors.subject &&
-                      handleForm.touched.subject ? (
-                        <div
-                          className="alert alert-danger my-2"
-                          role="alert"
-                          style={{ fontSize: "12px" }}
-                        >
-                          {handleForm.errors.subject}
-                        </div>
-                      ) : null}
+                        handleForm.touched.subject && (
+                          <div
+                            className="alert alert-danger my-2"
+                            role="alert"
+                            style={{ fontSize: "12px" }}
+                          >
+                            {handleForm.errors.subject}
+                          </div>
+                        )}
                     </div>
                   </div>
+
                   <div className=" col-md-6">
                     <div className="mb-4">
                       <input

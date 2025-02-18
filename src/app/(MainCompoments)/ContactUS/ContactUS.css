@@ -13,12 +13,14 @@
   padding: 3px 1px !important;
 }
 .ContactUS input:focus,
-.ContactUS textarea:focus {
+.ContactUS textarea:focus,
+.ContactUS select:focus {
   outline: 0 !important;
   box-shadow: 0 0 0 0 transparent !important;
 }
 .ContactUS input,
-.ContactUS textarea {
+.ContactUS textarea,
+.ContactUS select {
   background-color: #f9f9f9 !important;
   border: none !important;
   border-radius: 5px !important;
@@ -37,6 +39,9 @@
   border: none;
 }
 .ContactUS textarea::placeholder {
-  font-size:12px !important ;
+  font-size: 12px !important ;
   font-weight: 400 !important;
+}
+.ContactUS select.custom-select option {
+  box-shadow: 0 0 0 0 transparent !important;
 }
