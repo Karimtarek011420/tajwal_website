@@ -12,11 +12,13 @@
   border-radius: 5px !important;
   padding: 3px 1px !important;
 }
-.ContactUS input:focus {
+.ContactUS input:focus,
+.ContactUS textarea:focus {
   outline: 0 !important;
   box-shadow: 0 0 0 0 transparent !important;
 }
-.ContactUS input {
+.ContactUS input,
+.ContactUS textarea {
   background-color: #f9f9f9 !important;
   border: none !important;
   border-radius: 5px !important;

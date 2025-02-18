@@ -307,7 +307,7 @@ export default function ContactUS() {
                     {errorMessage}
                   </p>
                 </div>
-                <div className="d-flex justify-content-start align-items-center m-5 pb-2">
+                <div className="d-flex justify-content-start align-items-center m-5 ">
                   <button
                     disabled={!handleForm.dirty || !handleForm.isValid}
                     type="submit"
@@ -381,7 +381,7 @@ export default function ContactUS() {
             </div>
             <div
               className=" bg-white shadow-sm rounded-2 pt-3 pb-4  ContactUSp"
-              style={{ marginTop: "100px" }}
+              style={{ marginTop: "95px" }}
             >
               <p className=" px-3 ">الإدارة العامة</p>
               <div className="  d-flex justify-content-center align-items-center">
