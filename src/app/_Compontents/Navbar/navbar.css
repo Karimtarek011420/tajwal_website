@@ -159,6 +159,13 @@ li.nav-item a.nav-link {
     width: 100px !important;
     height: 50px !important;
   }
+  .offcanvas .nav-item a,
+  .nav-item button {
+    color: black !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+  }
+  
 
   nav.navbar {
     margin: 10px 2px !important;
