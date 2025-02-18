@@ -62,7 +62,7 @@
       padding: 0 15px;
     }
     .forgetpass button.follow {
-      padding: 10px 50px;
+      padding: 10px 100px;
     }
   }
   
@@ -73,7 +73,7 @@
     }
     .forgetpass button.follow {
       font-size: 12px;
-      padding: 10px 40px;
+      padding: 10px 100px;
     }
     .forgetpass .p-login p {
       font-size: 11px;

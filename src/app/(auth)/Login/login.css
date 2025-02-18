@@ -56,7 +56,7 @@
     padding: 0 15px;
   }
   .login button.follow {
-    padding: 10px 50px;
+    padding: 10px 100px;
   }
 }
 
@@ -67,7 +67,7 @@
   }
   .login button.follow {
     font-size: 12px;
-    padding: 10px 40px;
+    padding: 10px 100px;
   }
   .login .p-login p {
     font-size: 11px;
