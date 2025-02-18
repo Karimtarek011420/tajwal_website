@@ -6,6 +6,7 @@ import instacontect from "@/assets/images/instacontect.svg";
 import emailcontect from "@/assets/images/emailcontect.svg";
 import phonecontect from "@/assets/images/phonecontect.svg";
 import watscontect from "@/assets/images/watscontect.svg";
+import ordersucess from "@/assets/images/ordersucess.svg";
 import Image from "next/image";
 import { API_V2_BASE_URL } from "@/app/utils/config";
 import { useFormik } from "formik";
@@ -66,6 +67,9 @@ export default function ContactUS() {
 
       if (!regexName.test(values.name)) {
         errors.name = "الرجاء إدخال الاسم بشكل صحيح";
+      }
+      if (!values.subject || values.subject.trim() === "") {
+        errors.subject = "الرجاء إدخال سبب التواصل";
       }
       if (!regexEmail.test(values.email)) {
         errors.email = "الرجاء إدخال البريد الإلكتروني بشكل صحيح";
@@ -220,7 +224,22 @@ export default function ContactUS() {
           <div className=" col-md-6">
             <div className=" bg-white shadow-sm py-1">
               {sucessMessage ? (
-                <p>kkk</p>
+                <div className=" py-5 ">
+                  <div className=" d-flex justify-content-center  align-items-center">
+                    <Image
+                      src={ordersucess}
+                      alt="ordersucess"
+                      width={100}
+                      height={100}
+                    />
+                  </div>
+                  <div className="d-flex justify-content-center  align-items-center pb-5 pt-2 sucessp">
+                    <p>تم ارسال رسالتك</p>
+                  </div>
+                  <div className="d-flex justify-content-center  align-items-center pb-5 sucesspline">
+                    <p className="pb-3">سنقوم بالرد عليكم في أقرب وقت ممكن.</p>
+                  </div>
+                </div>
               ) : (
                 <form onSubmit={handleForm.handleSubmit}>
                   <div className=" row gy-3 px-3">
@@ -254,8 +273,7 @@ export default function ContactUS() {
                           onChange={handleForm.handleChange}
                           onBlur={handleForm.handleBlur}
                           id="subject"
-                          className="form-control"
-                          style={{ fontSize: "14px" }}
+                          className="form-control ContactUSp shadow-none  h-25 "
                         >
                           <option value="" disabled>
                             سبب التواصل
@@ -264,17 +282,17 @@ export default function ContactUS() {
                           <option value="subject2">الموضوع 2</option>
                           <option value="subject3">الموضوع 3</option>
                         </select>
-                        {handleForm.errors.subject &&
-                          handleForm.touched.subject && (
-                            <div
-                              className="alert alert-danger my-2"
-                              role="alert"
-                              style={{ fontSize: "12px" }}
-                            >
-                              {handleForm.errors.subject}
-                            </div>
-                          )}
                       </div>
+                      {handleForm.errors.subject &&
+                      handleForm.touched.subject ? (
+                        <div
+                          className="alert alert-danger my-2"
+                          role="alert"
+                          style={{ fontSize: "12px" }}
+                        >
+                          {handleForm.errors.subject}
+                        </div>
+                      ) : null}
                     </div>
 
                     <div className=" col-md-6">
