@@ -1,8 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import "./Customerservice.css";
-import xcontectus from "@/assets/images/xcontectus.svg";
-import instacontect from "@/assets/images/instacontect.svg";
+import servicecenter from "@/assets/images/servicecenter.svg";
+import servicechat from "@/assets/images/servicechat.svg";
+import servicewhats from "@/assets/images/servicewhats.svg";
 import emailcontect from "@/assets/images/emailcontect.svg";
 import phonecontect from "@/assets/images/phonecontect.svg";
 import watscontect from "@/assets/images/watscontect.svg";
@@ -22,7 +23,7 @@ export default function ContactUS() {
     setloading(true);
     try {
       const { data } = await axios.post(
-        `${API_V2_BASE_URL}/support_email/contact_us`,
+        `${API_V2_BASE_URL}/support_email/help`,
         values,
         {
           headers: {
@@ -96,8 +97,78 @@ export default function ContactUS() {
         </ul>
       </div>
 
-      <div className="container py-5">
-        <div className=" row gy-4">
+      <div className="container py-3 ">
+        <div className=" d-flex justify-content-center align-items-center  ">
+          <div className="row justify-content-center gy-4 w-100">
+            <div className="col-sm-6 col-md-4 col-lg-3">
+              <div className="bg-white shadow-sm rounded-2 py-2 ContactUSph text-center">
+                <div className="d-flex justify-content-center align-items-center">
+                  <div className="d-flex  justify-content-center align-items-center w-100  px-3 rounded">
+                    <Image
+                      src={servicecenter}
+                      width={48}
+                      height={50}
+                      alt="xcontectus"
+                    />
+                    <a
+                      href="#"
+                      target="_self"
+                      rel="noopener noreferrer"
+                      className=" px-4"
+                    >
+                      مركز المعلومات{" "}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>{" "}
+            <div className="col-sm-6 col-md-4 col-lg-3">
+              <div className="bg-white shadow-sm rounded-2 py-2 ContactUSph text-center">
+                <div className="d-flex justify-content-center align-items-center">
+                  <div className="d-flex  justify-content-center align-items-center w-100  px-3 rounded">
+                    <Image
+                      src={servicechat}
+                      width={51}
+                      height={50}
+                      alt="xcontectus"
+                    />
+                    <a
+                      href="#"
+                      target="_self"
+                      rel="noopener noreferrer"
+                      className=" px-4"
+                    >
+                      المحادثة المباشرة
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>{" "}
+            <div className="col-sm-6 col-md-4 col-lg-3">
+              <div className="bg-white shadow-sm rounded-2 py-2 ContactUSph text-center">
+                <div className="d-flex justify-content-center align-items-center">
+                  <div className="d-flex  justify-content-center align-items-center w-100  px-3 rounded">
+                    <Image
+                      src={servicewhats}
+                      width={40}
+                      height={50}
+                      alt="xcontectus"
+                    />
+                    <a
+                      href="#"
+                      target="_self"
+                      rel="noopener noreferrer"
+                      className=" px-4"
+                    >
+                     محادثة واتساب
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>{" "}
+          </div>
+        </div>
+        {/* <div className=" row gy-4">
           <div className=" col-md-3">
             <div className=" bg-white shadow-sm rounded-2 pt-3 pb-4  ContactUSp">
               <p className=" px-3 ">تابعنا</p>
@@ -213,7 +284,6 @@ export default function ContactUS() {
               </div>
             </div>
           </div>
-
           <div className=" col-md-3">
             <div className=" bg-white shadow-sm rounded-2 pt-3 pb-4  ContactUSp">
               <p className=" px-3 "> الإدارة المالية</p>
@@ -311,7 +381,7 @@ export default function ContactUS() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className=" w-50 mx-auto mt-5 messageCustomerservice">
           <div className=" bg-white shadow-sm py-1">
             {sucessMessage ? (
