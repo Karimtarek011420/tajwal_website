@@ -1,0 +1,39 @@
+/* General Styles */
+
+.accountInformation .cardinfo li.active {
+  font-weight: 500;
+}
+
+.accountInformation .accountInformationp {
+  color: var(--primary-color);
+}
+.cardinfo span {
+  font-size: 12px !important;
+  font-weight: 300 !important;
+  color: #626e7b;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.cardinfo h6 {
+  font-weight: 700 !important;
+  color: #626e7b;
+  font-size: 17px !important;
+}
+.cardinfo ul li {
+  padding-bottom: 10px;
+  color: #626e7b !important ;
+  font-size: 17px !important;
+  font-weight: 300 !important;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+.cardinfo ul li.accountInformationlogout {
+  color: #e14f72 !important;
+}
+
+.cardinfo .active {
+  font-weight: 500 !important;
+  color: #626e7b !important;
+}
+.cardinfo ul li:hover {
+  font-weight: 500 !important;
+}
