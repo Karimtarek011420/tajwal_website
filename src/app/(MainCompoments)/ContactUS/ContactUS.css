@@ -3,3 +3,34 @@
   font-weight: 400 !important;
   color: var(--auth-color);
 }
+.ContactUS .phone-input-field {
+  width: 100% !important;
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+  background-color: #f9f9f9 !important;
+  border-radius: 5px !important;
+  padding: 3px 1px !important;
+}
+.ContactUS input:focus {
+  outline: 0 !important;
+  box-shadow: 0 0 0 0 transparent !important;
+}
+.ContactUS input {
+  background-color: #f9f9f9 !important;
+  border: none !important;
+  border-radius: 5px !important;
+  padding: 10px 20px !important;
+}
+.ContactUS input::placeholder {
+  font-size: 12px !important;
+}
+.ContactUS button.follow {
+  background-color: var(--primary-color) !important;
+  padding: 10px 100px; /* Adjust button padding */
+  color: #f1f3f6;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 5px;
+  border: none;
+}

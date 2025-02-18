@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import "./ContactUS.css";
 import xcontectus from "@/assets/images/xcontectus.svg";
 import instacontect from "@/assets/images/instacontect.svg";
@@ -6,8 +7,79 @@ import emailcontect from "@/assets/images/emailcontect.svg";
 import phonecontect from "@/assets/images/phonecontect.svg";
 import watscontect from "@/assets/images/watscontect.svg";
 import Image from "next/image";
+import { API_V2_BASE_URL } from "@/app/utils/config";
+import { useFormik } from "formik";
+import axios from "axios";
+import { TailSpin } from "react-loader-spinner";
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
 
 export default function ContactUS() {
+  const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setloading] = useState(false);
+  const apiContect = async (values) => {
+    setloading(true);
+    try {
+      const { data } = await axios.post(
+        `${API_V2_BASE_URL}/support_email/contact_us`,
+        values,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        }
+      );
+
+      console.log(data);
+      // if (data.success === true) {
+      //   toast.success(data.message, {
+      //     duration: 1500,
+      //     style: {
+      //       backgroundColor: "#4b87a4",
+      //       color: "white",
+      //       position: "top-right",
+      //     },
+      //   });
+      // }
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+    setloading(false);
+  };
+  const handleForm = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+      subject: "",
+    },
+    onSubmit: apiContect,
+    validate: (values) => {
+      let errors = {};
+      const regexName = /^[\u0600-\u06FFa-zA-Z\s]{2,}$/;
+      const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      const PHONE_REGEX = /\+\d{11,15}/;
+
+      if (!regexName.test(values.first_name)) {
+        errors.first_name = "الرجاء إدخال الاسم بشكل صحيح";
+      }
+      if (!regexEmail.test(values.email)) {
+        errors.email = "الرجاء إدخال البريد الإلكتروني بشكل صحيح";
+      }
+      if (!PHONE_REGEX.test(values.phone_number)) {
+        errors.phone_number = "الرجاء إدخال رقم الجوال بشكل صحيح";
+      }
+
+      return errors;
+    },
+  });
+
+  const handlePhoneNumberChange = (value) => {
+    handleForm.setFieldValue("phone_number", value);
+  };
   return (
     <div className="ContactUS position-relative py-5">
       <div className="position-absolute country-listbeginall w-100">
@@ -139,9 +211,125 @@ export default function ContactUS() {
             </div>
           </div>
           <div className=" col-md-6">
-            <div className=" bg-white shadow-sm">
-              
+            <div className=" bg-white shadow-sm py-1">
+              <form onSubmit={handleForm.handleSubmit}>
+                <div className=" row gy-3 px-3">
+                  <div className=" col-md-6">
+                    <div className="mb-4">
+                      <input
+                        type="text"
+                        value={handleForm.values.name}
+                        onChange={handleForm.handleChange}
+                        onBlur={handleForm.handleBlur}
+                        className="form-control"
+                        id="name"
+                        placeholder="الاسم"
+                        aria-label="name"
+                      />
+                      {handleForm.errors.name && handleForm.touched.name ? (
+                        <div className="alert alert-danger my-2" role="alert">
+                          {handleForm.errors.name}
+                        </div>
+                      ) : null}
+                    </div>
+                  </div>
+                  <div className=" col-md-6">
+                    <div className="mb-4">
+                      <input
+                        type="text"
+                        value={handleForm.values.subject}
+                        onChange={handleForm.handleChange}
+                        onBlur={handleForm.handleBlur}
+                        className="form-control"
+                        id="subject"
+                        placeholder="subject"
+                        aria-label="subject"
+                      />
+                      {handleForm.errors.subject &&
+                      handleForm.touched.subject ? (
+                        <div className="alert alert-danger my-2" role="alert">
+                          {handleForm.errors.subject}
+                        </div>
+                      ) : null}
+                    </div>
+                  </div>
+                  <div className=" col-md-6">
+                    <div className="mb-4">
+                      <input
+                        value={handleForm.values.email}
+                        onChange={handleForm.handleChange}
+                        onBlur={handleForm.handleBlur}
+                        type="email"
+                        className="form-control"
+                        id="email"
+                        placeholder="البريد الإلكتروني"
+                        aria-label="Email"
+                        required
+                      />
+                      {handleForm.errors.email && handleForm.touched.email ? (
+                        <div className="alert alert-danger my-2" role="alert">
+                          {handleForm.errors.email}
+                        </div>
+                      ) : null}
+                    </div>
+                  </div>
+                  <div className=" col-md-6">
+                    <div className="mb-4 w-100" dir="ltr">
+                      <PhoneInput
+                        defaultCountry="sa"
+                        value={handleForm.values.phone_number}
+                        onChange={handlePhoneNumberChange}
+                        onBlur={handleForm.handleBlur}
+                        placeholder="رقم الجوال"
+                        className="phone-input-field"
+                        aria-label="phone_number"
+                        required
+                      />
+                      {handleForm.errors.phone_number &&
+                      handleForm.touched.phone_number ? (
+                        <div
+                          className="alert alert-danger my-2"
+                          dir="rtl"
+                          role="alert"
+                        >
+                          {handleForm.errors.phone_number}
+                        </div>
+                      ) : null}
+                    </div>
+                  </div>
+                  <div className=" col-md-12">
+                  <textarea name="contect" id="contect" placeholder="محتوى الرسالة" className=" form-control"></textarea>
+                  </div>
+                </div>
 
+                <div>
+                  <p className=" px-3 text-danger text-center">
+                    {errorMessage}
+                  </p>
+                </div>
+                <div className="d-flex justify-content-start align-items-center m-5 pb-2">
+                  <button
+                    disabled={!handleForm.dirty || !handleForm.isValid}
+                    type="submit"
+                    className="follow mt-3"
+                  >
+                    {loading ? (
+                      <TailSpin
+                        visible={true}
+                        height="35"
+                        width="35"
+                        color="#fff"
+                        ariaLabel="tail-spin-loading"
+                        radius="1"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                      />
+                    ) : (
+                      "إرسال"
+                    )}
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
           <div className=" col-md-3">
