@@ -36,3 +36,7 @@
   border-radius: 5px;
   border: none;
 }
+.ContactUS textarea::placeholder {
+  font-size:12px !important ;
+  font-weight: 400 !important;
+}

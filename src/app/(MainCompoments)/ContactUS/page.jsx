@@ -277,7 +277,7 @@ export default function ContactUS() {
                     <div className="mb-4 w-100" dir="ltr">
                       <PhoneInput
                         defaultCountry="sa"
-                        value={handleForm.values.phone_number}
+                        value={handleForm.values.phone}
                         onChange={handlePhoneNumberChange}
                         onBlur={handleForm.handleBlur}
                         placeholder="رقم الجوال"
@@ -285,20 +285,37 @@ export default function ContactUS() {
                         aria-label="phone_number"
                         required
                       />
-                      {handleForm.errors.phone_number &&
-                      handleForm.touched.phone_number ? (
+                      {handleForm.errors.phone && handleForm.touched.phone ? (
                         <div
                           className="alert alert-danger my-2"
                           dir="rtl"
                           role="alert"
                         >
-                          {handleForm.errors.phone_number}
+                          {handleForm.errors.phone}
                         </div>
                       ) : null}
                     </div>
                   </div>
                   <div className=" col-md-12">
-                  <textarea name="contect" id="contect" placeholder="محتوى الرسالة" className=" form-control"></textarea>
+                    <textarea
+                      value={handleForm.values.message}
+                      onChange={handleForm.handleChange}
+                      onBlur={handleForm.handleBlur}
+                      typeof="message"
+                      id="message"
+                      aria-label="message"
+                      placeholder="محتوى الرسالة"
+                      className=" form-control"
+                    ></textarea>
+                    {handleForm.errors.message && handleForm.touched.message ? (
+                      <div
+                        className="alert alert-danger my-2"
+                        dir="rtl"
+                        role="alert"
+                      >
+                        {handleForm.errors.message}
+                      </div>
+                    ) : null}
                   </div>
                 </div>
 
