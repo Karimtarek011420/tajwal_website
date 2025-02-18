@@ -30,6 +30,7 @@ const OfferDetails = () => {
             border: "none",
             overflow: "hidden",
           }}
+          className="offerifrem"
           title="Offer Details"
         />
       </div>

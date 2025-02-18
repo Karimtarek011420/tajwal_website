@@ -20,3 +20,8 @@
   padding: 10px 50px;
   border-radius: 3px;
 }
+@media (max-width: 800px) {
+.offerifrem{
+  width: 100% !important;
+}
+}
