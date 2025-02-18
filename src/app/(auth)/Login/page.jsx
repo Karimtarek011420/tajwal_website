@@ -106,7 +106,7 @@ const LoginPage = () => {
           alt="LoginUser"
         />
       </div>
-      <div className="bg-white shadow-lg rounded-4 px-4 py-5">
+      <div className="bg-white shadow-sm rounded-4 px-4 py-5">
         {step === 1 && (
           <>
             <div className="mb-4" dir="ltr">
