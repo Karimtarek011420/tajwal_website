@@ -1,5 +1,9 @@
 import React from "react";
-import "./ContactUS.css"
+import "./ContactUS.css";
+import xcontectus from "@/assets/images/xcontectus.svg";
+import instacontect from "@/assets/images/instacontect.svg";
+import emailcontect from "@/assets/images/emailcontect.svg";
+import Image from "next/image";
 
 export default function ContactUS() {
   return (
@@ -17,18 +21,98 @@ export default function ContactUS() {
 
       <div className="container py-5">
         <div className=" row gy-2">
-          <div className=" col-md-4">
-            <div className=" bg-white shadow-sm rounded-2 pt-3 pb-4 px-4 ContactUSp">
-              <p>تابعنا</p>
-              <div>
-                
+          <div className=" col-md-3">
+            <div className=" bg-white shadow-sm rounded-2 pt-3 pb-4  ContactUSp">
+              <p className=" px-3 ">تابعنا</p>
+              <div className="  d-flex justify-content-center align-items-center">
+                <div
+                  className=" d-flex   justify-content-end   align-items-center w-75 "
+                  style={{ backgroundColor: "#F1F3F6" }}
+                >
+                  <a
+                    href="https://x.com/Tajwalapp?t=fNlENfiyMV5Qf4d2CPeLDA&s=09"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ps-5 text-uppercase"
+                  >
+                    tajwalco@
+                  </a>
+                  <Image
+                    src={xcontectus}
+                    width={30}
+                    height={30}
+                    alt="xcontectus"
+                  />
+                </div>
               </div>
-
+              <div className="  d-flex justify-content-center align-items-center mt-4">
+                <div
+                  className=" d-flex   justify-content-end   align-items-center w-75 "
+                  style={{ backgroundColor: "#F1F3F6" }}
+                >
+                  <a
+                    href="https://x.com/Tajwalapp?t=fNlENfiyMV5Qf4d2CPeLDA&s=09"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ps-5 text-uppercase"
+                  >
+                    tajwalco@
+                  </a>
+                  <Image
+                    src={instacontect}
+                    width={30}
+                    height={30}
+                    alt="instacontect"
+                  />
+                </div>
+              </div>
             </div>
-
-
+            <div className=" bg-white shadow-sm rounded-2 pt-3 pb-4  ContactUSp  mt-5">
+              <p className=" px-3 ">خدمة العملاء</p>
+              <div className="  d-flex justify-content-center align-items-center">
+                <div
+                  className=" d-flex   justify-content-end   align-items-center w-75 "
+                  style={{ backgroundColor: "#F1F3F6" }}
+                >
+                  <a
+                    href="mailto:help@tajwal.co"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ps-5 "
+                  >
+                    help@tajwal.co
+                  </a>
+                  <Image
+                    src={emailcontect}
+                    width={30}
+                    height={30}
+                    alt="emailcontect"
+                  />
+                </div>
+              </div>
+              <div className="  d-flex justify-content-center align-items-center mt-4">
+                <div
+                  className=" d-flex   justify-content-end   align-items-center w-75 "
+                  style={{ backgroundColor: "#F1F3F6" }}
+                >
+                  <a
+                    href="https://x.com/Tajwalapp?t=fNlENfiyMV5Qf4d2CPeLDA&s=09"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ps-5"
+                  >
+                    tajwalco@
+                  </a>
+                  <Image
+                    src={instacontect}
+                    width={30}
+                    height={30}
+                    alt="xcontectus.svg"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
-
         </div>
       </div>
     </div>
