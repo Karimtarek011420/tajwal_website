@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import "./ContactUS.css";
+import "./Customerservice.css";
 import xcontectus from "@/assets/images/xcontectus.svg";
 import instacontect from "@/assets/images/instacontect.svg";
 import emailcontect from "@/assets/images/emailcontect.svg";
@@ -14,7 +14,7 @@ import axios from "axios";
 import { TailSpin } from "react-loader-spinner";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
-export default function Customerservice() {
+export default function ContactUS() {
   const [errorMessage, setErrorMessage] = useState("");
   const [sucessMessage, setsucessMessage] = useState(false);
   const [loading, setloading] = useState(false);
@@ -91,7 +91,7 @@ export default function Customerservice() {
             className="country-list-links bg-white mx-lg-2"
             style={{ color: "var(--primary-color)" }}
           >
-            <span>اتصل بنا</span>
+            <span>خدمة العملاء</span>
           </li>
         </ul>
       </div>
@@ -213,183 +213,7 @@ export default function Customerservice() {
               </div>
             </div>
           </div>
-          <div className=" col-md-6">
-            <div className=" bg-white shadow-sm py-1">
-              {sucessMessage ? (
-                <div className=" py-5 ">
-                  <div className=" d-flex justify-content-center  align-items-center">
-                    <Image
-                      src={ordersucess}
-                      alt="ordersucess"
-                      width={100}
-                      height={100}
-                    />
-                  </div>
-                  <div className="d-flex justify-content-center  align-items-center pb-5 pt-2 sucessp">
-                    <p>تم ارسال رسالتك</p>
-                  </div>
-                  <div className="d-flex justify-content-center  align-items-center pb-5 sucesspline">
-                    <p className="pb-3">سنقوم بالرد عليكم في أقرب وقت ممكن.</p>
-                  </div>
-                </div>
-              ) : (
-                <form onSubmit={handleForm.handleSubmit}>
-                  <div className=" row gy-3 px-3">
-                    <div className=" col-md-6">
-                      <div className="mb-4 mt-1">
-                        <input
-                          type="text"
-                          value={handleForm.values.name}
-                          onChange={handleForm.handleChange}
-                          onBlur={handleForm.handleBlur}
-                          className="form-control"
-                          id="name"
-                          placeholder="الاسم"
-                          aria-label="name"
-                        />
-                        {handleForm.errors.name && handleForm.touched.name ? (
-                          <div
-                            className="alert alert-danger my-2"
-                            role="alert"
-                            style={{ fontSize: "12px" }}
-                          >
-                            {handleForm.errors.name}
-                          </div>
-                        ) : null}
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="mb-4 mt-1">
-                        <select
-                          value={handleForm.values.subject}
-                          onChange={handleForm.handleChange}
-                          onBlur={handleForm.handleBlur}
-                          id="subject"
-                          className="form-control ContactUSp shadow-none  h-25 "
-                        >
-                          <option value="" disabled>
-                            سبب التواصل
-                          </option>
-                          <option value="subject1">الموضوع 1</option>
-                          <option value="subject2">الموضوع 2</option>
-                          <option value="subject3">الموضوع 3</option>
-                        </select>
-                      </div>
-                      {handleForm.errors.subject &&
-                      handleForm.touched.subject ? (
-                        <div
-                          className="alert alert-danger my-2"
-                          role="alert"
-                          style={{ fontSize: "12px" }}
-                        >
-                          {handleForm.errors.subject}
-                        </div>
-                      ) : null}
-                    </div>
 
-                    <div className=" col-md-6">
-                      <div className="mb-4">
-                        <input
-                          value={handleForm.values.email}
-                          onChange={handleForm.handleChange}
-                          onBlur={handleForm.handleBlur}
-                          type="email"
-                          className="form-control"
-                          id="email"
-                          placeholder="البريد الإلكتروني"
-                          aria-label="Email"
-                          required
-                        />
-                        {handleForm.errors.email && handleForm.touched.email ? (
-                          <div
-                            className="alert alert-danger my-2"
-                            role="alert"
-                            style={{ fontSize: "12px" }}
-                          >
-                            {handleForm.errors.email}
-                          </div>
-                        ) : null}
-                      </div>
-                    </div>
-                    <div className=" col-md-6">
-                      <div className="mb-4 w-100" dir="ltr">
-                        <PhoneInput
-                          defaultCountry="sa"
-                          value={handleForm.values.phone}
-                          onChange={handlePhoneNumberChange}
-                          onBlur={handleForm.handleBlur}
-                          placeholder="رقم الجوال"
-                          className="phone-input-field"
-                          aria-label="phone"
-                          required
-                        />
-                        {handleForm.errors.phone && handleForm.touched.phone ? (
-                          <div
-                            className="alert alert-danger my-2"
-                            dir="rtl"
-                            role="alert"
-                            style={{ fontSize: "12px" }}
-                          >
-                            {handleForm.errors.phone}
-                          </div>
-                        ) : null}
-                      </div>
-                    </div>
-                    <div className=" col-md-12">
-                      <textarea
-                        value={handleForm.values.message}
-                        onChange={handleForm.handleChange}
-                        onBlur={handleForm.handleBlur}
-                        id="message"
-                        aria-label="message"
-                        placeholder="محتوى الرسالة"
-                        className=" form-control"
-                      ></textarea>
-                      {handleForm.errors.message &&
-                      handleForm.touched.message ? (
-                        <div
-                          className="alert alert-danger my-2"
-                          dir="rtl"
-                          role="alert"
-                          style={{ fontSize: "12px" }}
-                        >
-                          {handleForm.errors.message}
-                        </div>
-                      ) : null}
-                    </div>
-                  </div>
-
-                  <div>
-                    <p className=" px-3 text-danger text-center">
-                      {errorMessage}
-                    </p>
-                  </div>
-                  <div className="d-flex justify-content-start align-items-center m-5 ">
-                    <button
-                      type="submit"
-                      disabled={!handleForm.dirty || !handleForm.isValid}
-                      className="follow mt-3"
-                    >
-                      {loading ? (
-                        <TailSpin
-                          visible={true}
-                          height="35"
-                          width="35"
-                          color="#fff"
-                          ariaLabel="tail-spin-loading"
-                          radius="1"
-                          wrapperStyle={{}}
-                          wrapperClass=""
-                        />
-                      ) : (
-                        "إرسال"
-                      )}
-                    </button>
-                  </div>
-                </form>
-              )}
-            </div>
-          </div>
           <div className=" col-md-3">
             <div className=" bg-white shadow-sm rounded-2 pt-3 pb-4  ContactUSp">
               <p className=" px-3 "> الإدارة المالية</p>
@@ -486,6 +310,181 @@ export default function Customerservice() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div className=" w-50 mx-auto mt-5 messageCustomerservice">
+          <div className=" bg-white shadow-sm py-1">
+            {sucessMessage ? (
+              <div className=" py-5 ">
+                <div className=" d-flex justify-content-center  align-items-center">
+                  <Image
+                    src={ordersucess}
+                    alt="ordersucess"
+                    width={100}
+                    height={100}
+                  />
+                </div>
+                <div className="d-flex justify-content-center  align-items-center pb-5 pt-2 sucessp">
+                  <p>تم ارسال رسالتك</p>
+                </div>
+                <div className="d-flex justify-content-center  align-items-center pb-5 sucesspline">
+                  <p className="pb-3">سنقوم بالرد عليكم في أقرب وقت ممكن.</p>
+                </div>
+              </div>
+            ) : (
+              <form onSubmit={handleForm.handleSubmit}>
+                <div className=" row gy-3 px-3">
+                  <div className=" col-md-6">
+                    <div className="mb-4 mt-1">
+                      <input
+                        type="text"
+                        value={handleForm.values.name}
+                        onChange={handleForm.handleChange}
+                        onBlur={handleForm.handleBlur}
+                        className="form-control"
+                        id="name"
+                        placeholder="الاسم"
+                        aria-label="name"
+                      />
+                      {handleForm.errors.name && handleForm.touched.name ? (
+                        <div
+                          className="alert alert-danger my-2"
+                          role="alert"
+                          style={{ fontSize: "12px" }}
+                        >
+                          {handleForm.errors.name}
+                        </div>
+                      ) : null}
+                    </div>
+                  </div>
+                  <div className="col-md-6">
+                    <div className="mb-4 mt-1">
+                      <select
+                        value={handleForm.values.subject}
+                        onChange={handleForm.handleChange}
+                        onBlur={handleForm.handleBlur}
+                        id="subject"
+                        className="form-control ContactUSp shadow-none  h-25 "
+                      >
+                        <option value="" disabled>
+                          سبب التواصل
+                        </option>
+                        <option value="subject1">الموضوع 1</option>
+                        <option value="subject2">الموضوع 2</option>
+                        <option value="subject3">الموضوع 3</option>
+                      </select>
+                    </div>
+                    {handleForm.errors.subject && handleForm.touched.subject ? (
+                      <div
+                        className="alert alert-danger my-2"
+                        role="alert"
+                        style={{ fontSize: "12px" }}
+                      >
+                        {handleForm.errors.subject}
+                      </div>
+                    ) : null}
+                  </div>
+
+                  <div className=" col-md-6">
+                    <div className="mb-4">
+                      <input
+                        value={handleForm.values.email}
+                        onChange={handleForm.handleChange}
+                        onBlur={handleForm.handleBlur}
+                        type="email"
+                        className="form-control"
+                        id="email"
+                        placeholder="البريد الإلكتروني"
+                        aria-label="Email"
+                        required
+                      />
+                      {handleForm.errors.email && handleForm.touched.email ? (
+                        <div
+                          className="alert alert-danger my-2"
+                          role="alert"
+                          style={{ fontSize: "12px" }}
+                        >
+                          {handleForm.errors.email}
+                        </div>
+                      ) : null}
+                    </div>
+                  </div>
+                  <div className=" col-md-6">
+                    <div className="mb-4 w-100" dir="ltr">
+                      <PhoneInput
+                        defaultCountry="sa"
+                        value={handleForm.values.phone}
+                        onChange={handlePhoneNumberChange}
+                        onBlur={handleForm.handleBlur}
+                        placeholder="رقم الجوال"
+                        className="phone-input-field"
+                        aria-label="phone"
+                        required
+                      />
+                      {handleForm.errors.phone && handleForm.touched.phone ? (
+                        <div
+                          className="alert alert-danger my-2"
+                          dir="rtl"
+                          role="alert"
+                          style={{ fontSize: "12px" }}
+                        >
+                          {handleForm.errors.phone}
+                        </div>
+                      ) : null}
+                    </div>
+                  </div>
+                  <div className=" col-md-12">
+                    <textarea
+                      value={handleForm.values.message}
+                      onChange={handleForm.handleChange}
+                      onBlur={handleForm.handleBlur}
+                      id="message"
+                      aria-label="message"
+                      placeholder="محتوى الرسالة"
+                      className=" form-control"
+                    ></textarea>
+                    {handleForm.errors.message && handleForm.touched.message ? (
+                      <div
+                        className="alert alert-danger my-2"
+                        dir="rtl"
+                        role="alert"
+                        style={{ fontSize: "12px" }}
+                      >
+                        {handleForm.errors.message}
+                      </div>
+                    ) : null}
+                  </div>
+                </div>
+
+                <div>
+                  <p className=" px-3 text-danger text-center">
+                    {errorMessage}
+                  </p>
+                </div>
+                <div className="d-flex justify-content-start align-items-center mx-lg-5 my-5 followll ">
+                  <button
+                    type="submit"
+                    disabled={!handleForm.dirty || !handleForm.isValid}
+                    className="follow mt-3"
+                  >
+                    {loading ? (
+                      <TailSpin
+                        visible={true}
+                        height="35"
+                        width="35"
+                        color="#fff"
+                        ariaLabel="tail-spin-loading"
+                        radius="1"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                      />
+                    ) : (
+                      "إرسال"
+                    )}
+                  </button>
+                </div>
+              </form>
+            )}
           </div>
         </div>
       </div>

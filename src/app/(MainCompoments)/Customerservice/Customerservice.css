@@ -1,113 +1,65 @@
-.Customerservice .Customerservicep {
-    font-size: 12px !important;
-    font-weight: 400 !important;
-    color: var(--auth-color);
-  }
-  
-  .Customerservice .phone-input-field {
+.Customerservice .ContactUSp {
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  color: var(--auth-color);
+}
+
+.Customerservice .phone-input-field {
+  width: 100% !important;
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+  background-color: #f9f9f9 !important;
+  border-radius: 5px !important;
+  padding: 3px 1px !important;
+}
+.Customerservice input:focus,
+.Customerservice textarea:focus,
+.Customerservice select:focus {
+  outline: 0 !important;
+  box-shadow: 0 0 0 0 transparent !important;
+}
+
+.Customerservice input,
+.Customerservice textarea,
+.Customerservice select {
+  background-color: #f9f9f9 !important;
+  border: none !important;
+  border-radius: 5px !important;
+  padding: 10px 20px !important;
+}
+.Customerservice input::placeholder {
+  font-size: 12px !important;
+}
+.Customerservice button.follow {
+  background-color: var(--primary-color) !important;
+  padding: 10px 100px; /* Adjust button padding */
+  color: #f1f3f6;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 5px;
+  border: none;
+}
+.Customerservice textarea::placeholder {
+  font-size: 12px !important ;
+  font-weight: 400 !important;
+}
+.Customerservice select.custom-select option {
+  box-shadow: 0 0 0 0 transparent !important;
+}
+.Customerservice .sucessp {
+  color: var(--primary-color);
+}
+.Customerservice .sucesspline {
+  color: var(--auth-color);
+  font-size: 12px !important;
+  font-weight: 300 !important;
+}
+@media (max-width: 600px) {
+  .Customerservice .messageCustomerservice {
     width: 100% !important;
-    background-color: transparent !important;
-    border: none !important;
-    outline: none !important;
-    background-color: #f9f9f9 !important;
-    border-radius: 5px !important;
-    padding: 3px 1px !important;
   }
-  .Customerservice input:focus,
-  .Customerservice textarea:focus,
-  .Customerservice select:focus {
-    outline: 0 !important;
-    box-shadow: 0 0 0 0 transparent !important;
+  .Customerservice .followll {
+    justify-content: center !important;
   }
-  
-  .Customerservice input,
-  .Customerservice textarea,
-  .Customerservice select {
-    background-color: #f9f9f9 !important;
-    border: none !important;
-    border-radius: 5px !important;
-    padding: 10px 20px !important;
-  }
-  .Customerservice input::placeholder {
-    font-size: 12px !important;
-  }
-  .Customerservice button.follow {
-    background-color: var(--primary-color) !important;
-    padding: 10px 100px; /* Adjust button padding */
-    color: #f1f3f6;
-    font-size: 13px;
-    font-weight: 700;
-    border-radius: 5px;
-    border: none;
-  }
-  .Customerservice textarea::placeholder {
-    font-size: 12px !important ;
-    font-weight: 400 !important;
-  }
-  .Customerservice select.custom-select option {
-    box-shadow: 0 0 0 0 transparent !important;
-  }
-  .Customerservice .sucessp{
-    color: var(--primary-color);
-  }
-  .Customerservice .sucesspline{
-    color: var(--auth-color);
-    font-size: 12px !important;
-    font-weight: 300 !important;
-  } .Customerservicep {
-    font-size: 12px !important;
-    font-weight: 400 !important;
-    color: var(--auth-color);
-  }
-  
-  .Customerservice .phone-input-field {
-    width: 100% !important;
-    background-color: transparent !important;
-    border: none !important;
-    outline: none !important;
-    background-color: #f9f9f9 !important;
-    border-radius: 5px !important;
-    padding: 3px 1px !important;
-  }
-  .Customerservice input:focus,
-  .Customerservice textarea:focus,
-  .Customerservice select:focus {
-    outline: 0 !important;
-    box-shadow: 0 0 0 0 transparent !important;
-  }
-  
-  .Customerservice input,
-  .Customerservice textarea,
-  .Customerservice select {
-    background-color: #f9f9f9 !important;
-    border: none !important;
-    border-radius: 5px !important;
-    padding: 10px 20px !important;
-  }
-  .Customerservice input::placeholder {
-    font-size: 12px !important;
-  }
-  .Customerservice button.follow {
-    background-color: var(--primary-color) !important;
-    padding: 10px 100px; /* Adjust button padding */
-    color: #f1f3f6;
-    font-size: 13px;
-    font-weight: 700;
-    border-radius: 5px;
-    border: none;
-  }
-  .Customerservice textarea::placeholder {
-    font-size: 12px !important ;
-    font-weight: 400 !important;
-  }
-  .Customerservice select.custom-select option {
-    box-shadow: 0 0 0 0 transparent !important;
-  }
-  .Customerservice .sucessp{
-    color: var(--primary-color);
-  }
-  .Customerservice .sucesspline{
-    color: var(--auth-color);
-    font-size: 12px !important;
-    font-weight: 300 !important;
-  }
+}

@@ -296,10 +296,10 @@ import withAuth from "@/app/utils/withAuth";
                       مركز المساعدة
                     </li>
                   </Link>
-                  <Link href="/customerService">
+                  <Link href="/Customerservice">
                     <li
                       className={
-                        pathName === "/customerService" ? "active" : ""
+                        pathName === "/Customerservice" ? "active" : ""
                       }
                     >
                       خدمة العملاء
