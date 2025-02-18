@@ -235,7 +235,7 @@ export default function ContactUS() {
                         <div
                           className="alert alert-danger my-2"
                           role="alert"
-                          style={{ fontSize: "10px" }}
+                          style={{ fontSize: "12px" }}
                         >
                           {handleForm.errors.name}
                         </div>
@@ -259,7 +259,7 @@ export default function ContactUS() {
                         <div
                           className="alert alert-danger my-2"
                           role="alert"
-                          style={{ fontSize: "10px" }}
+                          style={{ fontSize: "12px" }}
                         >
                           {handleForm.errors.subject}
                         </div>
@@ -283,7 +283,7 @@ export default function ContactUS() {
                         <div
                           className="alert alert-danger my-2"
                           role="alert"
-                          style={{ fontSize: "10px" }}
+                          style={{ fontSize: "12px" }}
                         >
                           {handleForm.errors.email}
                         </div>
@@ -307,7 +307,7 @@ export default function ContactUS() {
                           className="alert alert-danger my-2"
                           dir="rtl"
                           role="alert"
-                          style={{ fontSize: "10px" }}
+                          style={{ fontSize: "12px" }}
                         >
                           {handleForm.errors.phone}
                         </div>
@@ -329,7 +329,7 @@ export default function ContactUS() {
                         className="alert alert-danger my-2"
                         dir="rtl"
                         role="alert"
-                        style={{ fontSize: "10px" }}
+                        style={{ fontSize: "12px" }}
                       >
                         {handleForm.errors.message}
                       </div>
