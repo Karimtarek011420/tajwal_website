@@ -153,7 +153,7 @@ function Previousorders() {
                     return (
                       <div key={order.id} className="col-md-4">
                         <div className="bg-white shadow-sm text-center">
-                          <Link href={`/previousOrders/${order.id}`}>
+                          <Link href={`/Orders/${order.id}`}>
                             <div className="d-flex justify-content-between align-items-center p-3">
                               <div className="country-flag d-flex justify-content-center align-items-center">
                                 <Image
