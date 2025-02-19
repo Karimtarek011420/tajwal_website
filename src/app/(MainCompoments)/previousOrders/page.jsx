@@ -10,7 +10,7 @@ import axios from "axios";
 import withAuth from "@/app/utils/withAuth";
 import Image from "next/image";
 import { API_BASE_URL } from "@/app/utils/config";
-function previousOrders() {
+function Previousorders() {
   const [user, setUser] = useState(() => {
     try {
       return JSON.parse(localStorage.getItem("user")) || {};
@@ -155,7 +155,7 @@ function previousOrders() {
                     return (
                       <div key={order.id} className="col-md-4">
                         <div className="bg-white shadow-sm text-center">
-                          <Link href="#">
+                          <Link href={`/previousOrders/${order.id}`}>
                             <div className="d-flex justify-content-between align-items-center p-3">
                               <div className="country-flag d-flex justify-content-center align-items-center">
                                 <Image
@@ -200,14 +200,6 @@ function previousOrders() {
                   })}
                 </div>
               )}
-              <div className="d-flex justify-content-center">
-                <p
-                  className="text-danger text-center py-5"
-                  style={{ minHeight: "30vh" }}
-                >
-                  {error}
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -216,4 +208,4 @@ function previousOrders() {
   );
 }
 
-export default withAuth(previousOrders);
+export default withAuth(Previousorders);
