@@ -143,7 +143,7 @@ function Previousorders() {
               ) : data?.length === 0 ? (
                 <div className="d-flex justify-content-center">
                   <p
-                    className="text-danger text-center py-5"
+                    className="text-dark fs-6 text-center py-5"
                     style={{ minHeight: "30vh" }}
                   >
                     لا يوجد طلبات سابقة.
