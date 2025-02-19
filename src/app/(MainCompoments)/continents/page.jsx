@@ -70,7 +70,7 @@ export default function CountryHeader() {
           </Link>
         </ul>
       </div>
-      <div className="px-5">
+      <div className="px-lg-5 px-4">
         <div className="d-flex justify-content-center">
           {error && <p className="text-danger text-center py-5" style={{minHeight:'30vh'}}>{error}</p>}{" "}
         </div>

@@ -22,7 +22,7 @@ export default function CountryHeader() {
         }
       );
       setCountry(data.data);
-      setError(null)
+      setError(null);
     } catch (error) {
       setError("حدث خطأ أثناء تحميل البيانات. يرجى المحاولة لاحقًا.");
     }
@@ -72,9 +72,16 @@ export default function CountryHeader() {
           </Link>
         </ul>
       </div>
-      <div className="px-5">
+      <div className="px-lg-5 px-4">
         <div>
-          {error && <p className="text-danger text-center" style={{minHeight:'30vh'}}>{error}</p>}{" "}
+          {error && (
+            <p
+              className="text-danger text-center"
+              style={{ minHeight: "30vh" }}
+            >
+              {error}
+            </p>
+          )}{" "}
           {/* عرض الخطأ إن وجد */}
         </div>
         <div className="row gy-4">

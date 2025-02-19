@@ -64,7 +64,7 @@ export default async function CountryHeader() {
       </div>
 
       {/* عرض الدول */}
-      <div className="px-5">
+      <div className="px-lg-5 px-4">
         <div className="row gy-4">
           {countries.map((country) => (
             <div key={country.country_code} className="col-md-3">
