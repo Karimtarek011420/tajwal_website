@@ -23,7 +23,7 @@ import { TailSpin } from "react-loader-spinner";
 import { API_BASE_URL } from "@/app/utils/config";
 import withAuth from "@/app/utils/withAuth";
 
- function pagepurchase() {
+function pagepurchase() {
   const { selectedPackage, setSelectedPackagepur } = usePackage();
   const [quantity, setQuantity] = useState(1); // عداد الشرائح
   const [discountData, setDiscountData] = useState(null); // لتخزين بيانات الخصم
@@ -147,7 +147,7 @@ import withAuth from "@/app/utils/withAuth";
             .map((country) => country.country_code)
             .join(", "),
           paymentWay,
-          web_success_url:'http://localhost:3000/OrderSuccess/'
+          web_success_url: "http://localhost:3000/OrderSuccess/",
         },
         {
           headers: {
@@ -465,7 +465,12 @@ import withAuth from "@/app/utils/withAuth";
                     ></span>
                     <p>
                       أوافق انني اطلعت على{" "}
-                      <span style={{ color: "var(--primary-color)", fontWeight: "600" }}>
+                      <span
+                        style={{
+                          color: "var(--primary-color)",
+                          fontWeight: "600",
+                        }}
+                      >
                         قائمة الهواتف المتوافقة
                       </span>
                       ، وتأكدت من توافق هاتفي.
@@ -494,9 +499,7 @@ import withAuth from "@/app/utils/withAuth";
                           <div
                             key={method.id}
                             className={`${
-                              isLastTwo
-                                ? "col-12"
-                                : "col-6 col-md-6 col-lg-6"
+                              isLastTwo ? "col-12" : "col-6 col-md-6 col-lg-6"
                             }`}
                           >
                             <div
@@ -548,4 +551,4 @@ import withAuth from "@/app/utils/withAuth";
     </>
   );
 }
-export default withAuth(pagepurchase)
+export default withAuth(pagepurchase);
