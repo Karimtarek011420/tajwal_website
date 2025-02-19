@@ -86,7 +86,7 @@ a {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .country-listbeginall .country-list-links {
-    padding: 12px 40px !important;
+    padding: 12px 35px !important;
     font-size: var(--font-small);
   }
 }
