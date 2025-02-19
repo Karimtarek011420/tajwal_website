@@ -104,7 +104,7 @@ function Ordersdetails({ params: paramsPromise }) {
                     </li>
                   </Link>
                   <Link href="/Orders">
-                    <li className={pathName === `/Orders/{id}` ? "active" : ""}>
+                    <li className={pathName === `/Orders/${id}` ? "active" : ""}>
                       الطلبات السابقة
                     </li>
                   </Link>
