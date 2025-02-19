@@ -41,7 +41,7 @@ function Ordersdetails() {
       <div className="position-absolute country-listbeginall w-100">
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
           <li className="country-list-links bg-white mx-2 accountInformationp">
-            <span className="p-5"> الطلبات السابقة</span>
+            <span className="p-4"> الطلبات السابقة</span>
           </li>
         </ul>
       </div>
