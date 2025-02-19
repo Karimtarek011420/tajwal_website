@@ -66,7 +66,7 @@ function pagesucess({ params: paramsPromise }) {
               className="country-list-links bg-white mx-lg-2"
               style={{ color: "var(--primary-color)" }}
             >
-              <span className="p-5">تم تأكيد طلبك بنجاح</span>
+              <span className="p-4">تم تأكيد طلبك بنجاح</span>
             </li>
           </ul>
           <div className=" d-flex justify-content-center align-items-center">
