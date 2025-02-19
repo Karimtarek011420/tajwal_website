@@ -86,9 +86,9 @@ function Previousorders() {
                       معلومات الحساب
                     </li>
                   </Link>
-                  <Link href="/previousOrders">
+                  <Link href="/Previousorders">
                     <li
-                      className={pathName === "/previousOrders" ? "active" : ""}
+                      className={pathName === "/Previousorders" ? "active" : ""}
                     >
                       الطلبات السابقة
                     </li>

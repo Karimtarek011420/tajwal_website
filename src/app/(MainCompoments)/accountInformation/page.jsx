@@ -284,7 +284,7 @@ import withAuth from "@/app/utils/withAuth";
                       معلومات الحساب
                     </li>
                   </Link>
-                  <Link href="/previousOrders">
+                  <Link href="/Previousorders">
                     <li
                       className={pathName === "/Previousorders" ? "active" : ""}
                     >
