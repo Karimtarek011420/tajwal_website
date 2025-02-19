@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Customerservice.css";
 import servicecenter from "@/assets/images/servicecenter.svg";
 import servicechat from "@/assets/images/servicechat.svg";
