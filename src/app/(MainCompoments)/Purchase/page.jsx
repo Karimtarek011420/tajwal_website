@@ -477,7 +477,7 @@ import withAuth from "@/app/utils/withAuth";
               {isChecked ? (
                 <div className=" bg-white shadow-sm rounded-2 pb-4 pt-2 px-2 ">
                   <p
-                    className="px-1  "
+                    className="px-1"
                     style={{
                       fontSize: "12px",
                       fontWeight: "400",

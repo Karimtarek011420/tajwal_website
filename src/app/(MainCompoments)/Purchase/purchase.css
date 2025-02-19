@@ -15,6 +15,10 @@
 .custom-checkbox input[type="checkbox"]:checked + .checkmark {
   background-color: #f9f9f9; /* اللون الذي تريده */
 }
+.payement {
+  padding: 0px !important;
+  margin: 0px !important;
+}
 
 .custom-checkbox .checkmark::after {
   content: "";
@@ -127,9 +131,6 @@
   white-space: nowrap; /* منع التفاف النص */
 }
 
-
-
-
 .compatibility-check {
   margin: 14px auto;
   padding: 10px;
@@ -172,7 +173,6 @@
   }
 }
 
-
 /* تحسين التصميم للشاشات الصغيرة */
 @media (max-width: 530px) {
   .payement img {
@@ -196,4 +196,3 @@
     padding: 8px;
   }
 }
-
