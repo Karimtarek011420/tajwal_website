@@ -258,7 +258,8 @@ import withAuth from "@/app/utils/withAuth";
       <div className="position-absolute country-listbeginall w-100">
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
           <li className="country-list-links bg-white mx-2 accountInformationp">
-            معلومات الحساب
+            <span className="p-4"> معلومات الحساب</span>
+           
           </li>
         </ul>
       </div>

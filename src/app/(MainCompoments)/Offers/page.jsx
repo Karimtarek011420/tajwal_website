@@ -44,7 +44,7 @@ export default function OffersPage() {
             className="country-list-links bg-white mx-lg-2"
             style={{ color: "var(--primary-color)" }}
           >
-            <span>العروض</span>
+            <span className="p-5">العروض</span>
           </li>
         </ul>
       </div>

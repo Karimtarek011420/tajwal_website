@@ -91,7 +91,7 @@ export default function ContactUS() {
             className="country-list-links bg-white mx-lg-2"
             style={{ color: "var(--primary-color)" }}
           >
-            <span>اتصل بنا</span>
+            <span className="p-5">اتصل بنا</span>
           </li>
         </ul>
       </div>

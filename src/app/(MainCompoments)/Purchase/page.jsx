@@ -185,7 +185,7 @@ import withAuth from "@/app/utils/withAuth";
               className="country-list-links bg-white mx-lg-2"
               style={{ color: "var(--primary-color)" }}
             >
-              <span>إتمام الطلب</span>
+              <span className="p-5">إتمام الطلب</span>
             </li>
           </ul>
         </div>

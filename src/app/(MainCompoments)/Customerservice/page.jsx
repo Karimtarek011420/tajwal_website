@@ -92,7 +92,7 @@ export default function ContactUS() {
             className="country-list-links bg-white mx-lg-2"
             style={{ color: "var(--primary-color)" }}
           >
-            <span>خدمة العملاء</span>
+            <span className="p-5">خدمة العملاء</span>
           </li>
         </ul>
       </div>

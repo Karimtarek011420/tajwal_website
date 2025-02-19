@@ -60,7 +60,7 @@ function Previousorders() {
       <div className="position-absolute country-listbeginall w-100">
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
           <li className="country-list-links bg-white mx-2 accountInformationp">
-            الطلبات السابقة
+            <span className="p-5"> الطلبات السابقة</span>
           </li>
         </ul>
       </div>
@@ -87,9 +87,7 @@ function Previousorders() {
                     </li>
                   </Link>
                   <Link href="/Orders">
-                    <li
-                      className={pathName === "/Orders" ? "active" : ""}
-                    >
+                    <li className={pathName === "/Orders" ? "active" : ""}>
                       الطلبات السابقة
                     </li>
                   </Link>

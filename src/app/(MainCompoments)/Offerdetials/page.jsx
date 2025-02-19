@@ -13,7 +13,7 @@ const OfferDetails = () => {
             className="country-list-links bg-white mx-lg-2"
             style={{ color: "var(--primary-color)" }}
           >
-            <span> تفاصيل العرض</span>
+            <span className="p-5"> تفاصيل العرض</span>
           </li>
         </ul>
       </div>
