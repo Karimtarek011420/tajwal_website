@@ -12,12 +12,10 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  
   return (
     <html lang="ar">
       <head>
         <link rel="icon" href="/footerHero.svg" />
-        <script id='ze-snippet' src='https://static.zdassets.com/ekr/snippet.js?key=f4e36963-4fc1-4a3c-9fca-282829bb25e1'> </script>
       </head>
       <body className={`${readex.className} antialiased`}>
         <AuthTokenProvider>
