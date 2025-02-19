@@ -175,7 +175,7 @@ export default function ContactUS() {
                 <p className=" px-3 ">خدمة العملاء</p>
                 <div className="  d-flex justify-content-center align-items-center">
                   <div
-                    className=" d-flex   justify-content-end   align-items-center w-50 "
+                    className=" d-flex   justify-content-end   align-items-center w-50 widthsercive "
                     style={{ backgroundColor: "#F1F3F6" }}
                   >
                     <a
@@ -197,7 +197,7 @@ export default function ContactUS() {
 
                 <div className="  d-flex justify-content-center align-items-center mt-3">
                   <div
-                    className=" d-flex   justify-content-end   align-items-center w-50 "
+                    className=" d-flex   justify-content-end   align-items-center w-50 widthsercive "
                     style={{ backgroundColor: "#F1F3F6" }}
                   >
                     <a
@@ -224,7 +224,7 @@ export default function ContactUS() {
                 <p className=" px-3 "> الإدارة المالية</p>
                 <div className="  d-flex justify-content-center align-items-center">
                   <div
-                    className=" d-flex   justify-content-end   align-items-center w-50 "
+                    className=" d-flex   justify-content-end   align-items-center w-50 widthsercive "
                     style={{ backgroundColor: "#F1F3F6" }}
                   >
                     <a
@@ -245,7 +245,7 @@ export default function ContactUS() {
                 </div>
                 <div className="  d-flex justify-content-center align-items-center mt-3">
                   <div
-                    className=" d-flex   justify-content-end   align-items-center w-50 "
+                    className=" d-flex   justify-content-end   align-items-center w-50 widthsercive "
                     style={{ backgroundColor: "#F1F3F6" }}
                   >
                     <a
@@ -272,7 +272,7 @@ export default function ContactUS() {
                 <p className=" px-3 ">الإدارة العامة</p>
                 <div className="  d-flex justify-content-center align-items-center">
                   <div
-                    className=" d-flex   justify-content-end   align-items-center w-50 "
+                    className=" d-flex   justify-content-end   align-items-center w-50  widthsercive"
                     style={{ backgroundColor: "#F1F3F6" }}
                   >
                     <a
@@ -293,7 +293,7 @@ export default function ContactUS() {
                 </div>
                 <div className="  d-flex justify-content-center align-items-center mt-3">
                   <div
-                    className=" d-flex   justify-content-end   align-items-center w-50 "
+                    className=" d-flex   justify-content-end   align-items-center w-50  widthsercive"
                     style={{ backgroundColor: "#F1F3F6" }}
                   >
                     <a
