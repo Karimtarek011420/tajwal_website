@@ -18,7 +18,6 @@ import appstoreqr from "@/assets/images/appstoreqr.svg";
 import googleplayqr from "@/assets/images/googleplayqr.svg";
 import appStore1 from "@/assets/images/appStore1.svg";
 import googlePlay2 from "@/assets/images/googlePlay2.svg";
-
 import Image from "next/image";
 import withAuth from "@/app/utils/withAuth";
 import Link from "next/link";
@@ -57,8 +56,6 @@ function pagesucess({ params: paramsPromise }) {
       </p>
     );
   }
-  const apiDate = data?.created_at;
-  const formattedDate = new Date(apiDate).toISOString().split("T")[0];
 
   return (
     <>
@@ -115,7 +112,9 @@ function pagesucess({ params: paramsPromise }) {
                   <p className="mx-1 my-0">تاريخ الطلب</p>
                 </div>
                 <div>
-                  <p className="my-0">{formattedDate}</p>
+                  <p className="my-0">
+                    {new Date(data?.created_at).toLocaleDateString("EG")}
+                  </p>
                 </div>
               </div>
               <div className="d-flex justify-content-between align-items-center text-center p-3 rounded-3 m-2 mt-3 bg-white shadow-sm ordersucessdetilas">

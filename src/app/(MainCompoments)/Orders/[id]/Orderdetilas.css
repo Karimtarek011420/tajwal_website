@@ -41,3 +41,31 @@
   font-weight: 300;
   color: var(--auth-color);
 }
+.Ordersdetails .ordersucessdetilas {
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  color: var(--auth-color);
+}
+.Ordersdetails .wayesim {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: var(--auth-color) !important;
+}
+.Ordersdetails .wayesimp {
+  font-size: 10px !important;
+  font-weight: 300 !important;
+  color: var(--auth-color) !important;
+}
+.Ordersdetails .wayslink {
+  background-color: var(--primary-color);
+}
+.Ordersdetails .wayslink .wayslinkp {
+  font-size: 10px !important;
+  font-weight: 400 !important;
+}
+.Ordersdetails .tajwalh{
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: var(--secondary-color);
+}
+
