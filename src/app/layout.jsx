@@ -16,6 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="ar">
       <head>
         <link rel="icon" href="/footerHero.svg" />
+        
       </head>
       <body className={`${readex.className} antialiased`}>
         <AuthTokenProvider>

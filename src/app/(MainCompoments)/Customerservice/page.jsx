@@ -19,6 +19,7 @@ export default function ContactUS() {
   const [errorMessage, setErrorMessage] = useState("");
   const [sucessMessage, setsucessMessage] = useState(false);
   const [loading, setloading] = useState(false);
+  const [isScriptLoaded, setIsScriptLoaded] = useState(false);
   const apiContect = async (values) => {
     setloading(true);
     try {
@@ -83,6 +84,18 @@ export default function ContactUS() {
   const handlePhoneNumberChange = (value) => {
     handleForm.setFieldValue("phone", value);
   };
+  const handleClick = () => {
+    if (!isScriptLoaded) {
+      const script = document.createElement("script");
+      script.id = "ze-snippet";
+      script.src =
+        "https://static.zdassets.com/ekr/snippet.js?key=f4e36963-4fc1-4a3c-9fca-282829bb25e1";
+      script.async = true;
+      script.onload = () => console.log("Zendesk script loaded!");
+      document.body.appendChild(script);
+      setIsScriptLoaded(true);
+    }
+  };
 
   return (
     <div className="Customerservice position-relative py-5">
@@ -124,7 +137,11 @@ export default function ContactUS() {
             </div>{" "}
             <div className="col-sm-6 col-md-4 col-lg-3">
               <div className="bg-white shadow-sm rounded-2 py-2 ContactUSph text-center">
-                <div className="d-flex justify-content-center align-items-center">
+                <div
+                  className="d-flex justify-content-center align-items-center"
+                  onClick={handleClick}
+                  style={{ cursor: "pointer" }}
+                >
                   <div className="d-flex  justify-content-center align-items-center w-100  px-3 rounded">
                     <Image
                       src={servicechat}
