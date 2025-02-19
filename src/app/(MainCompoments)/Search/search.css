@@ -1,0 +1,54 @@
+.countryheader .countryname {
+  color: var(--auth-color) !important ;
+  font-size: var(--font-large) !important;
+  font-weight: 300 !important;
+}
+@media (min-width: 767px) and (max-width: 1200px) {
+  .countryheader .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .countryheader .col-md-3 {
+    flex: 0 0 50%; /* عرض العنصر يكون 50% من عرض الحاوية */
+    max-width: 50%;
+  }
+
+  .countryheader .col-md-3.text-center {
+    text-align: center;
+  }
+}
+/* الموبايل */
+@media (max-width: 767px) {
+  .countryheader .countryheader {
+    padding: 15px;
+  }
+
+  .countryheader .countryshow {
+    font-size: 12px !important;
+    padding: 14px 70px !important;
+  }
+
+  .countryheader .countryname {
+    font-size: 15px !important;
+    margin-left: 10px !important;
+    margin-right: 8px !important;
+  }
+}
+
+@media (max-width: 350px) {
+  .countryheader .countryshow {
+    padding: 15px 50px !important;
+    font-size: 12px !important;
+  }
+
+  .countryheader .countryname {
+    font-size: 12px !important;
+  }
+
+  .countryheader .country-flag img {
+    width: 50px !important;
+    height: 30px;
+  }
+}
