@@ -496,7 +496,7 @@ import withAuth from "@/app/utils/withAuth";
                             className={`${
                               isLastTwo
                                 ? "col-12"
-                                : "col-lg-6 col-md-6 col-sm-6 col-12  mx-0 px-0"
+                                : "col-6 col-md-6 col-lg-6"
                             }`}
                           >
                             <div
