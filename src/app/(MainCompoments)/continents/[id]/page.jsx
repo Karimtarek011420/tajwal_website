@@ -518,6 +518,9 @@ export default function DetailsCountry({ params: paramsPromise }) {
                           flexWrap: "wrap",
                           gap: 1,
                           mt: 2,
+                          overflowY: "auto", // تفعيل السكرول
+                          paddingRight: "4px", // تحسين شكل السكرول
+                          
                         }}
                       >
                         {selectedPackage.operator.countries.map(
