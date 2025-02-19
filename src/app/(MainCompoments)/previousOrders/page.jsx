@@ -52,21 +52,21 @@ function previousOrders() {
       });
     }
   };
-  if (!data?.length) {
-    return (
-      <div
-        className="error-message text-center py-5"
-        style={{ minHeight: "30vh" }}
-      >
-        <p className="text-danger">
-         لا يوجد طلبات الان
-        </p>
-      </div>
-    );
-  }
+  // if (!data?.length) {
+  //   return (
+  //     <div
+  //       className="error-message text-center py-5"
+  //       style={{ minHeight: "30vh" }}
+  //     >
+  //       <p className="text-danger">
+  //        لا يوجد طلبات الان
+  //       </p>
+  //     </div>
+  //   );
+  // }
 
   return (
-    <div className="accountInformation position-relative py-5">
+    <div className="previousOrders position-relative py-5">
       <div className="position-absolute country-listbeginall w-100">
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
           <li className="country-list-links bg-white mx-2 accountInformationp">
@@ -151,14 +151,15 @@ function previousOrders() {
                             <div className="country-flag d-flex justify-content-center align-items-center">
                               <Image
                                 src={order.country.image}
-                                width={60}
-                                height={40}
+                                width={45}
+                                height={30}
                                 loading="lazy"
                                 alt="img-country"
                               />
                               <div>
-                                <p className="text-black mb-0 ms-lg-4 px-lg-3 countryname">
-                                  {order.id}
+                                <p className="text-black mb-0 ms-lg-4 px-lg-3 ordername">
+                                  رقم الطلب:
+                                  <span> {order.id}</span>
                                 </p>
                               </div>
                             </div>
