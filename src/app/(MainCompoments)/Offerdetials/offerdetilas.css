@@ -23,5 +23,6 @@
 @media (max-width: 800px) {
 .offerifrem{
   width: 100% !important;
+  height: 100vh !important;
 }
 }
