@@ -37,3 +37,8 @@
 .previousOrders .cardinfo ul li:hover {
   font-weight: 500 !important;
 }
+.previousOrders .ordername {
+  font-size: 12px !important;
+  font-weight: 300;
+  color: var(--auth-color);
+}

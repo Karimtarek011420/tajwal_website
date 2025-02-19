@@ -10,7 +10,8 @@ import axios from "axios";
 import withAuth from "@/app/utils/withAuth";
 import Image from "next/image";
 import { API_BASE_URL } from "@/app/utils/config";
-function previousOrders() {
+
+function PreviousOrders() {
   const [user, setUser] = useState(() => {
     try {
       return JSON.parse(localStorage.getItem("user")) || {};
@@ -18,14 +19,15 @@ function previousOrders() {
       return {};
     }
   });
+
   const { token, settoken } = useContext(authtoken);
   const router = useRouter();
   const pathName = usePathname();
-  const [data, setdata] = useState(null);
+  const [orders, setOrders] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const [error, setError] = useState(null); // تخزين الخطأ
-
-  const apiOrders = async () => {
+  const fetchOrders = async () => {
     try {
       const { data } = await axios.get(`${API_BASE_URL}/get_order`, {
         headers: {
@@ -33,15 +35,17 @@ function previousOrders() {
           Accept: "application/json",
         },
       });
-      console.log(data.data);
-      setdata(data.data); // تعيين البيانات في state
+      setOrders(data.data);
       setError(null);
-    } catch (error) {
+    } catch {
       setError("حدث خطأ أثناء تحميل البيانات. يرجى المحاولة لاحقًا.");
+    } finally {
+      setLoading(false);
     }
   };
+
   useEffect(() => {
-    apiOrders();
+    fetchOrders();
   }, []);
 
   const handleLogout = () => {
@@ -49,21 +53,9 @@ function previousOrders() {
       logoutApi(token, settoken);
       setTimeout(() => {
         router.push("/");
-      });
+      }, 500);
     }
   };
-  // if (!data?.length) {
-  //   return (
-  //     <div
-  //       className="error-message text-center py-5"
-  //       style={{ minHeight: "30vh" }}
-  //     >
-  //       <p className="text-danger">
-  //        لا يوجد طلبات الان
-  //       </p>
-  //     </div>
-  //   );
-  // }
 
   return (
     <div className="previousOrders position-relative py-5">
@@ -74,81 +66,73 @@ function previousOrders() {
           </li>
         </ul>
       </div>
+
       <div className="container py-5">
         <div className="row gy-4">
+          {/* Sidebar */}
           <div className="col-md-3 offset-1">
-            <div className="cardinfo bg-info py-3 bg-white shadow-sm rounded-4 ps-5">
+            <div className="cardinfo bg-white shadow-sm rounded-4 ps-5 py-3">
               <div className="px-3">
                 <h6>{user?.first_name}</h6>
                 <span dir="ltr">{user?.phone_number}</span>
               </div>
-              <hr
-                style={{ borderColor: "gray", margin: "10px", width: "100%" }}
-              />
-              <div>
-                <ul className="list-unstyled px-3">
-                  <Link href="/accountInformation">
-                    <li
-                      className={
-                        pathName === "/accountInformation" ? "active" : ""
-                      }
-                    >
-                      معلومات الحساب
-                    </li>
-                  </Link>
-                  <Link href="/previousOrders">
-                    <li
-                      className={pathName === "/previousOrders" ? "active" : ""}
-                    >
-                      الطلبات السابقة
-                    </li>
-                  </Link>
-                  <Link href="/helpCenter">
-                    <li className={pathName === "/helpCenter" ? "active" : ""}>
-                      مركز المساعدة
-                    </li>
-                  </Link>
-                  <Link href="/Customerservice">
-                    <li
-                      className={
-                        pathName === "/Customerservice" ? "active" : ""
-                      }
-                    >
-                      خدمة العملاء
-                    </li>
-                  </Link>
-                  <Link href={"#"} onClick={handleLogout}>
-                    <li
-                      className="accountInformationlogout"
-                      aria-label="Logout"
-                    >
-                      تسجيل الخروج
-                    </li>
-                  </Link>
-                </ul>
-              </div>
+              <hr className="my-2" />
+
+              <ul className="list-unstyled px-3">
+                <Link href="/accountInformation">
+                  <li
+                    className={
+                      pathName === "/accountInformation" ? "active" : ""
+                    }
+                  >
+                    معلومات الحساب
+                  </li>
+                </Link>
+                <Link href="/previousOrders">
+                  <li
+                    className={pathName === "/previousOrders" ? "active" : ""}
+                  >
+                    الطلبات السابقة
+                  </li>
+                </Link>
+                <Link href="/helpCenter">
+                  <li className={pathName === "/helpCenter" ? "active" : ""}>
+                    مركز المساعدة
+                  </li>
+                </Link>
+                <Link href="/Customerservice">
+                  <li
+                    className={pathName === "/Customerservice" ? "active" : ""}
+                  >
+                    خدمة العملاء
+                  </li>
+                </Link>
+                <Link href="#" onClick={handleLogout}>
+                  <li className="accountInformationlogout" aria-label="Logout">
+                    تسجيل الخروج
+                  </li>
+                </Link>
+              </ul>
             </div>
           </div>
-          <div className=" col-md-8">
-            <div className=" container">
-              <div className="d-flex justify-content-center">
-                {error && (
-                  <p
-                    className="text-danger text-center py-5"
-                    style={{ minHeight: "30vh" }}
-                  >
-                    {error}
-                  </p>
-                )}{" "}
-              </div>
-              <div className=" row gy-4">
-                {data?.map((order) => {
-                  return (
+
+          {/* Orders Section */}
+          <div className="col-md-8">
+            <div className="container">
+              {loading ? (
+                <p className="text-center py-5">جاري تحميل الطلبات...</p>
+              ) : error ? (
+                <p className="text-danger text-center py-5">{error}</p>
+              ) : orders.length === 0 ? (
+                <p className="text-center py-5">لا يوجد طلبات سابقة.</p>
+              ) : (
+                <div className="row gy-4">
+                  {orders.map((order) => (
                     <div key={order.id} className="col-md-4">
-                      <div className="bg-white shadow-sm text-center">
+                      <div className="bg-white shadow-sm text-center p-3 rounded">
                         <Link href="#">
-                          <div className="d-flex justify-content-between align-items-center p-3">
-                            <div className="country-flag d-flex justify-content-center align-items-center">
+                          <div className="d-flex justify-content-between align-items-center">
+                            <div className="d-flex align-items-center">
                               <Image
                                 src={order.country.image}
                                 width={45}
@@ -156,10 +140,21 @@ function previousOrders() {
                                 loading="lazy"
                                 alt="img-country"
                               />
-                              <div>
-                                <p className="text-black mb-0 ms-lg-4 px-lg-3 ordername">
-                                  رقم الطلب:
-                                  <span> {order.id}</span>
+                              <div className="ms-3 text-start">
+                                <p className="text-black mb-0">
+                                  رقم الطلب : <span>{order.id}</span>
+                                </p>
+                                <p className="text-black mb-0">
+                                  تاريخ الطلب :{" "}
+                                  <span>
+                                    {new Date(
+                                      order.created_at
+                                    ).toLocaleDateString("EG")}
+                                  </span>
+                                </p>
+                                <p className="text-black mb-0">
+                                  إجمالى الطلب :{" "}
+                                  <span>{order.invoice_value} ر.س</span>
                                 </p>
                               </div>
                             </div>
@@ -173,9 +168,9 @@ function previousOrders() {
                         </Link>
                       </div>
                     </div>
-                  );
-                })}
-              </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -184,4 +179,4 @@ function previousOrders() {
   );
 }
 
-export default withAuth(previousOrders);
+export default withAuth(PreviousOrders);
