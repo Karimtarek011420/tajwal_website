@@ -244,14 +244,14 @@ function pagesucess({ params: paramsPromise }) {
               <div className=" mt-5">
                 <h6 className="tajwalh text-center py-2">حمل التطبيق</h6>
                 <div className=" d-flex justify-content-center align-items-center   ">
-                  <div className=" mx-3">
+                  <div className=" mx-2">
                     <QRCodeCanvas value={appLink} size={60} />
                   </div>
-                  <div className=" mx-4">
+                  <div className=" mx-3">
                     <QRCodeCanvas value={appLinkApple} size={60} />
                   </div>
                 </div>
-                <div className="  d-flex justify-content-center align-items-center  mt-1">
+                <div className="  d-flex justify-content-center align-items-center">
                   <a
                     className="mx-2"
                     href="https://play.google.com/store/apps/details?id=com.sic.tajwaal&pli=1"
@@ -267,7 +267,7 @@ function pagesucess({ params: paramsPromise }) {
                   </a>
 
                   <a
-                    className=" mx-2"
+                    className=" mx-1"
                     href="https://apps.apple.com/sa/app/%D8%AA%D8%AC%D9%88%D8%A7%D9%84-%D8%B4%D8%B1%D8%A7%D8%A6%D8%AD-%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA-%D9%88-%D8%A7%D9%86%D8%AA%D8%B1%D9%86%D8%AA/id6553994315"
                     target="_blank"
                     rel="noopener noreferrer"
