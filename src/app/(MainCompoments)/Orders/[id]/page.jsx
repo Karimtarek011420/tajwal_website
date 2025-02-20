@@ -71,6 +71,9 @@ function Ordersdetails({ params: paramsPromise }) {
       });
     }
   };
+  const handleback = () => {
+    router.back();
+  };
 
   return (
     <div className="Ordersdetails position-relative py-5">
@@ -81,7 +84,16 @@ function Ordersdetails({ params: paramsPromise }) {
           </li>
         </ul>
       </div>
-      <div className="container py-5">
+      <div className="container py-2">
+        <button
+          onClick={handleback}
+          className=" px-4 py-2  rounded-3 mx-5 mb-4 btnback "
+        >
+          <div className=" d-flex justify-content-center align-items-center text-center">
+          <i class="fa-solid fa-arrow-right text-white"></i>
+            <p className=" p-2 mb-0  text-white   "> العودة للطلبات</p>
+          </div>
+        </button>
         <div className="row gy-4">
           <div className="col-md-3 offset-1">
             <div className="cardinfo bg-info py-3 bg-white shadow-sm rounded-4 ps-5">
@@ -104,7 +116,9 @@ function Ordersdetails({ params: paramsPromise }) {
                     </li>
                   </Link>
                   <Link href="/Orders">
-                    <li className={pathName === `/Orders/${id}` ? "active" : ""}>
+                    <li
+                      className={pathName === `/Orders/${id}` ? "active" : ""}
+                    >
                       الطلبات السابقة
                     </li>
                   </Link>
