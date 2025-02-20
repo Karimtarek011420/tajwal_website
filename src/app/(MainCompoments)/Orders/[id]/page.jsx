@@ -24,6 +24,7 @@ import appstoreqr from "@/assets/images/appstoreqr.svg";
 import googleplayqr from "@/assets/images/googleplayqr.svg";
 import appStore1 from "@/assets/images/appStore1.svg";
 import googlePlay2 from "@/assets/images/googlePlay2.svg";
+import { QRCodeCanvas } from "qrcode.react";
 function Ordersdetails({ params: paramsPromise }) {
   const [user, setUser] = useState(() => {
     try {
@@ -74,7 +75,10 @@ function Ordersdetails({ params: paramsPromise }) {
   const handleback = () => {
     router.back();
   };
-
+  const appLink =
+    "https://play.google.com/store/apps/details?id=com.sic.tajwaal&pli=1";
+  const appLinkApple =
+    "https://apps.apple.com/sa/app/%D8%AA%D8%AC%D9%88%D8%A7%D9%84-%D8%B4%D8%B1%D8%A7%D8%A6%D8%AD-%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA-%D9%88-%D8%A7%D9%86%D8%AA%D8%B1%D9%86%D8%AA/id6553994315";
   return (
     <div className="Ordersdetails position-relative py-5">
       <div className="position-absolute country-listbeginall w-100">
@@ -90,7 +94,7 @@ function Ordersdetails({ params: paramsPromise }) {
           className=" px-4 py-2  rounded-3 mx-5 mb-4 btnback "
         >
           <div className=" d-flex justify-content-center align-items-center text-center">
-          <i class="fa-solid fa-arrow-right text-white"></i>
+            <i className="fa-solid fa-arrow-right text-white"></i>
             <p className=" p-2 mb-0  text-white   "> العودة للطلبات</p>
           </div>
         </button>
@@ -317,42 +321,41 @@ function Ordersdetails({ params: paramsPromise }) {
                   <div className=" mt-5">
                     <h6 className="tajwalh text-center py-2">حمل التطبيق</h6>
                     <div className=" d-flex justify-content-center align-items-center   ">
-                      <div className=" mx-4">
-                        <Image
-                          src={googleplayqr}
-                          className=""
-                          width={50}
-                          height={50}
-                          alt="QR code for Google Play Download"
-                        />
+                      <div className=" mx-3">
+                        <QRCodeCanvas value={appLink} size={60} />
                       </div>
                       <div className=" mx-4">
-                        <Image
-                          src={appstoreqr}
-                          width={50}
-                          height={50}
-                          alt="QR code for  App Store Download"
-                        />
+                        <QRCodeCanvas value={appLinkApple} size={60} />
                       </div>
                     </div>
-                    <div className="  d-flex justify-content-center align-items-center  mt-2">
-                      <div className="mx-2">
+                    <div className="  d-flex justify-content-center align-items-center  mt-1">
+                      <a
+                        className="mx-2"
+                        href="https://play.google.com/store/apps/details?id=com.sic.tajwaal&pli=1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Image
                           src={googlePlay2}
                           width={75}
                           height={25}
                           alt="Google Play"
                         />
-                      </div>
+                      </a>
 
-                      <div className=" mx-2">
+                      <a
+                        className=" mx-2"
+                        href="https://apps.apple.com/sa/app/%D8%AA%D8%AC%D9%88%D8%A7%D9%84-%D8%B4%D8%B1%D8%A7%D8%A6%D8%AD-%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA-%D9%88-%D8%A7%D9%86%D8%AA%D8%B1%D9%86%D8%AA/id6553994315"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Image
                           src={appStore1}
                           width={75}
                           height={25}
                           alt="App Store"
                         />
-                      </div>
+                      </a>
                     </div>
                   </div>
                 </div>

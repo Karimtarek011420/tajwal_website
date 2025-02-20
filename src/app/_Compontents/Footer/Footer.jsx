@@ -79,14 +79,19 @@ const Footer = () => {
                     />
                   </a>
 
-                  <div className=" mx-1">
+                  <a
+                    className=" mx-1"
+                    href="https://apps.apple.com/sa/app/%D8%AA%D8%AC%D9%88%D8%A7%D9%84-%D8%B4%D8%B1%D8%A7%D8%A6%D8%AD-%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA-%D9%88-%D8%A7%D9%86%D8%AA%D8%B1%D9%86%D8%AA/id6553994315"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Image
                       src={appStore1}
                       width={75}
                       height={25}
                       alt="App Store"
                     />
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>
