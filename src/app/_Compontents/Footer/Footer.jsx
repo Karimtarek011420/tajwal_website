@@ -3,11 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import "./footer.css";
 import Footerlogo from "@/assets/images/footerHero.svg";
-import appstoreqr from "@/assets/images/appstoreqr.svg";
-import googleplayqr from "@/assets/images/googleplayqr.svg";
 import appStore1 from "@/assets/images/appStore1.svg";
 import googlePlay2 from "@/assets/images/googlePlay2.svg";
-import QRCode, { QRCodeCanvas } from "qrcode.react";
+import { QRCodeCanvas } from "qrcode.react";
 
 const Footer = () => {
   const appLink =
@@ -59,22 +57,27 @@ const Footer = () => {
               <h6 className="tajwalh text-center py-2">حمل التطبيق</h6>
               <div className="">
                 <div className=" d-flex justify-content-center align-items-center   ">
-                  <div className=" mx-3">
-                    <QRCodeCanvas value={appLink} size={50} />
+                  <div className=" mx-2">
+                    <QRCodeCanvas value={appLink} size={60} />
                   </div>
                   <div className=" mx-3">
-                    <QRCodeCanvas value={appLinkApple} size={50} />
+                    <QRCodeCanvas value={appLinkApple} size={60} />
                   </div>
                 </div>
                 <div className="  d-flex justify-content-center align-items-center ">
-                  <div className="mx-1">
+                  <a
+                    className="mx-1"
+                    href="https://play.google.com/store/apps/details?id=com.sic.tajwaal&pli=1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Image
                       src={googlePlay2}
                       width={75}
                       height={25}
                       alt="Google Play"
                     />
-                  </div>
+                  </a>
 
                   <div className=" mx-1">
                     <Image
