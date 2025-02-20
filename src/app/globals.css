@@ -95,7 +95,7 @@ a {
   border-bottom: 1px solid white;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
@@ -106,7 +106,7 @@ a {
   html {
     color-scheme: dark;
   }
-}
+} */
 @media (min-width: 768px) and (max-width: 991px) {
   .country-listbeginall .country-list-links {
     padding: 12px 35px !important;
