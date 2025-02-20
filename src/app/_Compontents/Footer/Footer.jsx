@@ -86,19 +86,19 @@ const Footer = () => {
                 style={{ fontWeight: 400 }}
               >
                 <li className="col">
-                  <Link href="/login">دخول</Link>
+                  <Link href="/Login">دخول</Link>
                 </li>
                 <li className="col">
                   <Link href="/">البداية</Link>
                 </li>
                 <li className="col">
-                  <Link href="/sign-up">تسجيل</Link>
+                  <Link href="/Register">تسجيل</Link>
                 </li>
                 <li className="col">
                   <Link href="/Countries">الدول</Link>
                 </li>
                 <li className="col">
-                  <Link href="/login">خدمة العملاء</Link>
+                  <Link href="/Customerservice">خدمة العملاء</Link>
                 </li>
                 <li className="col">
                   <Link href="/Offers">العروض</Link>
