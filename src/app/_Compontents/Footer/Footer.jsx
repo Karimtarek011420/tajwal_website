@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import "./footer.css";
@@ -6,8 +7,14 @@ import appstoreqr from "@/assets/images/appstoreqr.svg";
 import googleplayqr from "@/assets/images/googleplayqr.svg";
 import appStore1 from "@/assets/images/appStore1.svg";
 import googlePlay2 from "@/assets/images/googlePlay2.svg";
+import QRCode, { QRCodeCanvas } from "qrcode.react";
 
 const Footer = () => {
+  const appLink =
+    "https://play.google.com/store/apps/details?id=com.sic.tajwaal&pli=1";
+  const appLinkApple =
+    "https://apps.apple.com/sa/app/%D8%AA%D8%AC%D9%88%D8%A7%D9%84-%D8%B4%D8%B1%D8%A7%D8%A6%D8%AD-%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA-%D9%88-%D8%A7%D9%86%D8%AA%D8%B1%D9%86%D8%AA/id6553994315";
+
   return (
     <footer>
       <div className="footer">
@@ -53,21 +60,10 @@ const Footer = () => {
               <div className="">
                 <div className=" d-flex justify-content-center align-items-center   ">
                   <div className=" mx-3">
-                    <Image
-                      src={googleplayqr}
-                      className=""
-                      width={50}
-                      height={50}
-                      alt="QR code for Google Play Download"
-                    />
+                    <QRCodeCanvas value={appLink} size={50} />
                   </div>
                   <div className=" mx-3">
-                    <Image
-                      src={appstoreqr}
-                      width={50}
-                      height={50}
-                      alt="QR code for  App Store Download"
-                    />
+                    <QRCodeCanvas value={appLinkApple} size={50} />
                   </div>
                 </div>
                 <div className="  d-flex justify-content-center align-items-center ">
