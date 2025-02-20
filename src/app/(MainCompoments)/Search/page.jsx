@@ -87,9 +87,9 @@ export default function SearchResults() {
         </p>
       )}
       <div className="px-lg-5">
-        <div className="row gy-4">
+        <div className="row gy-4" style={{minHeight:'30vh'}}>
           {results.map((country) => (
-            <div key={country.country_code} className="col-md-3 ">
+            <div key={country.country_code} className="col-md-3 " >
               <div className="bg-white shadow-sm text-center">
                 <Link
                   href={
