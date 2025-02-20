@@ -3,7 +3,7 @@
   --foreground: #171717;
   --primary-color: #336279; /* اللون الرئيسي */
   --secondary-color: #575050; /* اللون الفرعي */
-  --auth-color: #626E7B; /* اللون الفرعي */
+  --auth-color: #626e7b; /* اللون الفرعي */
   --font-large: 20px;
   --font-medium: 17px;
   --font-small: 14px;
@@ -71,7 +71,29 @@ a {
   background-color: #f9f9f9 !important;
   color: var(--primary-color) !important;
 }
-
+/* footer */
+.footer {
+  background-color: #d9dee44d;
+  color: var(--secondary-color);
+}
+.footer .tajwalh {
+  font-size: 12px !important;
+  font-weight: 600;
+}
+.footer .tajwalp {
+  font-size: 10px !important;
+  font-weight: 300;
+}
+.allfooter {
+  background-color: var(--auth-color);
+}
+.allfooter .tajwalall {
+  font-size: 10px !important;
+  font-weight: 300 !important;
+}
+.allfooter span {
+  border-bottom: 1px solid white;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
