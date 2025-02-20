@@ -29,9 +29,21 @@ const Footer = () => {
                     الالكترونية في السعودية، و مرخصة بالسجل التجاري رقم
                     7041398541
                   </p>
-                  <div className=" d-flex  ">
-                    <i className="fa-brands fa-square-instagram mx-3 fs-5"></i>
-                    <i className="fa-brands fa-square-x-twitter fs-5"></i>
+                  <div className=" d-flex">
+                    <a
+                      href="https://x.com/Tajwalapp?t=fNlENfiyMV5Qf4d2CPeLDA&s=09"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i className="fa-brands fa-square-instagram mx-3 fs-5"></i>
+                    </a>
+                    <a
+                      href="https://x.com/Tajwalapp?t=fNlENfiyMV5Qf4d2CPeLDA&s=09"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i className="fa-brands fa-square-x-twitter fs-5"></i>
+                    </a>
                   </div>
                 </div>
               </div>
