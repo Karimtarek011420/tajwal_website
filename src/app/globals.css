@@ -72,6 +72,7 @@ a {
   color: var(--primary-color) !important;
 }
 
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -99,6 +100,9 @@ a {
     padding: 8px 25px !important;
     font-size: 15px !important;
     margin: 5px 10px !important;
+  }
+  .imgnotfound {
+    width: 90% !important;
   }
 }
 
