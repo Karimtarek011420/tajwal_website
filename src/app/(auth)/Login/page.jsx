@@ -63,10 +63,25 @@ const LoginPage = () => {
     try {
       setLoading(true);
       setErrorMessage("");
+
+      let formattedPhone = phoneNumber;
+
+      // التحقق من كود الدولة
+      if (phoneNumber.startsWith("+966")) {
+        let withoutCountryCode = phoneNumber.replace("+966", ""); // إزالة كود الدولة
+
+        // إذا لم يبدأ الرقم بـ 0، نضيف 0 في البداية
+        if (!withoutCountryCode.startsWith("0")) {
+          withoutCountryCode = "0" + withoutCountryCode;
+        }
+
+        formattedPhone = withoutCountryCode; // حفظ الرقم الجديد بدون كود الدولة
+      }
+
       const { data } = await axios.post(
         `${API_BASE_URL}/login`,
         {
-          phone_number: phoneNumber,
+          phone_number: formattedPhone,
           password,
         },
         {
@@ -82,9 +97,11 @@ const LoginPage = () => {
           duration: 1500,
           style: { backgroundColor: "#4b87a4", color: "white" },
         });
-        localStorage.setItem("token", data.data.token); // Store the token properly
+
+        localStorage.setItem("token", data.data.token);
         settoken(data.data.token);
         localStorage.setItem("user", JSON.stringify(data.data.user));
+
         setTimeout(() => router.push("/"), 1000);
       } else {
         setErrorMessage(data.message || "فشل تسجيل الدخول. حاول مرة أخرى.");
