@@ -8,10 +8,10 @@ import { authtoken } from "../Authtoken/Authtoken";
 import "./navbar.css";
 import { logoutApi } from "@/app/Hookshelp/logout";
 // مكون خاص برابط Dropdown
-const DropdownItem = ({ href, text, onClick, customColor }) => (
+const DropdownItem = ({ href, text, onClick, customColor, isLast }) => (
   <li>
     <button
-      className="dropdown-item d-flex justify-content-between align-items-center px-3"
+      className="dropdown-item d-flex justify-content-between align-items-center px-3  border-0"
       onClick={() => onClick(href)}
       style={{
         color: customColor || "var(--secondary-color)",
@@ -27,7 +27,11 @@ const DropdownItem = ({ href, text, onClick, customColor }) => (
       <span className="ps-5">{text}</span>
       <i className="fa-solid fa-chevron-left pe-lg-5 pe-md-1"></i>
     </button>
-    <hr style={{ borderColor: "gray", margin: 0, width: "100%" }} />
+
+    {/* إخفاء الخط إذا كان العنصر الأخير */}
+    {!isLast && (
+      <hr style={{ borderColor: "gray", margin: 0, width: "100%" }} />
+    )}
   </li>
 );
 
@@ -43,7 +47,6 @@ export default function Navbar() {
       window.bootstrap = bootstrap;
     });
   }, []);
-
   // استرجاع بيانات المستخدم من LocalStorage
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -51,7 +54,6 @@ export default function Navbar() {
       setUser(JSON.parse(storedUser));
     }
   }, []);
-
   const handleLogout = async () => {
     // إغلاق القائمة المنسدلة إذا كانت مفتوحة
     const dropdown = document.querySelector(".dropdown-menu.show");
@@ -61,7 +63,6 @@ export default function Navbar() {
         bsDropdown.hide();
       }
     }
-
     // إغلاق الـ Offcanvas إذا كان مفتوحًا
     const offcanvas = document.getElementById("offcanvasNavbar");
     if (offcanvas && window.bootstrap) {
@@ -79,7 +80,6 @@ export default function Navbar() {
     // توجيه المستخدم إلى الصفحة الرئيسية بعد تسجيل الخروج
     router.push("/");
   };
-
   const handleNavClick = (href) => {
     const offcanvas = document.getElementById("offcanvasNavbar");
     if (offcanvas && window.bootstrap) {
@@ -127,6 +127,7 @@ export default function Navbar() {
             text="تسجيل الخروج"
             customColor="#E14F72"
             onClick={handleLogout}
+            isLast={true}
           />
         </ul>
       </li>
@@ -137,7 +138,7 @@ export default function Navbar() {
             دخول
           </Link>
         </li>
-        <li className="nav-item">
+        <li className="nav-item btnresgister">
           <Link
             className="nav-link text-white resgister my-1 mx-lg-5 me-lg-4"
             href="/Register"
