@@ -71,7 +71,7 @@ export default function Navbar() {
           <div className="d-flex align-items-center mx-2">
             <i className="fa-solid fa-user text-white iconoffcen"></i>
             <span
-              className="mx-2"
+              className="mx-2 iconoffcenspan"
               style={{ fontSize: "20px", fontWeight: "500" }}
             >
               {user?.first_name}
