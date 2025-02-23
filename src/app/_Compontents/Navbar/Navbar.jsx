@@ -80,15 +80,18 @@ export default function Navbar() {
     // توجيه المستخدم إلى الصفحة الرئيسية بعد تسجيل الخروج
     router.push("/");
   };
-  const handleNavClick = (href) => {
+  useEffect(() => {
+    // عند تغيير المسار، تأكد من إغلاق الـ Offcanvas
     const offcanvas = document.getElementById("offcanvasNavbar");
     if (offcanvas && window.bootstrap) {
       const bsOffcanvas = window.bootstrap.Offcanvas.getInstance(offcanvas);
       if (bsOffcanvas) {
-        bsOffcanvas.hide(); // إغلاق النافبار
+        bsOffcanvas.hide();
       }
     }
-    router.push(href); // توجيه المستخدم للرابط الجديد
+  }, [pathName]);
+  const handleNavClick = (href) => {
+    router.push(href); // توجيه المستخدم إلى الرابط الجديد
   };
 
   // روابط المستخدم المسجل
