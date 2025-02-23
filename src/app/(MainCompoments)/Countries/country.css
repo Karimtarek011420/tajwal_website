@@ -5,7 +5,7 @@
 
 .countryheader .countryname {
   color:  var(--auth-color) !important;
-  font-size: var( --font-large) !important;
+  font-size: var(--font-large) !important;
   font-weight: 300 !important;
 }
 @media (min-width: 767px) and (max-width: 1200px) {
