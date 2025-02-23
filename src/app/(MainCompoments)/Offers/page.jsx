@@ -64,12 +64,12 @@ export default function OffersPage() {
                 <Image
                   src={offer.image}
                   alt="offer_image"
-                  width={414}
-                  height={207}
+                  width={380}
+                  height={180}
                   className="w-100"
                   loading="lazy"
                 />
-                <div className="pt-5 pb-3 d-flex justify-content-center align-items-center">
+                <div className="pt-4 pb-3 d-flex justify-content-center align-items-center">
                   <button
                     className="btnoffer"
                     onClick={() => handleClick(offer)}
