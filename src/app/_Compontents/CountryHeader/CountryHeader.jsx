@@ -74,8 +74,8 @@ export default async function CountryHeader() {
                     <div className="country-flag d-flex justify-content-center align-items-center">
                       <Image
                         src={country.image}
-                        width={60}
-                        height={40}
+                        width={45}
+                        height={30}
                         alt={`علم ${country.title}`}
                         loading="lazy"
                       />
