@@ -4,7 +4,8 @@
   border-radius: 10px;
 }
 
-li.nav-item button.nav-link ,li.nav-item a.nav-link {
+li.nav-item button.nav-link,
+li.nav-item a.nav-link {
   font-size: var(--font-largeNavbar) !important;
   font-weight: 300 !important;
 }
@@ -72,7 +73,8 @@ li.nav-item button.nav-link ,li.nav-item a.nav-link {
     outline: none !important;
     box-shadow: 0 0 0 0 transparent !important;
   }
-  .offcanvas .nav-item button,li.nav-item a.nav-link,
+  .offcanvas .nav-item button,
+  li.nav-item a.nav-link,
   .nav-item button {
     color: black !important;
     font-size: 16px !important;
@@ -82,7 +84,7 @@ li.nav-item button.nav-link ,li.nav-item a.nav-link {
     color: black !important;
     font-size: 16px !important;
   }
- 
+
   .nav-item .iconoffcenspan {
     font-size: 16px !important;
     font-weight: 500 !important;
@@ -132,33 +134,26 @@ li.nav-item button.nav-link ,li.nav-item a.nav-link {
     font-size: 14px !important;
   }
 
-  .resgister {
+  .btnresgister .resgister {
     font-size: 14px !important;
     padding: 6px 20px !important;
-  }
-
-  
-}
-
-@media (max-width: 768px) {
-  .dropdown-menu {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .resgister {
-    width: fit-content !important;
-    font-size: 14px !important;
   }
 }
 
 @media screen and (max-width: 600px) {
+  .dropdown-menu {
+    width: 100%;
+  }
+  .btnresgister .resgister {
+    width: fit-content !important;
+    font-size: 14px !important;
+  }
   .navbar-brand .logo {
     width: 100px !important;
     height: 50px !important;
   }
-  .offcanvas .nav-item button.nav-link, .offcanvas .nav-item a.nav-link,
+  .offcanvas .nav-item button.nav-link,
+  .offcanvas .nav-item a.nav-link,
   .nav-item button {
     color: black !important;
     font-size: 16px !important;
