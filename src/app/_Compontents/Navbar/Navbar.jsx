@@ -84,11 +84,7 @@ export default function Navbar() {
             text="معلومات الحساب"
             className="btnlist"
           />
-          <DropdownItem
-            href="/Orders"
-            text="الطلبات السابقة"
-            className="btnlist"
-          />
+          <DropdownItem href="/Orders" text="الطلبات السابقة" className="btnlist" />
           <DropdownItem
             text="تسجيل الخروج"
             customColor="#E14F72"

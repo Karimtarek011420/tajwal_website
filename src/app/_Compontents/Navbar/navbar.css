@@ -86,10 +86,9 @@ li.nav-item a.nav-link {
   .nav-item button:hover {
     color: var(--primary-color) !important;
   }
-  .nav-item .iconoffcenspan{
+  .nav-item .iconoffcenspan {
     font-size: 16px !important;
     font-weight: 500 !important;
-
   }
 
   .offcanvas .nav-item .dropdown-item span {
@@ -122,7 +121,7 @@ li.nav-item a.nav-link {
   .offnecmedia .dropdown-menu {
     position: absolute !important;
     top: 100%;
-    left:20px;
+    left: 20px;
     transform: translateY(2px);
     width: auto;
     text-align: center;
@@ -170,7 +169,6 @@ li.nav-item a.nav-link {
     font-size: 16px !important;
     font-weight: 400 !important;
   }
-  
 
   nav.navbar {
     margin: 10px 2px !important;
