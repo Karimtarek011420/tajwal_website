@@ -129,7 +129,7 @@ export default function ContactUS() {
                   style={{ backgroundColor: "#F1F3F6" }}
                 >
                   <a
-                    href="https://x.com/Tajwalapp?t=fNlENfiyMV5Qf4d2CPeLDA&s=09"
+                    href="https://www.instagram.com/tajwalapp"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="ps-5 text-uppercase"

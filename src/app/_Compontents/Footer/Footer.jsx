@@ -36,7 +36,7 @@ const Footer = () => {
                   </p>
                   <div className=" d-flex">
                     <a
-                      href="https://x.com/Tajwalapp?t=fNlENfiyMV5Qf4d2CPeLDA&s=09"
+                      href="https://www.instagram.com/tajwalapp"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
