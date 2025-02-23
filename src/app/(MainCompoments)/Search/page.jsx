@@ -48,7 +48,7 @@ export default function SearchResults() {
   }, [searchTerm]);
 
   return (
-    <main className="countryheader position-relative  p-5">
+    <main className="countryheader position-relative  py-5">
       <div className="position-absolute country-listbeginall w-100">
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
           <li
@@ -86,10 +86,10 @@ export default function SearchResults() {
           لا توجد نتائج بحث
         </p>
       )}
-      <div className="px-lg-5">
+      <div className="px-lg-5 px-4">
         <div className="row gy-4" style={{minHeight:'30vh'}}>
           {results.map((country) => (
-            <div key={country.country_code} className="col-md-3 " >
+            <div key={country.country_code} className="col-md-3" >
               <div className="bg-white shadow-sm text-center">
                 <Link
                   href={

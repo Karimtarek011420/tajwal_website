@@ -68,7 +68,7 @@ a {
   transition: background-color 0.3s ease, color 0.3s ease !important;
 }
 .country-listbeginall .country-list-links:hover {
-  background-color: #f9f9f9 !important;
+  background-color: #ffffff !important;
   color: var(--primary-color) !important;
 }
 /* footer */
