@@ -58,7 +58,7 @@ export default function OffersPage() {
           {offers?.map((offer, index) => (
             <div key={index} className="col-md-4">
               <div
-                className="offer rounded-5 shadow-sm"
+                className="offer rounded-4 shadow-sm"
                 style={{ cursor: "pointer" }}
               >
                 <Image
