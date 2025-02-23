@@ -7,25 +7,26 @@ import logonavbar from "@/assets/images/logonavbar.svg";
 import { authtoken } from "../Authtoken/Authtoken";
 import "./navbar.css";
 import { logoutApi } from "@/app/Hookshelp/logout";
-
 // مكون خاص برابط Dropdown
 const DropdownItem = ({ href, text, onClick, customColor }) => (
   <li>
-    <Link
+    <button
       className="dropdown-item d-flex justify-content-between align-items-center px-3"
-      href={href || "#"}
-      onClick={onClick}
+      onClick={() => onClick(href)}
       style={{
         color: customColor || "var(--secondary-color)",
         padding: "10px",
         fontSize: "12px",
         fontWeight: "300",
         width: "100%",
+        background: "none",
+        border: "none",
+        textAlign: "start",
       }}
     >
       <span className="ps-5">{text}</span>
       <i className="fa-solid fa-chevron-left pe-lg-5 pe-md-1"></i>
-    </Link>
+    </button>
     <hr style={{ borderColor: "gray", margin: 0, width: "100%" }} />
   </li>
 );
@@ -38,7 +39,9 @@ export default function Navbar() {
 
   // تحميل Bootstrap JS
   useEffect(() => {
-    import("bootstrap/dist/js/bootstrap.bundle.min.js");
+    import("bootstrap/dist/js/bootstrap.bundle.min.js").then((bootstrap) => {
+      window.bootstrap = bootstrap;
+    });
   }, []);
 
   // استرجاع بيانات المستخدم من LocalStorage
@@ -50,23 +53,54 @@ export default function Navbar() {
   }, []);
 
   const handleLogout = async () => {
+    // إغلاق القائمة المنسدلة إذا كانت مفتوحة
+    const dropdown = document.querySelector(".dropdown-menu.show");
+    if (dropdown && window.bootstrap) {
+      const bsDropdown = window.bootstrap.Dropdown.getInstance(dropdown);
+      if (bsDropdown) {
+        bsDropdown.hide();
+      }
+    }
+
+    // إغلاق الـ Offcanvas إذا كان مفتوحًا
+    const offcanvas = document.getElementById("offcanvasNavbar");
+    if (offcanvas && window.bootstrap) {
+      const bsOffcanvas = window.bootstrap.Offcanvas.getInstance(offcanvas);
+      if (bsOffcanvas) {
+        bsOffcanvas.hide();
+      }
+    }
+
+    // تنفيذ تسجيل الخروج
     if (token) {
       await logoutApi(token, settoken); // انتظر تسجيل الخروج قبل التوجيه
     }
-    router.push("/"); // انتقل إلى الصفحة الرئيسية بعد تسجيل الخروج
+
+    // توجيه المستخدم إلى الصفحة الرئيسية بعد تسجيل الخروج
+    router.push("/");
+  };
+
+  const handleNavClick = (href) => {
+    const offcanvas = document.getElementById("offcanvasNavbar");
+    if (offcanvas && window.bootstrap) {
+      const bsOffcanvas = window.bootstrap.Offcanvas.getInstance(offcanvas);
+      if (bsOffcanvas) {
+        bsOffcanvas.hide(); // إغلاق النافبار
+      }
+    }
+    router.push(href); // توجيه المستخدم للرابط الجديد
   };
 
   // روابط المستخدم المسجل
   const renderAuthLinks = () =>
     token ? (
       <li className="nav-item dropdown dropacount offnecmedia">
-        <Link
+        <button
           className="nav-link dropdown-toggle d-flex align-items-center justify-content-between"
-          href="#"
           role="button"
           data-bs-toggle="dropdown"
           aria-expanded="false"
-          style={{ color: "white" }}
+          style={{ color: "white", background: "none", border: "none" }}
         >
           <div className="d-flex align-items-center mx-2">
             <i className="fa-solid fa-user text-white iconoffcen"></i>
@@ -77,19 +111,22 @@ export default function Navbar() {
               {user?.first_name}
             </span>
           </div>
-        </Link>
-        <ul className="dropdown-menu py-2 ">
+        </button>
+        <ul className="dropdown-menu py-2">
           <DropdownItem
             href="/accountInformation"
             text="معلومات الحساب"
-            className="btnlist"
+            onClick={handleNavClick}
           />
-          <DropdownItem href="/Orders" text="الطلبات السابقة" className="btnlist" />
+          <DropdownItem
+            href="/Orders"
+            text="الطلبات السابقة"
+            onClick={handleNavClick}
+          />
           <DropdownItem
             text="تسجيل الخروج"
             customColor="#E14F72"
             onClick={handleLogout}
-            className="btnlist logoutmobile"
           />
         </ul>
       </li>
@@ -151,66 +188,70 @@ export default function Navbar() {
           <div className="offcanvas-body">
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link
+                <button
                   className={`nav-link text-white ${
                     pathName === "/" ? "active" : ""
                   }`}
+                  onClick={() => handleNavClick("/")}
                   href="/"
                 >
                   البداية
-                </Link>
+                </button>
               </li>
               <li className="nav-item">
-                <Link
+                <button
                   className={`nav-link text-white ${
                     pathName === "/Countries" ? "active" : ""
                   }`}
-                  href="/Countries"
+                  onClick={() => handleNavClick("/Countries")}
                 >
                   الدول
-                </Link>
+                </button>
               </li>
               <li className="nav-item">
-                <Link
+                <button
                   className={`nav-link text-white ${
                     pathName === "/Offers" ? "active" : ""
                   }`}
-                  href="/Offers"
+                  onClick={() => handleNavClick("/Offers")}
                 >
                   العروض
-                </Link>
+                </button>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-white" href="#">
+                <button
+                  className="nav-link text-white"
+                  onClick={() => handleNavClick("/")}
+                >
                   مركز المساعدة
-                </Link>
+                </button>
               </li>
               <li className="nav-item">
-                <Link
+                <button
                   className={`nav-link text-white ${
                     pathName === "/ContactUS" ? "active" : ""
                   }`}
-                  href="/ContactUS"
+                  onClick={() => handleNavClick("/ContactUS")}
                 >
                   اتصل بنا
-                </Link>
+                </button>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <button
                   className="nav-link text-white"
                   aria-label="Switch to English"
                 >
                   English
                 </button>
-              </li>
-              <li className="nav-item">
+              </li> */}
+              {/* <li className="nav-item">
                 <button
                   className="nav-link text-white"
                   aria-label="Switch currency to SAR"
                 >
                   ر.س
                 </button>
-              </li>
+              </li> */}
             </ul>
 
             <div className="d-flex">

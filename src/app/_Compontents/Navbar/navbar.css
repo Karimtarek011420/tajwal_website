@@ -4,7 +4,7 @@
   border-radius: 10px;
 }
 
-li.nav-item a.nav-link {
+li.nav-item button.nav-link {
   font-size: var(--font-large) !important;
   font-weight: 300 !important;
 }
@@ -72,7 +72,7 @@ li.nav-item a.nav-link {
     outline: none !important;
     box-shadow: 0 0 0 0 transparent !important;
   }
-  .offcanvas .nav-item a,
+  .offcanvas .nav-item button,
   .nav-item button {
     color: black !important;
     font-size: 16px !important;
@@ -163,7 +163,7 @@ li.nav-item a.nav-link {
     width: 100px !important;
     height: 50px !important;
   }
-  .offcanvas .nav-item a.nav-link,
+  .offcanvas .nav-item button.nav-link,
   .nav-item button {
     color: black !important;
     font-size: 16px !important;
