@@ -84,7 +84,11 @@ export default function Navbar() {
             text="معلومات الحساب"
             className="btnlist"
           />
-          <DropdownItem href="/Orders" text="الطلبات السابقة" className="btnlist" />
+          <DropdownItem
+            href="/Orders"
+            text="الطلبات السابقة"
+            className="btnlist"
+          />
           <DropdownItem
             text="تسجيل الخروج"
             customColor="#E14F72"
@@ -156,6 +160,7 @@ export default function Navbar() {
                     pathName === "/" ? "active" : ""
                   }`}
                   href="/"
+                  data-bs-dismiss="offcanvas"
                 >
                   البداية
                 </Link>
@@ -166,6 +171,7 @@ export default function Navbar() {
                     pathName === "/Countries" ? "active" : ""
                   }`}
                   href="/Countries"
+                  data-bs-dismiss="offcanvas"
                 >
                   الدول
                 </Link>
@@ -176,6 +182,7 @@ export default function Navbar() {
                     pathName === "/Offers" ? "active" : ""
                   }`}
                   href="/Offers"
+                  data-bs-dismiss="offcanvas"
                 >
                   العروض
                 </Link>
