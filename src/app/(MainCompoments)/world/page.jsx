@@ -46,14 +46,6 @@ export default function DetailsCountry() {
       setError("حدث خطأ أثناء تحميل البيانات. يرجى المحاولة لاحقًا.");
     }
   };
-  useEffect(() => {
-    if (data && Array.isArray(data) && data.length > 0) {
-      const firstCountry = data[0]; // الحصول على أول دولة
-      if (firstCountry.days && firstCountry.days.length > 0) {
-        setSelectedDay(firstCountry.days[0]); // تعيين أول قيمة في مصفوفة الأيام
-      }
-    }
-  }, [data]); // يتم تشغيل هذا عند تغيير البيانات
 
   useEffect(() => {
     getCountryDetails();
@@ -180,7 +172,9 @@ export default function DetailsCountry() {
                 >
                   {country.operators.map((operator) =>
                     operator.packages
-                      .filter((pkg) => pkg.day === parseInt(selectedDay))
+                      .filter((pkg) =>
+                        selectedDay ? pkg.day === parseInt(selectedDay) : true
+                      )
                       .map((pkg) => (
                         <div
                           key={pkg.id}

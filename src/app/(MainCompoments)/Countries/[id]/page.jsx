@@ -15,7 +15,6 @@ import icon6m from "@/assets/images/icon6m.svg";
 import iconip from "@/assets/images/iconip.svg";
 import "./details.css";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { usePackage } from "@/app/_Compontents/PackageContext/PackageContext";
 import { authtoken } from "@/app/_Compontents/Authtoken/Authtoken";
@@ -47,14 +46,14 @@ export default function DetailsCountry({ params: paramsPromise }) {
       setError("حدث خطأ أثناء تحميل البيانات. يرجى المحاولة لاحقًا.");
     }
   };
-  useEffect(() => {
-    if (data && Array.isArray(data) && data.length > 0) {
-      const firstCountry = data[0]; // الحصول على أول دولة
-      if (firstCountry.days && firstCountry.days.length > 0) {
-        setSelectedDay(firstCountry.days[0]); // تعيين أول قيمة في مصفوفة الأيام
-      }
-    }
-  }, [data]); // يتم تشغيل هذا عند تغيير البيانات
+  // useEffect(() => {
+  //   if (data && Array.isArray(data) && data.length > 0) {
+  //     const firstCountry = data[0]; // الحصول على أول دولة
+  //     if (firstCountry.days && firstCountry.days.length > 0) {
+  //       setSelectedDay(firstCountry.days[0]); // تعيين أول قيمة في مصفوفة الأيام
+  //     }
+  //   }
+  // }, [data]); // يتم تشغيل هذا عند تغيير البيانات
 
   useEffect(() => {
     if (id) getCountryDetails();
@@ -94,7 +93,11 @@ export default function DetailsCountry({ params: paramsPromise }) {
   return (
     <div className="countrydetials position-relative py-5">
       <div>
-        {error && <p className="text-danger text-center" style={{minHeight:'30vh'}}>{error}</p>}{" "}
+        {error && (
+          <p className="text-danger text-center" style={{ minHeight: "30vh" }}>
+            {error}
+          </p>
+        )}{" "}
         {/* عرض الخطأ إن وجد */}
       </div>
       {Array.isArray(data) &&
@@ -103,8 +106,11 @@ export default function DetailsCountry({ params: paramsPromise }) {
             <div className="position-absolute country-listbeginall w-100">
               <ul className="list-unstyled d-flex justify-content-center align-items-center">
                 <li
-                  className="country-list-links bg-white mx-lg-2"
-                  style={{ color: "var(--primary-color)" }}
+                  className="country-list-links  mx-lg-2"
+                  style={{
+                    color: "var(--primary-color)",
+                    backgroundColor: "var(--background)",
+                  }}
                 >
                   <Image
                     src={country.image}
@@ -148,7 +154,9 @@ export default function DetailsCountry({ params: paramsPromise }) {
                 >
                   {country.operators.map((operator) =>
                     operator.packages
-                      .filter((pkg) => pkg.day === parseInt(selectedDay))
+                      .filter((pkg) =>
+                        selectedDay ? pkg.day === parseInt(selectedDay) : true
+                      )
                       .map((pkg) => (
                         <div
                           key={pkg.id}
@@ -369,14 +377,6 @@ export default function DetailsCountry({ params: paramsPromise }) {
                   )}
                 </div>
               </div>
-            </div>
-            <div className=" d-flex justify-content-center align-items-center pt-5">
-              <Link
-                href="/Countries "
-                className=" countryshow text-white  px-5 py-3"
-              >
-                عرض جميع الدول
-              </Link>
             </div>
           </div>
         ))}
