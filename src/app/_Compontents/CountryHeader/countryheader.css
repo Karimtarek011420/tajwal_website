@@ -35,7 +35,6 @@
     margin-right: 8px !important;
   }
 }
-
 @media (max-width: 350px) {
   .countryheader .countryshow {
     padding: 15px 50px !important;
@@ -44,10 +43,5 @@
 
   .countryheader .countryname {
     font-size: 12px !important;
-  }
-
-  .countryheader .country-flag img {
-    width: 50px !important;
-    height: 30px;
   }
 }
