@@ -126,7 +126,9 @@ export default function DetailsCountry({ params: paramsPromise }) {
                     dir="ltr"
                     className=" px-4 py-2 rounded-2"
                   >
-                    {pkg.amount === -1 ? "لا محدود" : `${pkg.amount / 1000}GB`}
+                    {pkg.amount === -1
+                      ? "لا محدود"
+                      : `${Math.floor(pkg.amount / 1000)}GB`}
                   </span>
                 </div>
               </div>
@@ -260,7 +262,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                     <p className="my-0">
                       {pkg.amount === -1
                         ? "لا محدود"
-                        : `${pkg.amount / 1000} غيغا بايت`}
+                        : `${Math.floor(pkg.amount / 1000)}GB`}
                     </p>
                   </div>
                 </div>
