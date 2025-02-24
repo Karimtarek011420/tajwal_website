@@ -4,10 +4,10 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 export default function LoadingSkeleton() {
   return (
-    <div className="px-5 py-5">
-      <div className="row gy-4">
+    <div className="px-3 px-md-4 px-lg-5">
+      <div className="row row-cols-xl-5 row-cols-lg-3 row-cols-md-3 row-cols-sm-2 row-cols-1 gy-4">
         {Array.from({ length: 50 }).map((_, index) => (
-          <div key={index} className="col-md-3">
+          <div key={index} className="col">
             <div className="bg-white shadow-sm text-center">
               <div className="d-flex justify-content-between align-items-center p-3">
                 <div className="country-flag d-flex justify-content-center align-items-center">

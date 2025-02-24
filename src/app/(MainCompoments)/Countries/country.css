@@ -3,20 +3,9 @@
   font-size: var(--font-large) !important;
   font-weight: 300 !important;
 }
-@media (min-width: 767px) and (max-width: 1200px) {
-  .countryheader .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
 
 /* الموبايل */
 @media (max-width: 767px) {
-  .countryheader .countryheader {
-    padding: 15px;
-  }
-
   .countryheader .country-listbegin {
     top: -40px;
   }
@@ -32,10 +21,5 @@
 @media (max-width: 350px) {
   .countryheader .countryname {
     font-size: 12px;
-  }
-
-  .countryheader .country-flag img {
-    width: 50px;
-    height: 30px;
   }
 }
