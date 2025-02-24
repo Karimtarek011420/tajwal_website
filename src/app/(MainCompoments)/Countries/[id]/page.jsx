@@ -122,7 +122,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                 </li>
               </ul>
             </div>
-            <div className="container">
+            <div className="px-5">
               <div className="d-flex flex-wrap justify-content-center align-items-center pt-2 pb-4">
                 {country?.days?.map((day) => (
                   <button
@@ -144,24 +144,18 @@ export default function DetailsCountry({ params: paramsPromise }) {
               </div>
 
               <div className="row gy-5 py-5">
-                <div
-                  style={{
-                    display: "flex",
-                    flexWrap: "wrap",
-                    gap: "30px",
-                    justifyContent: "center",
-                  }}
-                >
-                  {country.operators.map((operator) =>
-                    operator.packages
-                      .filter((pkg) =>
-                        selectedDay ? pkg.day === parseInt(selectedDay) : true
-                      )
-                      .map((pkg) => (
+                {country.operators.map((operator) =>
+                  operator.packages
+                    .filter((pkg) =>
+                      selectedDay ? pkg.day === parseInt(selectedDay) : true
+                    )
+                    .map((pkg) => (
+                      <div   key={pkg.id} className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 d-flex justify-content-center">
                         <div
-                          key={pkg.id}
+                        
                           style={{
-                            width: "400px",
+                            width: "100%",
+                            maxWidth: "400px",
                             borderRadius: "10px",
                             boxShadow: "0 5px 5px rgba(0,0,0,0.1)",
                             background:
@@ -373,9 +367,9 @@ export default function DetailsCountry({ params: paramsPromise }) {
                             </div>
                           </div>
                         </div>
-                      ))
-                  )}
-                </div>
+                      </div>
+                    ))
+                )}
               </div>
             </div>
           </div>
