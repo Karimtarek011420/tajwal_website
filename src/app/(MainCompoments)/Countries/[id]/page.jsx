@@ -81,6 +81,213 @@ export default function DetailsCountry({ params: paramsPromise }) {
       }, 800);
     }
   };
+  const array = [];
+  data?.map((country) => {
+    country.operators.map((operator) =>
+      operator.packages.map((pkg) => {
+        pkg.ele = (
+          <div
+            key={pkg.id}
+            className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-custom d-flex justify-content-center "
+          >
+            <div
+              style={{
+                width: "100%",
+                maxWidth: "350px",
+                borderRadius: "10px",
+                boxShadow: "0 5px 5px rgba(0,0,0,0.1)",
+                background:
+                  pkg.amount === -1
+                    ? "linear-gradient(to top, var(--primary-color), #5EB5DF)" // تدرج لوني للحزم غير المحدودة
+                    : "white", // تدرج لوني للحزم المحدودة
+              }}
+              className=" position-relative"
+            >
+              <div className=" countydtailsup d-flex justify-content-around align-items-center position-absolute ">
+                <div>
+                  {operator.countries.map((country) => {
+                    return (
+                      <Image
+                        key={country.country_code}
+                        src={country.image}
+                        height={58}
+                        width={80}
+                        alt={country.title}
+                      />
+                    );
+                  })}
+                </div>
+                <div>
+                  <span
+                    style={{
+                      backgroundColor:
+                        pkg.amount === -1 ? "#F9F9F9" : "#D9DEE4",
+                      fontSize: "13px",
+                      fontWeight: "300",
+                    }}
+                    dir="ltr"
+                    className=" px-4 py-2 rounded-2"
+                  >
+                    {pkg.amount === -1
+                      ? "لا محدود"
+                      : `${Math.floor(pkg.amount / 1000)}GB`}
+                  </span>
+                </div>
+              </div>
+              <div className="py-5">
+                <div
+                  className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
+                  style={{
+                    backgroundColor:
+                      pkg.amount === -1 ? "#F1F3F666" : "#F1F3F666",
+                    color: pkg.amount === -1 ? "#FFFFFF" : "var( --auth-color)",
+                    fontSize: "12px",
+                    fontWeight: "400",
+                  }}
+                >
+                  <div className="d-flex align-items-center justify-content-center">
+                    <Image
+                      src={pkg.amount === -1 ? icon1 : icon1dark}
+                      width={16}
+                      height={16}
+                      alt="iconcountry"
+                    />
+                    <p className="mx-2 my-0">التغطية</p>
+                  </div>
+                  <div>
+                    {console.log(operator.coverages)}
+                    <p className="my-0">{operator.coverages[0].name}</p>
+                  </div>
+                </div>
+                <div
+                  className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
+                  style={{
+                    backgroundColor: pkg.amount === -1 ? "#F1F3F666" : "#fff",
+                    color: pkg.amount === -1 ? "#FFFFFF" : "var( --auth-color)",
+                    fontSize: "12px",
+                    fontWeight: "400",
+                  }}
+                >
+                  <div className="d-flex align-items-center justify-content-center">
+                    <Image
+                      src={pkg.amount === -1 ? icon2 : icon2dark}
+                      width={13}
+                      height={16}
+                      alt="iconcountry"
+                      className=" text-white"
+                    />
+                    <p className="mx-2 my-0">البيانات</p>
+                  </div>
+                  <div>
+                    <p className="my-0">
+                      {pkg.amount === -1
+                        ? "لا محدود"
+                        : `${Math.floor(pkg.amount / 1000)}GB`}
+                    </p>
+                  </div>
+                </div>
+                <div
+                  className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
+                  style={{
+                    backgroundColor:
+                      pkg.amount === -1 ? "#F1F3F666" : "#F1F3F666",
+                    color: pkg.amount === -1 ? "#FFFFFF" : "var( --auth-color)",
+                    fontSize: "12px",
+                    fontWeight: "400",
+                  }}
+                >
+                  <div className="d-flex align-items-center justify-content-center">
+                    <Image
+                      src={pkg.amount === -1 ? icon3 : icon3dark}
+                      width={13}
+                      height={16}
+                      alt="iconcountry"
+                      className=" text-white"
+                    />
+                    <p className="mx-2 my-0">الصلاحية</p>
+                  </div>
+                  <div>
+                    <p className="my-0">
+                      {pkg.day} {pkg.day <= 10 ? "أيام" : "يوم"}
+                    </p>
+                  </div>
+                </div>
+                <div
+                  className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
+                  style={{
+                    backgroundColor: pkg.amount === -1 ? "#F1F3F666" : "#fff",
+                    color: pkg.amount === -1 ? "#FFFFFF" : "var( --auth-color)",
+                    fontSize: "12px",
+                    fontWeight: "400",
+                  }}
+                >
+                  <div className="d-flex align-items-center justify-content-center">
+                    <Image
+                      src={pkg.amount === -1 ? icon4 : icon4dark}
+                      width={13}
+                      height={16}
+                      alt="iconcountry"
+                      className="text-white"
+                    />
+                    <p className="mx-2 my-0">السعر</p>
+                  </div>
+                  <div>
+                    <p className="my-0">{pkg.price} ر.س</p>
+                  </div>
+                </div>
+                <div
+                  className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
+                  style={{
+                    backgroundColor:
+                      pkg.amount === -1 ? "#F1F3F666" : "#F1F3F666",
+                    color: pkg.amount === -1 ? "#FFFFFF" : "var( --auth-color)",
+                    fontSize: "12px",
+                    fontWeight: "400",
+                  }}
+                >
+                  <div className="d-flex align-items-center justify-content-center">
+                    <Image
+                      src={pkg.amount === -1 ? icon5 : icon5dark}
+                      width={16}
+                      height={16}
+                      alt="iconcountry"
+                    />
+                    <p className="mx-2 my-0">قابلة للتجديد</p>
+                  </div>
+                  <div>
+                    <p className="my-0">
+                      {operator.rechargeability === true ? "نعم" : "لا"}
+                    </p>
+                  </div>
+                </div>
+                <div className=" d-flex justify-content-center align-items-center">
+                  <button
+                    onClick={() => openModal(pkg, operator)}
+                    style={{
+                      backgroundColor: "transparent",
+                      padding: "10px 60px",
+                      color:
+                        pkg.amount === -1 ? "#fff" : "var(--primary-color)",
+                      border:
+                        pkg.amount === -1
+                          ? "2px #fff solid"
+                          : "2px var(--primary-color) solid",
+                      borderRadius: "5px",
+                      cursor: "pointer",
+                      marginTop: "10px",
+                    }}
+                  >
+                    اختيار
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+        array.push(pkg);
+      })
+    );
+  });
 
   return (
     <div className="countrydetials position-relative py-5">
@@ -134,241 +341,17 @@ export default function DetailsCountry({ params: paramsPromise }) {
                   </button>
                 ))}
               </div>
-
               <div className="row gy-5 py-5">
-                {country.operators.map((operator) =>
-                  operator.packages
-                    .filter((pkg) =>
-                      selectedDay ? pkg.day === parseInt(selectedDay) : true
-                    )
-                    .sort((a, b) => {
-                      if (a.amount === -1) return 1; // إذا كانت قيمة a غير محدودة، ضعها في النهاية
-                      if (b.amount === -1) return -1; // إذا كانت قيمة b غير محدودة، ضعها قبل a
-                      return a.amount - b.amount; // ترتيب تصاعدي للقيم المحددة (الجيجا)
-                    })
-                    .map((pkg) => (
-                      <div
-                        key={pkg.id}
-                        className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-custom d-flex justify-content-center "
-                      >
-                        <div
-                          style={{
-                            width: "100%",
-                            maxWidth: "350px",
-                            borderRadius: "10px",
-                            boxShadow: "0 5px 5px rgba(0,0,0,0.1)",
-                            background:
-                              pkg.amount === -1
-                                ? "linear-gradient(to top, var(--primary-color), #5EB5DF)" // تدرج لوني للحزم غير المحدودة
-                                : "white", // تدرج لوني للحزم المحدودة
-                          }}
-                          className=" position-relative"
-                        >
-                          <div className=" countydtailsup d-flex justify-content-around align-items-center position-absolute ">
-                            <div>
-                              {operator.countries.map((country) => {
-                                return (
-                                  <Image
-                                    key={country.country_code}
-                                    src={country.image}
-                                    height={58}
-                                    width={80}
-                                    alt={country.title}
-                                  />
-                                );
-                              })}
-                            </div>
-                            <div>
-                              <span
-                                style={{
-                                  backgroundColor:
-                                    pkg.amount === -1 ? "#F9F9F9" : "#D9DEE4",
-                                  fontSize: "13px",
-                                  fontWeight: "300",
-                                }}
-                                dir="ltr"
-                                className=" px-4 py-2 rounded-2"
-                              >
-                                {pkg.amount === -1
-                                  ? "لا محدود"
-                                  : `${Math.floor(pkg.amount / 1000)}GB`}
-                              </span>
-                            </div>
-                          </div>
-                          <div className="py-5">
-                            <div
-                              className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
-                              style={{
-                                backgroundColor:
-                                  pkg.amount === -1 ? "#F1F3F666" : "#F1F3F666",
-                                color:
-                                  pkg.amount === -1
-                                    ? "#FFFFFF"
-                                    : "var( --auth-color)",
-                                fontSize: "12px",
-                                fontWeight: "400",
-                              }}
-                            >
-                              <div className="d-flex align-items-center justify-content-center">
-                                <Image
-                                  src={pkg.amount === -1 ? icon1 : icon1dark}
-                                  width={16}
-                                  height={16}
-                                  alt="iconcountry"
-                                />
-                                <p className="mx-2 my-0">التغطية</p>
-                              </div>
-                              <div>
-                                {console.log(operator.coverages)}
-                                <p className="my-0">
-                                  {operator.coverages[0].name}
-                                </p>
-                              </div>
-                            </div>
-                            <div
-                              className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
-                              style={{
-                                backgroundColor:
-                                  pkg.amount === -1 ? "#F1F3F666" : "#fff",
-                                color:
-                                  pkg.amount === -1
-                                    ? "#FFFFFF"
-                                    : "var( --auth-color)",
-                                fontSize: "12px",
-                                fontWeight: "400",
-                              }}
-                            >
-                              <div className="d-flex align-items-center justify-content-center">
-                                <Image
-                                  src={pkg.amount === -1 ? icon2 : icon2dark}
-                                  width={13}
-                                  height={16}
-                                  alt="iconcountry"
-                                  className=" text-white"
-                                />
-                                <p className="mx-2 my-0">البيانات</p>
-                              </div>
-                              <div>
-                                <p className="my-0">
-                                  {pkg.amount === -1
-                                    ? "لا محدود"
-                                    : `${Math.floor(pkg.amount / 1000)}GB`}
-                                </p>
-                              </div>
-                            </div>
-                            <div
-                              className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
-                              style={{
-                                backgroundColor:
-                                  pkg.amount === -1 ? "#F1F3F666" : "#F1F3F666",
-                                color:
-                                  pkg.amount === -1
-                                    ? "#FFFFFF"
-                                    : "var( --auth-color)",
-                                fontSize: "12px",
-                                fontWeight: "400",
-                              }}
-                            >
-                              <div className="d-flex align-items-center justify-content-center">
-                                <Image
-                                  src={pkg.amount === -1 ? icon3 : icon3dark}
-                                  width={13}
-                                  height={16}
-                                  alt="iconcountry"
-                                  className=" text-white"
-                                />
-                                <p className="mx-2 my-0">الصلاحية</p>
-                              </div>
-                              <div>
-                                <p className="my-0">
-                                  {pkg.day} {pkg.day <= 10 ? "أيام" : "يوم"}
-                                </p>
-                              </div>
-                            </div>
-                            <div
-                              className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
-                              style={{
-                                backgroundColor:
-                                  pkg.amount === -1 ? "#F1F3F666" : "#fff",
-                                color:
-                                  pkg.amount === -1
-                                    ? "#FFFFFF"
-                                    : "var( --auth-color)",
-                                fontSize: "12px",
-                                fontWeight: "400",
-                              }}
-                            >
-                              <div className="d-flex align-items-center justify-content-center">
-                                <Image
-                                  src={pkg.amount === -1 ? icon4 : icon4dark}
-                                  width={13}
-                                  height={16}
-                                  alt="iconcountry"
-                                  className="text-white"
-                                />
-                                <p className="mx-2 my-0">السعر</p>
-                              </div>
-                              <div>
-                                <p className="my-0">{pkg.price} ر.س</p>
-                              </div>
-                            </div>
-                            <div
-                              className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
-                              style={{
-                                backgroundColor:
-                                  pkg.amount === -1 ? "#F1F3F666" : "#F1F3F666",
-                                color:
-                                  pkg.amount === -1
-                                    ? "#FFFFFF"
-                                    : "var( --auth-color)",
-                                fontSize: "12px",
-                                fontWeight: "400",
-                              }}
-                            >
-                              <div className="d-flex align-items-center justify-content-center">
-                                <Image
-                                  src={pkg.amount === -1 ? icon5 : icon5dark}
-                                  width={16}
-                                  height={16}
-                                  alt="iconcountry"
-                                />
-                                <p className="mx-2 my-0">قابلة للتجديد</p>
-                              </div>
-                              <div>
-                                <p className="my-0">
-                                  {operator.rechargeability === true
-                                    ? "نعم"
-                                    : "لا"}
-                                </p>
-                              </div>
-                            </div>
-                            <div className=" d-flex justify-content-center align-items-center">
-                              <button
-                                onClick={() => openModal(pkg, operator)}
-                                style={{
-                                  backgroundColor: "transparent",
-                                  padding: "10px 60px",
-                                  color:
-                                    pkg.amount === -1
-                                      ? "#fff"
-                                      : "var(--primary-color)",
-                                  border:
-                                    pkg.amount === -1
-                                      ? "2px #fff solid"
-                                      : "2px var(--primary-color) solid",
-                                  borderRadius: "5px",
-                                  cursor: "pointer",
-                                  marginTop: "10px",
-                                }}
-                              >
-                                اختيار
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))
-                )}
+                {array
+                  .filter((pkg) =>
+                    selectedDay ? pkg.day === parseInt(selectedDay) : true
+                  )
+                  .sort((a, b) => {
+                    if (a.amount === -1) return 1; // إذا كانت قيمة a غير محدودة، ضعها في النهاية
+                    if (b.amount === -1) return -1; // إذا كانت قيمة b غير محدودة، ضعها قبل a
+                    return a.amount - b.amount; // ترتيب تصاعدي للقيم المحددة (الجيجا)
+                  })
+                  .map((p) => p.ele)}
               </div>
             </div>
           </div>

@@ -1,5 +1,4 @@
 "use client";
-
 import { createContext, useContext, useEffect, useState } from "react";
 
 const PackageContext = createContext();
@@ -14,11 +13,12 @@ export const PackageProvider = ({ children }) => {
   }, []);
 
   // تحديث localStorage عند تغيير selectedPackage
-  useEffect(() => {
-    if (selectedPackage) {
-      localStorage.setItem("package", JSON.stringify(selectedPackage));
-    }
-  }, [selectedPackage]);
+  // useEffect(() => {
+  //   console.log(selectedPackage)
+  //   if (selectedPackage) {
+  //     localStorage.setItem("package", JSON.stringify(selectedPackage));
+  //   }
+  // }, [selectedPackage]);
   return (
     <PackageContext.Provider value={{ selectedPackage, setSelectedPackagepur }}>
       {children}
