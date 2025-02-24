@@ -17,7 +17,7 @@ import "react-international-phone/style.css";
 export default function ContactUS() {
   const [errorMessage, setErrorMessage] = useState("");
   const [sucessMessage, setsucessMessage] = useState(false);
-  
+
   const [loading, setloading] = useState(false);
   const apiContect = async (values) => {
     setloading(true);
@@ -89,8 +89,11 @@ export default function ContactUS() {
       <div className="position-absolute country-listbeginall w-100">
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
           <li
-            className="country-list-links bg-white mx-lg-2"
-            style={{ color: "var(--primary-color)" }}
+            className="country-list-links mx-lg-2"
+            style={{
+              color: "var(--primary-color)",
+              backgroundColor: "var(--background)",
+            }}
           >
             <span className="p-5">اتصل بنا</span>
           </li>

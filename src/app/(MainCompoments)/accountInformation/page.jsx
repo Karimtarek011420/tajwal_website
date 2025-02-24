@@ -257,8 +257,8 @@ import withAuth from "@/app/utils/withAuth";
     <div className="accountInformation position-relative py-5">
       <div className="position-absolute country-listbeginall w-100">
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
-          <li className="country-list-links bg-white mx-2 accountInformationp">
-            <span className="p-4"> معلومات الحساب</span>
+          <li className="country-list-links  mx-2 accountInformationp" style={{backgroundColor:'var(--background)'}}>
+            <span className="p-4"  > معلومات الحساب</span>
            
           </li>
         </ul>

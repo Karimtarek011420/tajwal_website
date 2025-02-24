@@ -16,7 +16,7 @@ import iconip from "@/assets/images/iconip.svg";
 import "./world.css";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { usePackage } from "@/app/_Compontents/PackageContext/PackageContext";
 import { Modal, Box, Button, Typography } from "@mui/material";
 import { API_BASE_URL } from "@/app/utils/config";
@@ -31,6 +31,7 @@ export default function DetailsCountry() {
   const [openbox, setOpenbox] = useState(false);
   const [opennet, setOpennet] = useState(false);
   const [error, setError] = useState(null); // تخزين الخطأ
+  const pathname = usePathname(); // الحصول على المسار الحالي
 
   const getCountryDetails = async () => {
     try {
@@ -94,7 +95,46 @@ export default function DetailsCountry() {
           <div key={country.country_code}>
             <div className="position-absolute country-listbeginall w-100">
               <ul className="list-unstyled d-flex justify-content-center align-items-center">
-                <li
+                <Link
+                  href={"/Countries"}
+                  className={`country-list-links mx-2 ${
+                    pathname === "/Countries" ? "active1" : "bg-transparent"
+                  }`}
+                  style={{
+                    color:
+                      pathname === "/Countries"
+                        ? "var(--primary-color)"
+                        : "#ffffff",
+                  }}
+                >
+                  دولية
+                </Link>
+                <Link
+                  href="/continents"
+                  className={`country-list-links mx-2 ${
+                    pathname === "/continents" ? "active1" : "bg-transparent"
+                  }`}
+                  style={{
+                    color:
+                      pathname === "/continents"
+                        ? "var(--primary-color)"
+                        : "#ffffff",
+                  }}
+                >
+                  قارية
+                </Link>
+                <Link
+                  href="/world"
+                  className={`country-list-links mx-2 ${
+                    pathname === "/world" ? "active1" : "bg-transparent"
+                  }`}
+                  style={{
+                    color: pathname === "/world" ? " #285060" : "#ffffff",
+                  }}
+                >
+                  عالمية
+                </Link>
+                {/* <li
                   className="country-list-links bg-white mx-lg-2"
                   style={{ color: "var(--primary-color)" }}
                 >
@@ -104,9 +144,8 @@ export default function DetailsCountry() {
                     height={25}
                     alt={country.title}
                   />
-                  {/* <span className="mx-3">{country.title}</span> */}
                   <span className="mx-3">عالمية</span>
-                </li>
+                </li> */}
               </ul>
             </div>
             <div className="container">

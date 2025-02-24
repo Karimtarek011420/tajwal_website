@@ -1,10 +1,10 @@
 :root {
-  --background: #ffffff;
+  --background: #f9f9f9;
   --foreground: #171717;
   --primary-color: #336279; /* اللون الرئيسي */
   --secondary-color: #575050; /* اللون الفرعي */
   --auth-color: #626e7b; /* اللون الفرعي */
-  --font-largeNavbar:20px;
+  --font-largeNavbar: 20px;
   --font-large: 18px;
   --font-medium: 17px;
   --font-small: 14px;
@@ -15,7 +15,6 @@ body {
   overflow-x: hidden;
 }
 body {
-  color: var(--foreground);
   background: var(--background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -69,7 +68,7 @@ a {
   transition: background-color 0.3s ease, color 0.3s ease !important;
 }
 .country-listbeginall .country-list-links:hover {
-  background-color: #ffffff !important;
+  background-color: var(--background) !important;
   color: var(--primary-color) !important;
 }
 /* footer */

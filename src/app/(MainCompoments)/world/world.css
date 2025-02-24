@@ -3,6 +3,10 @@
 .countrydetials .btnesim {
   border: 1px solid var(--primary-color) !important ;
 }
+.countrydetials .country-listbeginall .active1 {
+  background-color: #f9f9f9 !important;
+  color: var(--primary-color) !important; /* لون أخضر عند التفعيل */
+}
 .countrydetials .countydtailsup {
   top: -20px;
   width: 95%;

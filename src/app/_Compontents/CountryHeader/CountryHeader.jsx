@@ -46,8 +46,8 @@ export default async function CountryHeader() {
       <div className="position-absolute country-listbeginall w-100">
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
           <li
-            className="country-list-links bg-white mx-2"
-            style={{ color: "var(--primary-color)" }}
+            className="country-list-links  mx-2"
+            style={{ color: "var(--primary-color)" , backgroundColor:'var(--background)' }}
           >
             دولية
           </li>
