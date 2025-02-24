@@ -69,6 +69,12 @@
   font-weight: 400;
   color: var(--auth-color);
 }
+@media (min-width: 1200px) { 
+  .col-xl-custom {
+    flex: 0 0 20%; /* كل بطاقة تأخذ 20% من العرض */
+    max-width: 20%;
+  }
+}
 
 @media screen and (max-width: 600px) {
   .modal-content {

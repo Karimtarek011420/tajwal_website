@@ -150,12 +150,14 @@ export default function DetailsCountry({ params: paramsPromise }) {
                       selectedDay ? pkg.day === parseInt(selectedDay) : true
                     )
                     .map((pkg) => (
-                      <div   key={pkg.id} className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 d-flex justify-content-center">
+                      <div
+                        key={pkg.id}
+                        className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-custom d-flex justify-content-center"
+                      >
                         <div
-                        
                           style={{
                             width: "100%",
-                            maxWidth: "400px",
+                            maxWidth: "350px",
                             borderRadius: "10px",
                             boxShadow: "0 5px 5px rgba(0,0,0,0.1)",
                             background:
