@@ -5,21 +5,13 @@
 }
 
 /* الموبايل */
-@media (max-width: 767px) {
+@media (max-width: 850px) {
   .countryheader .country-listbegin {
     top: -40px;
   }
 
   .countryheader .countryname {
-    font-size: 15px !important;
-    margin-left: 10px !important;
-    margin-right: 8px !important;
-  }
-}
-
-/* الشاشات الصغيرة جدًا (350px أو أقل) */
-@media (max-width: 350px) {
-  .countryheader .countryname {
-    font-size: 12px;
+    font-size: 17px !important;
+   
   }
 }
