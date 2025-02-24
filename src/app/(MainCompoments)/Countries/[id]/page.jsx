@@ -152,7 +152,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                     .map((pkg) => (
                       <div
                         key={pkg.id}
-                        className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-custom d-flex justify-content-center"
+                        className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-custom d-flex justify-content-center"
                       >
                         <div
                           style={{
