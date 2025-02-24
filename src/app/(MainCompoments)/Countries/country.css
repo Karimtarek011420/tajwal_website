@@ -1,10 +1,5 @@
-.country-listbeginall .country-list-links:active {
-  background-color: #f9f9f9;
-  color: var(--primary-color) !important;
-}
-
 .countryheader .countryname {
-  color:  var(--auth-color) !important;
+  color: var(--auth-color) !important;
   font-size: var(--font-large) !important;
   font-weight: 300 !important;
 }
@@ -13,15 +8,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
-
-  .countryheader .col-md-3 {
-    flex: 0 0 50%; /* عرض العنصر يكون 50% من عرض الحاوية */
-    max-width: 50%;
-  }
-
-  .countryheader .col-md-3.text-center {
-    text-align: center;
   }
 }
 

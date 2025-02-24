@@ -37,22 +37,18 @@ export default function CountryHeader() {
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
           <Link
             href={"/Countries"}
-            className={`country-list-links mx-2 ${
-              pathname === "/Countries" ? "active1" : "bg-transparent"
-            }`}
+            className="country-list-links mx-2"
             style={{
               color:
                 pathname === "/Countries" ? "var(--primary-color)" : "#ffffff",
-                backgroundColor:'var(--background)'
+              backgroundColor: "var(--background)",
             }}
           >
             دولية
           </Link>
           <Link
             href="/continents"
-            className={`country-list-links mx-2 ${
-              pathname === "/continents" ? "active1" : "bg-transparent"
-            }`}
+            className="country-list-links mx-2 "
             style={{
               color:
                 pathname === "/continents" ? "var(--primary-color)" : "#ffffff",
@@ -62,9 +58,7 @@ export default function CountryHeader() {
           </Link>
           <Link
             href="/world"
-            className={`country-list-links mx-2 ${
-              pathname === "/world" ? "active1" : "bg-transparent"
-            }`}
+            className="country-list-links mx-2"
             style={{
               color: pathname === "/world" ? "var(--primary-color)" : "#ffffff",
             }}

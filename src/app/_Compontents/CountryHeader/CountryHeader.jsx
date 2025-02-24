@@ -67,22 +67,23 @@ export default async function CountryHeader() {
       </div>
 
       {/* عرض الدول */}
-      <div className="px-5">
-        <div className="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-1 gy-4 px-lg-5">
+      <div className="px-3 px-md-4 px-lg-5">
+        <div className="row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 gy-4">
           {countries.map((country) => (
             <div key={country.country_code} className="col">
-              <div className="bg-white shadow-sm text-center rounded-3">
+              <div className="bg-white shadow-sm text-center rounded-3 p-3">
                 <Link href={`/Countries/${country.country_code}`}>
-                  <div className="d-flex justify-content-between align-items-center p-3">
-                    <div className="country-flag d-flex justify-content-center align-items-center">
+                  <div className="d-flex justify-content-between align-items-center">
+                    <div className="d-flex align-items-center">
                       <Image
                         src={country.image}
                         width={45}
                         height={30}
                         alt={`علم ${country.title}`}
                         loading="lazy"
+                        className="ms-2"
                       />
-                      <p className="text-black mb-0 ms-lg-4 px-lg-3 countryname">
+                      <p className="text-black mb-0 ms-3 countryname">
                         {country.title}
                       </p>
                     </div>
@@ -94,7 +95,6 @@ export default async function CountryHeader() {
           ))}
         </div>
       </div>
-
       {/* زر عرض جميع الدول */}
       <div className="d-flex justify-content-center align-items-center pt-5">
         <Link href="/Countries" className="countryshow text-white px-5 py-3">
