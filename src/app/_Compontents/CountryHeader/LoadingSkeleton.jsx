@@ -5,9 +5,9 @@ import "react-loading-skeleton/dist/skeleton.css";
 export default function LoadingSkeleton() {
   return (
     <div className="px-5 py-5">
-      <div className="row gy-4">
+      <div  className="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-1 gy-4 px-lg-5">
         {Array.from({ length: 12 }).map((_, index) => (
-          <div key={index} className="col-md-3">
+          <div key={index} className="col">
             <div className="bg-white shadow-sm text-center">
               <div className="d-flex justify-content-between align-items-center p-3">
                 <div className="country-flag d-flex justify-content-center align-items-center">

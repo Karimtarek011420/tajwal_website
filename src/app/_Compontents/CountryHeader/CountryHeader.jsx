@@ -47,7 +47,10 @@ export default async function CountryHeader() {
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
           <li
             className="country-list-links  mx-2"
-            style={{ color: "var(--primary-color)" , backgroundColor:'var(--background)' }}
+            style={{
+              color: "var(--primary-color)",
+              backgroundColor: "var(--background)",
+            }}
           >
             دولية
           </li>
@@ -64,11 +67,11 @@ export default async function CountryHeader() {
       </div>
 
       {/* عرض الدول */}
-      <div className="px-lg-5 px-4">
-        <div className="row gy-4">
+      <div className="px-5">
+        <div className="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-1 gy-4 px-lg-5">
           {countries.map((country) => (
-            <div key={country.country_code} className="col-md-3">
-              <div className="bg-white shadow-sm text-center">
+            <div key={country.country_code} className="col">
+              <div className="bg-white shadow-sm text-center rounded-3">
                 <Link href={`/Countries/${country.country_code}`}>
                   <div className="d-flex justify-content-between align-items-center p-3">
                     <div className="country-flag d-flex justify-content-center align-items-center">
@@ -83,7 +86,7 @@ export default async function CountryHeader() {
                         {country.title}
                       </p>
                     </div>
-                    <Image src={arrow} width={20} height={20} alt="السهم" />
+                    <Image src={arrow} width={11} height={20} alt="السهم" />
                   </div>
                 </Link>
               </div>
@@ -91,6 +94,7 @@ export default async function CountryHeader() {
           ))}
         </div>
       </div>
+
       {/* زر عرض جميع الدول */}
       <div className="d-flex justify-content-center align-items-center pt-5">
         <Link href="/Countries" className="countryshow text-white px-5 py-3">
