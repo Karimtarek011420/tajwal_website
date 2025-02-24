@@ -122,7 +122,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                 </li>
               </ul>
             </div>
-            <div className="px-5">
+            <div className="px-lg-5">
               <div className="d-flex flex-wrap justify-content-center align-items-center pt-2 pb-4">
                 {country?.days?.map((day) => (
                   <button
@@ -152,7 +152,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                     .map((pkg) => (
                       <div
                         key={pkg.id}
-                        className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-custom d-flex justify-content-center"
+                        className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-custom d-flex justify-content-center "
                       >
                         <div
                           style={{
