@@ -37,12 +37,13 @@ export default function CountryHeader() {
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
           <Link
             href={"/Countries"}
-            className={`country-list-links mx-2 bg-white ${
+            className={`country-list-links mx-2 ${
               pathname === "/Countries" ? "active1" : "bg-transparent"
             }`}
             style={{
               color:
                 pathname === "/Countries" ? "var(--primary-color)" : "#ffffff",
+                backgroundColor:'var(--background)'
             }}
           >
             دولية
