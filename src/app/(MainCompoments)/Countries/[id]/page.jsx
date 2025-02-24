@@ -149,6 +149,11 @@ export default function DetailsCountry({ params: paramsPromise }) {
                     .filter((pkg) =>
                       selectedDay ? pkg.day === parseInt(selectedDay) : true
                     )
+                    .sort((a, b) => {
+                      if (a.amount === -1) return 1; // نقل "لا محدود" إلى النهاية
+                      if (b.amount === -1) return -1; // نقل "لا محدود" إلى النهاية
+                      return a.amount - b.amount; // ترتيب عادي بناءً على الحجم
+                    })
                     .map((pkg) => (
                       <div
                         key={pkg.id}
@@ -194,7 +199,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                               >
                                 {pkg.amount === -1
                                   ? "لا محدود"
-                                  : `${pkg.amount / 1000}GB`}
+                                  : `${Math.ceil(pkg.amount / 1024)}GB`}
                               </span>
                             </div>
                           </div>
@@ -255,7 +260,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                                 <p className="my-0">
                                   {pkg.amount === -1
                                     ? "لا محدود"
-                                    : `${pkg.amount / 1000} غيغا بايت`}
+                                    : `${Math.ceil(pkg.amount / 1024)}GB`}
                                 </p>
                               </div>
                             </div>
