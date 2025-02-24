@@ -41,8 +41,11 @@ export default function OffersPage() {
       <div className="position-absolute country-listbeginall w-100">
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
           <li
-            className="country-list-links bg-white mx-lg-2"
-            style={{ color: "var(--primary-color)" }}
+            className="country-list-links  mx-lg-2"
+            style={{
+              color: "var(--primary-color)",
+              backgroundColor: "var(--background)",
+            }}
           >
             <span className="p-5">العروض</span>
           </li>
@@ -51,7 +54,14 @@ export default function OffersPage() {
 
       <div className="container py-5">
         <div>
-          {error && <p className="text-danger text-center" style={{minHeight:'30vh'}}>{error}</p>}{" "}
+          {error && (
+            <p
+              className="text-danger text-center"
+              style={{ minHeight: "30vh" }}
+            >
+              {error}
+            </p>
+          )}{" "}
           {/* عرض الخطأ إن وجد */}
         </div>
         <div className="row gy-4">

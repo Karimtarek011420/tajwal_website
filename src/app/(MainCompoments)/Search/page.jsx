@@ -52,8 +52,11 @@ export default function SearchResults() {
       <div className="position-absolute country-listbeginall w-100">
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
           <li
-            className="country-list-links bg-white mx-2"
-            style={{ color: "var(--primary-color)" }}
+            className="country-list-links mx-2"
+            style={{
+              color: "var(--primary-color)",
+              backgroundColor: "var(--background)",
+            }}
           >
             دولية
           </li>
@@ -87,9 +90,9 @@ export default function SearchResults() {
         </p>
       )}
       <div className="px-lg-5 px-4">
-        <div className="row gy-4" style={{minHeight:'30vh'}}>
+        <div className="row gy-4" style={{ minHeight: "30vh" }}>
           {results.map((country) => (
-            <div key={country.country_code} className="col-md-3" >
+            <div key={country.country_code} className="col-md-3">
               <div className="bg-white shadow-sm text-center">
                 <Link
                   href={

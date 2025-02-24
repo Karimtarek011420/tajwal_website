@@ -182,8 +182,11 @@ function pagepurchase() {
         <div className="position-absolute country-listbeginall  w-100">
           <ul className="list-unstyled d-flex justify-content-center align-items-center">
             <li
-              className="country-list-links bg-white mx-lg-2"
-              style={{ color: "var(--primary-color)" }}
+              className="country-list-links  mx-lg-2"
+              style={{
+                color: "var(--primary-color)",
+                backgroundColor: "var(--background)",
+              }}
             >
               <span className="p-5">إتمام الطلب</span>
             </li>

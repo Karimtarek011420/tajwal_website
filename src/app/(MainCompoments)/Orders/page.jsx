@@ -59,7 +59,7 @@ function Previousorders() {
     <div className="previousOrders position-relative py-5">
       <div className="position-absolute country-listbeginall w-100">
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
-          <li className="country-list-links bg-white mx-2 accountInformationp">
+          <li className="country-list-links  mx-2 accountInformationp"  style={{ color: "var(--primary-color)" , backgroundColor:'var(--background)' }}>
             <span className="p-4"> الطلبات السابقة</span>
           </li>
         </ul>
