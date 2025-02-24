@@ -35,9 +35,7 @@ export default function CountryHeader() {
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
           <Link
             href={"/Countries"}
-            className={`country-list-links mx-2 ${
-              pathname === "/Countries" ? "active1" : "bg-transparent"
-            }`}
+            className="country-list-links mx-2"
             style={{
               color:
                 pathname === "/Countries" ? "var(--primary-color)" : "#ffffff",
@@ -47,23 +45,20 @@ export default function CountryHeader() {
           </Link>
           <Link
             href="/continents"
-            className={`country-list-links mx-2 ${
-              pathname === "/continents" ? "active1" : "bg-transparent"
-            }`}
+            className="country-list-links mx-2"
             style={{
               color:
                 pathname === "/continents" ? "var(--primary-color)" : "#ffffff",
+              backgroundColor: "var(--background)",
             }}
           >
             قارية
           </Link>
           <Link
             href="/world"
-            className={`country-list-links mx-2 ${
-              pathname === "/world" ? "active1" : "bg-transparent"
-            }`}
+            className="country-list-links mx-2"
             style={{
-              color: pathname === "/world" ? " #285060" : "#ffffff",
+              color: pathname === "/world" ? "var(--primary-color)" : "#ffffff",
             }}
           >
             عالمية
@@ -72,7 +67,14 @@ export default function CountryHeader() {
       </div>
       <div className="px-lg-5 px-4">
         <div className="d-flex justify-content-center">
-          {error && <p className="text-danger text-center py-5" style={{minHeight:'30vh'}}>{error}</p>}{" "}
+          {error && (
+            <p
+              className="text-danger text-center py-5"
+              style={{ minHeight: "30vh" }}
+            >
+              {error}
+            </p>
+          )}{" "}
         </div>
         <div className="row gy-4">
           {countries?.map((country) => {
