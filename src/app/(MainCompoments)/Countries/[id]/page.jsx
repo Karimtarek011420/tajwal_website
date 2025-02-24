@@ -142,9 +142,9 @@ export default function DetailsCountry({ params: paramsPromise }) {
                       selectedDay ? pkg.day === parseInt(selectedDay) : true
                     )
                     .sort((a, b) => {
-                      if (a.amount === -1) return 1;
-                      if (b.amount === -1) return -1;
-                      return a.amount - b.amount;
+                      if (a.amount === -1) return 1; // إذا كانت قيمة a غير محدودة، ضعها في النهاية
+                      if (b.amount === -1) return -1; // إذا كانت قيمة b غير محدودة، ضعها قبل a
+                      return a.amount - b.amount; // ترتيب تصاعدي للقيم المحددة (الجيجا)
                     })
                     .map((pkg) => (
                       <div
