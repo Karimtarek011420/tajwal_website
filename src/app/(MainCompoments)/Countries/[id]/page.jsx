@@ -46,20 +46,12 @@ export default function DetailsCountry({ params: paramsPromise }) {
       setError("حدث خطأ أثناء تحميل البيانات. يرجى المحاولة لاحقًا.");
     }
   };
-  // useEffect(() => {
-  //   if (data && Array.isArray(data) && data.length > 0) {
-  //     const firstCountry = data[0]; // الحصول على أول دولة
-  //     if (firstCountry.days && firstCountry.days.length > 0) {
-  //       setSelectedDay(firstCountry.days[0]); // تعيين أول قيمة في مصفوفة الأيام
-  //     }
-  //   }
-  // }, [data]); // يتم تشغيل هذا عند تغيير البيانات
 
   useEffect(() => {
     if (id) getCountryDetails();
   }, [id]);
   const handleDayClick = (day) => {
-    setSelectedDay(day);
+    setSelectedDay((prevDay) => (prevDay === day ? null : day));
   };
 
   const openModal = (pkg, operator) => {
@@ -150,9 +142,9 @@ export default function DetailsCountry({ params: paramsPromise }) {
                       selectedDay ? pkg.day === parseInt(selectedDay) : true
                     )
                     .sort((a, b) => {
-                      if (a.amount === -1) return 1; // نقل "لا محدود" إلى النهاية
-                      if (b.amount === -1) return -1; // نقل "لا محدود" إلى النهاية
-                      return a.amount - b.amount; // ترتيب عادي بناءً على الحجم
+                      if (a.amount === -1) return 1;
+                      if (b.amount === -1) return -1;
+                      return a.amount - b.amount;
                     })
                     .map((pkg) => (
                       <div
@@ -199,7 +191,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                               >
                                 {pkg.amount === -1
                                   ? "لا محدود"
-                                  : `${Math.ceil(pkg.amount / 1024)}GB`}
+                                  : `${Math.floor(pkg.amount / 1000)}GB`}
                               </span>
                             </div>
                           </div>
@@ -260,7 +252,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                                 <p className="my-0">
                                   {pkg.amount === -1
                                     ? "لا محدود"
-                                    : `${Math.ceil(pkg.amount / 1024)}GB`}
+                                    : `${Math.floor(pkg.amount / 1000)}GB`}
                                 </p>
                               </div>
                             </div>
