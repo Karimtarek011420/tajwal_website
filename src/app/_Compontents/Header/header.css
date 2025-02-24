@@ -8,7 +8,7 @@
   font-weight: 700 !important;
 }
 .content-center p {
-  font-size: var(--font-large) !important ;
+  font-size: var(--font-largeNavbar) !important ;
   font-weight: 300 !important;
   margin-bottom: 30px !important;
 }
@@ -84,7 +84,7 @@
 
 @media (max-width: 500px) {
   .content-center h1 {
-    font-size: 35px !important ;
+    font-size: 33px !important ;
   }
 
 
