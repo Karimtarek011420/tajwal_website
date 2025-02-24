@@ -17,7 +17,7 @@ export default function Header() {
     <>
       <main className="home py-2 pb-5">
         <Navbar />
-        <div className="content-center py-5">
+        <div className="content-center py-lg-5 py-3">
           <div>
             <h1 className="text-white text-center">
               ابقى متصلاً <span className="text">اينما كنت</span>
