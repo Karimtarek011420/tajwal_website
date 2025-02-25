@@ -194,8 +194,10 @@ function pagepurchase() {
         </div>
         <div className=" container py-5">
           <div className=" row gy-3">
-            <div className="col-lg-4 col-md-6 col-sm-12" style={{}}>
-              <div className="cardpurchase  bg-white shadow-sm rounded-2 position-relative">
+            <div className="col-lg-4 col-md-6 col-sm-12">
+              <div className="cardpurchase  bg-white shadow-sm rounded-2 position-relative"  style={{
+                padding: selectedPackage?.amount === -1 ? "" : "33px 0px", // ✅ التعديل هنا
+              }}>
                 <div className=" countydtailsup d-flex  justify-content-between align-items-center position-absolute ">
                   <div>
                     {selectedPackage.image && (
