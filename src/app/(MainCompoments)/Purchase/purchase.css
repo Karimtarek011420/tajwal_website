@@ -49,14 +49,14 @@
 .Purchasedateils .purchasepachage {
   color: var(--auth-color) !important;
   font-weight: 300 !important;
-  font-size: 10px !important;
+  font-size: 13px !important;
   background-color: #f9f9f9 !important;
 }
 .Purchasedateils .purchasepachagewidth {
   width: 230px !important;
 }
 .Purchasedateils .purchasepachagesum {
-  font-size: 12px !important;
+  font-size: 13px !important;
   font-weight: 400 !important;
   color: var(--auth-color) !important;
 }
