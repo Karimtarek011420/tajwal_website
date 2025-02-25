@@ -356,6 +356,40 @@ function pagepurchase() {
               </div>
             </div>
             <div className="col-lg-4 col-md-6 col-sm-12">
+              <div className="bg-white shadow-sm rounded-2 py-4 px-4">
+                <p className="p1 disacount">كود الخصم</p>
+                <p className="p1 disacount">
+                  لديك كود خصم؟ ادخلها في الخانة التالية واضغط تطبيق
+                </p>
+                <div className="discount-container">
+                  <input
+                    id="couponCode"
+                    name="couponCode"
+                    type="text"
+                    className="discount-input"
+                    placeholder="ادخل كود الخصم"
+                    value={couponCode}
+                    onChange={(e) => setCouponCode(e.target.value)}
+                  />
+                  <button
+                    onClick={fetchDiscount}
+                    className="apply-btn d-flex justify-content-center align-items-center"
+                    disabled={!couponCode || loading}
+                  >
+                    {loading ? (
+                      <TailSpin
+                        visible={true}
+                        height="25"
+                        width="25"
+                        color="#fff"
+                        ariaLabel="tail-spin-loading"
+                      />
+                    ) : (
+                      "تطبيق"
+                    )}
+                  </button>
+                </div>
+              </div>
               <div className="bg-white shadow-sm rounded-2 mb-3 pb-5 pt-4 px-2">
                 <p className=" px-1   purchasepachagesum">المجموع</p>
                 <div className=" d-flex purchasepachage justify-content-between align-items-center my-1 px-2 py-2 ">
@@ -395,7 +429,7 @@ function pagepurchase() {
                     </p>
                   ) : (
                     <p className="purchasepachage purchasepachagewidth px-5 py-1 my-1 w-100">
-                      الخصم : <span className="me-5"></span>
+                      الخصم : <span className="me-5">0 ر.س</span>
                     </p>
                   )}
                 </div>
@@ -404,40 +438,6 @@ function pagepurchase() {
                     الإجمالى الكلى :
                     <span className="me-4">{totalPriceAll} ر.س</span>
                   </p>
-                </div>
-              </div>
-              <div className="bg-white shadow-sm rounded-2 py-4 px-4">
-                <p className="p1 disacount">كود الخصم</p>
-                <p className="p1 disacount">
-                  لديك كود خصم؟ ادخلها في الخانة التالية واضغط تطبيق
-                </p>
-                <div className="discount-container">
-                  <input
-                    id="couponCode"
-                    name="couponCode"
-                    type="text"
-                    className="discount-input"
-                    placeholder="ادخل كود الخصم"
-                    value={couponCode}
-                    onChange={(e) => setCouponCode(e.target.value)}
-                  />
-                  <button
-                    onClick={fetchDiscount}
-                    className="apply-btn d-flex justify-content-center align-items-center"
-                    disabled={!couponCode || loading}
-                  >
-                    {loading ? (
-                      <TailSpin
-                        visible={true}
-                        height="25"
-                        width="25"
-                        color="#fff"
-                        ariaLabel="tail-spin-loading"
-                      />
-                    ) : (
-                      "تطبيق"
-                    )}
-                  </button>
                 </div>
               </div>
             </div>
