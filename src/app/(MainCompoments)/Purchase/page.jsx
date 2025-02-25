@@ -415,28 +415,30 @@ function pagepurchase() {
                   <p className="my-0"> {selectedPackage.price} ر.س</p>
                 </div>
                 <div className="d-flex justify-content-end">
-                  <p className="purchasepachage purchasepachagewidth px-4 py-1 my-2 w-100">
-                    المجموع : <span className="me-5">{totalPrice} ر.س</span>
+                  <p className="purchasepachage purchasepachagewidth px-2 py-1 my-2 w-100 d-flex justify-content-between">
+                    <span className="me-5 pe-5"> المجموع : </span>
+                    <span>{totalPrice} ر.س</span>
                   </p>
                 </div>
                 <div className="d-flex justify-content-end">
                   {discountData ? (
-                    <p className="purchasepachage purchasepachagewidth px-5 py-1 my-1 w-100">
-                      الخصم :{" "}
-                      <span className="me-5">
+                    <p className="purchasepachage purchasepachagewidth px-2 py-1 my-1 w-100 d-flex justify-content-between">
+                      <span className="me-5 pe-5"> الخصم : </span>
+                      <span>
                         {(totalPrice * discountData.percentage) / 100} ر.س
                       </span>
                     </p>
                   ) : (
-                    <p className="purchasepachage purchasepachagewidth px-5 py-1 my-1 w-100">
-                      الخصم : <span className="me-5">0 ر.س</span>
+                    <p className="purchasepachage purchasepachagewidth px-2 py-1 my-1 w-100 d-flex justify-content-between">
+                      <span className="me-5 pe-5"> الخصم : </span>{" "}
+                      <span>0 ر.س</span>
                     </p>
                   )}
                 </div>
                 <div className="d-flex justify-content-end">
-                  <p className="purchasepachage purchasepachagewidth px-3 py-1 my-1 boldall w-100">
-                    الإجمالى الكلى :
-                    <span className="me-4">{totalPriceAll} ر.س</span>
+                  <p className="purchasepachage purchasepachagewidth px-2 py-1 my-1 boldall w-100 d-flex justify-content-between">
+                    <span className="me-5 pe-3"> الإجمالى الكلى :</span>
+                    <span>{totalPriceAll} ر.س</span>
                   </p>
                 </div>
               </div>
