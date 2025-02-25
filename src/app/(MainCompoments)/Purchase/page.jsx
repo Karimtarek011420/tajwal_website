@@ -201,7 +201,7 @@ function pagepurchase() {
                     {selectedPackage.image && (
                       <Image
                         src={selectedPackage.image}
-                        width={80}
+                        width={60}
                         height={80}
                         alt={selectedPackage.title}
                       />
@@ -390,7 +390,7 @@ function pagepurchase() {
                   </button>
                 </div>
               </div>
-              <div className="bg-white shadow-sm rounded-2 mb-3 pb-5 pt-4 px-2">
+              <div className="bg-white shadow-sm rounded-2 mb-3 pt-4 pb-5  px-2 mt-3">
                 <p className=" px-1   purchasepachagesum">المجموع</p>
                 <div className=" d-flex purchasepachage justify-content-between align-items-center my-1 px-2 py-2 ">
                   <p className="my-0 ">شريحة -{selectedPackage.title}</p>
