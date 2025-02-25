@@ -220,7 +220,7 @@ function pagepurchase() {
                     >
                       {selectedPackage.amount === -1
                         ? "لا محدود"
-                        : `${selectedPackage.amount / 1000}GB`}
+                        : `${Math.floor(selectedPackage.amount / 1000)}GB`}
                     </span>
                   </div>
                 </div>
@@ -270,7 +270,9 @@ function pagepurchase() {
                       <p className="my-0">
                         {selectedPackage.amount === -1
                           ? "لا محدود"
-                          : `${selectedPackage.amount / 1000} غيغا بايت`}
+                          : `${Math.floor(
+                              selectedPackage.amount / 1000
+                            )} غيغا بايت`}
                       </p>
                     </div>
                   </div>
