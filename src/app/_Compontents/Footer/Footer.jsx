@@ -52,7 +52,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="  col-md-3 offset-2">
+            <div className="  col-md-3 offset-2 d-flex flex-column align-items-center text-center">
               <h6 className="tajwalh  text-center">حمل التطبيق</h6>
               <div className="d-flex align-content-center align-items-center  text-center ">
                 <div className="d-flex flex-column align-items-center">
