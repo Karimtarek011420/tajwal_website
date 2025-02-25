@@ -28,13 +28,29 @@ export default function RegisterPage() {
   };
   const apiRegister = async (values) => {
     setloading(true);
+    let formattedPhone = values.phone_number;
+
+    if (formattedPhone.startsWith("+966")) {
+      let withoutCountryCode = formattedPhone.replace("+966", "").trim();
+
+      if (!withoutCountryCode.startsWith("0")) {
+        withoutCountryCode = "0" + withoutCountryCode;
+      }
+
+      formattedPhone = withoutCountryCode;
+    }
+
     try {
-      const { data } = await axios.post(`${API_BASE_URL}/register`, values, {
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      });
+      const { data } = await axios.post(
+        `${API_BASE_URL}/register`,
+        { ...values, phone_number: formattedPhone },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        }
+      );
       console.log(data);
       if (data.success === true) {
         toast.success(data.message, {
@@ -48,7 +64,7 @@ export default function RegisterPage() {
       }
       console.log(data);
       localStorage.setItem("emailotp", values.email);
-      localStorage.setItem("phone_numberotp", values.phone_number);
+      localStorage.setItem("phone_numberotp", formattedPhone);
 
       setTimeout(() => {
         router.push("/Register/Otp");
@@ -69,7 +85,6 @@ export default function RegisterPage() {
           setErrorMessage("رقم الجوال مستخدم من قبل");
           console.log("ll");
         }
-       
       }
     }
     setloading(false);
