@@ -207,7 +207,7 @@ const LoginPage = () => {
               <button
                 type="button"
                 className=" back  mb-3"
-                onClick={() => router.back()}
+                onClick={() => setStep(1)}
               >
                 العودة للخلف
               </button>
