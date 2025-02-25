@@ -71,10 +71,6 @@ export default function SearchResults() {
           </Link>
         </ul>
       </div>
-      {/* <span className="text-center text-body-secondary mb-3">
-        نتائج البحث عن: {searchTerm}
-      </span> */}
-
       {loading && (
         <p className="text-white text-body-secondary mb-3 text-center">
           جاري البحث...
@@ -89,11 +85,14 @@ export default function SearchResults() {
           لا توجد نتائج بحث
         </p>
       )}
-      <div className="px-lg-5 px-4">
-        <div className="row gy-4" style={{ minHeight: "30vh" }}>
+      <div className="px-3 px-md-4 px-lg-5">
+        <div
+          className="row row-cols-xl-5 row-cols-lg-3 row-cols-md-3 row-cols-sm-2 row-cols-1 gy-4"
+          style={{ minHeight: "30vh" }}
+        >
           {results.map((country) => (
-            <div key={country.country_code} className="col-md-3">
-              <div className="bg-white shadow-sm text-center">
+            <div key={country.country_code} className="col">
+              <div className="bg-white shadow-sm text-center rounded-3 p-3">
                 <Link
                   href={
                     country.type === "local"
@@ -101,20 +100,21 @@ export default function SearchResults() {
                       : `/continents/${country.country_code}`
                   }
                 >
-                  <div className="d-flex justify-content-between align-items-center p-3">
-                    <div className="country-flag d-flex justify-content-center align-items-center">
+                  <div className="d-flex justify-content-between align-items-center">
+                    <div className="d-flex align-items-center">
                       <Image
                         src={country.image}
-                        width={60}
-                        height={40}
+                        width={45}
+                        height={30}
                         alt={`علم ${country.title}`}
                         loading="lazy"
+                        className="ms-2"
                       />
-                      <p className="text-black mb-0 ms-lg-4 px-lg-3 countryname">
+                      <p className="text-black mb-0 ms-3 countryname">
                         {country.title}
                       </p>
                     </div>
-                    <Image src={arrow} width={20} height={20} alt="السهم" />
+                    <Image src={arrow} width={11} height={20} alt="السهم" />
                   </div>
                 </Link>
               </div>
