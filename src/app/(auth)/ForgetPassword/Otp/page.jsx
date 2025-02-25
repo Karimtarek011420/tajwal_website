@@ -125,8 +125,9 @@ const forgetOtpPage = () => {
             position: "top-right",
           },
         });
+        localStorage.setItem("passOtp", values.otp);
+        console.log(data);
       }
-      console.log(data);
     } catch (error) {
       toast.error("تعذر إرسال رمز التحقق حاول مرة أخرى", {
         duration: 1500,

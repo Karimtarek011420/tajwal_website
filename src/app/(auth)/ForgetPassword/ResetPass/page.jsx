@@ -14,18 +14,21 @@ const ResetPasswordPage = () => {
   const router = useRouter();
   const [errorMessage, setErrorMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [showrePassword, setreShowPassword] = useState(false);
-  const [loading, setloading] = useState(false);
-  const [phonenumber, setPhonenumber] = useState("");
+  const [showRePassword, setShowRePassword] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [otp, setOtp] = useState("");
 
   useEffect(() => {
-    // التحقق من بيئة المتصفح
     if (typeof window !== "undefined") {
       const phone = localStorage.getItem("phonepass") || "";
       const otpCode = localStorage.getItem("passOtp") || "";
-      setPhonenumber(phone);
-      setOtp(otpCode);
+
+      setPhoneNumber(phone.trim());
+      setOtp(otpCode.trim());
+
+      // تحديث قيمة OTP في formik بعد تحميلها من localStorage
+      handleSubmitPass.setFieldValue("otp", otpCode.trim());
     }
   }, []);
 
@@ -33,13 +36,14 @@ const ResetPasswordPage = () => {
     setShowPassword(!showPassword);
   };
 
-  const togglerePasswordVisibility = () => {
-    setreShowPassword(!showrePassword);
+  const toggleRePasswordVisibility = () => {
+    setShowRePassword(!showRePassword);
   };
 
-  const apiresetPass = async (values) => {
-    setloading(true);
-    let formattedPhone = values.phone_number;
+  const apiResetPass = async (values) => {
+    setLoading(true);
+
+    let formattedPhone = phoneNumber.trim();
     if (formattedPhone.startsWith("+966")) {
       let withoutCountryCode = formattedPhone.replace("+966", "").trim();
 
@@ -49,6 +53,7 @@ const ResetPasswordPage = () => {
 
       formattedPhone = withoutCountryCode;
     }
+
     try {
       const { data } = await axios.post(
         `${API_BASE_URL}/reset_password`,
@@ -60,6 +65,7 @@ const ResetPasswordPage = () => {
           },
         }
       );
+
       if (data.success) {
         toast.success("تم تغيير كلمة السر بنجاح", {
           duration: 1500,
@@ -68,34 +74,39 @@ const ResetPasswordPage = () => {
             color: "white",
           },
         });
+
         localStorage.clear();
         router.push("/Login");
       }
     } catch (error) {
-      setErrorMessage("فشل تغير كلمة السر حاول مرة اخرى");
+      console.log(error);
+
+      setErrorMessage("فشل تغيير كلمة السر، حاول مرة أخرى");
     } finally {
-      setloading(false);
+      setLoading(false);
     }
   };
 
-  const handleSubmitpass = useFormik({
+  const handleSubmitPass = useFormik({
     initialValues: {
-      otp,
-      phone_number: phonenumber,
+      otp: "", // اجعلها فارغة لأننا سنقوم بتحديثها بعد جلبها من localStorage
+      phone_number: phoneNumber,
       password: "",
       confirm_password: "",
     },
     validate: (values) => {
       const errors = {};
-      if (values.password.length < 8) {
+      if (values.password.trim().length < 8) {
         errors.password = "يجب أن تحتوي كلمة السر على 8 أحرف على الأقل.";
       }
-      if (values.password !== values.confirm_password) {
+      if (values.password.trim() !== values.confirm_password.trim()) {
         errors.confirm_password = "كلمة السر وتأكيدها غير متطابقين.";
       }
       return errors;
     },
-    onSubmit: apiresetPass,
+    onSubmit: (values) => {
+      apiResetPass(values);
+    },
   });
 
   return (
@@ -109,18 +120,17 @@ const ResetPasswordPage = () => {
         />
       </div>
       <div className="bg-white shadow-lg rounded-4 px-4 py-5">
-        <form onSubmit={handleSubmitpass.handleSubmit}>
+        <form onSubmit={handleSubmitPass.handleSubmit}>
+          {/* حقل كلمة المرور */}
           <div className="mb-4 position-relative">
             <input
               type={showPassword ? "text" : "password"}
               name="password"
-              value={handleSubmitpass.values.password}
-              onChange={handleSubmitpass.handleChange}
-              onBlur={handleSubmitpass.handleBlur}
+              value={handleSubmitPass.values.password}
+              onChange={handleSubmitPass.handleChange}
+              onBlur={handleSubmitPass.handleBlur}
               className="form-control"
-              id="password"
               placeholder="الرقم السري"
-              aria-label="password"
               required
             />
             <i
@@ -136,31 +146,30 @@ const ResetPasswordPage = () => {
               }}
             ></i>
           </div>
-          {handleSubmitpass.errors.password &&
-          handleSubmitpass.touched.password ? (
+          {handleSubmitPass.errors.password &&
+          handleSubmitPass.touched.password ? (
             <div className="alert alert-danger my-2">
-              {handleSubmitpass.errors.password}
+              {handleSubmitPass.errors.password}
             </div>
           ) : null}
 
+          {/* حقل تأكيد كلمة المرور */}
           <div className="mb-4 position-relative">
             <input
-              type={showrePassword ? "text" : "password"}
+              type={showRePassword ? "text" : "password"}
               name="confirm_password"
-              value={handleSubmitpass.values.confirm_password}
-              onChange={handleSubmitpass.handleChange}
-              onBlur={handleSubmitpass.handleBlur}
+              value={handleSubmitPass.values.confirm_password}
+              onChange={handleSubmitPass.handleChange}
+              onBlur={handleSubmitPass.handleBlur}
               className="form-control"
-              id="confirm_password"
               placeholder="تأكيد الرقم السري"
-              aria-label="confirm_password"
               required
             />
             <i
               className={`fa-solid ${
-                showrePassword ? "fa-eye-slash" : "fa-eye"
+                showRePassword ? "fa-eye-slash" : "fa-eye"
               }`}
-              onClick={togglerePasswordVisibility}
+              onClick={toggleRePasswordVisibility}
               style={{
                 position: "absolute",
                 left: "10px",
@@ -171,10 +180,10 @@ const ResetPasswordPage = () => {
               }}
             ></i>
           </div>
-          {handleSubmitpass.errors.confirm_password &&
-          handleSubmitpass.touched.confirm_password ? (
+          {handleSubmitPass.errors.confirm_password &&
+          handleSubmitPass.touched.confirm_password ? (
             <div className="alert alert-danger my-2">
-              {handleSubmitpass.errors.confirm_password}
+              {handleSubmitPass.errors.confirm_password}
             </div>
           ) : null}
 
@@ -182,6 +191,7 @@ const ResetPasswordPage = () => {
             <p className="px-3 text-danger text-center">{errorMessage}</p>
           )}
 
+          {/* زر المتابعة */}
           <div className="d-flex justify-content-center align-items-center">
             <button type="submit" className="follow mt-3">
               {loading ? (
@@ -191,6 +201,8 @@ const ResetPasswordPage = () => {
               )}
             </button>
           </div>
+
+          {/* زر العودة */}
           <div className="d-flex justify-content-center align-items-center">
             <button
               type="button"
