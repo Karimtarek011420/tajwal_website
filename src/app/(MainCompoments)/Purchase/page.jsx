@@ -194,7 +194,7 @@ function pagepurchase() {
         </div>
         <div className=" container py-5">
           <div className=" row gy-3">
-            <div className="col-lg-4 col-md-6 col-sm-12">
+            <div className="col-lg-4 col-md-6 col-sm-12" style={{}}>
               <div className="cardpurchase  bg-white shadow-sm rounded-2 position-relative">
                 <div className=" countydtailsup d-flex  justify-content-between align-items-center position-absolute ">
                   <div>
@@ -390,7 +390,7 @@ function pagepurchase() {
                   </button>
                 </div>
               </div>
-              <div className="bg-white shadow-sm rounded-2 mb-3 pt-4 pb-5  px-2 mt-3">
+              <div className="bg-white shadow-sm rounded-2 mb-3 pt-4 pb-4  px-2 mt-3">
                 <p className=" px-1   purchasepachagesum">المجموع</p>
                 <div className=" d-flex purchasepachage justify-content-between align-items-center my-1 px-2 py-2 ">
                   <p className="my-0 ">شريحة -{selectedPackage.title}</p>
