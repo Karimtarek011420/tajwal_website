@@ -33,7 +33,7 @@ const Footer = () => {
                     الالكترونية في السعودية،
                     <br /> و مرخصة بالسجل التجاري رقم 7041398541
                   </p>
-                  <div className=" d-flex me-5">
+                  <div className=" d-flex mx-5">
                     <a
                       href="https://x.com/Tajwalapp?t=fNlENfiyMV5Qf4d2CPeLDA&s=09"
                       target="_blank"
@@ -52,42 +52,39 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="  col-md-3  offset-2">
-              <h6 className="tajwalh text-center py-2">حمل التطبيق</h6>
-              <div className="">
-                <div className=" d-flex justify-content-center align-items-center   ">
-                  <div className=" mx-2">
-                    <QRCodeCanvas value={appLink} size={60} />
-                  </div>
-                  <div className=" mx-3">
-                    <QRCodeCanvas value={appLinkApple} size={60} />
-                  </div>
-                </div>
-                <div className="  d-flex justify-content-center align-items-center ">
+            <div className="  col-md-3 offset-2">
+              <h6 className="tajwalh  text-center">حمل التطبيق</h6>
+              <div className="d-flex align-content-center align-items-center  text-center ">
+                <div className="d-flex flex-column align-items-center">
+                  <QRCodeCanvas value={appLink} size={60} className="mb-1" />
                   <a
-                    className="mx-1"
                     href="https://play.google.com/store/apps/details?id=com.sic.tajwaal&pli=1"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <Image
                       src={googlePlay2}
-                      width={75}
-                      height={25}
+                      width={100}
+                      height={30}
                       alt="Google Play"
                     />
                   </a>
-
+                </div>
+                <div className="d-flex flex-column align-items-center">
+                  <QRCodeCanvas
+                    value={appLinkApple}
+                    size={60}
+                    className="mb-1"
+                  />
                   <a
-                    className=" mx-1"
                     href="https://apps.apple.com/sa/app/%D8%AA%D8%AC%D9%88%D8%A7%D9%84-%D8%B4%D8%B1%D8%A7%D8%A6%D8%AD-%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA-%D9%88-%D8%A7%D9%86%D8%AA%D8%B1%D9%86%D8%AA/id6553994315"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <Image
                       src={appStore1}
-                      width={75}
-                      height={25}
+                      width={100}
+                      height={30}
                       alt="App Store"
                     />
                   </a>
