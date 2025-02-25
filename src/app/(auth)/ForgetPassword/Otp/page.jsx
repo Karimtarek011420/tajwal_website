@@ -21,16 +21,25 @@ const forgetOtpPage = () => {
   const email =
     typeof window !== "undefined" ? localStorage.getItem("emailotp") : null;
   const phonenumber =
-    typeof window !== "undefined"
-      ? localStorage.getItem("phonepass")
-      : null;
+    typeof window !== "undefined" ? localStorage.getItem("phonepass") : null;
 
   const apiOtp = async (values) => {
     setloading(true);
+    let formattedPhone = values.phone_number;
+
+    if (formattedPhone.startsWith("+966")) {
+      let withoutCountryCode = formattedPhone.replace("+966", "").trim();
+
+      if (!withoutCountryCode.startsWith("0")) {
+        withoutCountryCode = "0" + withoutCountryCode;
+      }
+
+      formattedPhone = withoutCountryCode;
+    }
     try {
       const { data } = await axios.post(
         `${API_BASE_URL}/verify_otp`,
-        values,
+        { ...values, phone_number: formattedPhone },
         {
           headers: {
             "Content-Type": "application/json",
@@ -47,7 +56,7 @@ const forgetOtpPage = () => {
             position: "top-right",
           },
         });
-        localStorage.setItem("passOtp", values.otp)
+        localStorage.setItem("passOtp", values.otp);
         router.push("/ForgetPassword/ResetPass");
       }
 
@@ -132,8 +141,9 @@ const forgetOtpPage = () => {
       <div className="bg-white shadow-lg rounded-4 px-4 py-5">
         <div className="text-center py-3 p_registerOtp">
           <p>
-            لاتمام عملية إسترجاع  الرقم السرى يرجى إدخال رمز التحقق المرسل للرقم الجوال      
-             {phonenumber}
+            لاتمام عملية إسترجاع الرقم السرى يرجى إدخال رمز التحقق المرسل للرقم
+            الجوال
+            {phonenumber}
           </p>
         </div>
         <form onSubmit={handleSubmitotp.handleSubmit}>
