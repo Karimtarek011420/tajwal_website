@@ -463,7 +463,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                     onClose={() => setOpen(false)}
                     BackdropProps={{
                       sx: {
-                        backgroundColor: "rgba(0, 0, 0, 0.2)", // تعديل شفافية الخلفية
+                        backgroundColor: "rgba(0, 0, 0, 0.8)", // تعديل شفافية الخلفية
                       },
                     }}
                   >
@@ -476,7 +476,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                         mx: "auto",
                         mt: "8vh",
                         borderRadius: 2,
-                        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)", // ظل خفيف
+                        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.8)", // ظل خفيف
                       }}
                     >
                       <Typography variant="h6">دول التغطية</Typography>
@@ -566,7 +566,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                         onClose={() => setOpen(false)}
                         BackdropProps={{
                           sx: {
-                            backgroundColor: "rgba(0, 0, 0, 0.2)", // تعديل شفافية الخلفية
+                            backgroundColor: "rgba(0, 0, 0, 0.8)", // تعديل شفافية الخلفية
                           },
                         }}
                       >
@@ -579,7 +579,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                             mx: "auto",
                             mt: "8vh",
                             borderRadius: 2,
-                            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)", // ظل خفيف
+                            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.8)", // ظل خفيف
                           }}
                         >
                           <Typography variant="h6">دول التغطية</Typography>
@@ -655,7 +655,9 @@ export default function DetailsCountry({ params: paramsPromise }) {
                       <p className="my-0 contentsimmodelp">
                         {selectedPackage.amount === -1
                           ? "لا محدود"
-                          : `${selectedPackage.amount / 1000} غيغا بايت`}
+                          : `${Math.floor(
+                              selectedPackage.amount / 1000
+                            )} غيغا بايت`}
                       </p>
                     </div>
                   </div>

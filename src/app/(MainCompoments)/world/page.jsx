@@ -691,7 +691,9 @@ export default function DetailsCountry() {
                       <p className="my-0 contentsimmodelp">
                         {selectedPackage.amount === -1
                           ? "لا محدود"
-                          : `${selectedPackage.amount / 1000} غيغا بايت`}
+                          : `${Math.floor(
+                              selectedPackage.amount / 1000
+                            )} غيغا بايت`}
                       </p>
                     </div>
                   </div>
