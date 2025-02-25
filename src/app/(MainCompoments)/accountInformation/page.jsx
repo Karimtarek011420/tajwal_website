@@ -467,7 +467,7 @@ import withAuth from "@/app/utils/withAuth";
               }
             }}
           >
-            <div className="modal-content">
+            <div className="modal-content" dir="ltr">
               <h6 className="modal-title mb-2 accountInformationp">
                 تغيير {modalData.field}
               </h6>
@@ -486,6 +486,7 @@ import withAuth from "@/app/utils/withAuth";
                     containerClassName="custom-phone-input" // كلاس مخصص لتحسين التصميم
                     inputClassName="custom-phone-input-field" // كلاس مخصص لحقل الإدخال
                     className="inputchange"
+                    
                   />
 
                   {/* إدخال OTP إذا كان مطلوباً */}

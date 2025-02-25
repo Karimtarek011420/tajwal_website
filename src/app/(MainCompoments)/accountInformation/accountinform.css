@@ -38,6 +38,7 @@
   text-align: center;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
   animation: slideDown 0.4s ease;
+  margin:0px 20px !important;
 }
 
 /* Modal Animation */
@@ -54,7 +55,6 @@
 
 /* Modal Buttons */
 .modalaccountInformation .modal-content button {
-  margin-top: 10px;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
