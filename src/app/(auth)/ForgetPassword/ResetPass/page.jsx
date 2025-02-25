@@ -39,10 +39,20 @@ const ResetPasswordPage = () => {
 
   const apiresetPass = async (values) => {
     setloading(true);
+    let formattedPhone = values.phone_number;
+    if (formattedPhone.startsWith("+966")) {
+      let withoutCountryCode = formattedPhone.replace("+966", "").trim();
+
+      if (!withoutCountryCode.startsWith("0")) {
+        withoutCountryCode = "0" + withoutCountryCode;
+      }
+
+      formattedPhone = withoutCountryCode;
+    }
     try {
       const { data } = await axios.post(
         `${API_BASE_URL}/reset_password`,
-        values,
+        { ...values, phone_number: formattedPhone },
         {
           headers: {
             "Content-Type": "application/json",

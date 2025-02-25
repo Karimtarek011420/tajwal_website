@@ -93,12 +93,22 @@ const forgetOtpPage = () => {
     }
   }, [counter]);
   const handleResendOTP = async () => {
+    let formattedPhone = phonenumber;
+    if (formattedPhone.startsWith("+966")) {
+      let withoutCountryCode = formattedPhone.replace("+966", "").trim();
+
+      if (!withoutCountryCode.startsWith("0")) {
+        withoutCountryCode = "0" + withoutCountryCode;
+      }
+
+      formattedPhone = withoutCountryCode;
+    }
     try {
       setCounter(30);
       setIsDisabled(true);
       const { data } = await axios.post(
         "https://api.tajwal.co/api/v1/create_otp",
-        { phone_number: phonenumber },
+        { phone_number: formattedPhone },
         {
           headers: {
             "Content-Type": "application/json",
@@ -116,6 +126,7 @@ const forgetOtpPage = () => {
           },
         });
       }
+      console.log(data);
     } catch (error) {
       toast.error("تعذر إرسال رمز التحقق حاول مرة أخرى", {
         duration: 1500,
