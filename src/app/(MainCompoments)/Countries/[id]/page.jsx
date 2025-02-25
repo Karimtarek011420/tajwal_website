@@ -110,8 +110,8 @@ export default function DetailsCountry({ params: paramsPromise }) {
                       <Image
                         key={country.country_code}
                         src={country.image}
-                        height={58}
-                        width={80}
+                        height={50}
+                        width={60}
                         alt={country.title}
                       />
                     );
