@@ -326,32 +326,32 @@ function pagepurchase() {
                       <p className="my-0">{selectedPackage.price} ر.س</p>
                     </div>
                   </div>
-                  <div
-                    className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
-                    style={{
-                      backgroundColor: "#F1F3F666",
-                      color: "var(--auth-color)",
-                      fontSize: "12px",
-                      fontWeight: "400",
-                    }}
-                  >
-                    <div className="d-flex align-items-center justify-content-center">
-                      <Image
-                        src={icon5}
-                        width={16}
-                        height={16}
-                        alt="iconcountry"
-                      />
-                      <p className="mx-2 my-0">قابلة للتجديد</p>
+                  {selectedPackage.amount === -1 ? (
+                    <div
+                      className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
+                      style={{
+                        backgroundColor: "#F1F3F666",
+                        color: "var(--auth-color)",
+                        fontSize: "12px",
+                        fontWeight: "400",
+                      }}
+                    >
+                      <div className="d-flex align-items-center justify-content-center">
+                        <Image
+                          src={icon5}
+                          width={16}
+                          height={16}
+                          alt="iconcountry"
+                        />
+                        <p className="mx-2 my-0">إستخدام عادل</p>
+                      </div>
+                      <div>
+                        <p className="my-0">نعم</p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="my-0">
-                        {selectedPackage.operator?.rechargeability === true
-                          ? "نعم"
-                          : "لا"}
-                      </p>
-                    </div>
-                  </div>
+                  ) : (
+                    ""
+                  )}
                 </div>
               </div>
             </div>

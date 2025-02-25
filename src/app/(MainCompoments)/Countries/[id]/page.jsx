@@ -234,31 +234,6 @@ export default function DetailsCountry({ params: paramsPromise }) {
                     <p className="my-0">{pkg.price} ر.س</p>
                   </div>
                 </div>
-                <div
-                  className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
-                  style={{
-                    backgroundColor:
-                      pkg.amount === -1 ? "#F1F3F666" : "#F1F3F666",
-                    color: pkg.amount === -1 ? "#FFFFFF" : "var( --auth-color)",
-                    fontSize: "12px",
-                    fontWeight: "400",
-                  }}
-                >
-                  <div className="d-flex align-items-center justify-content-center">
-                    <Image
-                      src={pkg.amount === -1 ? icon5 : icon5dark}
-                      width={16}
-                      height={16}
-                      alt="iconcountry"
-                    />
-                    <p className="mx-2 my-0">قابلة للتجديد</p>
-                  </div>
-                  <div>
-                    <p className="my-0">
-                      {operator.rechargeability === true ? "نعم" : "لا"}
-                    </p>
-                  </div>
-                </div>
                 <div className=" d-flex justify-content-center align-items-center">
                   <button
                     onClick={() => openModal(pkg, operator)}
