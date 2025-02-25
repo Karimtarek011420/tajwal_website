@@ -696,26 +696,26 @@ export default function DetailsCountry({ params: paramsPromise }) {
                       </p>
                     </div>
                   </div>
-                  <div className="d-flex justify-content-between align-items-center text-center  rounded-2 mt-2 contentsimmodel">
-                    <div className="d-flex align-items-center justify-content-center">
-                      <Image
-                        src={icon5dark}
-                        width={16}
-                        height={16}
-                        alt="iconcountry"
-                      />
-                      <p className="mx-2 my-0 contentsimmodelp">
-                        قابلة للتجديد
-                      </p>
+                  {selectedPackage.amount === -1 ? (
+                    <div className="d-flex justify-content-between align-items-center text-center  rounded-2 mt-2 contentsimmodel">
+                      <div className="d-flex align-items-center justify-content-center">
+                        <Image
+                          src={icon5dark}
+                          width={16}
+                          height={16}
+                          alt="iconcountry"
+                        />
+                        <p className="mx-2 my-0 contentsimmodelp">
+                          إستخدام عادل
+                        </p>
+                      </div>
+                      <div>
+                        <p className="my-0 contentsimmodelp">نعم</p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="my-0 contentsimmodelp">
-                        {selectedPackage.operator.rechargeability === true
-                          ? "نعم"
-                          : "لا"}
-                      </p>
-                    </div>
-                  </div>
+                  ) : (
+                    ""
+                  )}
                 </div>
               </div>
             </div>

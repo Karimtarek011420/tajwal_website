@@ -155,7 +155,6 @@ export default function DetailsCountry({ params: paramsPromise }) {
                     <p className="mx-2 my-0">التغطية</p>
                   </div>
                   <div>
-                    {console.log(operator.coverages)}
                     <p className="my-0">{operator.coverages[0].name}</p>
                   </div>
                 </div>
@@ -396,7 +395,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                   ))}
                 </div>
               </div>
-
+              {console.log(selectedPackage.operator.rechargeability)}
               {/* تفاصيل الباقة */}
               <div className="col-md-8">
                 {[
@@ -427,13 +426,16 @@ export default function DetailsCountry({ params: paramsPromise }) {
                     label: "السعر",
                     value: `${selectedPackage.price} ر.س`,
                   },
-                  {
-                    icon: icon5dark,
-                    label: "قابلة للتجديد",
-                    value: selectedPackage.operator.rechargeability
-                      ? "نعم"
-                      : "لا",
-                  },
+                  // ✅ إضافة العنصر فقط إذا كانت الباقة غير محدودة
+                  ...(selectedPackage.amount === -1
+                    ? [
+                        {
+                          icon: icon5dark,
+                          label: "إستخدام عادل",
+                          value: "نعم",
+                        },
+                      ]
+                    : []),
                 ].map((item, index) => (
                   <div
                     key={index}
