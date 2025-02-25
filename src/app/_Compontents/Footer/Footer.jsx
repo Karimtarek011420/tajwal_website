@@ -30,23 +30,23 @@ const Footer = () => {
                   <h6 className="tajwalh">شركة تجوال العالم للتجارة</h6>
                   <p className="tajwalp">
                     هي أول شركة سعودية مسجلة متخصصة في <br /> بيع شرائح التجوال
-                    الالكترونية في السعودية، و مرخصة بالسجل التجاري رقم
+                    الالكترونية في السعودية،<br /> و مرخصة بالسجل التجاري رقم
                     7041398541
                   </p>
-                  <div className=" d-flex">
-                    <a
-                      href="https://www.instagram.com/tajwalapp"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i className="fa-brands fa-square-instagram mx-3 fs-5"></i>
-                    </a>
+                  <div className=" d-flex me-5">
                     <a
                       href="https://x.com/Tajwalapp?t=fNlENfiyMV5Qf4d2CPeLDA&s=09"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <i className="fa-brands fa-square-x-twitter fs-5"></i>
+                    </a>
+                    <a
+                      href="https://www.instagram.com/tajwalapp"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i className="fa-brands fa-square-instagram mx-2 fs-5"></i>
                     </a>
                   </div>
                 </div>
