@@ -18,27 +18,6 @@
   color: var(--auth-color);
   line-height: 1.5; /* لتحسين قراءة النص */
 }
-
-/* تحسينات الاستجابة للشاشات */
-@media (max-width: 768px) {
-  .phone .headphone {
-    font-size: 20px; /* تقليل حجم الخط للشاشات الصغيرة */
-  }
-
-  .phone .phoneusepra {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  .phone .headphone {
-    font-size: 18px;
-  }
-
-  .phone .phoneusepra {
-    font-size: 14px;
-  }
-}
 @media (min-width: 767px) and (max-width: 995px) {
   .phone .row {
     display: flex;
@@ -53,5 +32,15 @@
 
   .phone .col-md-3.text-center {
     text-align: center;
+  }
+}
+/* تحسينات الاستجابة للشاشات */
+@media (max-width: 768px) {
+  .phone .headphone {
+    font-size: 20px; /* تقليل حجم الخط للشاشات الصغيرة */
+  }
+
+  .phone .phoneusepra {
+    font-size: 16px;
   }
 }
