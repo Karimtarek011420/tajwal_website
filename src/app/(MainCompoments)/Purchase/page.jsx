@@ -173,7 +173,7 @@ function pagepurchase() {
       </div>
     );
   }
-  localStorage.setItem("package", JSON.stringify(selectedPackage));
+  // localStorage.setItem("package", JSON.stringify(selectedPackage));
 
   console.log(selectedPackage.id);
   return (
