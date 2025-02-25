@@ -397,7 +397,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
                 ))}
               </div>
 
-              <div className="row gy-5 py-5">
+              <div className="row gy-5 py-5 px-3">
                 {array
                   .filter((pkg) =>
                     selectedDay ? pkg.day === parseInt(selectedDay) : true
