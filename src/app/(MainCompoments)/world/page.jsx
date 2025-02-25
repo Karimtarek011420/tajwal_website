@@ -51,7 +51,7 @@ export default function DetailsCountry() {
     getCountryDetails();
   }, []);
   const handleDayClick = (day) => {
-    setSelectedDay(day);
+    setSelectedDay((prevDay) => (prevDay === day ? null : day));
   };
 
   const openModal = (pkg, operator) => {
@@ -71,6 +71,299 @@ export default function DetailsCountry() {
     });
     router.push("/Purchase");
   };
+  const array = [];
+  data?.map((country) => {
+    country.operators.map((operator) =>
+      operator.packages.map((pkg) => {
+        pkg.ele = (
+          <div
+            key={pkg.id}
+            className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-custom d-flex justify-content-center "
+          >
+            <div
+              style={{
+                width: "100%",
+                maxWidth: "350px",
+                borderRadius: "10px",
+                boxShadow: "0 5px 5px rgba(0,0,0,0.1)",
+                background:
+                  pkg.amount === -1
+                    ? "linear-gradient(to top, var(--primary-color), #5EB5DF)" // تدرج لوني للحزم غير المحدودة
+                    : "white", // تدرج لوني للحزم المحدودة
+              }}
+              className=" position-relative"
+            >
+              <div className=" countydtailsup d-flex justify-content-around align-items-center position-absolute ">
+                <div>
+                  <Image
+                    src={country.image}
+                    width={80}
+                    height={35}
+                    alt={country.title}
+                  />
+                </div>
+                <div>
+                  <span
+                    style={{
+                      backgroundColor:
+                        pkg.amount === -1 ? "#F9F9F9" : "#D9DEE4",
+                      fontSize: "13px",
+                      fontWeight: "300",
+                    }}
+                    dir="ltr"
+                    className=" px-4 py-2 rounded-2"
+                  >
+                    {pkg.amount === -1
+                      ? "لا محدود"
+                      : `${Math.floor(pkg.amount / 1000)}GB`}
+                  </span>
+                </div>
+              </div>
+              <div className="py-5">
+                <div
+                  className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
+                  style={{
+                    backgroundColor:
+                      pkg.amount === -1 ? "#F1F3F666" : "#F1F3F666",
+                    color: pkg.amount === -1 ? "#FFFFFF" : "var(--auth-color)",
+                    fontSize: "12px",
+                    fontWeight: "400",
+                  }}
+                >
+                  <div className="d-flex align-items-center justify-content-center">
+                    <Image
+                      src={pkg.amount === -1 ? icon1 : icon1dark}
+                      width={16}
+                      height={16}
+                      alt="iconcountry"
+                    />
+                    <p className="mx-2 my-0">التغطية</p>
+                  </div>
+                  <div>
+                    <Button
+                      variant="contained"
+                      onClick={() => setOpen(true)}
+                      sx={{
+                        backgroundColor: "var(--primary-color)",
+                      }}
+                    >
+                      {operator.countries.length} دولة
+                    </Button>
+                    <Modal
+                      open={open}
+                      onClose={() => setOpen(false)}
+                      BackdropProps={{
+                        sx: {
+                          backgroundColor: "rgba(0, 0, 0, 0.2)", // تعديل شفافية الخلفية
+                        },
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          width: "90%", // يجعل المودال متجاوبًا على الشاشات الصغيرة
+                          maxWidth: 500, // الحد الأقصى للعرض
+                          bgcolor: "white",
+                          p: 2,
+                          mx: "auto",
+                          mt: "8vh",
+                          borderRadius: 2,
+                          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)", // ظل خفيف
+                        }}
+                      >
+                        <Typography variant="h6">دول التغطية</Typography>
+
+                        {/* جعل الدول تظهر بجانب بعضها */}
+                        <Box
+                          sx={{
+                            display: "flex",
+                            flexWrap: "wrap",
+                            gap: 1,
+                            mt: 2,
+                            overflowY: "auto", // تفعيل السكرول
+                            paddingRight: "4px", // تحسين شكل السكرول
+                            maxHeight: {
+                              xs: "250px",
+                              sm: "300px",
+                              md: "350px",
+                              lg: "400px",
+                            },
+                          }}
+                        >
+                          {operator.countries.map((countery, index) => (
+                            <Box
+                              key={`${countery.country_code}-bbbbb-${index}`}
+                              sx={{
+                                display: "flex",
+                                alignItems: "center",
+                                border: "1px solid #ddd", // إطار خفيف حول كل عنصر
+                                borderRadius: 2,
+                                px: 1,
+                              }}
+                            >
+                              <Image
+                                src={countery.image}
+                                height={20}
+                                width={20}
+                                alt={countery.title}
+                              />
+                              <Typography
+                                sx={{
+                                  px: 1,
+                                  fontSize: 13,
+                                }}
+                              >
+                                {countery.title}
+                              </Typography>
+                            </Box>
+                          ))}
+                        </Box>
+
+                        <Button
+                          onClick={() => setOpen(false)}
+                          sx={{
+                            mt: 2,
+                            px: 5,
+                            backgroundColor: "var(--primary-color)",
+                            color: "#ffffff",
+                            border: "1px solid var(--primary-color)",
+                            // جعل الزر بعرض الشاشة في الشاشات الصغيرة
+                          }}
+                        >
+                          إغلاق
+                        </Button>
+                      </Box>
+                    </Modal>
+                  </div>
+                </div>
+                <div
+                  className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
+                  style={{
+                    backgroundColor: pkg.amount === -1 ? "#F1F3F666" : "#fff",
+                    color: pkg.amount === -1 ? "#FFFFFF" : "var(--auth-color)",
+                    fontSize: "12px",
+                    fontWeight: "400",
+                  }}
+                >
+                  <div className="d-flex align-items-center justify-content-center">
+                    <Image
+                      src={pkg.amount === -1 ? icon2 : icon2dark}
+                      width={13}
+                      height={16}
+                      alt="iconcountry"
+                      className=" text-white"
+                    />
+                    <p className="mx-2 my-0">البيانات</p>
+                  </div>
+                  <div>
+                    <p className="my-0">
+                      {pkg.amount === -1
+                        ? "لا محدود"
+                        : `${Math.floor(pkg.amount / 1000)}GB`}
+                    </p>
+                  </div>
+                </div>
+                <div
+                  className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
+                  style={{
+                    backgroundColor:
+                      pkg.amount === -1 ? "#F1F3F666" : "#F1F3F666",
+                    color: pkg.amount === -1 ? "#FFFFFF" : "#626E7B",
+                    fontSize: "12px",
+                    fontWeight: "400",
+                  }}
+                >
+                  <div className="d-flex align-items-center justify-content-center">
+                    <Image
+                      src={pkg.amount === -1 ? icon3 : icon3dark}
+                      width={13}
+                      height={16}
+                      alt="iconcountry"
+                      className=" text-white"
+                    />
+                    <p className="mx-2 my-0">الصلاحية</p>
+                  </div>
+                  <div>
+                    <p className="my-0">
+                      {pkg.day} {pkg.day <= 10 ? "أيام" : "يوم"}
+                    </p>
+                  </div>
+                </div>
+                <div
+                  className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
+                  style={{
+                    backgroundColor: pkg.amount === -1 ? "#F1F3F666" : "#fff",
+                    color: pkg.amount === -1 ? "#FFFFFF" : "var(--auth-color)",
+                    fontSize: "12px",
+                    fontWeight: "400",
+                  }}
+                >
+                  <div className="d-flex align-items-center justify-content-center">
+                    <Image
+                      src={pkg.amount === -1 ? icon4 : icon4dark}
+                      width={13}
+                      height={16}
+                      alt="iconcountry"
+                      className="text-white"
+                    />
+                    <p className="mx-2 my-0">السعر</p>
+                  </div>
+                  <div>
+                    <p className="my-0">{pkg.price} ر.س</p>
+                  </div>
+                </div>
+                <div
+                  className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
+                  style={{
+                    backgroundColor:
+                      pkg.amount === -1 ? "#F1F3F666" : "#F1F3F666",
+                    color: pkg.amount === -1 ? "#FFFFFF" : "var(--auth-color)",
+                    fontSize: "12px",
+                    fontWeight: "400",
+                  }}
+                >
+                  <div className="d-flex align-items-center justify-content-center">
+                    <Image
+                      src={pkg.amount === -1 ? icon5 : icon5dark}
+                      width={16}
+                      height={16}
+                      alt="iconcountry"
+                    />
+                    <p className="mx-2 my-0">قابلة للتجديد</p>
+                  </div>
+                  <div>
+                    <p className="my-0">
+                      {operator.rechargeability === true ? "نعم" : "لا"}
+                    </p>
+                  </div>
+                </div>
+                <div className=" d-flex justify-content-center align-items-center">
+                  <button
+                    onClick={() => openModal(pkg, operator)}
+                    style={{
+                      backgroundColor: "transparent",
+                      padding: "10px 60px",
+                      color:
+                        pkg.amount === -1 ? "#fff" : "var(--primary-color)",
+                      border:
+                        pkg.amount === -1
+                          ? "2px #fff solid"
+                          : "2px var(--primary-color) solid",
+                      borderRadius: "5px",
+                      cursor: "pointer",
+                      marginTop: "10px",
+                    }}
+                  >
+                    اختيار
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+        array.push(pkg);
+      })
+    );
+  });
 
   return (
     <div className="countrydetials position-relative py-5">
@@ -89,9 +382,7 @@ export default function DetailsCountry() {
               <ul className="list-unstyled d-flex justify-content-center align-items-center">
                 <Link
                   href={"/Countries"}
-                  className={`country-list-links mx-2 ${
-                    pathname === "/Countries" ? "active1" : "bg-transparent"
-                  }`}
+                  className="country-list-links mx-2"
                   style={{
                     color:
                       pathname === "/Countries"
@@ -103,9 +394,7 @@ export default function DetailsCountry() {
                 </Link>
                 <Link
                   href="/continents"
-                  className={`country-list-links mx-2 ${
-                    pathname === "/continents" ? "active1" : "bg-transparent"
-                  }`}
+                  className="country-list-links mx-2"
                   style={{
                     color:
                       pathname === "/continents"
@@ -117,30 +406,20 @@ export default function DetailsCountry() {
                 </Link>
                 <Link
                   href="/world"
-                  className={`country-list-links mx-2 ${
-                    pathname === "/world" ? "active1" : "bg-transparent"
-                  }`}
+                  className="country-list-links mx-2"
                   style={{
-                    color: pathname === "/world" ? " #285060" : "#ffffff",
+                    color:
+                      pathname === "/world"
+                        ? "var(--primary-color)"
+                        : "#ffffff",
+                    backgroundColor: "var(--background)",
                   }}
                 >
                   عالمية
                 </Link>
-                {/* <li
-                  className="country-list-links bg-white mx-lg-2"
-                  style={{ color: "var(--primary-color)" }}
-                >
-                  <Image
-                    src={country.image}
-                    width={35}
-                    height={25}
-                    alt={country.title}
-                  />
-                  <span className="mx-3">عالمية</span>
-                </li> */}
               </ul>
             </div>
-            <div className="container">
+            <div className="px-lg-5">
               <div className="d-flex flex-wrap justify-content-center align-items-center pt-2 pb-4">
                 {country?.days?.map((day) => (
                   <button
@@ -162,326 +441,16 @@ export default function DetailsCountry() {
               </div>
 
               <div className="row gy-5 py-5">
-                <div
-                  style={{
-                    display: "flex",
-                    flexWrap: "wrap",
-                    gap: "30px",
-                    justifyContent: "center",
-                  }}
-                >
-                  {country.operators.map((operator) =>
-                    operator.packages
-                      .filter((pkg) =>
-                        selectedDay ? pkg.day === parseInt(selectedDay) : true
-                      )
-                      .map((pkg) => (
-                        <div
-                          key={pkg.id}
-                          style={{
-                            width: "400px",
-                            borderRadius: "10px",
-                            boxShadow: "0 5px 5px rgba(0,0,0,0.1)",
-                            background:
-                              pkg.amount === -1
-                                ? "linear-gradient(to top, var(--primary-color), #5EB5DF)" // تدرج لوني للحزم غير المحدودة
-                                : "white", // تدرج لوني للحزم المحدودة
-                          }}
-                          className=" position-relative"
-                        >
-                          <div className=" countydtailsup d-flex justify-content-around align-items-center position-absolute ">
-                            <div>
-                              <Image
-                                src={country.image}
-                                width={80}
-                                height={35}
-                                alt={country.title}
-                              />
-                            </div>
-                            <div>
-                              <span
-                                style={{
-                                  backgroundColor:
-                                    pkg.amount === -1 ? "#F9F9F9" : "#D9DEE4",
-                                  fontSize: "13px",
-                                  fontWeight: "300",
-                                }}
-                                dir="ltr"
-                                className=" px-4 py-2 rounded-2"
-                              >
-                                {pkg.amount === -1
-                                  ? "لا محدود"
-                                  : `${pkg.amount / 1000}GB`}
-                              </span>
-                            </div>
-                          </div>
-                          <div className="py-5">
-                            <div
-                              className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
-                              style={{
-                                backgroundColor:
-                                  pkg.amount === -1 ? "#F1F3F666" : "#F1F3F666",
-                                color:
-                                  pkg.amount === -1
-                                    ? "#FFFFFF"
-                                    : "var(--auth-color)",
-                                fontSize: "12px",
-                                fontWeight: "400",
-                              }}
-                            >
-                              <div className="d-flex align-items-center justify-content-center">
-                                <Image
-                                  src={pkg.amount === -1 ? icon1 : icon1dark}
-                                  width={16}
-                                  height={16}
-                                  alt="iconcountry"
-                                />
-                                <p className="mx-2 my-0">التغطية</p>
-                              </div>
-                              <div>
-                                <Button
-                                  variant="contained"
-                                  onClick={() => setOpen(true)}
-                                  sx={{
-                                    backgroundColor: "var(--primary-color)",
-                                  }}
-                                >
-                                  {operator.countries.length} دولة
-                                </Button>
-                                <Modal
-                                  open={open}
-                                  onClose={() => setOpen(false)}
-                                  BackdropProps={{
-                                    sx: {
-                                      backgroundColor: "rgba(0, 0, 0, 0.2)", // تعديل شفافية الخلفية
-                                    },
-                                  }}
-                                >
-                                  <Box
-                                    sx={{
-                                      width: "90%", // يجعل المودال متجاوبًا على الشاشات الصغيرة
-                                      maxWidth: 500, // الحد الأقصى للعرض
-                                      bgcolor: "white",
-                                      p: 2,
-                                      mx: "auto",
-                                      mt: "8vh",
-                                      borderRadius: 2,
-                                      boxShadow:
-                                        "0px 4px 10px rgba(0, 0, 0, 0.3)", // ظل خفيف
-                                    }}
-                                  >
-                                    <Typography variant="h6">
-                                      دول التغطية
-                                    </Typography>
-
-                                    {/* جعل الدول تظهر بجانب بعضها */}
-                                    <Box
-                                      sx={{
-                                        display: "flex",
-                                        flexWrap: "wrap",
-                                        gap: 1,
-                                        mt: 2,
-                                        overflowY: "auto", // تفعيل السكرول
-                                        paddingRight: "4px", // تحسين شكل السكرول
-                                        maxHeight: {
-                                          xs: "250px",
-                                          sm: "300px",
-                                          md: "350px",
-                                          lg: "400px",
-                                        },
-                                      }}
-                                    >
-                                      {operator.countries.map(
-                                        (countery, index) => (
-                                          <Box
-                                            key={`${countery.country_code}-bbbbb-${index}`}
-                                            sx={{
-                                              display: "flex",
-                                              alignItems: "center",
-                                              border: "1px solid #ddd", // إطار خفيف حول كل عنصر
-                                              borderRadius: 2,
-                                              px: 1,
-                                            }}
-                                          >
-                                            <Image
-                                              src={countery.image}
-                                              height={20}
-                                              width={20}
-                                              alt={countery.title}
-                                            />
-                                            <Typography
-                                              sx={{
-                                                px: 1,
-                                                fontSize: 13,
-                                              }}
-                                            >
-                                              {countery.title}
-                                            </Typography>
-                                          </Box>
-                                        )
-                                      )}
-                                    </Box>
-
-                                    <Button
-                                      onClick={() => setOpen(false)}
-                                      sx={{
-                                        mt: 2,
-                                        px: 5,
-                                        backgroundColor: "var(--primary-color)",
-                                        color: "#ffffff",
-                                        border:
-                                          "1px solid var(--primary-color)",
-                                        // جعل الزر بعرض الشاشة في الشاشات الصغيرة
-                                      }}
-                                    >
-                                      إغلاق
-                                    </Button>
-                                  </Box>
-                                </Modal>
-                              </div>
-                            </div>
-                            <div
-                              className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
-                              style={{
-                                backgroundColor:
-                                  pkg.amount === -1 ? "#F1F3F666" : "#fff",
-                                color:
-                                  pkg.amount === -1
-                                    ? "#FFFFFF"
-                                    : "var(--auth-color)",
-                                fontSize: "12px",
-                                fontWeight: "400",
-                              }}
-                            >
-                              <div className="d-flex align-items-center justify-content-center">
-                                <Image
-                                  src={pkg.amount === -1 ? icon2 : icon2dark}
-                                  width={13}
-                                  height={16}
-                                  alt="iconcountry"
-                                  className=" text-white"
-                                />
-                                <p className="mx-2 my-0">البيانات</p>
-                              </div>
-                              <div>
-                                <p className="my-0">
-                                  {pkg.amount === -1
-                                    ? "لا محدود"
-                                    : `${pkg.amount / 1000} غيغا بايت`}
-                                </p>
-                              </div>
-                            </div>
-                            <div
-                              className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
-                              style={{
-                                backgroundColor:
-                                  pkg.amount === -1 ? "#F1F3F666" : "#F1F3F666",
-                                color:
-                                  pkg.amount === -1 ? "#FFFFFF" : "#626E7B",
-                                fontSize: "12px",
-                                fontWeight: "400",
-                              }}
-                            >
-                              <div className="d-flex align-items-center justify-content-center">
-                                <Image
-                                  src={pkg.amount === -1 ? icon3 : icon3dark}
-                                  width={13}
-                                  height={16}
-                                  alt="iconcountry"
-                                  className=" text-white"
-                                />
-                                <p className="mx-2 my-0">الصلاحية</p>
-                              </div>
-                              <div>
-                                <p className="my-0">
-                                  {pkg.day} {pkg.day <= 10 ? "أيام" : "يوم"}
-                                </p>
-                              </div>
-                            </div>
-                            <div
-                              className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
-                              style={{
-                                backgroundColor:
-                                  pkg.amount === -1 ? "#F1F3F666" : "#fff",
-                                color:
-                                  pkg.amount === -1
-                                    ? "#FFFFFF"
-                                    : "var(--auth-color)",
-                                fontSize: "12px",
-                                fontWeight: "400",
-                              }}
-                            >
-                              <div className="d-flex align-items-center justify-content-center">
-                                <Image
-                                  src={pkg.amount === -1 ? icon4 : icon4dark}
-                                  width={13}
-                                  height={16}
-                                  alt="iconcountry"
-                                  className="text-white"
-                                />
-                                <p className="mx-2 my-0">السعر</p>
-                              </div>
-                              <div>
-                                <p className="my-0">{pkg.price} ر.س</p>
-                              </div>
-                            </div>
-                            <div
-                              className="d-flex justify-content-between align-items-center text-center p-3 rounded-2 m-3"
-                              style={{
-                                backgroundColor:
-                                  pkg.amount === -1 ? "#F1F3F666" : "#F1F3F666",
-                                color:
-                                  pkg.amount === -1
-                                    ? "#FFFFFF"
-                                    : "var(--auth-color)",
-                                fontSize: "12px",
-                                fontWeight: "400",
-                              }}
-                            >
-                              <div className="d-flex align-items-center justify-content-center">
-                                <Image
-                                  src={pkg.amount === -1 ? icon5 : icon5dark}
-                                  width={16}
-                                  height={16}
-                                  alt="iconcountry"
-                                />
-                                <p className="mx-2 my-0">قابلة للتجديد</p>
-                              </div>
-                              <div>
-                                <p className="my-0">
-                                  {operator.rechargeability === true
-                                    ? "نعم"
-                                    : "لا"}
-                                </p>
-                              </div>
-                            </div>
-                            <div className=" d-flex justify-content-center align-items-center">
-                              <button
-                                onClick={() => openModal(pkg, operator)}
-                                style={{
-                                  backgroundColor: "transparent",
-                                  padding: "10px 60px",
-                                  color:
-                                    pkg.amount === -1
-                                      ? "#fff"
-                                      : "var(--primary-color)",
-                                  border:
-                                    pkg.amount === -1
-                                      ? "2px #fff solid"
-                                      : "2px var(--primary-color) solid",
-                                  borderRadius: "5px",
-                                  cursor: "pointer",
-                                  marginTop: "10px",
-                                }}
-                              >
-                                اختيار
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      ))
-                  )}
-                </div>
+                {array
+                  .filter((pkg) =>
+                    selectedDay ? pkg.day === parseInt(selectedDay) : true
+                  )
+                  .sort((a, b) => {
+                    if (a.amount === -1) return 1; // إذا كانت قيمة a غير محدودة، ضعها في النهاية
+                    if (b.amount === -1) return -1; // إذا كانت قيمة b غير محدودة، ضعها قبل a
+                    return a.amount - b.amount; // ترتيب تصاعدي للقيم المحددة (الجيجا)
+                  })
+                  .map((p) => p.ele)}
               </div>
             </div>
           </div>
