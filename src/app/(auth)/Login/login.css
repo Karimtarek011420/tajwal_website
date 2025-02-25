@@ -30,7 +30,7 @@
 .login input::placeholder {
   font-size: 12px !important;
 }
-.login .loginpass{
+.login .loginpass {
   color: var(--primary-color);
   font-size: 12px !important;
   font-weight: 400 !important;
@@ -48,6 +48,15 @@
 .login .p-login p {
   color: var(--auth-color) !important;
   font-size: 12px !important;
+}
+.login button.back {
+  background-color: var(--auth-color) !important;
+  padding: 10px 80px; /* Adjust button padding */
+  color: #f1f3f6;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 5px;
+  border: none;
 }
 
 /* Responsive Adjustments */

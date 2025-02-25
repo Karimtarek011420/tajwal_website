@@ -188,7 +188,7 @@ const LoginPage = () => {
                 <p className="loginpass"> نسيت الرقم السرى ؟</p>
               </Link>
             </div>
-            <div className="d-flex justify-content-center align-items-center my-5">
+            <div className="d-flex justify-content-center align-items-center mt-5 mb-3">
               <button type="submit" className="follow mt-3" disabled={loading}>
                 {loading ? (
                   <TailSpin
@@ -201,6 +201,15 @@ const LoginPage = () => {
                 ) : (
                   "متابعة"
                 )}
+              </button>
+            </div>
+            <div className="d-flex justify-content-center align-items-center">
+              <button
+                type="button"
+                className=" back  mb-3"
+                onClick={() => router.back()}
+              >
+                العودة للخلف
               </button>
             </div>
             <AuthLinks />
