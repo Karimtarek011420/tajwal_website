@@ -400,7 +400,7 @@ function pagepurchase() {
                     </button>
                     <span
                       style={{
-                        fontSize: "8px",
+                        fontSize: "12px",
                         fontWeight: "600",
                         backgroundColor: "#fff",
                         padding: "6px 10px",

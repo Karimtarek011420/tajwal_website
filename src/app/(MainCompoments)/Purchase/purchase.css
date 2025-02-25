@@ -61,9 +61,9 @@
   color: var(--auth-color) !important;
 }
 .Purchasedateils .purchasepachage .btn {
-  font-size: 7px;
+  font-size: 13px;
   font-weight: 600;
-  padding: 3px 6px;
+  padding: 2px 8px;
   background-color: var(--primary-color);
   color: #fff;
 }
