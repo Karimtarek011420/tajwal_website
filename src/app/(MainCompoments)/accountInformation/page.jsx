@@ -317,6 +317,7 @@ function AccountInformation() {
     } finally {
       setLoading(false);
     }
+    setshow(true)
   };
 
   return (
@@ -555,7 +556,7 @@ function AccountInformation() {
 
                   {/* إدخال OTP إذا كان مطلوباً */}
                 
-                 {show ? <input
+                 {show && <input
                     type="text"
                     className="changeinput my-2"
                     placeholder=" OTP"
@@ -563,7 +564,7 @@ function AccountInformation() {
                     onChange={
                       (e) => setModalData({ ...modalData, otp: e.target.value }) // تحديث قيمة OTP
                     }
-                  />:''}
+                  />}
                 </>
               ) : (
                 // إدخال نصي للأجزاء الأخرى (البريد الإلكتروني أو كلمة المرور)
