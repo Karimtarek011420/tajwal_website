@@ -185,7 +185,7 @@ function AccountInformation() {
               position: "top",
               showConfirmButton: false,
             });
-            setshow(true)
+            setshow(true);
           } catch (error) {
             Swal.fire({
               icon: "error",
@@ -317,7 +317,7 @@ function AccountInformation() {
     } finally {
       setLoading(false);
     }
-    setshow(true)
+    setshow(true);
   };
 
   return (
@@ -524,7 +524,7 @@ function AccountInformation() {
         </div>
         {modalData.field && (
           <div
-            className={`modalaccountInformation ${
+            className={`   modalaccountInformation ${
               modalData.field ? "modal-visible" : ""
             }`}
             onClick={(e) => {
@@ -534,7 +534,7 @@ function AccountInformation() {
               }
             }}
           >
-            <div className="modal-content" dir="ltr">
+            <div className="modal-content mx-3" dir="ltr">
               <h6 className="modal-title mb-2 accountInformationp">
                 {modalData.field}
               </h6>
@@ -555,16 +555,19 @@ function AccountInformation() {
                   />
 
                   {/* إدخال OTP إذا كان مطلوباً */}
-                
-                 {show && <input
-                    type="text"
-                    className="changeinput my-2"
-                    placeholder=" OTP"
-                    value={modalData.otp}
-                    onChange={
-                      (e) => setModalData({ ...modalData, otp: e.target.value }) // تحديث قيمة OTP
-                    }
-                  />}
+
+                  {show && (
+                    <input
+                      type="text"
+                      className="changeinput my-2"
+                      placeholder=" OTP"
+                      value={modalData.otp}
+                      onChange={
+                        (e) =>
+                          setModalData({ ...modalData, otp: e.target.value }) // تحديث قيمة OTP
+                      }
+                    />
+                  )}
                 </>
               ) : (
                 // إدخال نصي للأجزاء الأخرى (البريد الإلكتروني أو كلمة المرور)
