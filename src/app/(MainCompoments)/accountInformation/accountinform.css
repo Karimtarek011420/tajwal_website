@@ -53,11 +53,7 @@
   .boxchange {
     flex-direction: column !important;
   }
-  .cardinfo h6 {
-    font-weight: 300 !important;
-    color: #626e7b;
-    font-size: 15px !important;
-  }
+  
   
 }
 /* Modal Styles */

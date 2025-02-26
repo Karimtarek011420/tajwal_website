@@ -384,7 +384,7 @@ function AccountInformation() {
           </div>
           <div className=" col-md-6 offset-2">
             <div className="changeinfo">
-              <div className=" bg-white rounded-4 shadow-sm px-5 py-3">
+              <div className=" bg-white rounded-2 shadow-sm px-5 py-3">
                 <p
                   style={{
                     color: "#B6BCC3",
@@ -405,7 +405,7 @@ function AccountInformation() {
                 </p>
               </div>
               <div
-                className=" boxchange rounded-4 shadow-sm px-5 py-3 my-4 d-flex justify-content-between align-items-center"
+                className=" boxchange rounded-2 shadow-sm px-5 py-3 my-4 d-flex justify-content-between align-items-center"
                 style={{ backgroundColor: "#F1F3F6" }}
               >
                 <div>
@@ -446,7 +446,7 @@ function AccountInformation() {
                 </div>
               </div>
               <div
-                className=" boxchange  rounded-4 shadow-sm px-5 py-3 my-4 d-flex justify-content-between align-items-center"
+                className=" boxchange  rounded-2 shadow-sm px-5 py-3 my-4 d-flex justify-content-between align-items-center"
                 style={{ backgroundColor: "#F1F3F6" }}
               >
                 <div>
@@ -481,7 +481,7 @@ function AccountInformation() {
                 </div>
               </div>
               <div
-                className=" boxchange rounded-4 shadow-sm px-5 py-3 d-flex justify-content-between align-items-center"
+                className=" boxchange rounded-2 shadow-sm px-5 py-3 d-flex justify-content-between align-items-center"
                 style={{ backgroundColor: "#F1F3F6" }}
               >
                 <div>
