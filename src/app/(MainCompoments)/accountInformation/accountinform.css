@@ -4,6 +4,56 @@
 .accountInformation .accountInformationp {
   color: var(--primary-color);
 }
+/* Card Info Styles */
+.cardinfo span {
+  font-size: 12px !important;
+  font-weight: 300 !important;
+  color: #626e7b;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.cardinfo h6 {
+  font-weight: 700 !important;
+  color: #626e7b;
+  font-size: 17px !important;
+}
+
+.cardinfo ul li {
+  padding-bottom: 10px;
+  color: #626e7b !important ;
+  font-size: 17px !important;
+  font-weight: 300 !important;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+.cardinfo ul li.accountInformationlogout {
+  color: #e14f72 !important;
+}
+
+.cardinfo .active {
+  font-weight: 500 !important;
+  color: #626e7b !important;
+}
+.cardinfo ul li:hover {
+  font-weight: 500 !important;
+}
+
+/* Button Styles */
+.btnchange {
+  color: white !important;
+  font-size: 10px;
+  font-weight: 300;
+  background-color: var(--primary-color);
+  padding: 5px 30px;
+  border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+  .boxchange {
+    flex-direction: column !important;
+  }
+}
 /* Modal Styles */
 .modalaccountInformation {
   position: fixed;
@@ -76,7 +126,7 @@ button.followclose:focus {
   box-shadow: 0 0 0 0 transparent !important;
   color: #ffffff !important;
 }
-.inputchange {
+.modal-content .inputchange {
   border: none !important;
   outline: none !important;
   background-color: #f9f9f9 !important;
@@ -84,19 +134,6 @@ button.followclose:focus {
   padding: 10px 12px !important;
   margin-top: 10px;
 }
-.swal-small-button {
-  font-size: 14px;
-  background-color: var(--primary-color);
-  color: #fff;
-  border-radius: 5px;
-  padding: 8px 15px;
-  transition: background-color 0.3s ease;
-}
-
-.swal-small-button:hover {
-  background-color: var(--primary-color);
-}
-
 .modal-content input {
   background-color: #f9f9f9 !important;
   border: none !important;
@@ -110,55 +147,4 @@ button.followclose:focus {
 .modal-content button:nth-child(2) {
   background-color: #ddd;
   color: #333;
-}
-
-/* Card Info Styles */
-.cardinfo span {
-  font-size: 12px !important;
-  font-weight: 300 !important;
-  color: #626e7b;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.cardinfo h6 {
-  font-weight: 700 !important;
-  color: #626e7b;
-  font-size: 17px !important;
-}
-
-.cardinfo ul li {
-  padding-bottom: 10px;
-  color: #626e7b !important ;
-  font-size: 17px !important;
-  font-weight: 300 !important;
-  transition: color 0.3s ease, font-weight 0.3s ease;
-}
-.cardinfo ul li.accountInformationlogout {
-  color: #e14f72 !important;
-}
-
-.cardinfo .active {
-  font-weight: 500 !important;
-  color: #626e7b !important;
-}
-.cardinfo ul li:hover {
-  font-weight: 500 !important;
-}
-
-/* Button Styles */
-.btnchange {
-  color: white !important;
-  font-size: 10px;
-  font-weight: 300;
-  background-color: var(--primary-color);
-  padding: 5px 30px;
-  border-radius: 5px;
-}
-
-/* Responsive Design */
-@media (max-width: 576px) {
-  .boxchange {
-    flex-direction: column !important;
-  }
 }
