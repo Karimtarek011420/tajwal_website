@@ -23,15 +23,10 @@ function AccountInformation() {
   });
   const [modalData, setModalData] = useState({ field: "", value: "", otp: "" });
   const [loading, setLoading] = useState(false);
-
-  const handlePhoneChange = (value) => {
-    setModalData({ ...modalData, value });
-  };
-
+  const [show, setshow] = useState(false);
   const { token, settoken } = useContext(authtoken);
   const router = useRouter();
   const pathName = usePathname();
-
   const handleLogout = () => {
     if (token) {
       logoutApi(token, settoken);
@@ -47,7 +42,6 @@ function AccountInformation() {
   const createPhoneOtp = async (phoneNumber) => {
     setLoading(true);
     let formattedPhone = phoneNumber;
-
     if (formattedPhone.startsWith("+966")) {
       let withoutCountryCode = formattedPhone.replace("+966", "").trim();
       if (!withoutCountryCode.startsWith("0")) {
@@ -70,7 +64,6 @@ function AccountInformation() {
       return response.data;
     } catch (error) {
       let errorMessage = "رقم الهاتف مستخدم بالفعل.";
-
       if (error.response) {
         if (error.response.data?.message) {
           errorMessage = error.response.data.message;
@@ -80,7 +73,6 @@ function AccountInformation() {
       } else if (error.request) {
         errorMessage = "فشل الاتصال بالخادم. يرجى التحقق من الإنترنت.";
       }
-
       Swal.fire({
         icon: "error",
         text: errorMessage,
@@ -193,6 +185,7 @@ function AccountInformation() {
               position: "top",
               showConfirmButton: false,
             });
+            setshow(true)
           } catch (error) {
             Swal.fire({
               icon: "error",
@@ -542,7 +535,7 @@ function AccountInformation() {
           >
             <div className="modal-content" dir="ltr">
               <h6 className="modal-title mb-2 accountInformationp">
-                تغيير {modalData.field}
+                {modalData.field}
               </h6>
 
               {/* عرض إدخال التغيير حسب نوع الحقل */}
@@ -555,29 +548,29 @@ function AccountInformation() {
                     onChange={
                       (value) => setModalData({ ...modalData, value }) // تحديث قيمة رقم الجوال
                     }
-                    placeholder="أدخل رقم الجوال"
                     containerClassName="custom-phone-input" // كلاس مخصص لتحسين التصميم
                     inputClassName="custom-phone-input-field" // كلاس مخصص لحقل الإدخال
                     className="inputchange"
                   />
 
                   {/* إدخال OTP إذا كان مطلوباً */}
-                  <input
+                
+                 {show ? <input
                     type="text"
                     className="changeinput my-2"
-                    placeholder="أدخل OTP"
+                    placeholder=" OTP"
                     value={modalData.otp}
                     onChange={
                       (e) => setModalData({ ...modalData, otp: e.target.value }) // تحديث قيمة OTP
                     }
-                  />
+                  />:''}
                 </>
               ) : (
                 // إدخال نصي للأجزاء الأخرى (البريد الإلكتروني أو كلمة المرور)
                 <input
                   type="text"
                   className="changeinput"
-                  placeholder={`أدخل ${modalData.field}`} // النص التوضيحي بناءً على الحقل
+                  placeholder={` ${modalData.field}`} // النص التوضيحي بناءً على الحقل
                   value={modalData.value}
                   onChange={
                     (e) => setModalData({ ...modalData, value: e.target.value }) // تحديث القيمة
