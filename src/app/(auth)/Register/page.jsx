@@ -184,7 +184,7 @@ export default function RegisterPage() {
               onChange={handlePhoneNumberChange}
               onBlur={handleForm.handleBlur}
               placeholder="رقم الجوال"
-              className="phone-input-field"
+              className="phone-input-field p-2"
               aria-label="phone_number"
               required
             />
