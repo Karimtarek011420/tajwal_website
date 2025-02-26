@@ -35,10 +35,8 @@ function AccountInformation() {
       });
     }
   };
-
   const isValidPhoneNumber = (phoneNumber) => /^\+\d{11,15}$/.test(phoneNumber);
   const isValidOtp = (otp) => /^\d{1,4}$/.test(otp);
-
   const createPhoneOtp = async (phoneNumber) => {
     setLoading(true);
     let formattedPhone = phoneNumber;
@@ -64,7 +62,7 @@ function AccountInformation() {
       return response.data;
     } catch (error) {
       let errorMessage = "رقم الهاتف مستخدم بالفعل.";
-      if (error.response) {
+      if (error) {
         if (error.response.data?.message) {
           errorMessage = error.response.data.message;
         } else if (error.response.status === 404) {
@@ -196,7 +194,6 @@ function AccountInformation() {
               showConfirmButton: false,
             });
           }
-
           return;
         } else {
           if (!isValidOtp(modalData.otp)) {
@@ -334,7 +331,7 @@ function AccountInformation() {
       </div>
       <div className="container py-5">
         <div className="row gy-4">
-          <div className="col-md-3 offset-1">
+          <div className="col-md-3  offset-1">
             <div className="cardinfo bg-info py-3 bg-white shadow-sm rounded-4 ps-5">
               <div className="px-3">
                 <h6>{user?.first_name}</h6>
@@ -524,42 +521,36 @@ function AccountInformation() {
         </div>
         {modalData.field && (
           <div
-            className={` d-flex justify-content-center align-items-center  modalaccountInformation ${
+            className={`modalaccountInformation ${
               modalData.field ? "modal-visible" : ""
             }`}
             onClick={(e) => {
-              // إذا تم النقر على منطقة خارجية (مودال فقط)، يتم إغلاق النافذة.
               if (e.target.classList.contains("modal")) {
                 setModalData({ field: "", value: "", otp: "" });
               }
             }}
           >
-            <div className="modal-content mx-3 " dir="ltr">
+            <div className="modal-content " dir="ltr">
               <h6 className="modal-title mb-2 accountInformationp">
                 {modalData.field}
               </h6>
-
-              {/* عرض إدخال التغيير حسب نوع الحقل */}
               {modalData.field === "phone_number" ? (
                 <>
-                  {/* إدخال رقم الجوال */}
-                  <PhoneInput
-                    defaultCountry="sa" // تعيين الدولة الافتراضية إلى السعودية (رمز الدولة)
-                    value={modalData.value}
-                    onChange={
-                      (value) => setModalData({ ...modalData, value }) // تحديث قيمة رقم الجوال
-                    }
-                    containerClassName="custom-phone-input" // كلاس مخصص لتحسين التصميم
-                    inputClassName="custom-phone-input-field" // كلاس مخصص لحقل الإدخال
-                    className="inputchange"
-                  />
-
-                  {/* إدخال OTP إذا كان مطلوباً */}
-
+                  <div className="inputchange">
+                    <PhoneInput
+                      defaultCountry="sa"
+                      value={modalData.value}
+                      onChange={(value) =>
+                        setModalData({ ...modalData, value })
+                      }
+                      containerClassName="custom-phone-input"
+                      inputClassName="custom-phone-input-field"
+                    />
+                  </div>
                   {show && (
                     <input
                       type="text"
-                      className="changeinput my-2"
+                      className="changeinput mt-2"
                       placeholder=" OTP"
                       value={modalData.otp}
                       onChange={
@@ -570,20 +561,18 @@ function AccountInformation() {
                   )}
                 </>
               ) : (
-                // إدخال نصي للأجزاء الأخرى (البريد الإلكتروني أو كلمة المرور)
                 <input
                   type="text"
                   className="changeinput"
-                  placeholder={` ${modalData.field}`} // النص التوضيحي بناءً على الحقل
+                  placeholder={` ${modalData.field}`}
                   value={modalData.value}
-                  onChange={
-                    (e) => setModalData({ ...modalData, value: e.target.value }) // تحديث القيمة
+                  onChange={(e) =>
+                    setModalData({ ...modalData, value: e.target.value })
                   }
                 />
               )}
 
-              {/* زر التحديث */}
-              <div className="d-flex justify-content-center align-items-center my-2 mx-5">
+              <div className=" my-2">
                 <button
                   onClick={handleUpdate}
                   className="form-control follow position-relative"
@@ -603,7 +592,7 @@ function AccountInformation() {
                   )}
                 </button>
               </div>
-              <div className=" mx-5">
+              <div>
                 <button
                   onClick={() =>
                     setModalData({ field: "", value: "", otp: "" })
