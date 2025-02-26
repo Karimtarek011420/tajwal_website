@@ -13,7 +13,7 @@ import "react-international-phone/style.css";
 import { API_BASE_URL } from "@/app/utils/config";
 import withAuth from "@/app/utils/withAuth";
 
- function AccountInformation() {
+function AccountInformation() {
   const [user, setUser] = useState(() => {
     try {
       return JSON.parse(localStorage.getItem("user")) || {};
@@ -46,10 +46,22 @@ import withAuth from "@/app/utils/withAuth";
 
   const createPhoneOtp = async (phoneNumber) => {
     setLoading(true);
+    let formattedPhone = phoneNumber;
+
+    if (formattedPhone.startsWith("+966")) {
+      let withoutCountryCode = formattedPhone.replace("+966", "").trim();
+
+      if (!withoutCountryCode.startsWith("0")) {
+        withoutCountryCode = "0" + withoutCountryCode;
+      }
+
+      formattedPhone = withoutCountryCode;
+    }
+
     try {
       const response = await axios.post(
         `${API_BASE_URL}/create_phone_change_otp`,
-        { phone_number: phoneNumber },
+        { phone_number: formattedPhone },
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -75,10 +87,21 @@ import withAuth from "@/app/utils/withAuth";
 
   const updatePhoneNumber = async (otp, phoneNumber) => {
     setLoading(true);
+    let formattedPhone = phoneNumber;
+
+    if (formattedPhone.startsWith("+966")) {
+      let withoutCountryCode = formattedPhone.replace("+966", "").trim();
+
+      if (!withoutCountryCode.startsWith("0")) {
+        withoutCountryCode = "0" + withoutCountryCode;
+      }
+
+      formattedPhone = withoutCountryCode;
+    }
     try {
       const response = await axios.post(
         `${API_BASE_URL}/update_phone`,
-        { otp, phone_number: phoneNumber },
+        { otp, phone_number: formattedPhone },
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -143,16 +166,44 @@ import withAuth from "@/app/utils/withAuth";
             setLoading(false);
             return;
           }
+          try {
+            await createPhoneOtp(modalData.value);
+            Swal.fire({
+              icon: "success",
+              text: "تم إرسال رمز OTP بنجاح.",
+              toast: true,
+              timer: 2000,
+              position: "top",
+              showConfirmButton: false,
+            });
+          } catch (error) {
+            if (
+              error.response &&
+              error.response.data?.message === "Phone Already Used"
+            ) {
+              Swal.fire({
+                icon: "error",
+                text: "هذا الرقم مستخدم بالفعل، الرجاء إدخال رقم آخر.",
+                toast: true,
+                timer: 2000,
+                position: "top",
+                showConfirmButton: false,
+              });
+            } else {
+              // أي خطأ آخر
+              Swal.fire({
+                icon: "error",
+                text:
+                  error.message ||
+                  "حدث خطأ أثناء إرسال رمز OTP، يرجى المحاولة لاحقًا.",
+                toast: true,
+                timer: 2000,
+                position: "top",
+                showConfirmButton: false,
+              });
+            }
+          }
 
-          await createPhoneOtp(modalData.value);
-          Swal.fire({
-            icon: "success",
-            text: "تم إرسال رمز OTP بنجاح.",
-            toast: true,
-            timer: 2000,
-            position: "top",
-            showConfirmButton: false,
-          });
           return;
         } else {
           if (!isValidOtp(modalData.otp)) {
@@ -166,13 +217,45 @@ import withAuth from "@/app/utils/withAuth";
             });
             return;
           }
+
           await updatePhoneNumber(modalData.otp, modalData.value);
+
+          // ✅ تطبيق تنسيق الرقم الجديد بعد التحديث
+          let formattedPhone = modalData.value;
+          if (formattedPhone.startsWith("+966")) {
+            let withoutCountryCode = formattedPhone.replace("+966", "").trim();
+            if (!withoutCountryCode.startsWith("0")) {
+              withoutCountryCode = "0" + withoutCountryCode;
+            }
+            formattedPhone = withoutCountryCode;
+          }
+
+          // تحديث بيانات المستخدم بعد تطبيق التنسيق
+          const updatedData = { ...user, phone_number: formattedPhone };
+          setUser(updatedData);
+          localStorage.setItem("user", JSON.stringify(updatedData));
+
+          Swal.fire({
+            icon: "success",
+            text: "تم تحديث رقم الهاتف بنجاح.",
+            toast: true,
+            timer: 2000,
+            position: "top",
+            showConfirmButton: false,
+          });
+
+          setModalData({ field: "", value: "", otp: "" });
+          setLoading(false);
+          return;
         }
-      } else if (modalData.field === "email") {
+      }
+
+      // تحديث البريد الإلكتروني وكلمة المرور بدون تغييرات على التنسيق
+      if (modalData.field === "email" || modalData.field === "password") {
         if (modalData.value.length === 0) {
           Swal.fire({
             icon: "error",
-            text: "يرجى   ملئ الحقل .",
+            text: "يرجى ملء الحقل.",
             toast: true,
             timer: 2000,
             position: "top",
@@ -181,8 +264,9 @@ import withAuth from "@/app/utils/withAuth";
           setLoading(false);
           return;
         }
+
         if (
-          !modalData.value ||
+          modalData.field === "email" &&
           !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
             modalData.value
           )
@@ -198,20 +282,8 @@ import withAuth from "@/app/utils/withAuth";
           setLoading(false);
           return;
         }
-      } else if (modalData.field === "password") {
-        if (modalData.value.length === 0) {
-          Swal.fire({
-            icon: "error",
-            text: " يرجى مل الحقل.",
-            toast: true,
-            timer: 2000,
-            position: "top",
-            showConfirmButton: false,
-          });
-          setLoading(false);
-          return;
-        }
-        if (!modalData.value || modalData.value.length < 8) {
+
+        if (modalData.field === "password" && modalData.value.length < 8) {
           Swal.fire({
             icon: "error",
             text: "كلمة المرور يجب أن تكون 8 حروف على الأقل.",
@@ -226,6 +298,12 @@ import withAuth from "@/app/utils/withAuth";
       }
 
       await updateProfile({ [modalData.field]: modalData.value });
+
+      // تحديث البيانات في `user` و `localStorage`
+      const updatedData = { ...user, [modalData.field]: modalData.value };
+      setUser(updatedData);
+      localStorage.setItem("user", JSON.stringify(updatedData));
+
       Swal.fire({
         icon: "success",
         text: "تم التحديث بنجاح.",
@@ -235,9 +313,6 @@ import withAuth from "@/app/utils/withAuth";
         showConfirmButton: false,
       });
 
-      const updatedData = { ...user, [modalData.field]: modalData.value };
-      setUser(updatedData);
-      localStorage.setItem("user", JSON.stringify(updatedData));
       setModalData({ field: "", value: "", otp: "" });
     } catch (error) {
       Swal.fire({
@@ -257,9 +332,11 @@ import withAuth from "@/app/utils/withAuth";
     <div className="accountInformation position-relative py-5">
       <div className="position-absolute country-listbeginall w-100">
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
-          <li className="country-list-links  mx-2 accountInformationp" style={{backgroundColor:'var(--background)'}}>
-            <span className="p-4"  > معلومات الحساب</span>
-           
+          <li
+            className="country-list-links  mx-2 accountInformationp"
+            style={{ backgroundColor: "var(--background)" }}
+          >
+            <span className="p-4"> معلومات الحساب</span>
           </li>
         </ul>
       </div>
@@ -286,9 +363,7 @@ import withAuth from "@/app/utils/withAuth";
                     </li>
                   </Link>
                   <Link href="/Orders">
-                    <li
-                      className={pathName === "/Orders" ? "active" : ""}
-                    >
+                    <li className={pathName === "/Orders" ? "active" : ""}>
                       الطلبات السابقة
                     </li>
                   </Link>
@@ -486,7 +561,6 @@ import withAuth from "@/app/utils/withAuth";
                     containerClassName="custom-phone-input" // كلاس مخصص لتحسين التصميم
                     inputClassName="custom-phone-input-field" // كلاس مخصص لحقل الإدخال
                     className="inputchange"
-                    
                   />
 
                   {/* إدخال OTP إذا كان مطلوباً */}
@@ -550,4 +624,4 @@ import withAuth from "@/app/utils/withAuth";
   );
 }
 
-export default withAuth(AccountInformation)
+export default withAuth(AccountInformation);
