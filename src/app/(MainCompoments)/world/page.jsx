@@ -344,16 +344,13 @@ export default function DetailsCountry() {
     <div className="countrydetials position-relative py-5">
       <div>
         {error && (
-          <p className="text-danger text-center" style={{ minHeight: "30vh" }}>
+          <p className="text-danger text-center px-3" style={{ minHeight: "30vh" }}>
             {error}
           </p>
         )}{" "}
         {/* عرض الخطأ إن وجد */}
       </div>
-      {Array.isArray(data) &&
-        data.map((country) => (
-          <div key={country.country_code}>
-            <div className="position-absolute country-listbeginall w-100">
+      <div className="position-absolute country-listbeginall w-100">
               <ul className="list-unstyled d-flex justify-content-center align-items-center">
                 <Link
                   href={"/Countries"}
@@ -394,6 +391,10 @@ export default function DetailsCountry() {
                 </Link>
               </ul>
             </div>
+      {Array.isArray(data) &&
+        data.map((country) => (
+          <div key={country.country_code}>
+            
             <div className="px-lg-5">
               <div className="d-flex flex-wrap justify-content-center align-items-center pt-2 pb-4">
                 {country?.days?.map((day) => (
@@ -414,8 +415,7 @@ export default function DetailsCountry() {
                   </button>
                 ))}
               </div>
-
-              <div className="row gy-5 py-5 px-3">
+              <div className="row gy-5 py-4  px-3">
                 {array
                   .filter((pkg) =>
                     selectedDay ? pkg.day === parseInt(selectedDay) : true
