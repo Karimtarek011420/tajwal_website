@@ -114,9 +114,9 @@ export default function ContactUS() {
                     href="https://x.com/Tajwalapp?t=fNlENfiyMV5Qf4d2CPeLDA&s=09"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="ps-5 text-uppercase"
+                    className="ps-5 "
                   >
-                    tajwalco@
+                    Tajwalapp@
                   </a>
                   <Image
                     src={xcontectus}
@@ -135,9 +135,9 @@ export default function ContactUS() {
                     href="https://www.instagram.com/tajwalapp"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="ps-5 text-uppercase"
+                    className="ps-5 "
                   >
-                    tajwalco@
+                    Tajwalapp@
                   </a>
                   <Image
                     src={instacontect}
