@@ -21,6 +21,7 @@
   align-items: center;
   opacity: 0;
   visibility: hidden;
+ 
   transition: opacity 0.3s ease, visibility 0.3s ease;
   z-index: 1000;
 }
@@ -107,7 +108,7 @@ button.followclose:focus {
   text-align: center;
 }
 .inputchange {
-  width: 100% !important;
+  width: 99% !important;
   background-color: transparent !important;
   border: none !important;
   outline: none !important;

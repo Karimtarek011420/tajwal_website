@@ -524,7 +524,7 @@ function AccountInformation() {
         </div>
         {modalData.field && (
           <div
-            className={`   modalaccountInformation ${
+            className={` d-flex justify-content-center align-items-center  modalaccountInformation ${
               modalData.field ? "modal-visible" : ""
             }`}
             onClick={(e) => {
@@ -534,7 +534,7 @@ function AccountInformation() {
               }
             }}
           >
-            <div className="modal-content mx-3" dir="ltr">
+            <div className="modal-content mx-3 " dir="ltr">
               <h6 className="modal-title mb-2 accountInformationp">
                 {modalData.field}
               </h6>
@@ -583,7 +583,7 @@ function AccountInformation() {
               )}
 
               {/* زر التحديث */}
-              <div className="d-flex justify-content-center align-items-center my-2">
+              <div className="d-flex justify-content-center align-items-center my-2 mx-5">
                 <button
                   onClick={handleUpdate}
                   className="form-control follow position-relative"
@@ -603,12 +603,16 @@ function AccountInformation() {
                   )}
                 </button>
               </div>
-              <button
-                onClick={() => setModalData({ field: "", value: "", otp: "" })}
-                className="followclose form-control "
-              >
-                إغلاق
-              </button>
+              <div className=" mx-5">
+                <button
+                  onClick={() =>
+                    setModalData({ field: "", value: "", otp: "" })
+                  }
+                  className="followclose form-control  "
+                >
+                  إغلاق
+                </button>
+              </div>
             </div>
 
             {/* زر الإغلاق */}
