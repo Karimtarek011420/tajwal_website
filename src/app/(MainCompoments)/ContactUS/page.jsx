@@ -240,7 +240,7 @@ export default function ContactUS() {
                 <form onSubmit={handleForm.handleSubmit}>
                   <div className=" row gy-3 px-3">
                     <div className=" col-md-6">
-                      <div className="mb-4 mt-1">
+                      <div className="mb-4 mt-1 pt-2">
                         <input
                           type="text"
                           value={handleForm.values.name}
@@ -263,7 +263,7 @@ export default function ContactUS() {
                       </div>
                     </div>
                     <div className="col-md-6">
-                      <div className="mb-4 mt-1">
+                      <div className="mb-4 mt-1 pt-2">
                         <select
                           value={handleForm.values.subject}
                           onChange={handleForm.handleChange}
@@ -292,7 +292,7 @@ export default function ContactUS() {
                     </div>
 
                     <div className=" col-md-6">
-                      <div className="mb-4">
+                      <div className="mb-3">
                         <input
                           value={handleForm.values.email}
                           onChange={handleForm.handleChange}
@@ -316,7 +316,7 @@ export default function ContactUS() {
                       </div>
                     </div>
                     <div className=" col-md-6">
-                      <div className="mb-4 w-100" dir="ltr">
+                      <div className="mb-3 w-100" dir="ltr">
                         <PhoneInput
                           defaultCountry="sa"
                           value={handleForm.values.phone}
