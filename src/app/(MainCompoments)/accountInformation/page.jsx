@@ -50,11 +50,9 @@ function AccountInformation() {
 
     if (formattedPhone.startsWith("+966")) {
       let withoutCountryCode = formattedPhone.replace("+966", "").trim();
-
       if (!withoutCountryCode.startsWith("0")) {
         withoutCountryCode = "0" + withoutCountryCode;
       }
-
       formattedPhone = withoutCountryCode;
     }
 
@@ -71,15 +69,28 @@ function AccountInformation() {
       );
       return response.data;
     } catch (error) {
+      let errorMessage = "رقم الهاتف مستخدم بالفعل.";
+
+      if (error.response) {
+        if (error.response.data?.message) {
+          errorMessage = error.response.data.message;
+        } else if (error.response.status === 404) {
+          errorMessage = "رقم الهاتف مستخدم بالفعل.";
+        }
+      } else if (error.request) {
+        errorMessage = "فشل الاتصال بالخادم. يرجى التحقق من الإنترنت.";
+      }
+
       Swal.fire({
         icon: "error",
-        text: "فشل في إرسال OTP. يرجى المحاولة مرة أخرى.",
+        text: errorMessage,
         toast: true,
         timer: 2000,
         position: "top",
         showConfirmButton: false,
       });
-      return null;
+
+      return Promise.reject(errorMessage); // ✅ إرجاع الخطأ بدلاً من `null`
     } finally {
       setLoading(false);
     }
@@ -157,7 +168,7 @@ function AccountInformation() {
           if (!isValidPhoneNumber(modalData.value)) {
             Swal.fire({
               icon: "error",
-              text: " الرجاء إدخال رقم بشكل صحيح",
+              text: "الرجاء إدخال رقم هاتف صحيح.",
               toast: true,
               timer: 2000,
               position: "top",
@@ -166,8 +177,14 @@ function AccountInformation() {
             setLoading(false);
             return;
           }
+
           try {
-            await createPhoneOtp(modalData.value);
+            const response = await createPhoneOtp(modalData.value);
+
+            if (response.error) {
+              throw new Error(response.error);
+            }
+
             Swal.fire({
               icon: "success",
               text: "تم إرسال رمز OTP بنجاح.",
@@ -177,31 +194,14 @@ function AccountInformation() {
               showConfirmButton: false,
             });
           } catch (error) {
-            if (
-              error.response &&
-              error.response.data?.message === "Phone Already Used"
-            ) {
-              Swal.fire({
-                icon: "error",
-                text: "هذا الرقم مستخدم بالفعل، الرجاء إدخال رقم آخر.",
-                toast: true,
-                timer: 2000,
-                position: "top",
-                showConfirmButton: false,
-              });
-            } else {
-              // أي خطأ آخر
-              Swal.fire({
-                icon: "error",
-                text:
-                  error.message ||
-                  "حدث خطأ أثناء إرسال رمز OTP، يرجى المحاولة لاحقًا.",
-                toast: true,
-                timer: 2000,
-                position: "top",
-                showConfirmButton: false,
-              });
-            }
+            Swal.fire({
+              icon: "error",
+              text: error.message || "رقم الهاتف مستخدم بالفعل.",
+              toast: true,
+              timer: 2000,
+              position: "top",
+              showConfirmButton: false,
+            });
           }
 
           return;
@@ -209,7 +209,7 @@ function AccountInformation() {
           if (!isValidOtp(modalData.otp)) {
             Swal.fire({
               icon: "error",
-              text: " يجب ادخال رمز OTP صحيح",
+              text: "يجب إدخال رمز OTP صحيح.",
               toast: true,
               timer: 2000,
               position: "top",
@@ -220,7 +220,6 @@ function AccountInformation() {
 
           await updatePhoneNumber(modalData.otp, modalData.value);
 
-          // ✅ تطبيق تنسيق الرقم الجديد بعد التحديث
           let formattedPhone = modalData.value;
           if (formattedPhone.startsWith("+966")) {
             let withoutCountryCode = formattedPhone.replace("+966", "").trim();
@@ -230,7 +229,6 @@ function AccountInformation() {
             formattedPhone = withoutCountryCode;
           }
 
-          // تحديث بيانات المستخدم بعد تطبيق التنسيق
           const updatedData = { ...user, phone_number: formattedPhone };
           setUser(updatedData);
           localStorage.setItem("user", JSON.stringify(updatedData));
