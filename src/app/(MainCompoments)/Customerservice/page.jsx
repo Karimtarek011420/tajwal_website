@@ -335,7 +335,7 @@ export default function ContactUS() {
           </div>
         </div>
         <div className=" w-50 mx-auto mt-5 messageCustomerservice">
-          <div className=" bg-white shadow-sm py-1">
+          <div className=" bg-white shadow-sm py-1 pt-3">
             {sucessMessage ? (
               <div className=" py-5 ">
                 <div className=" d-flex justify-content-center  align-items-center">
@@ -380,13 +380,13 @@ export default function ContactUS() {
                     </div>
                   </div>
                   <div className="col-md-6">
-                    <div className="mb-4 mt-1">
+                    <div className="mb-3 mt-1 ">
                       <select
                         value={handleForm.values.subject}
                         onChange={handleForm.handleChange}
                         onBlur={handleForm.handleBlur}
                         id="subject"
-                        className="form-control ContactUSp shadow-none  h-25 "
+                        className="form-control ContactUSp shadow-none  h-25  "
                       >
                         <option value="" disabled>
                           سبب التواصل
@@ -408,7 +408,7 @@ export default function ContactUS() {
                   </div>
 
                   <div className=" col-md-6">
-                    <div className="mb-4">
+                    <div className="mb-3">
                       <input
                         value={handleForm.values.email}
                         onChange={handleForm.handleChange}
