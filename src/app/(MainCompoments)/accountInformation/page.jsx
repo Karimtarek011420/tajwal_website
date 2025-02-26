@@ -122,6 +122,8 @@ function AccountInformation() {
       });
     } finally {
       setLoading(false);
+      setshow(false);
+
     }
   };
 
@@ -314,7 +316,6 @@ function AccountInformation() {
     } finally {
       setLoading(false);
     }
-    setshow(true);
   };
 
   return (
