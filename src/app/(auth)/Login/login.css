@@ -4,6 +4,10 @@
   max-width: 500px; /* Limit max-width for large screens */
   margin: 0 auto; /* Center the container */
 }
+.login .imagelogin {
+  width: 408px !important;
+  height: 307px !important;
+}
 .login .phone-input-field {
   width: 100% !important;
   background-color: transparent !important;

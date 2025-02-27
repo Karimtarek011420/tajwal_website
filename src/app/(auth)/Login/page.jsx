@@ -151,9 +151,8 @@ const LoginPage = () => {
         <Image
           src={LoginUser}
           layout="responsive"
+          className="imagelogin"
           alt="LoginUser"
-          width={408}
-          height={307}
         />
       </div>
       <div className="bg-white shadow-sm rounded-3 px-4 py-5 ">
