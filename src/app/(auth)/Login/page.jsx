@@ -147,7 +147,7 @@ const LoginPage = () => {
 
   return (
     <div className="container login pt-5 pb-4">
-      <div className="text-center mb-5">
+      <div className="text-center d-flex justify-content-center align-items-center  mb-4">
         <Image
           src={LoginUser}
           layout="responsive"
@@ -173,7 +173,7 @@ const LoginPage = () => {
             {errorMessage && (
               <p
                 className="px-3 text-danger text-center mt-3"
-                style={{ fontSize: "14px" }}
+                style={{ fontSize: "13px" }}
               >
                 {errorMessage}
               </p>
