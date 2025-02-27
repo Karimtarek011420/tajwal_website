@@ -132,7 +132,7 @@ export default function RegisterPage() {
 
   return (
     <div className="container registertajwal pt-5 pb-4">
-      <div className="text-center mb-5">
+      <div className="text-center d-flex justify-content-center align-items-center  mb-4">
         <Image
           src={RegisterUser}
           layout="responsive"
@@ -140,7 +140,7 @@ export default function RegisterPage() {
           alt="Register User"
         />
       </div>
-      <div className="bg-white shadow-sm rounded-4 px-4 py-3">
+      <div className="bg-white shadow-sm rounded-3 px-4 pb-3 pt-1">
         <form onSubmit={handleForm.handleSubmit}>
           <div className="mb-4 mt-5">
             <input
