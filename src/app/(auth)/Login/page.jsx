@@ -151,7 +151,7 @@ const LoginPage = () => {
 
         {step === 2 && (
           <form onSubmit={handleLoginSubmit}>
-            <div className="p-login text-center py-3">
+            <div className="p-login text-center py-2">
               <p>ادخل الرقم السري للمتابعة</p>
             </div>
             <div className="mb-4 position-relative">
@@ -188,8 +188,8 @@ const LoginPage = () => {
                 <p className="loginpass"> نسيت الرقم السرى ؟</p>
               </Link>
             </div>
-            <div className="d-flex justify-content-center align-items-center mt-5 mb-3">
-              <button type="submit" className="follow mt-3" disabled={loading}>
+            <div className="d-flex justify-content-center align-items-center mt-2 mb-3">
+              <button type="submit" className="follow " disabled={loading}>
                 {loading ? (
                   <TailSpin
                     visible={true}
