@@ -12,7 +12,7 @@ import { useRouter } from "next/navigation";
 import { TailSpin } from "react-loader-spinner";
 import Link from "next/link";
 import { authtoken } from "@/app/_Compontents/Authtoken/Authtoken";
-import { API_BASE_URL } from "@/app/utils/config";
+import { API_BASE_URL, API_V2_BASE_URL } from "@/app/utils/config";
 const LoginPage = () => {
   const router = useRouter();
   const [step, setStep] = useState(1);
@@ -23,20 +23,58 @@ const LoginPage = () => {
   const [loading, setLoading] = useState(false);
   const { settoken } = useContext(authtoken);
   const togglePasswordVisibility = () => setShowPassword(!showPassword);
-  const handlePhoneSubmit = () => {
+  const handlePhoneSubmit = async (e) => {
+    e.preventDefault();
     setLoading(true);
     if (!phoneNumber) {
       setErrorMessage("يرجى إدخال رقم الهاتف.");
       setLoading(false);
       return;
-    }
-    if (!/\+\d{11,15}/.test(phoneNumber)) {
+    } else if (!/^\+\d{11,15}$/.test(phoneNumber)) {
       setErrorMessage("يرجى إدخال رقم هاتف صالح.");
       setLoading(false);
       return;
     }
+    try {
+      setLoading(true);
+      let formattedPhone = phoneNumber;
+      if (phoneNumber.startsWith("+966")) {
+        let withoutCountryCode = phoneNumber.replace("+966", "");
+        if (!withoutCountryCode.startsWith("0")) {
+          withoutCountryCode = "0" + withoutCountryCode;
+        }
+        formattedPhone = withoutCountryCode; // حفظ الرقم الجديد بدون كود الدولة
+      }
+      const response = await axios.post(
+        `${API_V2_BASE_URL}/check_if_user_exist`,
+        {
+          phone_number: formattedPhone,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          validateStatus: (status) => status < 500, // السماح بإدارة الأخطاء يدوياً
+        }
+      );
+      if (response.status === 200 && response.data?.success) {
+        setStep(2);
+      } else if (response.status === 400 || response.status === 404) {
+        toast.success("ليس لديك حساب قم بتجسيل حساب! ", {
+          duration: 1500,
+          style: { backgroundColor: "#4b87a4", color: "white" },
+        });
+        setTimeout(() => {
+          router.push("/Register");
+        }, 800);
+      } else {
+        throw new Error("استجابة غير متوقعة من الخادم");
+      }
+    } catch (error) {
+      setErrorMessage("حدث خطأ، يرجى المحاولة مرة أخرى.");
+    }
     setErrorMessage("");
-    setStep(2);
     setLoading(false);
   };
 
@@ -118,7 +156,7 @@ const LoginPage = () => {
           height={307}
         />
       </div>
-      <div className="bg-white shadow-sm rounded-2 px-4 py-5 ">
+      <div className="bg-white shadow-sm rounded-3 px-4 py-5 ">
         {step === 1 && (
           <>
             <div className="mb-2" dir="ltr">
@@ -142,7 +180,17 @@ const LoginPage = () => {
             )}
             <div className="d-flex justify-content-center align-items-center my-3">
               <button onClick={handlePhoneSubmit} className="follow mt-2">
-                متابعة
+                {loading ? (
+                  <TailSpin
+                    visible={true}
+                    height="35"
+                    width="35"
+                    color="#fff"
+                    ariaLabel="tail-spin-loading"
+                  />
+                ) : (
+                  "متابعة"
+                )}
               </button>
             </div>
             <AuthLinks />
