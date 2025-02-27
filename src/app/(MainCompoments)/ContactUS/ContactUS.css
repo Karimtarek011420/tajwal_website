@@ -55,16 +55,20 @@
   font-size: 12px !important;
   font-weight: 300 !important;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1210px) {
   .ContactUS .row {
     flex-direction: column;
     align-items: center;
   }
 
-  .ContactUS .col-md-3,
-  .ContactUS .col-md-6 {
+  .ContactUS .col-md-3 {
     width: 100%;
     max-width: 400px;
+  }
+
+  .ContactUS .col-md-6 {
+    width: 100%;
+    max-width: 600px;
   }
 
   .ContactUS .ContactUSp {
