@@ -8,14 +8,14 @@ import Link from "next/link";
 const AuthLinks = () => {
   return (
     <>
-      <div className="position-relative mb-3 text-center authlinks">
+      <div className="position-relative mb-2 text-center authlinks">
         <p className="bg-white position-relative z-2 px-3 d-inline-block  authlinkspara">
           المتابعة باستخدام
         </p>
         <div className="position-absolute  top-50 start-0  w-100  border-top  text-black-50 p-0 m-0 "></div>
       </div>
 
-      <div className="mb-4 d-flex justify-content-center gap-3">
+      <div className=" d-flex justify-content-center gap-3">
         <Link href="#" aria-label="Sign in with Twitter" className=" ms-3">
           <Image
             src={xauth}
