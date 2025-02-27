@@ -13,7 +13,6 @@ import { TailSpin } from "react-loader-spinner";
 import Link from "next/link";
 import { authtoken } from "@/app/_Compontents/Authtoken/Authtoken";
 import { API_BASE_URL } from "@/app/utils/config";
-
 const LoginPage = () => {
   const router = useRouter();
   const [step, setStep] = useState(1);
@@ -23,24 +22,19 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const { settoken } = useContext(authtoken);
-
   const togglePasswordVisibility = () => setShowPassword(!showPassword);
-
   const handlePhoneSubmit = () => {
     setLoading(true);
-
-    if (phoneNumber.length === 0) {
+    if (!phoneNumber) {
       setErrorMessage("يرجى إدخال رقم الهاتف.");
       setLoading(false);
       return;
     }
-
     if (!/\+\d{11,15}/.test(phoneNumber)) {
       setErrorMessage("يرجى إدخال رقم هاتف صالح.");
       setLoading(false);
       return;
     }
-
     setErrorMessage("");
     setStep(2);
     setLoading(false);
@@ -119,14 +113,15 @@ const LoginPage = () => {
         <Image
           src={LoginUser}
           layout="responsive"
-          className="loginimage"
           alt="LoginUser"
+          width={408}
+          height={307}
         />
       </div>
       <div className="bg-white shadow-sm rounded-4 px-4 py-5">
         {step === 1 && (
           <>
-            <div className="mb-4" dir="ltr">
+            <div className="mb-2" dir="ltr">
               <PhoneInput
                 defaultCountry="sa"
                 value={phoneNumber}
@@ -138,10 +133,15 @@ const LoginPage = () => {
               />
             </div>
             {errorMessage && (
-              <p className="px-3 text-danger text-center">{errorMessage}</p>
+              <p
+                className="px-3 text-danger text-center mt-3"
+                style={{ fontSize: "14px" }}
+              >
+                {errorMessage}
+              </p>
             )}
-            <div className="d-flex justify-content-center align-items-center my-5">
-              <button onClick={handlePhoneSubmit} className="follow mt-3">
+            <div className="d-flex justify-content-center align-items-center my-3">
+              <button onClick={handlePhoneSubmit} className="follow mt-2">
                 متابعة
               </button>
             </div>
