@@ -386,7 +386,7 @@ export default function ContactUS() {
                         onChange={handleForm.handleChange}
                         onBlur={handleForm.handleBlur}
                         id="subject"
-                        className="form-control ContactUSp shadow-none  h-25  "
+                        className="form-control ContactUSp shadow-none  h-25 "
                       >
                         <option value="" disabled>
                           سبب التواصل
@@ -483,7 +483,7 @@ export default function ContactUS() {
                     {errorMessage}
                   </p>
                 </div>
-                <div className="d-flex justify-content-start align-items-center mx-lg-5 my-5 followll ">
+                <div className="d-flex justify-content-start align-items-center mx-5 my-5 followll ">
                   <button
                     type="submit"
                     disabled={!handleForm.dirty || !handleForm.isValid}
