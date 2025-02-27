@@ -186,7 +186,7 @@ export default function ContactUS() {
           </div>
         </div>
         <div className=" d-flex justify-content-center align-items-center  mt-5 ">
-          <div className="row  justify-content-center gy-4 w-100">
+          <div className="row  justify-content-center gy-4 w-100 mediatab">
             <div className=" col-md-4">
               <div className=" bg-white shadow-sm rounded-2 pt-3 pb-4  ContactUSp  ">
                 <p className=" px-3 ">خدمة العملاء</p>
