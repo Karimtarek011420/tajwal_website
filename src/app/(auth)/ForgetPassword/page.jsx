@@ -108,12 +108,18 @@ const ForgetpassPage = () => {
             />
             {handleForget.errors.phone_number &&
               handleForget.touched.phone_number && (
-                <p className="px-3 pt-2 text-danger text-center">
+                <p
+                  className="px-3 text-danger text-center mt-3"
+                  style={{ fontSize: "13px" }}
+                >
                   {handleForget.errors.phone_number}
                 </p>
               )}
             {errorMessage && (
-              <p className="px-3 pt-2 text-danger text-center">
+              <p
+                className="px-3 text-danger text-center mt-3"
+                style={{ fontSize: "13px" }}
+              >
                 {errorMessage}
               </p>
             )}
