@@ -154,7 +154,11 @@ export default function RegisterPage() {
               aria-label="first_name"
             />
             {handleForm.errors.first_name && handleForm.touched.first_name ? (
-              <div className="alert alert-danger my-2" role="alert">
+              <div
+                className="px-3 text-danger  mt-3"
+                style={{ fontSize: "13px" }}
+                role="alert"
+              >
                 {handleForm.errors.first_name}
               </div>
             ) : null}
@@ -172,7 +176,11 @@ export default function RegisterPage() {
               required
             />
             {handleForm.errors.email && handleForm.touched.email ? (
-              <div className="alert alert-danger my-2" role="alert">
+              <div
+                className="px-3 text-danger  mt-3"
+                style={{ fontSize: "13px" }}
+                role="alert"
+              >
                 {handleForm.errors.email}
               </div>
             ) : null}
@@ -190,7 +198,12 @@ export default function RegisterPage() {
             />
             {handleForm.errors.phone_number &&
             handleForm.touched.phone_number ? (
-              <div className="alert alert-danger my-2" dir="rtl" role="alert">
+              <div
+                className="px-3 text-danger  mt-3"
+                style={{ fontSize: "13px" }}
+                dir="rtl"
+                role="alert"
+              >
                 {handleForm.errors.phone_number}
               </div>
             ) : null}
@@ -221,7 +234,11 @@ export default function RegisterPage() {
             ></i>
           </div>
           {handleForm.errors.password && handleForm.touched.password ? (
-            <div className="alert alert-danger my-2" role="alert">
+            <div
+              className="px-3 text-danger  mt-3 mb-2"
+              style={{ fontSize: "13px" }}
+              role="alert"
+            >
               {handleForm.errors.password}
             </div>
           ) : null}
@@ -253,12 +270,17 @@ export default function RegisterPage() {
             ></i>
           </div>
           {handleForm.errors.repassword && handleForm.touched.repassword ? (
-            <div className="alert alert-danger my-4" role="alert">
+            <div
+              className="px-3 text-danger  mt-3 mb-2"
+              style={{ fontSize: "13px" }}
+              role="alert"
+            >
               {handleForm.errors.repassword}
             </div>
           ) : null}
           <div>
-            <p className=" px-3 text-danger text-center">{errorMessage}</p>
+            <p  className="px-3 text-danger  mt-3 "
+                style={{ fontSize: "13px" }}>{errorMessage}</p>
           </div>
           <div className="d-flex justify-content-center align-items-center">
             <button
@@ -282,7 +304,7 @@ export default function RegisterPage() {
               )}
             </button>
           </div>
-          <div className="p_register pt-5 pb-3">
+          <div className="p_register  pt-4 ">
             <p>
               بالتسجيل للحصول على حساب في “تجوال”، فأنك توافق على الشروط
               والأحكام. تعرف على المزيد حول كيفية استخدامنا وحماية بياناتك في
