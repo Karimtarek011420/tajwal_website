@@ -170,10 +170,7 @@ const LoginPage = () => {
               />
             </div>
             {errorMessage && (
-              <p
-                className="px-3 text-danger  mt-3"
-                style={{ fontSize: "13px" }}
-              >
+              <p className="px-3 text-danger mt-3" style={{ fontSize: "13px" }}>
                 {errorMessage}
               </p>
             )}
@@ -228,7 +225,9 @@ const LoginPage = () => {
               ></i>
             </div>
             {errorMessage && (
-              <p className="px-3 text-danger text-center">{errorMessage}</p>
+              <p className="px-3 text-danger mt-3" style={{ fontSize: "13px" }}>
+                {errorMessage}
+              </p>
             )}
             <div className="d-flex justify-content-end">
               <Link href="/ForgetPassword">
