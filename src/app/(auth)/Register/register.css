@@ -1,8 +1,7 @@
-/* General Styles */
 .registertajwal {
   width: 100%;
-  max-width: 500px; /* Limit max-width for large screens */
-  margin: 0 auto; /* Center the container */
+  max-width: 500px; 
+  margin: 0 auto; 
 }
 .registertajwal .imageregister {
   width: 260px !important;
@@ -30,7 +29,7 @@
 }
 .registertajwal button.follow {
   background-color: var(--primary-color) !important;
-  padding: 10px 100px; /* Adjust button padding */
+  padding: 10px 100px; 
   color: #f1f3f6;
   font-size: 13px;
   font-weight: 700;
@@ -42,8 +41,6 @@
   font-size: 12px !important;
   font-weight: 400 !important;
 }
-
-/* Responsive Adjustments */
 @media screen and (max-width: 992px) {
   .registertajwal {
     padding: 0 15px;

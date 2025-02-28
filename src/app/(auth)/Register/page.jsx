@@ -12,14 +12,12 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { TailSpin } from "react-loader-spinner";
 import { API_BASE_URL } from "@/app/utils/config";
-
 export default function RegisterPage() {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [showrePassword, setreShowPassword] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setloading] = useState(false);
-
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
