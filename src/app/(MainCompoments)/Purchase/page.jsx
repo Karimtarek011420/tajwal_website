@@ -166,8 +166,8 @@ function pagepurchase() {
 
   if (!selectedPackage) {
     return (
-      <div className=" d-flex justify-content-center align-items-center py-5 selectedPackagereturn ">
-        <p>
+      <div className=" d-flex justify-content-center align-items-center py-5  selectedPackagereturn  px-5">
+        <p style={{fontSize:'13px'}}>
           لم يتم اختيار أي باقة. الرجاء العودة إلى الصفحة السابقة واختيار باقة.
         </p>
       </div>
