@@ -355,10 +355,10 @@ export default function DetailsCountry() {
 
   return (
     <div className="countrydetials position-relative py-5">
-      <div>
+      <div className="px-3 px-md-4 px-lg-5">
         {error && (
           <p
-            className="text-danger text-center px-3"
+            className="text-danger text-center"
             style={{ minHeight: "30vh" }}
           >
             {error}

@@ -53,7 +53,7 @@ export default function OffersPage() {
       </div>
 
       <div className="container py-5">
-        <div>
+        <div className="px-3 px-md-4 px-lg-5">
           {error && (
             <p
               className="text-danger text-center"

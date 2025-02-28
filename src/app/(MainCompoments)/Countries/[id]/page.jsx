@@ -265,7 +265,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
 
   return (
     <div className="countrydetials position-relative py-5">
-      <div>
+      <div className="px-3 px-md-4 px-lg-5">
         {error && (
           <p className="text-danger text-center" style={{ minHeight: "30vh" }}>
             {error}

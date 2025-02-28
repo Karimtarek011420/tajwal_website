@@ -66,10 +66,10 @@ export default function CountryHeader() {
         </ul>
       </div>
       <div className="px-3 px-md-4 px-lg-5">
-        <div className="d-flex justify-content-center">
+        <div>
           {error && (
             <p
-              className="text-danger text-center py-5"
+              className="text-danger text-center"
               style={{ minHeight: "30vh" }}
             >
               {error}
