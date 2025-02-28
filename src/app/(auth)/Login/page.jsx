@@ -8,7 +8,7 @@ import "react-international-phone/style.css";
 import "./login.css";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { TailSpin } from "react-loader-spinner";
 import Link from "next/link";
 import { authtoken } from "@/app/_Compontents/Authtoken/Authtoken";
@@ -23,6 +23,8 @@ const LoginPage = () => {
   const [loading, setLoading] = useState(false);
   const { settoken } = useContext(authtoken);
   const togglePasswordVisibility = () => setShowPassword(!showPassword);
+  const searchParams = useSearchParams();
+  const redirect = searchParams.get("redirect");
   const handlePhoneSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -86,7 +88,6 @@ const LoginPage = () => {
       setErrorMessage("يرجى إدخال كلمة المرور.");
       return;
     }
-
     if (!regexPassword.test(password)) {
       setErrorMessage("الرقم السرى غير صحيح");
       return;
@@ -134,7 +135,7 @@ const LoginPage = () => {
         settoken(data.data.token);
         localStorage.setItem("user", JSON.stringify(data.data.user));
 
-        setTimeout(() => router.push("/"), 1000);
+        setTimeout(() => router.push(redirect || "/"), 1000);
       } else {
         setErrorMessage(data.message || "فشل تسجيل الدخول. حاول مرة أخرى.");
       }
