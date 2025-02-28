@@ -21,6 +21,7 @@ import { usePackage } from "@/app/_Compontents/PackageContext/PackageContext";
 import { Modal, Box, Button, Typography } from "@mui/material";
 import { API_BASE_URL } from "@/app/utils/config";
 import { authtoken } from "@/app/_Compontents/Authtoken/Authtoken";
+import toast from "react-hot-toast";
 export default function DetailsCountry() {
   const router = useRouter();
   const [data, setData] = useState(null);
