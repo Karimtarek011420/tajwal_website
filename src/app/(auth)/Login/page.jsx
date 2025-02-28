@@ -171,7 +171,7 @@ const LoginPage = () => {
             </div>
             {errorMessage && (
               <p
-                className="px-3 text-danger text-center mt-3"
+                className="px-3 text-danger  mt-3"
                 style={{ fontSize: "13px" }}
               >
                 {errorMessage}
