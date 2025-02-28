@@ -142,7 +142,7 @@ export default function RegisterPage() {
       </div>
       <div className="bg-white shadow-sm rounded-3 px-4 pb-3 pt-1">
         <form onSubmit={handleForm.handleSubmit}>
-          <div className="mb-4 mt-5">
+          <div className="mt-4 mb-3">
             <input
               type="text"
               value={handleForm.values.first_name}
@@ -159,7 +159,7 @@ export default function RegisterPage() {
               </div>
             ) : null}
           </div>
-          <div className="mb-4">
+          <div className="mb-3">
             <input
               value={handleForm.values.email}
               onChange={handleForm.handleChange}
@@ -177,7 +177,7 @@ export default function RegisterPage() {
               </div>
             ) : null}
           </div>
-          <div className="mb-4" dir="ltr">
+          <div className="mb-3" dir="ltr">
             <PhoneInput
               defaultCountry="sa"
               value={handleForm.values.phone_number}

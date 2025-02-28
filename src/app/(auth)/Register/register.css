@@ -9,12 +9,11 @@
   height: 213px !important;
 }
 .registertajwal .phone-input-field {
-  width: 100% !important;
   background-color: transparent !important;
   border: none !important;
   outline: none !important;
   background-color: #f9f9f9 !important;
-  border-radius: 5px !important;
+  border-radius: 3px !important;
 }
 .registertajwal input:focus {
   outline: 0 !important;
@@ -55,10 +54,6 @@
 }
 
 @media screen and (max-width: 576px) {
-  .registertajwal input,
-  .registertajwal .phone-input-field {
-    padding: 10px 12px !important;
-  }
   .registertajwal button.follow {
     font-size: 12px;
     padding: 10px 100px !important;
@@ -66,8 +61,5 @@
   .registertajwal .p_register p {
     font-size: 11px;
   }
-  .registertajwal img {
-    max-width: 100%;
-    height: auto;
-  }
+ 
 }
