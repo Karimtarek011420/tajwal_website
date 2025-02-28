@@ -80,7 +80,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
         style: { backgroundColor: "#4b87a4", color: "white" },
       });
       setTimeout(() => {
-        router.push("/Login");
+        router.push("/Login?redirect=/Purchase");
       }, 800);
     }
   };

@@ -1,5 +1,5 @@
 "use client";
-import React, { use, useEffect, useState } from "react";
+import React, { use, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import icon1 from "@/assets/images/Icon1.svg";
 import icon1dark from "@/assets/images/Icon1dark.svg";
@@ -20,6 +20,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { usePackage } from "@/app/_Compontents/PackageContext/PackageContext";
 import { Modal, Box, Button, Typography } from "@mui/material";
 import { API_BASE_URL } from "@/app/utils/config";
+import { authtoken } from "@/app/_Compontents/Authtoken/Authtoken";
 export default function DetailsCountry() {
   const router = useRouter();
   const [data, setData] = useState(null);
@@ -32,6 +33,7 @@ export default function DetailsCountry() {
   const [opennet, setOpennet] = useState(false);
   const [error, setError] = useState(null); // تخزين الخطأ
   const pathname = usePathname(); // الحصول على المسار الحالي
+  const { token, settoken } = useContext(authtoken);
 
   const getCountryDetails = async () => {
     try {
@@ -69,7 +71,17 @@ export default function DetailsCountry() {
       title: data[0]?.title,
       image: data[0]?.image,
     });
-    router.push("/Purchase");
+    if (token) {
+      router.push("/Purchase");
+    } else {
+      toast.success(" سجل دخول الى تجوال!", {
+        duration: 1500,
+        style: { backgroundColor: "#4b87a4", color: "white" },
+      });
+      setTimeout(() => {
+        router.push("/Login?redirect=/Purchase");
+      }, 800);
+    }
   };
   const array = [];
   data?.map((country) => {
@@ -344,57 +356,52 @@ export default function DetailsCountry() {
     <div className="countrydetials position-relative py-5">
       <div>
         {error && (
-          <p className="text-danger text-center px-3" style={{ minHeight: "30vh" }}>
+          <p
+            className="text-danger text-center px-3"
+            style={{ minHeight: "30vh" }}
+          >
             {error}
           </p>
         )}{" "}
         {/* عرض الخطأ إن وجد */}
       </div>
       <div className="position-absolute country-listbeginall w-100">
-              <ul className="list-unstyled d-flex justify-content-center align-items-center">
-                <Link
-                  href={"/Countries"}
-                  className="country-list-links mx-2"
-                  style={{
-                    color:
-                      pathname === "/Countries"
-                        ? "var(--primary-color)"
-                        : "#ffffff",
-                  }}
-                >
-                  دولية
-                </Link>
-                <Link
-                  href="/continents"
-                  className="country-list-links mx-2"
-                  style={{
-                    color:
-                      pathname === "/continents"
-                        ? "var(--primary-color)"
-                        : "#ffffff",
-                  }}
-                >
-                  قارية
-                </Link>
-                <Link
-                  href="/world"
-                  className="country-list-links mx-2"
-                  style={{
-                    color:
-                      pathname === "/world"
-                        ? "var(--primary-color)"
-                        : "#ffffff",
-                    backgroundColor: "var(--background)",
-                  }}
-                >
-                  عالمية
-                </Link>
-              </ul>
-            </div>
+        <ul className="list-unstyled d-flex justify-content-center align-items-center">
+          <Link
+            href={"/Countries"}
+            className="country-list-links mx-2"
+            style={{
+              color:
+                pathname === "/Countries" ? "var(--primary-color)" : "#ffffff",
+            }}
+          >
+            دولية
+          </Link>
+          <Link
+            href="/continents"
+            className="country-list-links mx-2"
+            style={{
+              color:
+                pathname === "/continents" ? "var(--primary-color)" : "#ffffff",
+            }}
+          >
+            قارية
+          </Link>
+          <Link
+            href="/world"
+            className="country-list-links mx-2"
+            style={{
+              color: pathname === "/world" ? "var(--primary-color)" : "#ffffff",
+              backgroundColor: "var(--background)",
+            }}
+          >
+            عالمية
+          </Link>
+        </ul>
+      </div>
       {Array.isArray(data) &&
         data.map((country) => (
           <div key={country.country_code}>
-            
             <div className="px-lg-5">
               <div className="d-flex flex-wrap justify-content-center align-items-center pt-2 pb-4">
                 {country?.days?.map((day) => (
