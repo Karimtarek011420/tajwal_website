@@ -316,6 +316,55 @@ function AccountInformation() {
       setLoading(false);
     }
   };
+  const handleDelete = async () => {
+    Swal.fire({
+      title: "هل أنت متأكد؟",
+      text: "لن تتمكن من التراجع عن هذا الإجراء!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "نعم، احذف الحساب!",
+      cancelButtonText: "إلغاء"
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          const { data } = await axios.delete(`${API_BASE_URL}/profile`, {
+            headers: {
+              Authorization: `Bearer ${token}`,
+              Accept: "application/json",
+            },
+          });
+  
+          if (data.success) {
+            setUser(null);
+            setModalData({ field: "", value: "", otp: "" });
+  
+            Swal.fire({
+              title: "تم الحذف!",
+              text: "تم حذف حسابك بنجاح.",
+              icon: "success"
+            });
+  
+            setTimeout(() => {
+              settoken(null);
+              localStorage.removeItem("token");
+              localStorage.removeItem("user");
+              router.push("/");
+            }, 500);
+          }
+        } catch (error) {
+          console.error(error);
+          Swal.fire({
+            title: "خطأ!",
+            text: "حدث خطأ أثناء محاولة حذف الحساب.",
+            icon: "error"
+          });
+        }
+      }
+    });
+  };
+  
 
   return (
     <div className="accountInformation position-relative py-5">
@@ -523,7 +572,10 @@ function AccountInformation() {
                   التراجع عن الحذف بعد حذف الحساب.
                 </p>
                 <div className=" d-flex justify-content-center">
-                  <button className=" deleteacountbtn text-white rounded-3">
+                  <button
+                    onClick={handleDelete}
+                    className=" deleteacountbtn text-white rounded-3"
+                  >
                     حذف الحساب
                   </button>
                 </div>
