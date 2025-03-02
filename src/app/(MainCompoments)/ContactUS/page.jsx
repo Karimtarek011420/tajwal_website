@@ -253,9 +253,9 @@ export default function ContactUS() {
                         />
                         {handleForm.errors.name && handleForm.touched.name ? (
                           <div
-                            className="alert alert-danger my-2"
+                            className=" text-danger my-2"
                             role="alert"
-                            style={{ fontSize: "12px" }}
+                            style={{ fontSize: "13px" }}
                           >
                             {handleForm.errors.name}
                           </div>
@@ -282,9 +282,9 @@ export default function ContactUS() {
                       {handleForm.errors.subject &&
                       handleForm.touched.subject ? (
                         <div
-                          className="alert alert-danger my-2"
+                          className=" text-danger my-2"
                           role="alert"
-                          style={{ fontSize: "12px" }}
+                          style={{ fontSize: "13px" }}
                         >
                           {handleForm.errors.subject}
                         </div>
@@ -306,9 +306,9 @@ export default function ContactUS() {
                         />
                         {handleForm.errors.email && handleForm.touched.email ? (
                           <div
-                            className="alert alert-danger my-2"
+                            className=" text-danger my-2"
                             role="alert"
-                            style={{ fontSize: "12px" }}
+                            style={{ fontSize: "13px" }}
                           >
                             {handleForm.errors.email}
                           </div>
@@ -329,10 +329,10 @@ export default function ContactUS() {
                         />
                         {handleForm.errors.phone && handleForm.touched.phone ? (
                           <div
-                            className="alert alert-danger my-2"
+                            className=" text-danger my-2"
                             dir="rtl"
                             role="alert"
-                            style={{ fontSize: "12px" }}
+                            style={{ fontSize: "13px" }}
                           >
                             {handleForm.errors.phone}
                           </div>
@@ -352,10 +352,10 @@ export default function ContactUS() {
                       {handleForm.errors.message &&
                       handleForm.touched.message ? (
                         <div
-                          className="alert alert-danger my-2"
+                          className=" text-danger my-2"
                           dir="rtl"
                           role="alert"
-                          style={{ fontSize: "12px" }}
+                          style={{ fontSize: "13px" }}
                         >
                           {handleForm.errors.message}
                         </div>
