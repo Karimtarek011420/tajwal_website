@@ -186,6 +186,7 @@ export default function RegisterPage() {
           <div className="mb-3" dir="ltr">
             <PhoneInput
               defaultCountry="sa"
+              name="phone_number"
               value={handleForm.values.phone_number}
               onChange={handlePhoneNumberChange}
               onBlur={handleForm.handleBlur}
@@ -277,8 +278,9 @@ export default function RegisterPage() {
             </div>
           ) : null}
           <div>
-            <p  className="px-3 text-danger  mt-3 "
-                style={{ fontSize: "13px" }}>{errorMessage}</p>
+            <p className="px-3 text-danger  mt-3 " style={{ fontSize: "13px" }}>
+              {errorMessage}
+            </p>
           </div>
           <div className="d-flex justify-content-center align-items-center">
             <button

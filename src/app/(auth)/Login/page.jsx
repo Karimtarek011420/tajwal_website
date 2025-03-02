@@ -162,6 +162,7 @@ const LoginPage = () => {
             <div className="mb-2" dir="ltr">
               <PhoneInput
                 defaultCountry="sa"
+                name="phone_number"
                 value={phoneNumber}
                 onChange={setPhoneNumber}
                 placeholder="رقم الجوال"
