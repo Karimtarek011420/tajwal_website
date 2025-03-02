@@ -39,6 +39,7 @@ export default function ContactUS() {
       }
       console.log(data);
     } catch (error) {
+      setErrorMessage("حدث خطأ ما الرجاء محاولة لاحقا");
       console.log(error);
     }
     setloading(false);
