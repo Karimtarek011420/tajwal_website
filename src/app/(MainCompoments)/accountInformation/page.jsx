@@ -327,10 +327,10 @@ function AccountInformation() {
       confirmButtonText: "نعم، احذف الحساب!",
       cancelButtonText: "إلغاء",
       customClass: {
-        title: "swal-title",
-        popup: "swal-popup",
-        confirmButton: "swal-confirm",
-        cancelButton: "swal-cancel",
+        title: "swal-titleacount",
+        popup: "swal-popupacount",
+        confirmButton: "swal-confirmacount",
+        cancelButton: "swal-cancelacount",
       },
     }).then(async (result) => {
       if (result.isConfirmed) {
@@ -351,8 +351,8 @@ function AccountInformation() {
               text: "تم حذف حسابك بنجاح.",
               icon: "success",
               customClass: {
-                title: "swal-title",
-                popup: "swal-popup",
+                title: "swal-titleacount",
+                popup: "swal-popupacount",
               },
             });
 
