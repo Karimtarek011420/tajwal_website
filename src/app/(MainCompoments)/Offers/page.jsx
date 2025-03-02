@@ -52,7 +52,7 @@ export default function OffersPage() {
         </ul>
       </div>
 
-      <div className="container py-5">
+      <div className=" container py-5">
         <div className="px-3 px-md-4 px-lg-5">
           {error && (
             <p
@@ -64,11 +64,11 @@ export default function OffersPage() {
           )}{" "}
           {/* عرض الخطأ إن وجد */}
         </div>
-        <div className="row gy-4">
+        <div className="row gy-3">
           {offers?.map((offer, index) => (
             <div key={index} className="col-md-4">
               <div
-                className="offer rounded-4 shadow-sm"
+                className="offer rounded-3 shadow-sm"
                 style={{ cursor: "pointer" }}
               >
                 <Image
