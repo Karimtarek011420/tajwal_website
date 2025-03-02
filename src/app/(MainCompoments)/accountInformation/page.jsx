@@ -516,8 +516,17 @@ function AccountInformation() {
                   </button>
                 </div>
               </div>
-              <div className=" boxchange rounded-2 shadow-sm px-5 py-3 d-flex justify-content-between align-items-center">
-                <p >حذف الحساب</p>
+              <div className=" boxchange rounded-2 shadow-sm px-5 py-3">
+                <p className="deleteacount">حذف الحساب</p>
+                <p className="deleteacountp">
+                  بامكانك حذف حسابك بشكل نهائي، و لكن يجدر ذكر انه لا يمكنك
+                  التراجع عن الحذف بعد حذف الحساب.
+                </p>
+                <div className=" d-flex justify-content-center">
+                  <button className=" deleteacountbtn text-white rounded-3">
+                    حذف الحساب
+                  </button>
+                </div>
               </div>
             </div>
           </div>
