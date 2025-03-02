@@ -1,5 +1,5 @@
 "use client";
-import React, {useState } from "react";
+import React, { useState } from "react";
 import "./Customerservice.css";
 import servicecenter from "@/assets/images/servicecenter.svg";
 import servicechat from "@/assets/images/servicechat.svg";
@@ -40,6 +40,8 @@ export default function ContactUS() {
       }
       console.log(data);
     } catch (error) {
+      setErrorMessage("حدث خطأ ما الرجاء محاولة لاحقا");
+
       console.log(error);
     }
     setloading(false);
@@ -103,7 +105,10 @@ export default function ContactUS() {
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
           <li
             className="country-list-links mx-lg-2"
-            style={{ color: "var(--primary-color)" , backgroundColor:'var(--background)' }}
+            style={{
+              color: "var(--primary-color)",
+              backgroundColor: "var(--background)",
+            }}
           >
             <span className="p-5">خدمة العملاء</span>
           </li>
@@ -370,9 +375,9 @@ export default function ContactUS() {
                       />
                       {handleForm.errors.name && handleForm.touched.name ? (
                         <div
-                          className="alert alert-danger my-2"
+                          className=" text-danger my-2"
                           role="alert"
-                          style={{ fontSize: "12px" }}
+                          style={{ fontSize: "13px" }}
                         >
                           {handleForm.errors.name}
                         </div>
@@ -398,9 +403,9 @@ export default function ContactUS() {
                     </div>
                     {handleForm.errors.subject && handleForm.touched.subject ? (
                       <div
-                        className="alert alert-danger my-2"
+                        className="text-danger my-2"
                         role="alert"
-                        style={{ fontSize: "12px" }}
+                        style={{ fontSize: "13px" }}
                       >
                         {handleForm.errors.subject}
                       </div>
@@ -422,9 +427,9 @@ export default function ContactUS() {
                       />
                       {handleForm.errors.email && handleForm.touched.email ? (
                         <div
-                          className="alert alert-danger my-2"
+                          className="text-danger my-2"
                           role="alert"
-                          style={{ fontSize: "12px" }}
+                          style={{ fontSize: "13px" }}
                         >
                           {handleForm.errors.email}
                         </div>
@@ -445,10 +450,10 @@ export default function ContactUS() {
                       />
                       {handleForm.errors.phone && handleForm.touched.phone ? (
                         <div
-                          className="alert alert-danger my-2"
+                          className="text-danger my-2"
                           dir="rtl"
                           role="alert"
-                          style={{ fontSize: "12px" }}
+                          style={{ fontSize: "13px" }}
                         >
                           {handleForm.errors.phone}
                         </div>
@@ -467,10 +472,10 @@ export default function ContactUS() {
                     ></textarea>
                     {handleForm.errors.message && handleForm.touched.message ? (
                       <div
-                        className="alert alert-danger my-2"
+                        className="text-danger my-2"
                         dir="rtl"
                         role="alert"
-                        style={{ fontSize: "12px" }}
+                        style={{ fontSize: "13px" }}
                       >
                         {handleForm.errors.message}
                       </div>
