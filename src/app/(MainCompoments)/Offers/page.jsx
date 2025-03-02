@@ -64,7 +64,7 @@ export default function OffersPage() {
           )}{" "}
           {/* عرض الخطأ إن وجد */}
         </div>
-        <div className="row gy-3">
+        <div className="row gy-4">
           {offers?.map((offer, index) => (
             <div key={index} className="col-md-4">
               <div
