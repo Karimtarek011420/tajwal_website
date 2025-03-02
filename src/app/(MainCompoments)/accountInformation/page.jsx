@@ -123,7 +123,6 @@ function AccountInformation() {
     } finally {
       setLoading(false);
       setshow(false);
-
     }
   };
 
@@ -516,6 +515,9 @@ function AccountInformation() {
                     تغيير
                   </button>
                 </div>
+              </div>
+              <div className=" boxchange rounded-2 shadow-sm px-5 py-3 d-flex justify-content-between align-items-center">
+                <p >حذف الحساب</p>
               </div>
             </div>
           </div>

@@ -8,20 +8,20 @@
 .cardinfo span {
   font-size: 12px !important;
   font-weight: 300 !important;
-  color: #626e7b;
+  color: var(--auth-color) !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
 .cardinfo h6 {
   font-weight: 700 !important;
-  color: #626e7b;
+  color: var(--auth-color) !important;
   font-size: 17px !important;
 }
 
 .cardinfo ul li {
   padding-bottom: 10px;
-  color: #626e7b !important ;
+  color: var(--auth-color) !important;
   font-size: 17px !important;
   font-weight: 300 !important;
   transition: color 0.3s ease, font-weight 0.3s ease;
@@ -32,7 +32,7 @@
 
 .cardinfo .active {
   font-weight: 500 !important;
-  color: #626e7b !important;
+  color: var(--auth-color) !important;
 }
 .cardinfo ul li:hover {
   font-weight: 500 !important;
@@ -53,8 +53,6 @@
   .boxchange {
     flex-direction: column !important;
   }
-  
-  
 }
 /* Modal Styles */
 .modalaccountInformation {
