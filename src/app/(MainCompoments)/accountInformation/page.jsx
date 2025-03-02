@@ -318,14 +318,20 @@ function AccountInformation() {
   };
   const handleDelete = async () => {
     Swal.fire({
-      title: "هل أنت متأكد؟",
+      title: "🚨 هل أنت متأكد؟",
       text: "لن تتمكن من التراجع عن هذا الإجراء!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
+      confirmButtonColor: "#e63946", // لون زر التأكيد
+      cancelButtonColor: "#6c757d", // لون زر الإلغاء
       confirmButtonText: "نعم، احذف الحساب!",
-      cancelButtonText: "إلغاء"
+      cancelButtonText: "إلغاء",
+      customClass: {
+        title: "swal-title",
+        popup: "swal-popup",
+        confirmButton: "swal-confirm",
+        cancelButton: "swal-cancel",
+      },
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
@@ -335,17 +341,21 @@ function AccountInformation() {
               Accept: "application/json",
             },
           });
-  
+
           if (data.success) {
             setUser(null);
             setModalData({ field: "", value: "", otp: "" });
-  
+
             Swal.fire({
-              title: "تم الحذف!",
+              title: "✅ تم الحذف!",
               text: "تم حذف حسابك بنجاح.",
-              icon: "success"
+              icon: "success",
+              customClass: {
+                title: "swal-title",
+                popup: "swal-popup",
+              },
             });
-  
+
             setTimeout(() => {
               settoken(null);
               localStorage.removeItem("token");
@@ -356,15 +366,18 @@ function AccountInformation() {
         } catch (error) {
           console.error(error);
           Swal.fire({
-            title: "خطأ!",
+            title: "❌ خطأ!",
             text: "حدث خطأ أثناء محاولة حذف الحساب.",
-            icon: "error"
+            icon: "error",
+            customClass: {
+              title: "swal-title",
+              popup: "swal-popup",
+            },
           });
         }
       }
     });
   };
-  
 
   return (
     <div className="accountInformation position-relative py-5">
