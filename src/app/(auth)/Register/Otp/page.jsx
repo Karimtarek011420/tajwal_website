@@ -125,7 +125,7 @@ const RegisterOtpPage = () => {
       <div className="text-center mb-5">
         <Image
           src={RegisterOtp}
-          layout="responsive"
+          priority 
           className="imgcover"
           alt="Register OTP User"
         />

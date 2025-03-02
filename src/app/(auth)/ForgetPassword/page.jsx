@@ -81,7 +81,7 @@ const ForgetpassPage = () => {
       <div className="text-center mb-5">
         <Image
           src={forgetimage}
-          layout="responsive"
+          priority
           className="forgetpassimage"
           alt="Forget Password Illustration"
         />

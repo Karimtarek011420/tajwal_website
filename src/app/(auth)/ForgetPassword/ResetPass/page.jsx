@@ -114,7 +114,7 @@ const ResetPasswordPage = () => {
       <div className="text-center mb-5">
         <Image
           src={imageResetpassword}
-          layout="responsive"
+          priority
           className="imageResetpassword"
           alt="Reset Password"
         />

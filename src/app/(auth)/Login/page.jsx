@@ -151,7 +151,7 @@ const LoginPage = () => {
       <div className="text-center d-flex justify-content-center align-items-center  mb-4">
         <Image
           src={LoginUser}
-          layout="responsive"
+          priority
           className="imagelogin"
           alt="LoginUser"
         />
