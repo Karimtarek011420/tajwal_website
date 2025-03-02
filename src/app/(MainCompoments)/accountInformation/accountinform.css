@@ -173,8 +173,8 @@ button.followclose:focus {
 }
 
 .swal-titleacount {
-  font-size: 16px !important;
-  font-weight: bold;
+  font-size: 20px !important;
+  font-weight: 600;
   color: var(--secondary-color) !important;
 }
 
