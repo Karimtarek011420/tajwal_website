@@ -12,7 +12,7 @@
   }
   .forgetpass .forgetpassimage {
     width: 240px !important;
-    height: 260px !important;
+    height: auto !important;
   }
   .forgetpass .phone-input-field {
     width: 100% !important;

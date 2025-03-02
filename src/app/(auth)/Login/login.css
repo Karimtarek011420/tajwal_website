@@ -5,7 +5,7 @@
 }
 .login .imagelogin {
   width: 408px !important;
-  height: 307px !important;
+  height: auto !important;
 }
 .login .phone-input-field {
   width: 100% !important;

@@ -44,7 +44,7 @@
 }
 .registerotp .imgcover {
   width: 240px !important;
-  height: 260px !important;
+  height: auto !important;
 }
 
 /* Responsive Adjustments */

@@ -5,7 +5,7 @@
 }
 .registertajwal .imageregister {
   width: 260px !important;
-  height: 213px !important;
+  height: auto !important;
 }
 .registertajwal .phone-input-field {
   background-color: transparent !important;

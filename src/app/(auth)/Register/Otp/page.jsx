@@ -127,7 +127,7 @@ const RegisterOtpPage = () => {
           src={RegisterOtp}
           priority 
           className="imgcover"
-          alt="Register OTP User"
+          alt="RegisterOTPUser"
         />
       </div>
       <div className="bg-white shadow-lg rounded-4 px-4 py-5">
