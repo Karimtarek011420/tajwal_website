@@ -440,6 +440,8 @@ export default function ContactUS() {
                     <div className="mb-4 w-100" dir="ltr">
                       <PhoneInput
                         defaultCountry="sa"
+                        id="phone"
+                        name="phone"
                         value={handleForm.values.phone}
                         onChange={handlePhoneNumberChange}
                         onBlur={handleForm.handleBlur}
