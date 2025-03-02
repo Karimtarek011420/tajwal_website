@@ -23,7 +23,7 @@ const CustomPhoneInput = () => {
       <label
         style={{ fontSize: "16px", marginBottom: "5px", display: "block" }}
       >
-        رقم الجوال
+         ;vdlرقم الجوال
       </label>
 
       <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
