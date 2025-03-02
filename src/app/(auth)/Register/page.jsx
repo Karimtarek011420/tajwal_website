@@ -133,8 +133,8 @@ export default function RegisterPage() {
       <div className="text-center d-flex justify-content-center align-items-center  mb-4">
         <Image
           src={RegisterUser}
-          layout="responsive"
           className="imageregister"
+          priority 
           alt="Register User"
         />
       </div>
