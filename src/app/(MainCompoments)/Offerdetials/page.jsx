@@ -44,7 +44,7 @@ const OfferDetails = () => {
       )}
 
       <div
-        className="container py-5 d-flex justify-content-center align-items-center"
+        className=" container py-5 d-flex justify-content-center align-items-center"
         style={{ width: "100vw", height: "100vh", overflow: "hidden" }}
       >
         <iframe
@@ -57,7 +57,7 @@ const OfferDetails = () => {
             border: "none",
             overflow: "hidden",
           }}
-          className="offerifrem"
+          className="offerifrem mb-5"
           title="Offer Details"
         />
       </div>
