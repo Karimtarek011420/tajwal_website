@@ -39,7 +39,6 @@ export default function OffersPage() {
                 alt="Helpcentertajwal"
                 width={26}
                 height={35}
-                priority
               />
               <p>كيف تستخدم تجوال</p>
               <p>
