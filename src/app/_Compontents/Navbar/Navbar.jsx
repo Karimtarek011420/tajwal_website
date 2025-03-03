@@ -225,7 +225,7 @@ export default function Navbar() {
               <li className="nav-item">
                 <button
                   className="nav-link text-white"
-                  onClick={() => handleNavClick("/")}
+                  onClick={() => handleNavClick("/Helpcenter")}
                 >
                   مركز المساعدة
                 </button>

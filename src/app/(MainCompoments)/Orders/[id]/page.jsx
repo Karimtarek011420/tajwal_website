@@ -133,8 +133,8 @@ function Ordersdetails({ params: paramsPromise }) {
                       الطلبات السابقة
                     </li>
                   </Link>
-                  <Link href="/helpCenter">
-                    <li className={pathName === "/helpCenter" ? "active" : ""}>
+                  <Link href="/Helpcenter">
+                    <li className={pathName === "/Helpcenter" ? "active" : ""}>
                       مركز المساعدة
                     </li>
                   </Link>
