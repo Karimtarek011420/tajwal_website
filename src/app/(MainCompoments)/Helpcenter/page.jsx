@@ -21,12 +21,12 @@ export default function OffersPage() {
         <p className=" text-center Helpcenterp pb-3">
           مالذي تحتاج المساعدة فيه؟
         </p>
-        <div className="search-bar">
+        <div className=" search-bar">
           <button className="search-button" aria-label="Search">
             <i className="fas fa-search"></i>
           </button>
           <input type="text" placeholder="اكتب نبذة عن المشكلة التي تواجهها" />
-          <p className="Helpcenterpsearch text-white">ابحث</p>
+          <p className="Helpcenterpsearch">ابحث</p>
         </div>
       </div>
     </div>
