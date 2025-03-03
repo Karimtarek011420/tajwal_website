@@ -55,7 +55,14 @@
 }
 @media (max-width: 380px) {
   .Helpcenter .search-button {
-    
     padding: 14px;
+  }
+  .Helpcenter .search-bar input {
+    padding: 5px;
+  }
+  .Helpcenter .Helpcenterpsearch {
+    margin-top: 17px;
+    padding: 25px 20px;
+    height: 100%;
   }
 }
