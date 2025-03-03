@@ -10,7 +10,7 @@ const OfferDetails = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <div className="offers position-relative pt-5">
+    <div className="offers position-relative pt-5 ">
       <div className="position-absolute country-listbeginall w-100">
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
           <li
