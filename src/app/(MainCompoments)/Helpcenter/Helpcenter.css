@@ -67,7 +67,7 @@
 }
 .Helpcenter .search-bar .Helpcenterpsearch{
     background-color: var(--primary-color);
-    padding: 12px 30px !important;
+    padding: 14px 30px !important;
     font-size: 13px !important;
     font-weight: 300 !important;
     border-top-left-radius: 10px ;
