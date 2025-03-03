@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import "./Helpcenter.css";
 import Image from "next/image";
-import arrow from "@/assets/images/arrow.svg";
+import Helpcentertwal from "@/assets/images/footerHero.svg";
 
 export default function OffersPage() {
   return (
@@ -32,10 +32,37 @@ export default function OffersPage() {
           <p className="Helpcenterpsearch">ابحث</p>
         </div>
         <div className=" row gy-4 py-5 justify-content-center align-items-center">
-          <div className="col-md--3">
-            <div className=" bg-white shadow-sm rounded-3">
+          <div className="col-md-4">
+            <div className=" bg-white shadow-sm rounded-3  text-center px-5 py-3">
               <Image
-                src={arrow}
+                src={Helpcentertwal}
+                alt="Helpcentertajwal"
+                width={26}
+                height={35}
+                priority
+              />
+              <p>كيف تستخدم تجوال</p>
+              <p>
+                خطوات التسجيل و اختيار الباقة و اتمام عملية الدفع و طرق الوصول
+                للشرائح و الطلبات السابقة
+              </p>
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div className=" bg-white shadow-sm rounded-3 d-flex  justify-content-center align-items-center px-5 py-3">
+              <Image
+                src={Helpcentertwal}
+                alt="Helpcentertajwal"
+                width={26}
+                height={35}
+                priority
+              />
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div className=" bg-white shadow-sm rounded-3 d-flex  justify-content-center align-items-center px-5 py-3">
+              <Image
+                src={Helpcentertwal}
                 alt="Helpcentertajwal"
                 width={26}
                 height={35}
