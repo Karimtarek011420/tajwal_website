@@ -19,6 +19,7 @@ import Validity from "@/assets/images/icon3dark.svg";
 import Numberslides from "@/assets/images/Numberslides.svg";
 import PlaybackSpeed from "@/assets/images/PlaybackSpeed.svg";
 import invoiceways from "@/assets/images/invoiceways.svg";
+import dataid from "@/assets/images/Icon2.svg";
 import TravelBag from "@/assets/images/TravelBag.svg";
 import appstoreqr from "@/assets/images/appstoreqr.svg";
 import googleplayqr from "@/assets/images/googleplayqr.svg";
@@ -237,6 +238,24 @@ function Ordersdetails({ params: paramsPromise }) {
                       {data?.esims?.[0] && (
                         <p className="my-0">{data.esims[0].country_name}</p>
                       )}
+                    </div>
+                  </div>
+                  <div className="d-flex justify-content-between align-items-center text-center p-3 rounded-3 m-2 mt-3 bg-white shadow-sm ordersucessdetilas">
+                    <div className="d-flex align-items-center justify-content-center ">
+                      <Image
+                        src={dataid}
+                        width={16}
+                        height={16}
+                        alt="Coverage"
+                      />
+                      <p className="mx-1 my-0">البيانات</p>
+                    </div>
+                    <div>
+                      <p className="my-0">
+                        {" "}
+                        {Math.floor(data?.esims[0].package_amount / 1000)} غيغا
+                        بايت
+                      </p>
                     </div>
                   </div>
                   <div className="d-flex justify-content-between align-items-center text-center p-3 rounded-3 m-2 mt-3 bg-white shadow-sm ordersucessdetilas">
