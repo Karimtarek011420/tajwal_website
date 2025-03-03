@@ -53,3 +53,9 @@
   justify-content: center;
   height: 100%;
 }
+@media (max-width: 380px) {
+  .Helpcenter .search-button {
+    
+    padding: 14px;
+  }
+}
