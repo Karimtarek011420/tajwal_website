@@ -64,6 +64,16 @@
   font-weight: 300 !important;
   color: var(--auth-color);
 }
+.Helpcenter .Helpcenterpquestion {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  color: var(--primary-color) !important;
+}
+.Helpcenter .Helpcenterpspan{
+  font-size: 12px !important;
+  font-weight: 300 !important;
+  color: var(--auth-color) !important;
+}
 @media (max-width: 380px) {
   .Helpcenter .search-button {
     padding: 14px;
