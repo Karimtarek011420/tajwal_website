@@ -132,7 +132,7 @@ export default function ContactUS() {
                       href="#"
                       target="_self"
                       rel="noopener noreferrer"
-                      className=" px-4"
+                      className=" px-lg-4 px-2"
                     >
                       مركز المعلومات{" "}
                     </a>
@@ -158,7 +158,7 @@ export default function ContactUS() {
                       href="#"
                       target="_self"
                       rel="noopener noreferrer"
-                      className=" px-4"
+                      className=" px-lg-4 px-1"
                     >
                       المحادثة المباشرة
                     </a>
@@ -180,7 +180,7 @@ export default function ContactUS() {
                       href="https://wa.me/966505105224"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className=" px-4"
+                      className=" px-lg-4 px-2"
                     >
                       محادثة واتساب
                     </a>
