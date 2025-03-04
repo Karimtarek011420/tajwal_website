@@ -122,7 +122,7 @@ export default function HelpcenterPage() {
           <p className="Helpcenterphelp1 pt-2">
             تواصل معنا باستخدام اي من وسائل التواصل التالية و سنسعد بالرد عليكم.
           </p>
-          <div className=" d-flex justify-content-center align-items-center mt-4">
+          <div className="  mt-4">
             <div className="row justify-content-center gy-4 w-100">
               <div className="col-sm-6 col-md-4 col-lg-3">
                 <div className="bg-white shadow-sm rounded-2 py-2 ContactUSph text-center">
@@ -142,7 +142,7 @@ export default function HelpcenterPage() {
                         href="#"
                         target="_self"
                         rel="noopener noreferrer"
-                        className=" px-4"
+                        className=" px-lg-4 px-1"
                       >
                         المحادثة المباشرة
                       </a>
@@ -164,7 +164,7 @@ export default function HelpcenterPage() {
                         href="https://wa.me/966505105224"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className=" px-4"
+                        className=" px-lg-4 px-2"
                       >
                         محادثة واتساب
                       </a>
@@ -175,7 +175,7 @@ export default function HelpcenterPage() {
             </div>
           </div>
         </div>
-        <div className=" d-flex justify-content-center align-items-center  mt-5 ">
+        <div className=" d-flex justify-content-center align-items-center  mt-2 ">
           <div className="row  justify-content-center gy-4 w-100 mediatab">
             <div className=" col-md-4">
               <div className=" bg-white shadow-sm rounded-2 pt-3 pb-4  ContactUSp  ">
