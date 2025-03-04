@@ -53,6 +53,17 @@
   justify-content: center;
   height: 100%;
 }
+.Helpcenter .Helpcentertajwalp {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: var(--auth-color);
+  margin: 0px !important;
+}
+.Helpcenter .Helpcentertajwalp2 {
+  font-size: 10px !important;
+  font-weight: 300 !important;
+  color: var(--auth-color);
+}
 @media (max-width: 380px) {
   .Helpcenter .search-button {
     padding: 14px;

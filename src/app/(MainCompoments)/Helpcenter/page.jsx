@@ -31,7 +31,7 @@ export default function OffersPage() {
           <input type="text" placeholder="اكتب نبذة عن المشكلة التي تواجهها" />
           <p className="Helpcenterpsearch">ابحث</p>
         </div>
-        <div className=" row gy-4 py-5 justify-content-center align-items-center">
+        <div className=" row gy-4 py-5 justify-content-center align-items-center px-lg-5">
           <div className="col-md-4">
             <div className=" bg-white shadow-sm rounded-3  text-center px-5 py-3">
               <Image
@@ -40,33 +40,41 @@ export default function OffersPage() {
                 width={26}
                 height={35}
               />
-              <p>كيف تستخدم تجوال</p>
-              <p>
+              <p className="Helpcentertajwalp pt-2">كيف تستخدم تجوال</p>
+              <p className="Helpcentertajwalp2 pt-2">
                 خطوات التسجيل و اختيار الباقة و اتمام عملية الدفع و طرق الوصول
                 للشرائح و الطلبات السابقة
               </p>
             </div>
           </div>
           <div className="col-md-4">
-            <div className=" bg-white shadow-sm rounded-3 d-flex  justify-content-center align-items-center px-5 py-3">
+            <div className=" bg-white shadow-sm rounded-3  text-center px-5 py-3">
               <Image
                 src={Helpcentertwal}
                 alt="Helpcentertajwal"
                 width={26}
                 height={35}
-                priority
               />
+              <p className="Helpcentertajwalp pt-2">كيف تستخدم تجوال</p>
+              <p className="Helpcentertajwalp2 pt-2">
+                خطوات التسجيل و اختيار الباقة و اتمام عملية الدفع و طرق الوصول
+                للشرائح و الطلبات السابقة
+              </p>
             </div>
           </div>
           <div className="col-md-4">
-            <div className=" bg-white shadow-sm rounded-3 d-flex  justify-content-center align-items-center px-5 py-3">
+            <div className=" bg-white shadow-sm rounded-3  text-center px-5 py-3">
               <Image
                 src={Helpcentertwal}
                 alt="Helpcentertajwal"
                 width={26}
                 height={35}
-                priority
               />
+              <p className="Helpcentertajwalp pt-2">كيف تستخدم تجوال</p>
+              <p className="Helpcentertajwalp2 pt-2">
+                خطوات التسجيل و اختيار الباقة و اتمام عملية الدفع و طرق الوصول
+                للشرائح و الطلبات السابقة
+              </p>
             </div>
           </div>
         </div>
