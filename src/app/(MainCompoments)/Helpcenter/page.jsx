@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import "./Helpcenter.css";
 import Image from "next/image";
 import Helpcentertwal from "@/assets/images/footerHero.svg";
+import Isolation_Mode from "@/assets/images/Isolation_Mode.svg";
 
 export default function OffersPage() {
   return (
@@ -50,15 +51,17 @@ export default function OffersPage() {
           <div className="col-md-4">
             <div className=" bg-white shadow-sm rounded-3  text-center px-5 py-3">
               <Image
-                src={Helpcentertwal}
-                alt="Helpcentertajwal"
+                src={Isolation_Mode}
+                alt="Isolation_Mode"
                 width={26}
                 height={35}
               />
-              <p className="Helpcentertajwalp pt-2">كيف تستخدم تجوال</p>
+              <p className="Helpcentertajwalp pt-2">
+                تفعيل الشرائح و استخدامها
+              </p>
               <p className="Helpcentertajwalp2 pt-2">
-                خطوات التسجيل و اختيار الباقة و اتمام عملية الدفع و طرق الوصول
-                للشرائح و الطلبات السابقة
+                تعرف على كيفية تثبيت الشريحة و اضافتها الى هاتفك و تفعيلها و
+                البدء في استخدامها.
               </p>
             </div>
           </div>
