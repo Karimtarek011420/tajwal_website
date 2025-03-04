@@ -86,6 +86,11 @@
   color: var(--auth-color);
   margin: 0px !important;
 }
+.Helpcenter .ContactUSph {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: var(--auth-color);
+}
 @media (max-width: 380px) {
   .Helpcenter .search-button {
     padding: 14px;

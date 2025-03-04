@@ -5,11 +5,27 @@ import Image from "next/image";
 import Helpcentertwal from "@/assets/images/footerHero.svg";
 import Isolation_Mode from "@/assets/images/Isolation_Mode.svg";
 import eorrhelp from "@/assets/images/eorrhelp.svg";
+import servicechat from "@/assets/images/servicechat.svg";
+import servicewhats from "@/assets/images/servicewhats.svg";
 
 export default function HelpcenterPage() {
+  const [isScriptLoaded, setIsScriptLoaded] = useState(false);
   const faqs = Array(8).fill(
     "لوريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)، ويستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص الشكلي."
   );
+  const handleClick = () => {
+    if (!isScriptLoaded) {
+      const script = document.createElement("script");
+      script.id = "ze-snippet";
+      script.src =
+        "https://static.zdassets.com/ekr/snippet.js?key=f4e36963-4fc1-4a3c-9fca-282829bb25e1";
+      script.async = true;
+      script.onload = () => console.log("Zendesk script loaded!");
+      document.body.appendChild(script);
+      setIsScriptLoaded(true);
+    }
+  };
+
   return (
     <div className="Helpcenter position-relative py-5">
       <div className="position-absolute country-listbeginall w-100">
@@ -103,6 +119,58 @@ export default function HelpcenterPage() {
           <p className="Helpcenterphelp1 pt-2">
             تواصل معنا باستخدام اي من وسائل التواصل التالية و سنسعد بالرد عليكم.
           </p>
+          <div className=" d-flex justify-content-center align-items-center mt-4">
+            <div className="row justify-content-center gy-4 w-100">
+              <div className="col-sm-6 col-md-4 col-lg-3">
+                <div className="bg-white shadow-sm rounded-2 py-2 ContactUSph text-center">
+                  <div
+                    className="d-flex justify-content-center align-items-center"
+                    onClick={handleClick}
+                    style={{ cursor: "pointer" }}
+                  >
+                    <div className="d-flex  justify-content-center align-items-center w-100  px-3 rounded">
+                      <Image
+                        src={servicechat}
+                        width={51}
+                        height={50}
+                        alt="xcontectus"
+                      />
+                      <a
+                        href="#"
+                        target="_self"
+                        rel="noopener noreferrer"
+                        className=" px-4"
+                      >
+                        المحادثة المباشرة
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>{" "}
+              <div className="col-sm-6 col-md-4 col-lg-3">
+                <div className="bg-white shadow-sm rounded-2 py-2 ContactUSph text-center">
+                  <div className="d-flex justify-content-center align-items-center">
+                    <div className="d-flex  justify-content-center align-items-center w-100  px-3 rounded">
+                      <Image
+                        src={servicewhats}
+                        width={40}
+                        height={50}
+                        alt="xcontectus"
+                      />
+                      <a
+                        href="https://wa.me/966505105224"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className=" px-4"
+                      >
+                        محادثة واتساب
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>{" "}
+            </div>
+          </div>
         </div>
       </div>
     </div>
