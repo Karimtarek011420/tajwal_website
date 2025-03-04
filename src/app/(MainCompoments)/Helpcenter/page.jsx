@@ -7,6 +7,9 @@ import Isolation_Mode from "@/assets/images/Isolation_Mode.svg";
 import eorrhelp from "@/assets/images/eorrhelp.svg";
 import servicechat from "@/assets/images/servicechat.svg";
 import servicewhats from "@/assets/images/servicewhats.svg";
+import emailcontect from "@/assets/images/emailcontect.svg";
+import phonecontect from "@/assets/images/phonecontect.svg";
+import watscontect from "@/assets/images/watscontect.svg";
 
 export default function HelpcenterPage() {
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
@@ -169,6 +172,155 @@ export default function HelpcenterPage() {
                   </div>
                 </div>
               </div>{" "}
+            </div>
+          </div>
+        </div>
+        <div className=" d-flex justify-content-center align-items-center  mt-5 ">
+          <div className="row  justify-content-center gy-4 w-100 mediatab">
+            <div className=" col-md-4">
+              <div className=" bg-white shadow-sm rounded-2 pt-3 pb-4  ContactUSp  ">
+                <p className=" px-3 ">خدمة العملاء</p>
+                <div className="  d-flex justify-content-center align-items-center">
+                  <div
+                    className=" d-flex   justify-content-end   align-items-center w-50 widthsercive "
+                    style={{ backgroundColor: "#F1F3F6" }}
+                  >
+                    <a
+                      href="mailto:help@tajwal.co"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ps-5 "
+                    >
+                      help@tajwal.co
+                    </a>
+                    <Image
+                      src={emailcontect}
+                      width={30}
+                      height={30}
+                      alt="emailcontect"
+                    />
+                  </div>
+                </div>
+
+                <div className="  d-flex justify-content-center align-items-center mt-3">
+                  <div
+                    className=" d-flex   justify-content-end   align-items-center w-50 widthsercive "
+                    style={{ backgroundColor: "#F1F3F6" }}
+                  >
+                    <a
+                      href="https://wa.me/966505105224"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ps-5"
+                      dir="ltr"
+                    >
+                      966 505 10 5224
+                    </a>
+                    <Image
+                      src={watscontect}
+                      width={30}
+                      height={30}
+                      alt="watscontect"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className=" col-md-4">
+              <div className=" bg-white shadow-sm rounded-2 pt-3 pb-4  ContactUSp ">
+                <p className=" px-3 "> الإدارة المالية</p>
+                <div className="  d-flex justify-content-center align-items-center">
+                  <div
+                    className=" d-flex   justify-content-end   align-items-center w-50 widthsercive "
+                    style={{ backgroundColor: "#F1F3F6" }}
+                  >
+                    <a
+                      href="mailto:finance@tajwal.co"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ps-5 "
+                    >
+                      finance@tajwal.co
+                    </a>
+                    <Image
+                      src={emailcontect}
+                      width={30}
+                      height={30}
+                      alt="emailcontect"
+                    />
+                  </div>
+                </div>
+                <div className="  d-flex justify-content-center align-items-center mt-3">
+                  <div
+                    className=" d-flex   justify-content-end   align-items-center w-50 widthsercive "
+                    style={{ backgroundColor: "#F1F3F6" }}
+                  >
+                    <a
+                      href="tel:+966505123456"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ps-5"
+                      dir="ltr"
+                    >
+                      966 505 12 3456
+                    </a>
+                    <Image
+                      src={phonecontect}
+                      width={30}
+                      height={30}
+                      alt="phonecontect"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className=" col-md-4">
+              <div className=" bg-white shadow-sm rounded-2 pt-3 pb-4  ContactUSp ">
+                <p className=" px-3 ">الإدارة العامة</p>
+                <div className="  d-flex justify-content-center align-items-center">
+                  <div
+                    className=" d-flex   justify-content-end   align-items-center w-50  widthsercive"
+                    style={{ backgroundColor: "#F1F3F6" }}
+                  >
+                    <a
+                      href="mailto:info@tajwal.co"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ps-5 "
+                    >
+                      info@tajwal.co
+                    </a>
+                    <Image
+                      src={emailcontect}
+                      width={30}
+                      height={30}
+                      alt="emailcontect"
+                    />
+                  </div>
+                </div>
+                <div className="  d-flex justify-content-center align-items-center mt-3">
+                  <div
+                    className=" d-flex   justify-content-end   align-items-center w-50  widthsercive"
+                    style={{ backgroundColor: "#F1F3F6" }}
+                  >
+                    <a
+                      href="tel:+966505123456"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ps-5"
+                      dir="ltr"
+                    >
+                      966 505 12 3456{" "}
+                    </a>
+                    <Image
+                      src={phonecontect}
+                      width={30}
+                      height={30}
+                      alt="phonecontect"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

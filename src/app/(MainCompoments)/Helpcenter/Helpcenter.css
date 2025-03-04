@@ -91,6 +91,21 @@
   font-weight: 500 !important;
   color: var(--auth-color);
 }
+.Helpcenter .ContactUSp {
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  color: var(--auth-color);
+}
+@media (min-width: 765px) and (max-width: 1400px) {
+  .Helpcenter .row.mediatab {
+    flex-direction: column;
+    align-items: center;
+  }
+  .Helpcenter .mediatab .col-md-4 {
+    width: 100%;
+    max-width: 400px;
+  }
+}
 @media (max-width: 380px) {
   .Helpcenter .search-button {
     padding: 14px;
