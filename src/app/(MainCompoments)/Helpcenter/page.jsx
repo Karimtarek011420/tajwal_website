@@ -26,7 +26,7 @@ export default function HelpcenterPage() {
         </ul>
       </div>
       <div className=" container pb-5 pt-3">
-        <p className=" text-center Helpcenterp pb-3">
+        <p className=" text-center Helpcenterp ">
           مالذي تحتاج المساعدة فيه؟
         </p>
         <div className=" search-bar">
@@ -87,9 +87,12 @@ export default function HelpcenterPage() {
           <div className="   bg-white shadow-sm rounded-3 py-4  px-lg-4 px-3 mx-lg-5">
             <div className="row">
               {faqs.map((faq, index) => (
-                <div key={index} className="col-md-6 mb-3">
+                <div key={index} className="col-md-6 mb-4">
                   <li className="list-group-item border-0 d-flex align-items-start text-end">
-                    <i className="fa-solid fa-circle m-2 " style={{fontSize:'9px' , color:'var(--auth-color)'}}></i>
+                    <i
+                      className="fa-solid fa-circle m-2 "
+                      style={{ fontSize: "9px", color: "var(--auth-color)" }}
+                    ></i>
                     <span className="Helpcenterpspan">{faq}</span>
                   </li>
                 </div>
@@ -97,6 +100,7 @@ export default function HelpcenterPage() {
             </div>
           </div>
         </div>
+        <div></div>
       </div>
     </div>
   );
