@@ -4,6 +4,7 @@ import "./Helpcenter.css";
 import Image from "next/image";
 import Helpcentertwal from "@/assets/images/footerHero.svg";
 import Isolation_Mode from "@/assets/images/Isolation_Mode.svg";
+import eorrhelp from "@/assets/images/eorrhelp.svg";
 
 export default function OffersPage() {
   return (
@@ -53,7 +54,7 @@ export default function OffersPage() {
               <Image
                 src={Isolation_Mode}
                 alt="Isolation_Mode"
-                width={26}
+                width={33}
                 height={35}
               />
               <p className="Helpcentertajwalp pt-2">
@@ -67,16 +68,13 @@ export default function OffersPage() {
           </div>
           <div className="col-md-4">
             <div className=" bg-white shadow-sm rounded-3  text-center px-5 py-3">
-              <Image
-                src={Helpcentertwal}
-                alt="Helpcentertajwal"
-                width={26}
-                height={35}
-              />
-              <p className="Helpcentertajwalp pt-2">كيف تستخدم تجوال</p>
+              <Image src={eorrhelp} alt="eorrhelp" width={21} height={35} />
+              <p className="Helpcentertajwalp pt-2">
+                الأعطال الشائعه و اصلاحها
+              </p>
               <p className="Helpcentertajwalp2 pt-2">
-                خطوات التسجيل و اختيار الباقة و اتمام عملية الدفع و طرق الوصول
-                للشرائح و الطلبات السابقة
+                قد تواجهك بعض المشاكل في اي من مراحل تفعيل او استخدام الشريحة،
+                هنا تجد الحلول.
               </p>
             </div>
           </div>
