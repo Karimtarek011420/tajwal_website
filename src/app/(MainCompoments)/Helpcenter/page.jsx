@@ -26,9 +26,7 @@ export default function HelpcenterPage() {
         </ul>
       </div>
       <div className=" container pb-5 pt-3">
-        <p className=" text-center Helpcenterp ">
-          مالذي تحتاج المساعدة فيه؟
-        </p>
+        <p className=" text-center Helpcenterp ">مالذي تحتاج المساعدة فيه؟</p>
         <div className=" search-bar">
           <button className="search-button" aria-label="Search">
             <i className="fas fa-search"></i>
@@ -100,7 +98,12 @@ export default function HelpcenterPage() {
             </div>
           </div>
         </div>
-        <div></div>
+        <div className=" text-center py-5">
+          <p className="Helpcenterphelp">لا زلت تحتاج مساعدة؟</p>
+          <p className="Helpcenterphelp1 pt-2">
+            تواصل معنا باستخدام اي من وسائل التواصل التالية و سنسعد بالرد عليكم.
+          </p>
+        </div>
       </div>
     </div>
   );

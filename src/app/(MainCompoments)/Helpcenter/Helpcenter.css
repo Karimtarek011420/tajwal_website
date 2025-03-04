@@ -69,10 +69,22 @@
   font-weight: 400 !important;
   color: var(--primary-color) !important;
 }
-.Helpcenter .Helpcenterpspan{
+.Helpcenter .Helpcenterpspan {
   font-size: 12px !important;
   font-weight: 300 !important;
   color: var(--auth-color) !important;
+}
+.Helpcenter .Helpcenterphelp {
+  font-size: var(--font-medium) !important;
+  font-weight: 500 !important;
+  color: var(--primary-color);
+  margin: 0px !important;
+}
+.Helpcenter .Helpcenterphelp1 {
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: var(--auth-color);
+  margin: 0px !important;
 }
 @media (max-width: 380px) {
   .Helpcenter .search-button {
