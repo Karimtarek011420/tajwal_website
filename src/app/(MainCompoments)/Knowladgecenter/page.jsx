@@ -126,7 +126,6 @@ export default function KnowladgecenterPage() {
             </div>
           </>
         )}
-
         <div className=" row gy-3 pt-5 pb-4 justify-content-center align-items-center px-lg-5">
           <div className="col-md-4">
             <div className=" bg-white shadow-sm rounded-3  text-center px-lg-5 px-2 py-3">
