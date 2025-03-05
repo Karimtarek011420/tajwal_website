@@ -60,7 +60,7 @@ export default function KnowladgecenterPage() {
             </div>
           </div>
         </div>
-        <div className=" row gy-3 py-5 justify-content-center align-items-center px-lg-5">
+        <div className=" row gy-3 pt-5 pb-4 justify-content-center align-items-center px-lg-5">
           <div className="col-md-4">
             <div className=" bg-white shadow-sm rounded-3  text-center px-lg-5 px-2 py-3">
               <Image
@@ -106,7 +106,7 @@ export default function KnowladgecenterPage() {
             </div>
           </div>
         </div>
-        <div className=" text-center py-5">
+        <div className=" text-center">
           <p className="Helpcenterphelp">لا زلت تحتاج مساعدة؟</p>
           <p className="Helpcenterphelp1 pt-2">
             تواصل معنا باستخدام اي من وسائل التواصل التالية و سنسعد بالرد عليكم.
