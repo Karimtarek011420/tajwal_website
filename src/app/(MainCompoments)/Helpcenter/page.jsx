@@ -13,12 +13,11 @@ import watscontect from "@/assets/images/watscontect.svg";
 import Link from "next/link";
 
 export default function HelpcenterPage() {
-  const [isScriptLoaded, setIsScriptLoaded] = useState(false);
   const faqs = Array(8).fill(
     "لوريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)، ويستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص الشكلي."
   );
   const handleClick = () => {
-    if (!isScriptLoaded) {
+    if (!document.getElementById("ze-snippet")) {
       const script = document.createElement("script");
       script.id = "ze-snippet";
       script.src =
@@ -26,7 +25,6 @@ export default function HelpcenterPage() {
       script.async = true;
       script.onload = () => console.log("Zendesk script loaded!");
       document.body.appendChild(script);
-      setIsScriptLoaded(true);
     }
   };
 

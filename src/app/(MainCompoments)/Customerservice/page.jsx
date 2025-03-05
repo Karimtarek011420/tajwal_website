@@ -19,7 +19,6 @@ export default function ContactUS() {
   const [errorMessage, setErrorMessage] = useState("");
   const [sucessMessage, setsucessMessage] = useState(false);
   const [loading, setloading] = useState(false);
-  const [isScriptLoaded, setIsScriptLoaded] = useState(false);
   const apiContect = async (values) => {
     setloading(true);
     try {
@@ -87,7 +86,7 @@ export default function ContactUS() {
     handleForm.setFieldValue("phone", value);
   };
   const handleClick = () => {
-    if (!isScriptLoaded) {
+    if (!document.getElementById("ze-snippet")) {
       const script = document.createElement("script");
       script.id = "ze-snippet";
       script.src =
@@ -95,7 +94,6 @@ export default function ContactUS() {
       script.async = true;
       script.onload = () => console.log("Zendesk script loaded!");
       document.body.appendChild(script);
-      setIsScriptLoaded(true);
     }
   };
 
