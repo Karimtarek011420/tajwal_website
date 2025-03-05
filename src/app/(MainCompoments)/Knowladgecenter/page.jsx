@@ -10,7 +10,7 @@ import servicewhats from "@/assets/images/servicewhats.svg";
 import Link from "next/link";
 
 export default function KnowladgecenterPage() {
-  const [openFaqIndex, setOpenFaqIndex] = useState(null); // لتتبع السؤال المفتوح
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
   const faqs = Array(8).fill(
     "لوريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)، ويستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص الشكلي."
   );
@@ -42,7 +42,7 @@ export default function KnowladgecenterPage() {
         </ul>
       </div>
       <div className=" container pb-5 pt-3">
-        {openFaqIndex ? (
+        {openFaqIndex !== null ? (
           <>
             <div className="me-lg-5 d-flex">
               <Link href={"/Helpcenter"}>
@@ -54,7 +54,7 @@ export default function KnowladgecenterPage() {
               ></i>
               <p
                 className=" Helpcenterpquestion mx-1"
-                onClick={() => setOpenFaqIndex(openFaqIndex === null)}
+                onClick={() => setOpenFaqIndex(null)}
                 style={{ cursor: "pointer" }}
               >
                 كيف تستخدم تجوال
