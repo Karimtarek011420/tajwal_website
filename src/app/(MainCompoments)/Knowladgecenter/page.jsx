@@ -54,7 +54,16 @@ export default function KnowladgecenterPage() {
                 className="fa-solid fa-chevron-left mx-1 mt-2 "
                 style={{ fontSize: "14px", color: "var(--auth-color)" }}
               ></i>
-              <p className=" Helpcenterpquestiontwal mx-1">كيف تستخدم تجوال</p>
+              <p className=" Helpcenterpquestion mx-1">كيف تستخدم تجوال</p>
+
+              <i
+                className="fa-solid fa-chevron-left mx-1 mt-2 "
+                style={{ fontSize: "14px", color: "var(--auth-color)" }}
+              ></i>
+              <p className=" Helpcenterpquestiontwal mx-1">
+                {" "}
+                لوريم ايبسوم هو ببساطة
+              </p>
             </div>
             <div className="bg-white shadow-sm rounded-3 py-4  px-lg-5 px-3  mx-lg-5">
               <p className=" Helpcenterpquestion2">كيف تستخدم تجوال</p>
