@@ -27,7 +27,7 @@ export default function KnowladgecenterPage() {
   };
 
   return (
-    <div className="Helpcenter position-relative py-5">
+    <div className="Knowladgecenter position-relative py-5">
       <div className="position-absolute country-listbeginall w-100">
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
           <li
@@ -42,6 +42,24 @@ export default function KnowladgecenterPage() {
         </ul>
       </div>
       <div className=" container pb-5 pt-3">
+        <div>
+          <p className="me-lg-5 Helpcenterpquestion ">الاسئلة الأكثر شيوعاً</p>
+          <div className="   bg-white shadow-sm rounded-3 py-4  px-lg-4 px-3 mx-lg-5">
+            <div className="row">
+              {faqs.map((faq, index) => (
+                <div key={index} className="col-md-6 mb-4">
+                  <li className="list-group-item border-0 d-flex align-items-start text-end">
+                    <i
+                      className="fa-solid fa-circle m-2 "
+                      style={{ fontSize: "9px", color: "var(--auth-color)" }}
+                    ></i>
+                    <span className="Helpcenterpspan">{faq}</span>
+                  </li>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
         <div className=" row gy-3 py-5 justify-content-center align-items-center px-lg-5">
           <div className="col-md-4">
             <div className=" bg-white shadow-sm rounded-3  text-center px-lg-5 px-2 py-3">
@@ -85,24 +103,6 @@ export default function KnowladgecenterPage() {
                 قد تواجهك بعض المشاكل في اي من مراحل تفعيل او استخدام الشريحة،
                 هنا تجد الحلول.
               </p>
-            </div>
-          </div>
-        </div>
-        <div>
-          <p className="me-lg-5 Helpcenterpquestion ">الاسئلة الأكثر شيوعاً</p>
-          <div className="   bg-white shadow-sm rounded-3 py-4  px-lg-4 px-3 mx-lg-5">
-            <div className="row">
-              {faqs.map((faq, index) => (
-                <div key={index} className="col-md-6 mb-4">
-                  <li className="list-group-item border-0 d-flex align-items-start text-end">
-                    <i
-                      className="fa-solid fa-circle m-2 "
-                      style={{ fontSize: "9px", color: "var(--auth-color)" }}
-                    ></i>
-                    <span className="Helpcenterpspan">{faq}</span>
-                  </li>
-                </div>
-              ))}
             </div>
           </div>
         </div>

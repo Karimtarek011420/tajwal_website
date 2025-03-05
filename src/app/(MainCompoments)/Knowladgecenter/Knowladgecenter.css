@@ -1,48 +1,42 @@
-.Helpcenter .Helpcenterp {
-  font-size: var(--font-medium) !important;
-  font-weight: 300 !important;
-  color: var(--auth-color);
-}
-
-.Helpcenter .Helpcentertajwalp {
+.Knowladgecenter .Helpcentertajwalp {
   font-size: 14px !important;
   font-weight: 500 !important;
   color: var(--auth-color);
   margin: 0px !important;
 }
-.Helpcenter .Helpcentertajwalp2 {
+.Knowladgecenter .Helpcentertajwalp2 {
   font-size: 10px !important;
   font-weight: 300 !important;
   color: var(--auth-color);
 }
-.Helpcenter .Helpcenterpquestion {
+.Knowladgecenter .Helpcenterpquestion {
   font-size: 16px !important;
   font-weight: 400 !important;
   color: var(--primary-color) !important;
 }
-.Helpcenter .Helpcenterpspan {
+.Knowladgecenter .Helpcenterpspan {
   font-size: 12px !important;
   font-weight: 300 !important;
   color: var(--auth-color) !important;
 }
-.Helpcenter .Helpcenterphelp {
+.Knowladgecenter .Helpcenterphelp {
   font-size: var(--font-medium) !important;
   font-weight: 500 !important;
   color: var(--primary-color);
   margin: 0px !important;
 }
-.Helpcenter .Helpcenterphelp1 {
+.Knowladgecenter .Helpcenterphelp1 {
   font-size: 12px !important;
   font-weight: 500 !important;
   color: var(--auth-color);
   margin: 0px !important;
 }
-.Helpcenter .ContactUSph {
+.Knowladgecenter .ContactUSph {
   font-size: 14px !important;
   font-weight: 500 !important;
   color: var(--auth-color);
 }
-.Helpcenter .ContactUSp {
+.Knowladgecenter .ContactUSp {
   font-size: 12px !important;
   font-weight: 400 !important;
   color: var(--auth-color);
