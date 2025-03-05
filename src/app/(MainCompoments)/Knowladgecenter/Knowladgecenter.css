@@ -9,6 +9,11 @@
   font-weight: 300 !important;
   color: var(--auth-color);
 }
+.Knowladgecenter .Helpcenterpquestion {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: var(--auth-color) !important;
+}
 .Knowladgecenter .Helpcenterpquestion2 {
   font-size: 20px !important;
   font-weight: 400 !important;
