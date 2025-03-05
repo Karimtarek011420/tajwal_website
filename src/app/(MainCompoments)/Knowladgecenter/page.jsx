@@ -53,7 +53,7 @@ export default function KnowladgecenterPage() {
           ></i>
           <p className=" Helpcenterpquestiontwal mx-1">كيف تستخدم تجوال</p>
         </div>
-        <div className="   bg-white shadow-sm rounded-3 py-4  px-lg-5 px-3  mx-lg-5">
+        <div className="bg-white shadow-sm rounded-3 py-4  px-lg-5 px-3  mx-lg-5">
           <p className=" Helpcenterpquestion2">كيف تستخدم تجوال</p>
           <div className="row px-lg-5 px-3">
             {faqs.map((faq, index) => (
