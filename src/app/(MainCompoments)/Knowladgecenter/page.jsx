@@ -10,13 +10,12 @@ import servicewhats from "@/assets/images/servicewhats.svg";
 import Link from "next/link";
 
 export default function KnowladgecenterPage() {
-  const [isScriptLoaded, setIsScriptLoaded] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState(null); // لتتبع السؤال المفتوح
   const faqs = Array(8).fill(
     "لوريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)، ويستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص الشكلي."
   );
   const handleClick = () => {
-    if (!isScriptLoaded) {
+    if (!document.getElementById("ze-snippet")) {
       const script = document.createElement("script");
       script.id = "ze-snippet";
       script.src =
@@ -24,7 +23,6 @@ export default function KnowladgecenterPage() {
       script.async = true;
       script.onload = () => console.log("Zendesk script loaded!");
       document.body.appendChild(script);
-      setIsScriptLoaded(true);
     }
   };
 
@@ -54,7 +52,13 @@ export default function KnowladgecenterPage() {
                 className="fa-solid fa-chevron-left mx-1 mt-2 "
                 style={{ fontSize: "14px", color: "var(--auth-color)" }}
               ></i>
-              <p className=" Helpcenterpquestion mx-1">كيف تستخدم تجوال</p>
+              <p
+                className=" Helpcenterpquestion mx-1"
+                onClick={() => setOpenFaqIndex(openFaqIndex === null)}
+                style={{ cursor: "pointer" }}
+              >
+                كيف تستخدم تجوال
+              </p>
 
               <i
                 className="fa-solid fa-chevron-left mx-1 mt-2 "
