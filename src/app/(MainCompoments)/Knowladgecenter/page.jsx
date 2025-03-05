@@ -44,12 +44,9 @@ export default function KnowladgecenterPage() {
       <div className=" container pb-5 pt-3">
         <div>
           <p className="me-lg-5 Helpcenterpquestion ">الاسئلة الأكثر شيوعاً</p>
-          <div className="   bg-white shadow-sm rounded-3 py-4  px-lg-5 px-3 mx-lg-5">
-            <p className="me-lg-5 Helpcenterpquestion ">
-              الاسئلة الأكثر شيوعاً
-            </p>
-
-            <div className="row">
+          <div className="   bg-white shadow-sm rounded-3 py-4  px-lg-5 px-3  mx-lg-5">
+            <p className=" Helpcenterpquestion ">كيف تستخدم تجوال</p>
+            <div className="row px-lg-5 px-3">
               {faqs.map((faq, index) => (
                 <div key={index} className="col-md-12 mb-4">
                   <li className="list-group-item border-0 d-flex align-items-start text-end">
