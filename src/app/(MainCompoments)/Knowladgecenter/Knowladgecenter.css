@@ -54,3 +54,8 @@
   font-weight: 400 !important;
   color: var(--auth-color);
 }
+@media (max-width:600px) {
+  .Knowladgecenter .Knowladgecentermediea {
+    flex-wrap: wrap !important;
+  }
+}

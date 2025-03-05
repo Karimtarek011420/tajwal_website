@@ -44,28 +44,26 @@ export default function KnowladgecenterPage() {
       <div className=" container pb-5 pt-3">
         {openFaqIndex !== null ? (
           <>
-            <div className="me-lg-5 d-flex">
+            <div className="me-lg-5 d-flex Knowladgecentermediea">
               <Link href={"/Helpcenter"}>
                 <p className="me-lg-5 Helpcenterpquestion ">مركز المساعدة</p>
               </Link>
-              <i
-                className="fa-solid fa-chevron-left mx-1 mt-2 "
-                style={{ fontSize: "14px", color: "var(--auth-color)" }}
-              ></i>
               <p
                 className=" Helpcenterpquestion mx-1"
                 onClick={() => setOpenFaqIndex(null)}
                 style={{ cursor: "pointer" }}
               >
+                <i
+                  className="fa-solid fa-chevron-left mx-1 mt-2 "
+                  style={{ fontSize: "14px", color: "var(--auth-color)" }}
+                ></i>
                 كيف تستخدم تجوال
               </p>
-
-              <i
-                className="fa-solid fa-chevron-left mx-1 mt-2 "
-                style={{ fontSize: "14px", color: "var(--auth-color)" }}
-              ></i>
               <p className=" Helpcenterpquestiontwal mx-1">
-                {" "}
+                <i
+                  className="fa-solid fa-chevron-left mx-1 mt-2 "
+                  style={{ fontSize: "14px", color: "var(--auth-color)" }}
+                ></i>{" "}
                 لوريم ايبسوم هو ببساطة
               </p>
             </div>
