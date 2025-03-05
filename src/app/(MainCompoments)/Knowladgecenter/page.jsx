@@ -11,6 +11,7 @@ import Link from "next/link";
 
 export default function KnowladgecenterPage() {
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
+  const [openFaqIndex, setOpenFaqIndex] = useState(null); // لتتبع السؤال المفتوح
   const faqs = Array(8).fill(
     "لوريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)، ويستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص الشكلي."
   );
