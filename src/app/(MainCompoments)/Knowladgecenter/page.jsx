@@ -56,7 +56,7 @@ export default function KnowladgecenterPage() {
               ></i>
               <p className=" Helpcenterpquestiontwal mx-1">كيف تستخدم تجوال</p>
             </div>
-            {/* <div className="bg-white shadow-sm rounded-3 py-4  px-lg-5 px-3  mx-lg-5">
+            <div className="bg-white shadow-sm rounded-3 py-4  px-lg-5 px-3  mx-lg-5">
               <p className=" Helpcenterpquestion2">كيف تستخدم تجوال</p>
               <div className="row px-lg-5 px-3">
                 {faqs.map((faq, index) => (
@@ -77,7 +77,7 @@ export default function KnowladgecenterPage() {
                   </div>
                 ))}
               </div>
-            </div> */}
+            </div>
           </>
         ) : (
           <>
@@ -98,9 +98,7 @@ export default function KnowladgecenterPage() {
                   <div key={index} className="col-md-12 mb-4">
                     <li
                       className="list-group-item border-0 d-flex align-items-start text-end"
-                      onClick={() =>
-                        setOpenFaqIndex(openFaqIndex === index ? null : index)
-                      }
+                      onClick={() => setOpenFaqIndex(openFaqIndex === null)}
                       style={{ cursor: "pointer" }}
                     >
                       <i
