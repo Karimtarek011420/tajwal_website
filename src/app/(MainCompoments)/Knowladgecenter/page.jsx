@@ -43,11 +43,15 @@ export default function KnowladgecenterPage() {
         </ul>
       </div>
       <div className=" container pb-5 pt-3">
-        <div className="me-lg-5 d-flex">
+        <div className="me-lg-5 d-flex ">
           <Link href={"/Helpcenter"}>
             <p className="me-lg-5 Helpcenterpquestion ">مركز المساعدة</p>
           </Link>
-          <p className=" Helpcenterpquestion">كيف تستخدم تجوال</p>
+          <i
+            className="fa-solid fa-chevron-left mx-1 mt-2 "
+            style={{ fontSize: "14px", color: "var(--auth-color)" }}
+          ></i>
+          <p className=" Helpcenterpquestiontwal mx-1">كيف تستخدم تجوال</p>
         </div>
         <div className="   bg-white shadow-sm rounded-3 py-4  px-lg-5 px-3  mx-lg-5">
           <p className=" Helpcenterpquestion2">كيف تستخدم تجوال</p>
