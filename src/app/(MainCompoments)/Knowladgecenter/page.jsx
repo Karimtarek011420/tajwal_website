@@ -198,8 +198,8 @@ export default function KnowladgecenterPage() {
           <p className="Helpcenterphelp1 pt-2">
             تواصل معنا باستخدام اي من وسائل التواصل التالية و سنسعد بالرد عليكم.
           </p>
-          <div className="  mt-4">
-            <div className="row justify-content-center gy-4 w-100">
+          <div className="mt-4">
+            <div className="row justify-content-center align-items-center  gy-4 ">
               <div className="col-sm-6 col-md-4 col-lg-3">
                 <div className="bg-white shadow-sm rounded-2 py-2 ContactUSph text-center">
                   <div
