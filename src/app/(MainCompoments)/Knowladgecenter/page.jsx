@@ -1,15 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import "./Helpcenter.css";
+import "./Knowladgecenter.css";
 import Image from "next/image";
 import Helpcentertwal from "@/assets/images/footerHero.svg";
 import Isolation_Mode from "@/assets/images/Isolation_Mode.svg";
 import eorrhelp from "@/assets/images/eorrhelp.svg";
 import servicechat from "@/assets/images/servicechat.svg";
 import servicewhats from "@/assets/images/servicewhats.svg";
-import emailcontect from "@/assets/images/emailcontect.svg";
-import phonecontect from "@/assets/images/phonecontect.svg";
-import watscontect from "@/assets/images/watscontect.svg";
 
 export default function KnowladgecenterPage() {
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);

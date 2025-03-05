@@ -10,6 +10,7 @@ import servicewhats from "@/assets/images/servicewhats.svg";
 import emailcontect from "@/assets/images/emailcontect.svg";
 import phonecontect from "@/assets/images/phonecontect.svg";
 import watscontect from "@/assets/images/watscontect.svg";
+import Link from "next/link";
 
 export default function HelpcenterPage() {
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
@@ -55,19 +56,21 @@ export default function HelpcenterPage() {
         </div>
         <div className=" row gy-3 py-5 justify-content-center align-items-center px-lg-5">
           <div className="col-md-4">
-            <div className=" bg-white shadow-sm rounded-3  text-center px-lg-5 px-2 py-3">
-              <Image
-                src={Helpcentertwal}
-                alt="Helpcentertajwal"
-                width={26}
-                height={35}
-              />
-              <p className="Helpcentertajwalp pt-2">كيف تستخدم تجوال</p>
-              <p className="Helpcentertajwalp2 pt-2">
-                خطوات التسجيل و اختيار الباقة و اتمام عملية الدفع و طرق الوصول
-                للشرائح و الطلبات السابقة
-              </p>
-            </div>
+            <Link href={"/Knowladgecenter"}>
+              <div className=" bg-white shadow-sm rounded-3  text-center px-lg-5 px-2 py-3">
+                <Image
+                  src={Helpcentertwal}
+                  alt="Helpcentertajwal"
+                  width={26}
+                  height={35}
+                />
+                <p className="Helpcentertajwalp pt-2">كيف تستخدم تجوال</p>
+                <p className="Helpcentertajwalp2 pt-2">
+                  خطوات التسجيل و اختيار الباقة و اتمام عملية الدفع و طرق الوصول
+                  للشرائح و الطلبات السابقة
+                </p>
+              </div>
+            </Link>
           </div>
           <div className="col-md-4">
             <div className=" bg-white shadow-sm rounded-3  text-center px-lg-5 px-2 py-3">
