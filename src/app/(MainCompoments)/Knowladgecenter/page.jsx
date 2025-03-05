@@ -43,7 +43,7 @@ export default function KnowladgecenterPage() {
         </ul>
       </div>
       <div className=" container pb-5 pt-3">
-        <div className="me-lg-5 d-flex ">
+        <div className="me-lg-5 d-flex">
           <Link href={"/Helpcenter"}>
             <p className="me-lg-5 Helpcenterpquestion ">مركز المساعدة</p>
           </Link>
