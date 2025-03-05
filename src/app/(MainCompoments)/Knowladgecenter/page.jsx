@@ -7,6 +7,7 @@ import Isolation_Mode from "@/assets/images/Isolation_Mode.svg";
 import eorrhelp from "@/assets/images/eorrhelp.svg";
 import servicechat from "@/assets/images/servicechat.svg";
 import servicewhats from "@/assets/images/servicewhats.svg";
+import Link from "next/link";
 
 export default function KnowladgecenterPage() {
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
@@ -42,23 +43,27 @@ export default function KnowladgecenterPage() {
         </ul>
       </div>
       <div className=" container pb-5 pt-3">
-        <div>
-          <p className="me-lg-5 Helpcenterpquestion ">الاسئلة الأكثر شيوعاً</p>
-          <div className="   bg-white shadow-sm rounded-3 py-4  px-lg-5 px-3  mx-lg-5">
-            <p className=" Helpcenterpquestion ">كيف تستخدم تجوال</p>
-            <div className="row px-lg-5 px-3">
-              {faqs.map((faq, index) => (
-                <div key={index} className="col-md-12 mb-4">
-                  <li className="list-group-item border-0 d-flex align-items-start text-end">
-                    <i
-                      className="fa-solid fa-circle m-2 "
-                      style={{ fontSize: "9px", color: "var(--auth-color)" }}
-                    ></i>
-                    <span className="Helpcenterpspan">{faq}</span>
-                  </li>
-                </div>
-              ))}
-            </div>
+        <div className="me-lg-5">
+          <Link href={"/Helpcenter"}>
+            <p className="me-lg-5 Helpcenterpquestion ">
+              الاسئلة الأكثر شيوعاً
+            </p>
+          </Link>
+        </div>
+        <div className="   bg-white shadow-sm rounded-3 py-4  px-lg-5 px-3  mx-lg-5">
+          <p className=" Helpcenterpquestion2">كيف تستخدم تجوال</p>
+          <div className="row px-lg-5 px-3">
+            {faqs.map((faq, index) => (
+              <div key={index} className="col-md-12 mb-4">
+                <li className="list-group-item border-0 d-flex align-items-start text-end">
+                  <i
+                    className="fa-solid fa-circle m-2 "
+                    style={{ fontSize: "9px", color: "var(--auth-color)" }}
+                  ></i>
+                  <span className="Helpcenterpspan">{faq}</span>
+                </li>
+              </div>
+            ))}
           </div>
         </div>
         <div className=" row gy-3 pt-5 pb-4 justify-content-center align-items-center px-lg-5">
