@@ -4,10 +4,14 @@
   color: var(--auth-color);
   margin: 0px !important;
 }
-.Knowladgecenter .Helpcentertajwalp2 {
+.Knowladgecenter .Helpcentertajwalp2,
+.Knowladgecenter .Helpcenterpquestion3 {
   font-size: 10px !important;
   font-weight: 300 !important;
-  color: var(--auth-color);
+  color: var(--auth-color) !important;
+}
+.Knowladgecenter .Helpcenterpquestion3 {
+  font-size: 18px !important;
 }
 .Knowladgecenter .Helpcenterpquestion,
 .Knowladgecenter .Helpcenterpquestiontwal {
