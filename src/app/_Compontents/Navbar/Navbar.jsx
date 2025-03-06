@@ -162,6 +162,7 @@ export default function Navbar() {
             width={200}
             height={100}
             alt="Company logo"
+            priority
           />
         </Link>
         <button
