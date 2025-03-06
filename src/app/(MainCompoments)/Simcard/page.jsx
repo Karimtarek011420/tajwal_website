@@ -18,7 +18,6 @@ export default function SimcardPage() {
           </li>
         </ul>
       </div>
-
       <div className=" container py-5">
         
       </div>
