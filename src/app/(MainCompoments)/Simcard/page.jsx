@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import "./Simcard.css";
-
 export default function SimcardPage() {
   return (
     <div className="Simcard  position-relative py-5">
@@ -19,7 +18,7 @@ export default function SimcardPage() {
         </ul>
       </div>
       <div className=" container py-5">
-        
+
       </div>
     </div>
   );
