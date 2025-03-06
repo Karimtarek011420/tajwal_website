@@ -14,7 +14,7 @@ export default function SimcardPage() {
               backgroundColor: "var(--background)",
             }}
           >
-            <span className="p-5">العروض</span>
+            <span className="p-5">طريقة تثبيت الشريحة</span>
           </li>
         </ul>
       </div>

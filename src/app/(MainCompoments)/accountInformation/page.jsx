@@ -578,7 +578,7 @@ function AccountInformation() {
                   </button>
                 </div>
               </div>
-              <div className=" boxchange rounded-2 shadow-sm px-4 py-3">
+              <div className=" boxchange rounded-2 shadow-sm px-4 py-3 mt-3">
                 <p className="deleteacount">حذف الحساب</p>
                 <p className="deleteacountp ">
                   بامكانك حذف حسابك بشكل نهائي، و لكن يجدر ذكر انه لا يمكنك
