@@ -179,14 +179,9 @@
     width: 100% !important; /* الصور تأخذ عرض العنصر بالكامل */
     height: 40px !important;
   }
-
-  .payement {
-    padding: 1px 0px !important
-    ; /* فراغ بين العناصر */
-  }
 }
 /* استجابة للشاشات الأصغر من 350 بكسل */
-@media (max-width: 350px) {
+@media (max-width: 400px) {
   .discount-input::placeholder {
     font-size: 10px;
   }
@@ -194,5 +189,8 @@
   .apply-btn {
     font-size: 10px;
     padding: 8px;
+  }
+  .custom-checkbox .checkmark {
+    width: 40px !important;
   }
 }
