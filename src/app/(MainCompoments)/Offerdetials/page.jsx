@@ -1,13 +1,19 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import CircularProgress from "@mui/material/CircularProgress";
 import "./offerdetilas.css";
 
 const OfferDetails = () => {
   const searchParams = useSearchParams();
-  const offer_url = searchParams.get("offer_url");
+  const [offerUrl, setOfferUrl] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    const url = searchParams.get("offer_url");
+    if (url) {
+      setOfferUrl(url);
+    }
+  }, [searchParams]);
 
   return (
     <div className="offers position-relative pt-5 ">
@@ -48,7 +54,7 @@ const OfferDetails = () => {
         style={{ width: "100vw", height: "100vh", overflow: "hidden" }}
       >
         <iframe
-          src={offer_url}
+          src={offerUrl}
           loading="lazy"
           onLoad={() => setIsLoading(false)} // إخفاء اللودنج عند اكتمال التحميل
           style={{
