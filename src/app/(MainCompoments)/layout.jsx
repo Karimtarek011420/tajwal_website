@@ -4,9 +4,11 @@ import Header from "../_Compontents/Header/Header";
 export default function RootLayout({ children }) {
   return (
     <>
-      <Header />
-      {children}
-      <Footer />
+      <div className="layoutfooter">
+        <Header />
+        <main className="contentfooter">{children}</main>
+        <Footer />
+      </div>
     </>
   );
 }
