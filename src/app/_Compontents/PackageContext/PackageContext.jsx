@@ -7,28 +7,18 @@ export const PackageProvider = ({ children }) => {
   const [selectedPackage, setSelectedPackagepur] = useState(null);
   useEffect(() => {
     const storedPackage = localStorage.getItem("package");
-    try {
-      if (storedPackage) {
-        const parsedPackage = JSON.parse(storedPackage);
-        if (typeof parsedPackage === "object" && parsedPackage !== null) {
-          setSelectedPackagepur(parsedPackage);
-        }
-      }
-    } catch (error) {
-      console.error("خطأ أثناء قراءة البيانات من localStorage:", error);
+    if (storedPackage) {
+      setSelectedPackagepur(JSON.parse(storedPackage));
     }
   }, []);
 
   // تحديث localStorage عند تغيير selectedPackage
-  useEffect(() => {
-    try {
-      if (selectedPackage && typeof selectedPackage === "object") {
-        localStorage.setItem("package", JSON.stringify(selectedPackage));
-      }
-    } catch (error) {
-      console.error("خطأ أثناء حفظ البيانات في localStorage:", error);
-    }
-  }, [selectedPackage]);
+  // useEffect(() => {
+  //   console.log(selectedPackage)
+  //   if (selectedPackage) {
+  //     localStorage.setItem("package", JSON.stringify(selectedPackage));
+  //   }
+  // }, [selectedPackage]);
   return (
     <PackageContext.Provider value={{ selectedPackage, setSelectedPackagepur }}>
       {children}
