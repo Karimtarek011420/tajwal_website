@@ -338,7 +338,7 @@ export default function ContactUS() {
           </div>
         </div>
         <div className=" w-50 mx-auto mt-5 messageCustomerservice">
-          <div className=" bg-white shadow-sm py-1 pt-3">
+          <div className=" bg-white shadow-sm py-1 pt-4 rounded-3">
             {sucessMessage ? (
               <div className=" py-5 ">
                 <div className=" d-flex justify-content-center  align-items-center">

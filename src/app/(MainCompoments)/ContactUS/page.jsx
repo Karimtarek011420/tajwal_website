@@ -219,7 +219,7 @@ export default function ContactUS() {
             </div>
           </div>
           <div className=" col-md-6">
-            <div className=" bg-white shadow-sm py-1">
+            <div className=" bg-white shadow-sm py-1  rounded-3">
               {sucessMessage ? (
                 <div className=" py-5 ">
                   <div className=" d-flex justify-content-center  align-items-center">
@@ -241,7 +241,7 @@ export default function ContactUS() {
                 <form onSubmit={handleForm.handleSubmit}>
                   <div className=" row gy-3 px-3">
                     <div className=" col-md-6">
-                      <div className="mb-4 mt-1 pt-2">
+                      <div className="mb-3 mt-1 pt-3">
                         <input
                           type="text"
                           value={handleForm.values.name}
@@ -264,7 +264,7 @@ export default function ContactUS() {
                       </div>
                     </div>
                     <div className="col-md-6">
-                      <div className="mb-4 mt-1 pt-2">
+                      <div className="mb-3 mt-1 pt-3">
                         <select
                           value={handleForm.values.subject}
                           onChange={handleForm.handleChange}
