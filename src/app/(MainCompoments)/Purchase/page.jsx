@@ -173,7 +173,7 @@ function pagepurchase() {
       </div>
     );
   }
-  // localStorage.setItem("package", JSON.stringify(selectedPackage));
+  localStorage.setItem("package", JSON.stringify(selectedPackage));
 
   console.log(selectedPackage.id);
   return (
@@ -503,7 +503,7 @@ function pagepurchase() {
                   >
                     وسيلة الدفع
                   </p>
-                  <div className=" container-fluid py-1">
+                  <div className=" container py-1 ">
                     <div className="row justify-content-center  gy-2">
                       {paymentMethods?.map((method, index) => {
                         const isLastTwo = index >= paymentMethods.length - 2; // تحقق إذا كانت الصورة من الصور الأخيرة
