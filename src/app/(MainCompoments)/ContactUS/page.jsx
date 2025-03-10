@@ -293,7 +293,7 @@ export default function ContactUS() {
                     </div>
 
                     <div className=" col-md-6">
-                      <div className="mb-3">
+                      <div className="mb-2">
                         <input
                           value={handleForm.values.email}
                           onChange={handleForm.handleChange}
@@ -317,7 +317,7 @@ export default function ContactUS() {
                       </div>
                     </div>
                     <div className=" col-md-6">
-                      <div className="mb-3 w-100" dir="ltr">
+                      <div className="mb-2 w-100" dir="ltr">
                         <PhoneInput
                           defaultCountry="sa"
                           id="phone"
