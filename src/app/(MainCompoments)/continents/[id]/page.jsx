@@ -796,7 +796,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
               </div>
               <div className="col-md-8 ">
                 <p className="textmodelp">معلومات إضافية</p>
-                <div className=" w-100  rounded-2 bg-white shadow-sm p-1">
+                <div className=" w-100  rounded-2 bg-white shadow-sm p-1 mb-2">
                   <div>
                     <div className="d-flex justify-content-between align-items-center text-center px-lg-3 px-1 py-lg-1  mt-lg-2">
                       <div className="d-flex align-items-center justify-content-center ">
