@@ -76,7 +76,7 @@ export default function CountryHeader() {
             </p>
           )}{" "}
         </div>
-        <div className="row row-cols-xl-5 row-cols-lg-3 row-cols-md-3 row-cols-sm-2 row-cols-1 gy-4">
+        <div className="row row-cols-xl-5 row-cols-lg-3 row-cols-md-3 row-cols-sm-2 row-cols-1 gy-4 pb-5">
           {countries?.map((country) => {
             return (
               <div key={country.country_code} className="col">
