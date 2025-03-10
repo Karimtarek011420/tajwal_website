@@ -357,10 +357,7 @@ export default function DetailsCountry() {
     <div className="countrydetials position-relative py-5">
       <div className="px-3 px-md-4 px-lg-5">
         {error && (
-          <p
-            className="text-danger text-center"
-            style={{ minHeight: "30vh" }}
-          >
+          <p className="text-danger text-center" style={{ minHeight: "30vh" }}>
             {error}
           </p>
         )}{" "}
@@ -849,7 +846,7 @@ export default function DetailsCountry() {
               </div>
               <div className="col-md-8 ">
                 <p className="textmodelp">معلومات إضافية</p>
-                <div className=" w-100  rounded-2 bg-white shadow-sm p-1">
+                <div className=" w-100  rounded-2 bg-white shadow-sm p-1 mb-2">
                   <div>
                     <div className="d-flex justify-content-between align-items-center text-center px-lg-3 px-1 py-lg-1  mt-lg-2">
                       <div className="d-flex align-items-center justify-content-center ">

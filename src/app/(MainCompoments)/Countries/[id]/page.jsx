@@ -469,7 +469,7 @@ export default function DetailsCountry({ params: paramsPromise }) {
               {/* معلومات إضافية */}
               <div className="col-md-8">
                 <p className="textmodelp">معلومات إضافية</p>
-                <div className="w-100 rounded-2 bg-white shadow-sm p-1">
+                <div className="w-100 rounded-2 bg-white shadow-sm p-1 mb-2">
                   {[
                     {
                       icon: icon6m,
