@@ -322,7 +322,7 @@ function Ordersdetails({ params: paramsPromise }) {
                       “طرق تثبيت الشريحة”
                     </p>
                     <div className=" p-2 wayslink rounded-3 mx-5">
-                      <Link href="">
+                      <Link href="/Simcard">
                         <div className="d-flex justify-content-between align-items-center ">
                           <div className="country-flag d-flex justify-content-center align-items-center p-1">
                             <Image
