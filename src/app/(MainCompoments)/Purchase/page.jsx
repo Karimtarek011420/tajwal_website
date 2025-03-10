@@ -167,7 +167,7 @@ function pagepurchase() {
   if (!selectedPackage) {
     return (
       <div className=" d-flex justify-content-center align-items-center py-5  selectedPackagereturn  px-5">
-        <p style={{fontSize:'13px'}}>
+        <p style={{ fontSize: "13px" }}>
           لم يتم اختيار أي باقة. الرجاء العودة إلى الصفحة السابقة واختيار باقة.
         </p>
       </div>
@@ -194,10 +194,13 @@ function pagepurchase() {
         </div>
         <div className=" container py-5">
           <div className=" row gy-3">
-            <div className="col-lg-4 col-md-6 col-sm-12">
-              <div className="cardpurchase  bg-white shadow-sm rounded-2 position-relative"  style={{
-                padding: selectedPackage?.amount === -1 ? "" : "33px 0px", // ✅ التعديل هنا
-              }}>
+            <div className=" col-xl-4 col-lg-6 col-sm-12">
+              <div
+                className="cardpurchase  bg-white shadow-sm rounded-2 position-relative"
+                style={{
+                  padding: selectedPackage?.amount === -1 ? "" : "33px 0px", // ✅ التعديل هنا
+                }}
+              >
                 <div className=" countydtailsup d-flex  justify-content-between align-items-center position-absolute ">
                   <div>
                     {selectedPackage.image && (
@@ -357,7 +360,7 @@ function pagepurchase() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 col-md-6 col-sm-12">
+            <div className="col-xl-4 col-lg-6 col-sm-12">
               <div className="bg-white shadow-sm rounded-2 py-4 px-4">
                 <p className="p1 disacount">كود الخصم</p>
                 <p className="p1 disacount">
@@ -445,7 +448,7 @@ function pagepurchase() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 col-md-6 col-sm-12">
+            <div className="col-xl-4 col-lg-6 col-sm-12">
               <div
                 className="bg-white shadow-sm rounded-2  pb-2 pt-1 px-4 mb-2  "
                 style={{
