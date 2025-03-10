@@ -18,6 +18,7 @@
 .payement {
   padding: 0px !important;
   margin: 0px !important;
+  gap: 0 !important;
 }
 
 .custom-checkbox .checkmark::after {

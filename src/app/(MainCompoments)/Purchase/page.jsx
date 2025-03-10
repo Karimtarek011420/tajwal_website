@@ -503,15 +503,17 @@ function pagepurchase() {
                   >
                     وسيلة الدفع
                   </p>
-                  <div className="container py-1">
-                    <div className="row justify-content-center gy-2">
+                  <div className=" container-fluid py-1">
+                    <div className="row justify-content-center  gy-2">
                       {paymentMethods?.map((method, index) => {
                         const isLastTwo = index >= paymentMethods.length - 2; // تحقق إذا كانت الصورة من الصور الأخيرة
                         return (
                           <div
                             key={method.id}
                             className={`${
-                              isLastTwo ? "col-12" : "col-6 col-md-6 col-lg-6"
+                              isLastTwo
+                                ? "col-12"
+                                : "col-6 col-md-6 col-lg-6 p-0"
                             }`}
                           >
                             <div
