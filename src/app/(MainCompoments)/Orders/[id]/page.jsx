@@ -164,7 +164,7 @@ function Ordersdetails({ params: paramsPromise }) {
             ) : (
               <div className=" row gy-2">
                 <div className=" col-xl-6">
-                  <div className="d-flex justify-content-between align-items-center text-center p-3 rounded-3 m-2 mt-3 bg-white shadow-sm ordersucessdetilas">
+                  <div className="d-flex justify-content-between align-items-center text-center p-3 rounded-3 mx-2  bg-white shadow-sm ordersucessdetilas">
                     <div className="d-flex align-items-center justify-content-center ">
                       <Image
                         src={numberorder}
@@ -309,7 +309,7 @@ function Ordersdetails({ params: paramsPromise }) {
                   </div>
                 </div>
                 <div className="  col-xl-6">
-                  <div className=" bg-white shadow-sm rounded-2 px-2 py-4 mt-3">
+                  <div className=" bg-white shadow-sm rounded-2 px-2 py-4">
                     <div className=" px-3">
                       <h6 className="wayesim">طريقة تثبيت الشريحة</h6>
                       <p className="wayesimp py-1">
