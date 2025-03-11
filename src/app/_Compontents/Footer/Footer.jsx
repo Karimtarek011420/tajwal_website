@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="footer">
-        <div className=" px-3 py-3  ">
+        <div className=" px-3 py-3">
           <div className=" row gy-4">
             <div className=" col-md-3  offset-2">
               <div className=" d-flex">
@@ -26,7 +26,7 @@ const Footer = () => {
                   alt="Tajwal Logo"
                   className="me-4"
                 />
-                <div className=" mx-3">
+                <div className=" mx-xl-3 mx-2">
                   <h6 className="tajwalh">شركة تجوال العالم للتجارة</h6>
                   <p className="tajwalp">
                     هي أول شركة سعودية مسجلة متخصصة في <br /> بيع شرائح التجوال
