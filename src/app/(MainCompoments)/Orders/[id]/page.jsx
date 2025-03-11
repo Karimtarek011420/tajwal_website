@@ -169,7 +169,7 @@ function Ordersdetails({ params: paramsPromise }) {
               </div>
             ) : (
               <div className=" row gy-2">
-                <div className=" col-md-6">
+                <div className=" col-xl-6">
                   <div className="d-flex justify-content-between align-items-center text-center p-3 rounded-3 m-2 mt-3 bg-white shadow-sm ordersucessdetilas">
                     <div className="d-flex align-items-center justify-content-center ">
                       <Image
@@ -314,13 +314,15 @@ function Ordersdetails({ params: paramsPromise }) {
                     </div>
                   </div>
                 </div>
-                <div className=" offset-1 col-md-5">
+                <div className="  col-xl-6">
                   <div className=" bg-white shadow-sm rounded-2 px-2 py-4 mt-3">
-                    <h6 className="wayesim">طريقة تثبيت الشريحة</h6>
-                    <p className="wayesimp py-1">
-                      بأمكانك تثبيت الشريحة بأي من الثلاث طرق المذكور في صفحة
-                      “طرق تثبيت الشريحة”
-                    </p>
+                    <div className=" px-3">
+                      <h6 className="wayesim">طريقة تثبيت الشريحة</h6>
+                      <p className="wayesimp py-1">
+                        بأمكانك تثبيت الشريحة بأي من الثلاث طرق المذكور في صفحة
+                        “طرق تثبيت الشريحة”
+                      </p>
+                    </div>
                     <div className=" p-2 wayslink rounded-3 mx-5">
                       <Link href="/Simcard">
                         <div className="d-flex justify-content-between align-items-center ">
@@ -342,7 +344,6 @@ function Ordersdetails({ params: paramsPromise }) {
                       </Link>
                     </div>
                   </div>
-
                   <div className=" mt-5">
                     <div className="   d-flex flex-column align-items-center text-center">
                       <h6 className="tajwalh  text-center pb-2">حمل التطبيق</h6>
