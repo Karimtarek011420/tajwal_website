@@ -72,7 +72,7 @@ function Previousorders() {
       </div>
       <div className="container py-5">
         <div className="row gy-4">
-          <div className="col-md-3 offset-1">
+          <div className="col-md-4">
             <div className="cardinfo bg-info py-3 bg-white shadow-sm rounded-4 ps-5">
               <div className="px-3">
                 <h6>{user?.first_name}</h6>
@@ -123,9 +123,8 @@ function Previousorders() {
               </div>
             </div>
           </div>
-
-          <div className=" col-md-8">
-            <div className=" container">
+          <div className="col-md-8">
+            <div >
               {loading ? (
                 <div className="d-flex justify-content-center">
                   <p className="text-dark text-center py-5">
@@ -146,7 +145,7 @@ function Previousorders() {
                 <div className=" row gy-4">
                   {data?.map((order) => {
                     return (
-                      <div key={order.id} className="col-md-4">
+                      <div key={order.id} className="col-xl-4 col-lg-6">
                         <div className="bg-white shadow-sm text-center">
                           <Link href={`/Orders/${order.id}`}>
                             <div className="d-flex justify-content-between align-items-center p-3">
