@@ -59,7 +59,13 @@ function Previousorders() {
     <div className="previousOrders position-relative py-5">
       <div className="position-absolute country-listbeginall w-100">
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
-          <li className="country-list-links  mx-2 accountInformationp"  style={{ color: "var(--primary-color)" , backgroundColor:'var(--background)' }}>
+          <li
+            className="country-list-links  mx-2 accountInformationp"
+            style={{
+              color: "var(--primary-color)",
+              backgroundColor: "var(--background)",
+            }}
+          >
             <span className="p-4"> الطلبات السابقة</span>
           </li>
         </ul>
@@ -122,28 +128,17 @@ function Previousorders() {
             <div className=" container">
               {loading ? (
                 <div className="d-flex justify-content-center">
-                  <p
-                    className="text-dark text-center py-5"
-                    style={{ minHeight: "30vh" }}
-                  >
+                  <p className="text-dark text-center py-5">
                     جارى تحميل الطلبات......
                   </p>
                 </div>
               ) : error ? (
                 <div className="d-flex justify-content-center">
-                  <p
-                    className="text-danger text-center py-5"
-                    style={{ minHeight: "30vh" }}
-                  >
-                    {error}
-                  </p>
+                  <p className="text-danger text-center py-5">{error}</p>
                 </div>
               ) : data?.length === 0 ? (
                 <div className="d-flex justify-content-center">
-                  <p
-                    className="text-dark fs-6 text-center py-5"
-                    style={{ minHeight: "30vh" }}
-                  >
+                  <p className=" text-danger fs-6 text-center py-5">
                     لا يوجد طلبات سابقة.
                   </p>
                 </div>
