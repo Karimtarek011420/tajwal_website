@@ -160,21 +160,14 @@ function Ordersdetails({ params: paramsPromise }) {
 
           <div className="col-md-8">
             {loading ? (
-              <div className="px-3 px-md-4 px-lg-5">
-                <div className="row row-cols-xl-1 ">
-                  {Array.from({ length: 1 }).map((_, index) => (
-                    <div key={index} className="col">
-                      <div className="bg-white shadow-sm text-center">
-                        <div className="d-flex justify-content-between align-items-center p-3">
-                          <div className="country-flag d-flex justify-content-center align-items-center">
-                            <Skeleton width={200} height={100} />
-                            <Skeleton width={200} className=" me-2 ms-lg-4 px-lg-3" />
-                          </div>
-                          <Skeleton width={100} height={50} />
-                        </div>
-                      </div>
+              <div>
+                <div className="bg-white shadow-sm text-center">
+                  <div className="d-flex justify-content-between align-items-center p-3">
+                    <div className="country-flag d-flex justify-content-center align-items-center">
+                      <Skeleton width={200} height={100} />
                     </div>
-                  ))}
+                    <Skeleton width={200} className=" me-2 ms-lg-4 px-lg-3" />
+                  </div>
                 </div>
               </div>
             ) : (
@@ -301,8 +294,8 @@ function Ordersdetails({ params: paramsPromise }) {
                       )}
                     </div>
                   </div>
-                  <div className=" mt-3">
-                    <div className=" px-5 py-2 wayslink rounded-2">
+                  <div className=" my-3">
+                    <div className=" px-5 py-2 wayslink rounded-3">
                       <Link href="">
                         <div className="">
                           <div className=" d-flex justify-content-center align-items-center text-center">
