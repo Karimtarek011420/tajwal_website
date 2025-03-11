@@ -26,7 +26,7 @@ const Footer = () => {
                   alt="Tajwal Logo"
                   className="me-4"
                 />
-                <div className=" mx-xl-3 mx-2">
+                <div className="mx-xl-3 mx-2">
                   <h6 className="tajwalh">شركة تجوال العالم للتجارة</h6>
                   <p className="tajwalp">
                     هي أول شركة سعودية مسجلة متخصصة في <br /> بيع شرائح التجوال
@@ -52,7 +52,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="  col-md-3 offset-2 d-flex flex-column align-items-center text-center">
+            <div className=" col-md-3 offset-2 d-flex flex-column align-items-center text-center">
               <h6 className="tajwalh  text-center pb-2">حمل التطبيق</h6>
               <div className="d-flex align-content-center align-items-center  text-center ">
                 <div className="d-flex flex-column align-items-center">
