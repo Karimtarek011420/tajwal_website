@@ -5,7 +5,6 @@ import arrow from "@/assets/images/arrow.svg";
 import "./countryheader.css";
 import axios from "axios";
 import { API_BASE_URL } from "@/app/utils/config";
-
 // دالة لجلب البيانات من الـ API
 const getCountry = async () => {
   try {
@@ -29,10 +28,7 @@ export default async function CountryHeader() {
 
   if (!countries.length) {
     return (
-      <div
-        className="error-message text-center py-5"
-        style={{ minHeight: "30vh" }}
-      >
+      <div className="error-message text-center py-5">
         <p className="text-danger">
           حدث خطأ أثناء جلب البيانات. حاول مجددًا لاحقًا.
         </p>
