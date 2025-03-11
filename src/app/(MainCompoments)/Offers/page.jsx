@@ -52,7 +52,7 @@ export default function OffersPage() {
         </ul>
       </div>
 
-      <div className=" container py-5">
+      <div className=" container pt-3">
         <div className="px-3 px-md-4 px-lg-5">
           {error && (
             <p
