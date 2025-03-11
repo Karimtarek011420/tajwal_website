@@ -3,7 +3,6 @@
   font-size: var(--font-large) !important;
   font-weight: 300 !important;
 }
-
 .countryheader .countryshow {
   background-color: var(--secondary-color) !important;
   padding: 15px 100px !important;
@@ -13,7 +12,6 @@
   color: #ffffff !important;
   transition: background-color 0.3s ease !important;
 }
-
 .countryheader .countryshow:hover {
   background-color: var(--primary-color) !important;
 }
