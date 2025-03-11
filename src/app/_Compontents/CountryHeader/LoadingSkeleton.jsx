@@ -15,7 +15,11 @@ export default function LoadingSkeleton() {
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="d-flex align-items-center">
                     <Skeleton width={45} height={30} />
-                    <Skeleton width={80} height={20} className="ms-lg-3 ms-2" />
+                    <Skeleton
+                      width={80}
+                      height={20}
+                      className="me-2 ms-lg-3 ms-2"
+                    />
                   </div>
                   <Skeleton width={15} height={25} />
                 </div>

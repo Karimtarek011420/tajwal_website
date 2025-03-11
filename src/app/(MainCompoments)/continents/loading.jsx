@@ -12,7 +12,7 @@ export default function LoadingSkeleton() {
               <div className="d-flex justify-content-between align-items-center p-3">
                 <div className="country-flag d-flex justify-content-center align-items-center">
                   <Skeleton width={60} height={40} />
-                  <Skeleton width={80} className="ms-lg-4 px-lg-3" />
+                  <Skeleton width={80} className="me-2 ms-lg-4 px-lg-3" />
                 </div>
                 <Skeleton width={20} height={20} />
               </div>
