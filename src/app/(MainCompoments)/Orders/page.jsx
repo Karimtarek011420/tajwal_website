@@ -138,7 +138,7 @@ function Previousorders() {
                               <Skeleton width={60} height={40} />
                               <Skeleton
                                 width={80}
-                                className="ms-lg-4 px-lg-3"
+                                className="me-1 ms-lg-4 px-lg-3"
                               />
                             </div>
                             <Skeleton width={20} height={20} />
