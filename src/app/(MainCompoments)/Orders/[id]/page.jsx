@@ -308,7 +308,7 @@ function Ordersdetails({ params: paramsPromise }) {
                               loading="lazy"
                               className="m-1"
                             />
-                            <p className=" p-1 mb-0  text-white  wayslinkp">
+                            <p className=" p-1 mb-0  text-white  wayslinkppin">
                               {" "}
                               الفاتورة
                             </p>
