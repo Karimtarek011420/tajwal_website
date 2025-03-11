@@ -22,6 +22,8 @@ import dataid from "@/assets/images/Icon2.svg";
 import appStore1 from "@/assets/images/appStore1.svg";
 import googlePlay2 from "@/assets/images/googlePlay2.svg";
 import { QRCodeCanvas } from "qrcode.react";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 function Ordersdetails({ params: paramsPromise }) {
   const [user, setUser] = useState(() => {
     try {
@@ -158,8 +160,22 @@ function Ordersdetails({ params: paramsPromise }) {
 
           <div className="col-md-8">
             {loading ? (
-              <div className="d-flex justify-content-center align-items-center">
-                <p className="text-center">جارٍ تحميل البيانات...</p>
+              <div className="px-3 px-md-4 px-lg-5">
+                <div className="row row-cols-xl-1 ">
+                  {Array.from({ length: 1 }).map((_, index) => (
+                    <div key={index} className="col">
+                      <div className="bg-white shadow-sm text-center">
+                        <div className="d-flex justify-content-between align-items-center p-3">
+                          <div className="country-flag d-flex justify-content-center align-items-center">
+                            <Skeleton width={200} height={100} />
+                            <Skeleton width={200} className=" me-2 ms-lg-4 px-lg-3" />
+                          </div>
+                          <Skeleton width={100} height={50} />
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             ) : (
               <div className=" row gy-2">
