@@ -6,7 +6,7 @@ export default function LoadingSkeleton() {
   return (
     <div className="px-5 py-5">
       <div className="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-1 gy-4 px-lg-5">
-        {Array.from({ length: 10 }).map(
+        {Array.from({ length: 12 }).map(
           (
             _,
             index // عدد العناصر يمكن تعديله حسب الحاجة
