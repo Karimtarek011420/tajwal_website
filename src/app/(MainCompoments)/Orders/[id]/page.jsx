@@ -74,7 +74,7 @@ function Ordersdetails({ params: paramsPromise }) {
     }
   };
   const handleback = () => {
-    router.back();
+    router.push("/Orders");
   };
   const appLink =
     "https://play.google.com/store/apps/details?id=com.sic.tajwaal&pli=1";
@@ -105,8 +105,8 @@ function Ordersdetails({ params: paramsPromise }) {
             <p className=" p-2 mb-0  text-white   "> العودة للطلبات</p>
           </div>
         </button>
-        <div className="row gy-4">
-          <div className="col-md-3 offset-1">
+        <div className="row gy-3">
+          <div className="col-md-4">
             <div className="cardinfo bg-info py-3 bg-white shadow-sm rounded-4 ps-5">
               <div className="px-3">
                 <h6>{user?.first_name}</h6>
@@ -160,12 +160,10 @@ function Ordersdetails({ params: paramsPromise }) {
             </div>
           </div>
 
-          <div className=" col-md-8">
+          <div className="col-md-8">
             {loading ? (
               <div className="d-flex justify-content-center align-items-center">
-                <p className="text-center" style={{ minHeight: "30vh" }}>
-                  جارٍ تحميل البيانات...
-                </p>
+                <p className="text-center">جارٍ تحميل البيانات...</p>
               </div>
             ) : (
               <div className=" row gy-2">
