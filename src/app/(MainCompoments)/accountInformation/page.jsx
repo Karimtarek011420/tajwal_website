@@ -393,7 +393,7 @@ function AccountInformation() {
       </div>
       <div className="container py-5">
         <div className="row gy-4">
-          <div className="col-md-3  offset-1">
+          <div className="col-md-4  offset-1">
             <div className="cardinfo bg-info py-3 bg-white shadow-sm rounded-4 ps-5">
               <div className="px-3">
                 <h6>{user?.first_name}</h6>
@@ -444,7 +444,7 @@ function AccountInformation() {
               </div>
             </div>
           </div>
-          <div className=" col-md-6 offset-2">
+          <div className=" col-md-6 offset-1">
             <div className="changeinfo">
               <div className=" bg-white rounded-2 shadow-sm px-5 py-3">
                 <p
