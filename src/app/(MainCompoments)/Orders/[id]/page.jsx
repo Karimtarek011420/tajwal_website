@@ -16,7 +16,7 @@ import paystyle from "@/assets/images/paystyle.svg";
 import Coverage from "@/assets/images/Icon1dark.svg";
 import Validity from "@/assets/images/icon3dark.svg";
 import Numberslides from "@/assets/images/Numberslides.svg";
-import PlaybackSpeed from "@/assets/images/PlaybackSpeed.svg";
+import PlaybackSpeed from "@/assets/images/wayesim.svg";
 import invoiceways from "@/assets/images/invoiceways.svg";
 import dataid from "@/assets/images/Icon2.svg";
 import appStore1 from "@/assets/images/appStore1.svg";
@@ -160,14 +160,12 @@ function Ordersdetails({ params: paramsPromise }) {
 
           <div className="col-md-8">
             {loading ? (
-              <div>
-                <div className="bg-white shadow-sm text-center">
-                  <div className="d-flex justify-content-between align-items-center p-3">
-                    <div className="country-flag d-flex justify-content-center align-items-center">
-                      <Skeleton width={200} height={100} />
-                    </div>
-                    <Skeleton width={200} className=" me-2 ms-lg-4 px-lg-3" />
+              <div className="bg-white shadow-sm text-center  rounded-3">
+                <div className="d-flex justify-content-between align-items-center p-3">
+                  <div className="country-flag d-flex justify-content-center align-items-center">
+                    <Skeleton width={200} height={100} />
                   </div>
+                  <Skeleton width={200} className=" me-2 ms-lg-4 px-lg-3" />
                 </div>
               </div>
             ) : (
@@ -296,7 +294,10 @@ function Ordersdetails({ params: paramsPromise }) {
                   </div>
                   <div className=" my-3">
                     <div className=" px-5 py-2 wayslink rounded-3">
-                      <Link href="">
+                      <Link
+                        href={`https://api.tajwal.co/api/v1/invoice_view/${id}`}
+                        target="_blanck"
+                      >
                         <div className="">
                           <div className=" d-flex justify-content-center align-items-center text-center">
                             <Image
@@ -332,8 +333,8 @@ function Ordersdetails({ params: paramsPromise }) {
                           <div className="country-flag d-flex justify-content-center align-items-center p-1">
                             <Image
                               src={PlaybackSpeed}
-                              width={16}
-                              height={16}
+                              width={18}
+                              height={18}
                               alt="arrow"
                               loading="lazy"
                             />
