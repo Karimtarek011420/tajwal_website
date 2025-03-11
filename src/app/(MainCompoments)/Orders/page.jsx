@@ -10,6 +10,8 @@ import axios from "axios";
 import withAuth from "@/app/utils/withAuth";
 import Image from "next/image";
 import { API_BASE_URL } from "@/app/utils/config";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 function Previousorders() {
   const [user, setUser] = useState(() => {
     try {
@@ -124,12 +126,27 @@ function Previousorders() {
             </div>
           </div>
           <div className="col-md-8">
-            <div className=" me-lg-5" >
+            <div className=" me-lg-5">
               {loading ? (
-                <div className="d-flex justify-content-center">
-                  <p className="text-dark text-center py-5">
-                    جارى تحميل الطلبات......
-                  </p>
+                <div className="px-3 px-md-4 px-lg-5">
+                  <div className="row row-cols-xl-3 row-cols-lg-2  row-cols-1 gy-4">
+                    {Array.from({ length: 50 }).map((_, index) => (
+                      <div key={index} className="col">
+                        <div className="bg-white shadow-sm text-center">
+                          <div className="d-flex justify-content-between align-items-center p-3">
+                            <div className="country-flag d-flex justify-content-center align-items-center">
+                              <Skeleton width={60} height={40} />
+                              <Skeleton
+                                width={80}
+                                className="ms-lg-4 px-lg-3"
+                              />
+                            </div>
+                            <Skeleton width={20} height={20} />
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ) : error ? (
                 <div className="d-flex justify-content-center">
