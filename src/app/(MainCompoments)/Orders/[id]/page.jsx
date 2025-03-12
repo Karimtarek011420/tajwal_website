@@ -292,7 +292,7 @@ function Ordersdetails({ params: paramsPromise }) {
                       )}
                     </div>
                   </div>
-                  <div className=" my-3 py-2 wayslink rounded-3">
+                  <div className=" my-3 py-2 wayslink rounded-3 shadow-sm">
                     <Link
                       href={`${API_BASE_URL}/invoice_view/${id}`}
                       target="_blanck"
