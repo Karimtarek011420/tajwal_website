@@ -107,6 +107,7 @@ a {
   }
   .imgnotfound {
     width: 90% !important;
+    height: auto !important;
   }
 }
 
