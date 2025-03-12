@@ -292,7 +292,7 @@ function Ordersdetails({ params: paramsPromise }) {
                       )}
                     </div>
                   </div>
-                  <div className=" my-3 py-2 wayslink rounded-3 shadow-sm">
+                  <div className=" my-3 py-2 wayslink rounded-3 shadow-sm d-flex justify-content-between align-items-center text-center p-3 rounded-3 m-2 mt-3">
                     <Link
                       href={`${API_BASE_URL}/invoice_view/${id}`}
                       target="_blanck"
