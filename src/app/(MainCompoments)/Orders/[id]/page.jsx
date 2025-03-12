@@ -292,24 +292,22 @@ function Ordersdetails({ params: paramsPromise }) {
                       )}
                     </div>
                   </div>
-                  <div className=" my-3 py-2 wayslink rounded-3 shadow-sm d-flex justify-content-between align-items-center text-center p-3 rounded-3 m-2 mt-3">
+                  <div className="p-2 wayslink rounded-3 shadow-sm m-2 mt-4">
                     <Link
                       href={`${API_BASE_URL}/invoice_view/${id}`}
-                      target="_blanck"
+                      target="_blank"
+                      className="d-flex justify-content-between align-items-center w-100"
                     >
-                      <div className=" d-flex justify-content-center align-items-center text-center">
+                      <p className="p-1 mb-0 text-white wayslinkppin text-center flex-grow-1">
+                        الفاتورة
+                      </p>
+                      <div className=" ms-2">
                         <Image
                           src={invoiceways}
                           width={21}
                           height={22}
                           alt="arrow"
-                          loading="lazy"
-                          className="m-1"
                         />
-                        <p className=" p-1 mb-0  text-white  wayslinkppin">
-                          {" "}
-                          الفاتورة
-                        </p>
                       </div>
                     </Link>
                   </div>
