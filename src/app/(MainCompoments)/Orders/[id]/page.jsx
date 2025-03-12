@@ -17,7 +17,7 @@ import Coverage from "@/assets/images/Icon1dark.svg";
 import Validity from "@/assets/images/icon3dark.svg";
 import Numberslides from "@/assets/images/Numberslides.svg";
 import PlaybackSpeed from "@/assets/images/wayesim.svg";
-import invoiceways from "@/assets/images/invoiceways.svg";
+import invoiceways from "@/assets/images/myfatoraorder.svg";
 import dataid from "@/assets/images/Icon2.svg";
 import appStore1 from "@/assets/images/appStore1.svg";
 import googlePlay2 from "@/assets/images/googlePlay2.svg";
@@ -300,8 +300,8 @@ function Ordersdetails({ params: paramsPromise }) {
                       <div className=" d-flex justify-content-center align-items-center text-center">
                         <Image
                           src={invoiceways}
-                          width={16}
-                          height={16}
+                          width={21}
+                          height={22}
                           alt="arrow"
                           loading="lazy"
                           className="m-1"
@@ -323,18 +323,18 @@ function Ordersdetails({ params: paramsPromise }) {
                         “طرق تثبيت الشريحة”
                       </p>
                     </div>
-                    <div className=" p-2 wayslink rounded-3 mx-5">
+                    <div className=" py-2 px-4 wayslink rounded-3 mx-5">
                       <Link href="/Simcard">
                         <div className="d-flex justify-content-between align-items-center ">
                           <div className="country-flag d-flex justify-content-center align-items-center p-1">
                             <Image
                               src={PlaybackSpeed}
-                              width={18}
-                              height={18}
+                              width={17}
+                              height={17}
                               alt="arrow"
                               loading="lazy"
                             />
-                            <p className="text-black mb-0 ms-lg-4 px-3 text-white  wayslinkp">
+                            <p className="text-black mb-0 ms-lg-3 px-2 text-white  wayslinkp">
                               {" "}
                               طرق تثبيت الشريحة
                             </p>
