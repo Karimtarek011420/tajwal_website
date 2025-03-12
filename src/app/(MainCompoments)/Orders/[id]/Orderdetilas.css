@@ -13,7 +13,8 @@
   padding: 0 !important;
 }
 button.btnback {
-  background-color: var(--primary-btn) !important;
+  background-color: var(--primary-color) !important;
+  filter: brightness(1.5) saturate(0.8);
   border: none !important;
   font-size: 12px !important;
   font-weight: 500 !important;
