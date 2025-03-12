@@ -9,7 +9,6 @@ import icon3 from "@/assets/images/icon3.svg";
 import icon3dark from "@/assets/images/icon3dark.svg";
 import icon4dark from "@/assets/images/icon4.svg";
 import icon4 from "@/assets/images/icon4dark.svg";
-import icon5 from "@/assets/images/icon5.svg";
 import icon5dark from "@/assets/images/icon5dark.svg";
 import icon6m from "@/assets/images/icon6m.svg";
 import iconip from "@/assets/images/iconip.svg";
