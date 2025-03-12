@@ -39,7 +39,6 @@ function Ordersdetails({ params: paramsPromise }) {
   const pathName = usePathname();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null); // تخزين الخطأ
   const apiDetialsOrder = async () => {
     setLoading(true);
     try {
@@ -96,7 +95,7 @@ function Ordersdetails({ params: paramsPromise }) {
       <div className="container py-2">
         <button
           onClick={handleback}
-          className=" px-4 py-2  rounded-3 mx-5 mb-4 btnback "
+          className="  px-4 py-2  rounded-3 me-5 mb-3 btnback"
         >
           <div className=" d-flex justify-content-center align-items-center text-center">
             <i className="fa-solid fa-arrow-right text-white"></i>
