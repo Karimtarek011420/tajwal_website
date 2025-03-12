@@ -329,8 +329,8 @@ function Ordersdetails({ params: paramsPromise }) {
                           <div className="country-flag d-flex justify-content-center align-items-center p-1">
                             <Image
                               src={PlaybackSpeed}
-                              width={17}
-                              height={17}
+                              width={18}
+                              height={18}
                               alt="arrow"
                               loading="lazy"
                             />

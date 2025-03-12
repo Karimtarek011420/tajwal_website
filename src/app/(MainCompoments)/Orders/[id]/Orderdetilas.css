@@ -63,7 +63,7 @@ button.btnback {
   color: var(--auth-color) !important;
 }
 .Ordersdetails .wayslink {
-  background-color: #4b87a4 !important ;
+  background-color: var(--primary-btn) !important  ;
 }
 .Ordersdetails .wayslink .wayslinkp {
   font-size: 13px !important;
