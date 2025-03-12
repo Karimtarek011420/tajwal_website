@@ -292,34 +292,30 @@ function Ordersdetails({ params: paramsPromise }) {
                       )}
                     </div>
                   </div>
-                  <div className=" my-3">
-                    <div className=" px-5 py-2 wayslink rounded-3">
-                      <Link
-                        href={`https://api.tajwal.co/api/v1/invoice_view/${id}`}
-                        target="_blanck"
-                      >
-                        <div className="">
-                          <div className=" d-flex justify-content-center align-items-center text-center">
-                            <Image
-                              src={invoiceways}
-                              width={16}
-                              height={16}
-                              alt="arrow"
-                              loading="lazy"
-                              className="m-1"
-                            />
-                            <p className=" p-1 mb-0  text-white  wayslinkppin">
-                              {" "}
-                              الفاتورة
-                            </p>
-                          </div>
-                        </div>
-                      </Link>
-                    </div>
+                  <div className=" my-3 py-2 wayslink rounded-3">
+                    <Link
+                      href={`${API_BASE_URL}/invoice_view/${id}`}
+                      target="_blanck"
+                    >
+                      <div className=" d-flex justify-content-center align-items-center text-center">
+                        <Image
+                          src={invoiceways}
+                          width={16}
+                          height={16}
+                          alt="arrow"
+                          loading="lazy"
+                          className="m-1"
+                        />
+                        <p className=" p-1 mb-0  text-white  wayslinkppin">
+                          {" "}
+                          الفاتورة
+                        </p>
+                      </div>
+                    </Link>
                   </div>
                 </div>
                 <div className="  col-xl-6">
-                  <div className=" bg-white shadow-sm rounded-2 px-2 py-4">
+                  <div className=" bg-white shadow-sm rounded-3 px-2 py-4">
                     <div className=" px-3">
                       <h6 className="wayesim">طريقة تثبيت الشريحة</h6>
                       <p className="wayesimp py-1">
