@@ -13,7 +13,7 @@
   padding: 0 !important;
 }
 button.btnback {
-  background-color:#4B87A4 !important;
+  background-color: var(--primary-btn) !important;
   /* filter: brightness(1.5) saturate(0.8); */
   border: none !important;
   font-size: 12px !important;
@@ -63,8 +63,7 @@ button.btnback {
   color: var(--auth-color) !important;
 }
 .Ordersdetails .wayslink {
-  background-color: var(--primary-color) !important ;
-  filter: brightness(1.5) saturate(0.8);
+  background-color: #4b87a4 !important ;
 }
 .Ordersdetails .wayslink .wayslinkp {
   font-size: 13px !important;
