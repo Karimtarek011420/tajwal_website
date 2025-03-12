@@ -46,15 +46,15 @@ export const logoutApi = async (
       position: "top",
       icon: "error",
       title: "فشل تسجيل الخروج",
-      text: errorMessage,
-      showConfirmButton: true,
-      background: "#E14F72",
+      showConfirmButton: false,
+      timer: 1000,
+      toast: true,
+      background: "#e14f72",
       color: "white",
-      customClass: {
-        popup: "small-swal-logout",
-        title: "small-title-logout", 
-        confirmButton: "custom-confirm-button-logout",
-      },
+      iconColor: "white",
+      padding: "20px",
+      width: 400,
+      timerProgressBar: true,
     });
 
     // Log the error for debugging

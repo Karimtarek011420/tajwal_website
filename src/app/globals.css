@@ -44,24 +44,7 @@ a {
 .contentfooter {
   flex: 1;
 }
-.small-swal-logout {
-  margin-top: 20px !important;
-  width: 300px !important; /* تقليل العرض */
-  height: 150px !important; /* ضبط الارتفاع تلقائياً */
-  font-size: 10px !important; /* تصغير الخط */
-}
-.small-title-logout {
-  font-size: 12px !important; /* تصغير حجم الخط */
-  font-weight: normal !important; /* تقليل سمك الخط إذا كان سميكًا */
-}
-.custom-confirm-button-logout {
-  background-color: var(--primary-color) !important; /* تغيير لون الخلفية */
-  color: white !important; /* تغيير لون النص */
-  font-size: 14px !important; /* تصغير الخط */
-  padding: 8px 20px !important; /* تعديل الحجم */
-  border-radius: 8px !important; /* تعديل الحواف */
-  border: none !important; /* إزالة الحدود */
-}
+
 .country-listbeginall {
   position: absolute;
   left: 50%;
