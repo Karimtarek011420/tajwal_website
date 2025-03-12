@@ -2,7 +2,7 @@
   --background: #f9f9f9;
   --foreground: #171717;
   --primary-color: #336279; /* اللون الرئيسي */
-  --primary-btn: #4B87A4; /* اللون الثانوي */
+  --primary-btn: #4b87a4; /* اللون الثانوي */
   --secondary-color: #575050; /* اللون الفرعي */
   --auth-color: #626e7b; /* اللون الفرعي */
   --font-largeNavbar: 20px;
@@ -46,8 +46,8 @@ a {
 }
 .small-swal-logout {
   margin-top: 20px !important;
-  width: 400px !important; /* تقليل العرض */
-  height: 220px !important; /* ضبط الارتفاع تلقائياً */
+  width: 300px !important; /* تقليل العرض */
+  height: 150px !important; /* ضبط الارتفاع تلقائياً */
   font-size: 10px !important; /* تصغير الخط */
 }
 .small-title-logout {
