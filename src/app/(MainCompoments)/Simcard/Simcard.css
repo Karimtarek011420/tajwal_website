@@ -6,15 +6,20 @@
   background-color: #ffffff;
   border: 1px solid#D9DEE4; /* لون الحدود */
   border-bottom: none; /* إزالة الحد السفلي */
-  border-top-left-radius: 8px !important;
-  border-top-right-radius: 8px !important;
+  border-top-left-radius: 3px !important;
+  border-top-right-radius: 3px !important;
 }
 .Simcarchoose .Simcard-list-links {
   border: none !important;
-  background-color: transparent;
+  background-color: #f9f9f9;
   padding: 10px 80px !important;
   font-size: 15px !important;
   font-weight: 500 !important;
+  color: var(--auth-color);
+}
+.Simcard-list-links.active {
+  background-color: #ffffff !important;
+  color: var(--primary-btn) !important;
 }
 
 @media (min-width: 526px) and (max-width: 995px) {
