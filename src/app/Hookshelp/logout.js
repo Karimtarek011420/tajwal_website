@@ -52,7 +52,7 @@ export const logoutApi = async (
       background: "#e14f72",
       color: "white",
       iconColor: "white",
-      padding: "20px",
+      padding: "10px 20px",
       width: 400,
       timerProgressBar: true,
     });
