@@ -87,8 +87,8 @@ export default function SearchResults() {
       )}
       <div className="px-3 px-md-4 px-lg-5">
         <div
-          className="row row-cols-xl-5 row-cols-lg-3 row-cols-md-3 row-cols-sm-2 row-cols-1 gy-2"
-          style={{ minHeight: "30vh" }}
+          className="row row-cols-xl-5 row-cols-lg-3 row-cols-md-3 row-cols-sm-2 row-cols-1 gy-3"
+          
         >
           {results.map((country) => (
             <div key={country.country_code} className="col">
