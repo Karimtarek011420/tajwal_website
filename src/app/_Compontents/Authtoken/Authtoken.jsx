@@ -21,8 +21,8 @@ export default function AuthTokenProvider({ children }) {
       <div className=" d-flex justify-content-center align-items-center py-5 vh-100">
         <TailSpin
           visible={true}
-          height="60"
-          width="60"
+          height="50"
+          width="50"
           color="var(--primary-color)"
           ariaLabel="tail-spin-loading"
           radius="1"
