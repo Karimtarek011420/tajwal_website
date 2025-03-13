@@ -39,12 +39,18 @@ export default function SimcardPage() {
             يدوي
           </button>
         </div>
-        <div className="row gy-3 px-lg-5 px-2 mx-lg-5">
-          <div className="col-md-6">
-            <Image src={Importantwarning} width={'100%'} alt="Importantwarning" />
+        <div className="row gy-3 justify-content-center align-items-center  px-lg-5">
+          <div className="col-12 col-md-6">
+            <Image
+              src={Importantwarning}
+              alt="Importantwarning"
+              className="img-fluid"
+            />
+            <div>lll</div>
           </div>
-
-          <div className="col-md-6"></div>
+          <div className="col-12 col-md-6">
+            {/* يمكن إضافة محتوى إضافي هنا */}
+          </div>
         </div>
       </div>
     </div>
