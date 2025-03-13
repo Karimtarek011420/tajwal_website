@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function SimcardPage() {
   return (
     <div className="Simcard  position-relative py-5">
-      <div className="position-absolute country-listbeginall w-100 ">
+      <div className="position-absolute country-listbeginall w-100">
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
           <li
             className="country-list-links  mx-lg-2"
@@ -18,10 +18,10 @@ export default function SimcardPage() {
           </li>
         </ul>
       </div>
-      <div className=" container py-5 bg-white shadow-sm rounded-3 position-relative mt-5 ">
+      <div className=" container py-5 bg-white shadow-sm rounded-3 position-relative mt-5">
         <div className="position-absolute Simcarchoose  d-flex justify-content-center align-items-center">
-          <button className="Simcard-list-links mx-2">رمز QR</button>
-          <button className="Simcard-list-links mx-2 ">يدوي</button>
+          <button className="Simcard-list-links  ">رمز QR</button>
+          <button className="Simcard-list-links ">يدوي</button>
         </div>
       </div>
     </div>

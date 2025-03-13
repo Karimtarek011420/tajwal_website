@@ -1,6 +1,6 @@
 .Simcarchoose {
   left: 50%;
-  top: -45px;
+  top: -44px;
   transform: translateX(-50%);
   z-index: 2;
   background-color: #ffffff;
@@ -11,9 +11,23 @@
 }
 .Simcarchoose .Simcard-list-links {
   border: none !important;
-  background-color: transparent !important;
+  background-color: transparent;
   padding: 10px 80px !important;
-  margin: 0px !important;
-  font-size: var(--font-medium) !important;
+  font-size: 15px !important;
   font-weight: 500 !important;
+}
+
+@media (min-width: 526px) and (max-width: 995px) {
+  .Simcarchoose {
+    top: -44px;
+  }
+  .Simcarchoose .Simcard-list-links {
+    padding: 10px 40px !important;
+  }
+}
+@media (max-width: 526px) {
+  .Simcarchoose .Simcard-list-links {
+    padding: 10px 50px !important;
+    white-space: nowrap; /* يمنع النص من النزول لسطر جديد */
+  }
 }
