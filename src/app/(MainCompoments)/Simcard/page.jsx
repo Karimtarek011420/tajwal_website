@@ -17,8 +17,10 @@ export default function SimcardPage() {
           </li>
         </ul>
       </div>
-      <div className=" container py-5">
-
+      <div className=" container py-5 bg-white shadow-sm rounded-3 position-relative">
+        <div className=" position-absolute">
+          <button> رمز QR</button>
+        </div>
       </div>
     </div>
   );
