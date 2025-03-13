@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import "./Simcard.css";
+import Importantwarning from "@/assets/images/Importantwarning.svg";
+import Image from "next/image";
 export default function SimcardPage() {
   const [selectedOption, setSelectedOption] = useState("qr");
   return (
@@ -36,6 +38,13 @@ export default function SimcardPage() {
           >
             يدوي
           </button>
+        </div>
+        <div className="row gy-3 px-lg-5 px-2 mx-lg-5">
+          <div className="col-md-6">
+            <Image src={Importantwarning} width={'100%'} alt="Importantwarning" />
+          </div>
+
+          <div className="col-md-6"></div>
         </div>
       </div>
     </div>
