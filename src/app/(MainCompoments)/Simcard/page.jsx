@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import "./Simcard.css";
 import Importantwarning from "@/assets/images/Importantwarning.svg";
 import Image from "next/image";
-export default function SimcardPage() {
+import withAuth from "@/app/utils/withAuth";
+function SimcardPage() {
   const [selectedOption, setSelectedOption] = useState("qr");
   return (
     <div className="Simcard  position-relative py-5">
@@ -56,3 +57,4 @@ export default function SimcardPage() {
     </div>
   );
 }
+export default withAuth(SimcardPage);
