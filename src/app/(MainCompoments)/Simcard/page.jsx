@@ -39,12 +39,12 @@ export default function SimcardPage() {
             يدوي
           </button>
         </div>
-        <div className="row gy-3 justify-content-center align-items-center  px-lg-5">
-          <div className="col-12 col-md-6">
+        <div className="row gy-3 justify-content-center align-items-center  px-md-5">
+          <div className="col-12 col-md-6 ">
             <Image
               src={Importantwarning}
               alt="Importantwarning"
-              className="img-fluid"
+              className="img-fluid "
             />
             <div>lll</div>
           </div>
