@@ -1,0 +1,19 @@
+.Simcarchoose {
+  left: 50%;
+  top: -45px;
+  transform: translateX(-50%);
+  z-index: 2;
+  background-color: #ffffff;
+  border: 1px solid#D9DEE4; /* لون الحدود */
+  border-bottom: none; /* إزالة الحد السفلي */
+}
+.Simcarchoose .Simcard-list-links {
+  border-top-left-radius: 5px !important;
+  border: none !important;
+  background-color: transparent !important;
+  border-top-right-radius: 5px !important;
+  padding: 10px 80px !important;
+  margin: 0px !important;
+  font-size: var(--font-medium) !important;
+  font-weight: 500 !important;
+}
