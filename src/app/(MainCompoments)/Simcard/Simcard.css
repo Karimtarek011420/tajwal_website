@@ -17,7 +17,7 @@
   font-weight: 500 !important;
   color: var(--auth-color);
 }
-.Simcard-list-links.active {
+.Simcarchoose .Simcard-list-links.active {
   background-color: #ffffff !important;
   color: var(--primary-btn) !important;
 }
