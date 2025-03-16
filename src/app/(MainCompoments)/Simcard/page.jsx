@@ -14,10 +14,13 @@ function SimcardPage() {
     setCheckedItems(newCheckedItems);
   };
   const checkboxLabels = [
-    "اطلعت على كامل التعليمات لتثبيت الشريحة .",
-    "انا على علم انه في حال تم حذف الشريحة او التوقف اثناء تثبيت الشريحة، فانه لن اتمكن من اعادة تثبيتها مره اخرى.",
-    "اتفهم انني لن أقوم بتفعيل خيار “تجوال البيانات” الا عند الوصول للدولة المحددة.",
+    `اطلعت على كامل التعليمات لتثبيت الشريحة .`,
+    `انا على علم انه في حال تم حذف الشريحة او التوقف اثناء تثبيت الشريحة، 
+    <span style="font-weight: 600; text-decoration: underline;">فانه لن اتمكن من اعادة تثبيتها</span> مره اخرى.`,
+    `اتفهم انني 
+    <span style="font-weight: 600; text-decoration: underline;">ولن أقوم</span>بتفعيل خيار “تجوال البيانات” الا عند الوصول للدولة المحددة.`,
   ];
+
   return (
     <div className="Simcard  position-relative py-5">
       <div className="position-absolute country-listbeginall w-100">
@@ -72,8 +75,8 @@ function SimcardPage() {
               }}
             >
               {checkedItems.map((isChecked, index) => (
-                <div className="compatibility-check d-flex   " key={index}>
-                  <label className="custom-checkbox pt-lg-1 ">
+                <div className="compatibility-check d-flex  " key={index}>
+                  <label className="custom-checkbox ">
                     <input
                       type="checkbox"
                       checked={isChecked}
@@ -89,7 +92,10 @@ function SimcardPage() {
                       }}
                     ></span>
                   </label>
-                  <p className=" pt-2">{checkboxLabels[index]}</p>
+                  <p
+                    className=" pt-2"
+                    dangerouslySetInnerHTML={{ __html: checkboxLabels[index] }}
+                  ></p>
                 </div>
               ))}
             </div>
