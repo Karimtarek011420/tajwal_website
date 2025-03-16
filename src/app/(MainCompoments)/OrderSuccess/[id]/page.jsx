@@ -1,7 +1,7 @@
 "use client";
 import { API_V2_BASE_URL } from "@/app/utils/config";
 import axios from "axios";
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ordersucess.css";
 import ordersucess from "@/assets/images/ordersucess.svg";
 import numberorder from "@/assets/images/numberorder.svg";
@@ -14,17 +14,16 @@ import Numberslides from "@/assets/images/Numberslides.svg";
 import PlaybackSpeed from "@/assets/images/PlaybackSpeed.svg";
 import invoiceways from "@/assets/images/invoiceways.svg";
 import TravelBag from "@/assets/images/TravelBag.svg";
-import appstoreqr from "@/assets/images/appstoreqr.svg";
-import googleplayqr from "@/assets/images/googleplayqr.svg";
 import appStore1 from "@/assets/images/appStore1.svg";
 import googlePlay2 from "@/assets/images/googlePlay2.svg";
 import Image from "next/image";
 import withAuth from "@/app/utils/withAuth";
 import Link from "next/link";
 import { QRCodeCanvas } from "qrcode.react";
-function pagesucess({ params: paramsPromise }) {
-  const params = use(paramsPromise);
-  const { id } = params;
+import { useParams } from "next/navigation";
+function pagesucess() {
+  const params = useParams();
+  const id = params.id; //
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
