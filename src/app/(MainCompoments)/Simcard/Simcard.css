@@ -4,7 +4,7 @@
   transform: translateX(-50%);
   z-index: 2;
   background-color: #ffffff;
-  border: 1px solid #D9DEE4; /* لون الحدود */
+  border: 1px solid #d9dee4; /* لون الحدود */
   border-bottom: none; /* إزالة الحد السفلي */
   border-top-left-radius: 3px !important;
   border-top-right-radius: 3px !important;
@@ -21,6 +21,65 @@
   background-color: #ffffff !important;
   color: var(--primary-btn) !important;
 }
+/* checkboxx */
+.custom-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.custom-checkbox .checkmark {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  position: relative;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkmark {
+  background-color: #f9f9f9; /* اللون الذي تريده */
+}
+.payement {
+  padding: 0px !important;
+  margin: 0px !important;
+  gap: 0 !important;
+}
+
+.custom-checkbox .checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 9px;
+  top: 1px;
+  width: 8px;
+  height: 24px;
+  border: solid var(--primary-color);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+  display: block;
+}
+.compatibility-check {
+  margin: 14px auto;
+  padding: 10px;
+  max-width: 500px;
+  border-radius: 8px; /* زوايا مستديرة */
+}
+
+.custom-checkbox p {
+  font-size: 10px !important;
+  font-weight: 300 !important;
+  margin-right: 15px !important;
+  margin-top: 5px;
+}
+
+.compatibility-check .title {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--auth-color);
+}
 
 @media (min-width: 526px) and (max-width: 995px) {
   .Simcarchoose {
@@ -34,5 +93,10 @@
   .Simcarchoose .Simcard-list-links {
     padding: 10px 50px !important;
     white-space: nowrap; /* يمنع النص من النزول لسطر جديد */
+  }
+}
+@media (max-width: 400px) {
+  .custom-checkbox .checkmark {
+    width: 40px !important;
   }
 }

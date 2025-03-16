@@ -1,11 +1,12 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Simcard.css";
 import Importantwarning from "@/assets/images/Importantwarning.svg";
 import Image from "next/image";
 import withAuth from "@/app/utils/withAuth";
 function SimcardPage() {
   const [selectedOption, setSelectedOption] = useState("qr");
+  const [isChecked, setIsChecked] = useState(false);
   return (
     <div className="Simcard  position-relative py-5">
       <div className="position-absolute country-listbeginall w-100">
@@ -41,13 +42,53 @@ function SimcardPage() {
           </button>
         </div>
         <div className="row gy-3 justify-content-center align-items-center  px-md-5">
-          <div className="col-12 col-md-6  text-center">
+          <div className="col-12 col-md-6 text-center ">
             <Image
               src={Importantwarning}
               alt="Importantwarning"
               className="img-fluid "
             />
-            <div>lll</div>
+            <div
+              className="bg-white shadow-sm rounded-2  pb-2 pt-1 px-4 mb-2  "
+              style={{
+                border: isChecked
+                  ? "1px solid var(--primary-color)"
+                  : "1px solid #dc3545", // أخضر عند التحديد - أحمر عند عدم التحديد
+                transition: "border 0.3s ease-in-out", // انتقال سلس
+              }}
+            >
+              <div className="compatibility-check">
+                <h5 className="title">تأكيد التحقق من توافق هاتفك</h5>
+                <label className="custom-checkbox pt-lg-1 d-flex justify-content-center align-items-center">
+                  <input
+                    type="checkbox"
+                    checked={isChecked}
+                    onChange={() => setIsChecked(!isChecked)}
+                  />
+                  <span
+                    className="checkmark"
+                    style={{
+                      border: isChecked
+                        ? "1px solid var(--primary-color)"
+                        : "1px solid #dc3545", // أخضر عند التحديد - أحمر عند عدم التحديد
+                      transition: "border 0.3s ease-in-out", // انتقال سلس
+                    }}
+                  ></span>
+                  <p>
+                    أوافق انني اطلعت على{" "}
+                    <span
+                      style={{
+                        color: "var(--primary-color)",
+                        fontWeight: "600",
+                      }}
+                    >
+                      قائمة الهواتف المتوافقة
+                    </span>
+                    ، وتأكدت من توافق هاتفي.
+                  </p>
+                </label>
+              </div>
+            </div>
           </div>
           <div className="col-12 col-md-6">
             {/* يمكن إضافة محتوى إضافي هنا */}
