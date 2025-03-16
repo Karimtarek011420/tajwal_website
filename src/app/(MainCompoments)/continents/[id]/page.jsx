@@ -1,5 +1,5 @@
 "use client";
-import React, { use, useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import icon1 from "@/assets/images/Icon1.svg";
 import icon1dark from "@/assets/images/Icon1dark.svg";
@@ -16,15 +16,15 @@ import iconip from "@/assets/images/iconip.svg";
 import "./details.css";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { usePackage } from "@/app/_Compontents/PackageContext/PackageContext";
 import { Modal, Box, Button, Typography } from "@mui/material";
 import { API_BASE_URL } from "@/app/utils/config";
 import { authtoken } from "@/app/_Compontents/Authtoken/Authtoken";
 import toast from "react-hot-toast";
-export default function DetailsCountry({ params: paramsPromise }) {
-  const params = use(paramsPromise);
-  const { id } = params;
+export default function DetailsCountry() {
+  const params = useParams();
+  const id = params.id; //
   const router = useRouter();
   const [data, setData] = useState(null);
   const [selectedDay, setSelectedDay] = useState(null);

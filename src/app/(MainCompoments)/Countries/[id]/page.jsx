@@ -1,5 +1,5 @@
 "use client";
-import React, { use, useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import icon1 from "@/assets/images/Icon1.svg";
 import icon1dark from "@/assets/images/Icon1dark.svg";
@@ -9,21 +9,20 @@ import icon3 from "@/assets/images/icon3.svg";
 import icon3dark from "@/assets/images/icon3dark.svg";
 import icon4dark from "@/assets/images/icon4.svg";
 import icon4 from "@/assets/images/icon4dark.svg";
-import icon5 from "@/assets/images/icon5.svg";
 import icon5dark from "@/assets/images/icon5dark.svg";
 import icon6m from "@/assets/images/icon6m.svg";
 import iconip from "@/assets/images/iconip.svg";
 import "./details.css";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { usePackage } from "@/app/_Compontents/PackageContext/PackageContext";
 import { authtoken } from "@/app/_Compontents/Authtoken/Authtoken";
 import toast from "react-hot-toast";
 import { API_BASE_URL } from "@/app/utils/config";
 
-export default function DetailsCountry({ params: paramsPromise }) {
-  const params = use(paramsPromise);
-  const { id } = params;
+export default function DetailsCountry() {
+  const params = useParams();
+  const id = params.id; //
   const router = useRouter();
   const [data, setData] = useState(null);
   const [selectedDay, setSelectedDay] = useState(null);
