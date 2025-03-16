@@ -1,8 +1,8 @@
 "use client";
 import Link from "next/link";
-import React, { use, useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Orderdetilas.css";
-import { usePathname, useRouter } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 import { authtoken } from "@/app/_Compontents/Authtoken/Authtoken";
 import { logoutApi } from "@/app/Hookshelp/logout";
 import axios from "axios";
@@ -24,7 +24,7 @@ import googlePlay2 from "@/assets/images/googlePlay2.svg";
 import { QRCodeCanvas } from "qrcode.react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-function Ordersdetails({ params: paramsPromise }) {
+function Ordersdetails() {
   const [user, setUser] = useState(() => {
     try {
       return JSON.parse(localStorage.getItem("user")) || {};
@@ -33,8 +33,8 @@ function Ordersdetails({ params: paramsPromise }) {
     }
   });
   const { token, settoken } = useContext(authtoken);
-  const params = use(paramsPromise);
-  const { id } = params;
+  const params = useParams();
+  const id = params.id; // استقبال ID الطلب من الـ URL
   const router = useRouter();
   const pathName = usePathname();
   const [data, setData] = useState(null);
