@@ -41,7 +41,7 @@ function SimcardPage() {
           </button>
         </div>
         <div className="row gy-3 justify-content-center align-items-center  px-md-5">
-          <div className="col-12 col-md-6 ">
+          <div className="col-12 col-md-6  text-center">
             <Image
               src={Importantwarning}
               alt="Importantwarning"
