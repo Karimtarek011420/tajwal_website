@@ -39,7 +39,7 @@ const OfferDetails = () => {
             zIndex: 1000,
           }}
         >
-          <CircularProgress size={80} color="var(--primary-color)" />
+          <CircularProgress size={40} color="var(--primary-color)" />
         </div>
       )}
 
