@@ -42,81 +42,47 @@ function SimcardPage() {
           </button>
         </div>
         <div className="row gy-3 justify-content-center align-items-center  px-md-5">
-          <div className="col-12 col-md-6 text-center ">
-            <Image
-              src={Importantwarning}
-              alt="Importantwarning"
-              className="img-fluid "
-            />
+          <div className="col-12 col-md-5 d-flex flex-column align-items-center text-center">
+            <div className="equal-width">
+              <Image
+                src={Importantwarning}
+                alt="Importantwarning"
+                className="img-fluid"
+              />
+            </div>
             <div
-              className="bg-white shadow-sm rounded-3  pb-2 pt-1 px-4 mb-2  "
+              className="equal-width bg-white shadow-sm rounded-3 pb-2 pt-1 px-4 my-3"
               style={{
                 border: isChecked
                   ? "1px solid var(--primary-color)"
-                  : "1px solid #dc3545", // أخضر عند التحديد - أحمر عند عدم التحديد
-                transition: "border 0.3s ease-in-out", // انتقال سلس
+                  : "1px solid #dc3545",
+                transition: "border 0.3s ease-in-out",
               }}
             >
-              <div className="compatibility-check">
-                <label className="custom-checkbox pt-lg-1 d-flex ">
-                  <input
-                    type="checkbox"
-                    checked={isChecked}
-                    onChange={() => setIsChecked(!isChecked)}
-                  />
-                  <span
-                    className="checkmark"
-                    style={{
-                      border: isChecked
-                        ? "1px solid var(--primary-color)"
-                        : "1px solid #dc3545", // أخضر عند التحديد - أحمر عند عدم التحديد
-                      transition: "border 0.3s ease-in-out", // انتقال سلس
-                    }}
-                  ></span>
-                  <p>أوافق انني اطلعت على </p>
-                </label>
-              </div>
-              <div className="compatibility-check">
-                <label className="custom-checkbox pt-lg-1 d-flex">
-                  <input
-                    type="checkbox"
-                    checked={isChecked}
-                    onChange={() => setIsChecked(!isChecked)}
-                  />
-                  <span
-                    className="checkmark"
-                    style={{
-                      border: isChecked
-                        ? "1px solid var(--primary-color)"
-                        : "1px solid #dc3545", // أخضر عند التحديد - أحمر عند عدم التحديد
-                      transition: "border 0.3s ease-in-out", // انتقال سلس
-                    }}
-                  ></span>
-                  <p>أوافق انني اطلعت على </p>
-                </label>
-              </div>
-              <div className="compatibility-check">
-                <label className="custom-checkbox pt-lg-1 d-flex">
-                  <input
-                    type="checkbox"
-                    checked={isChecked}
-                    onChange={() => setIsChecked(!isChecked)}
-                  />
-                  <span
-                    className="checkmark"
-                    style={{
-                      border: isChecked
-                        ? "1px solid var(--primary-color)"
-                        : "1px solid #dc3545", // أخضر عند التحديد - أحمر عند عدم التحديد
-                      transition: "border 0.3s ease-in-out", // انتقال سلس
-                    }}
-                  ></span>
-                  <p>أوافق انني اطلعت على </p>
-                </label>
-              </div>
+              {[1, 2, 3].map((_, index) => (
+                <div className="compatibility-check" key={index}>
+                  <label className="custom-checkbox pt-lg-1 d-flex">
+                    <input
+                      type="checkbox"
+                      checked={isChecked}
+                      onChange={() => setIsChecked(!isChecked)}
+                    />
+                    <span
+                      className="checkmark"
+                      style={{
+                        border: isChecked
+                          ? "1px solid var(--primary-color)"
+                          : "1px solid #dc3545",
+                        transition: "border 0.3s ease-in-out",
+                      }}
+                    ></span>
+                    <p>أوافق أنني اطلعت على</p>
+                  </label>
+                </div>
+              ))}
             </div>
           </div>
-          <div className="col-12 col-md-6">
+          <div className="col-12 col-md-7">
             {/* يمكن إضافة محتوى إضافي هنا */}
           </div>
         </div>
