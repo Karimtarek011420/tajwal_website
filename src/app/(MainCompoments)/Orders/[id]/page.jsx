@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import "./Orderdetilas.css";
 import { useParams, usePathname, useRouter } from "next/navigation";
 import { authtoken } from "@/app/_Compontents/Authtoken/Authtoken";
@@ -25,13 +25,16 @@ import { QRCodeCanvas } from "qrcode.react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 function Ordersdetails() {
-  const [user, setUser] = useState(() => {
+  const [user, setUser] = useState({});
+  useEffect(() => {
     try {
-      return JSON.parse(localStorage.getItem("user")) || {};
-    } catch {
-      return {};
+      const storedUser = JSON.parse(localStorage.getItem("user"));
+      if (storedUser) setUser(storedUser);
+    } catch (error) {
+      console.error("Error parsing user data:", error);
     }
-  });
+  }, []);
+
   const { token, settoken } = useContext(authtoken);
   const params = useParams();
   const id = params.id; // استقبال ID الطلب من الـ URL
@@ -39,7 +42,8 @@ function Ordersdetails() {
   const pathName = usePathname();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const apiDetialsOrder = async () => {
+  const apiDetialsOrder = useCallback(async () => {
+    if (!id || !token) return;
     setLoading(true);
     try {
       const { data } = await axios.get(
@@ -51,25 +55,23 @@ function Ordersdetails() {
           },
         }
       );
-      console.log(data.data);
       setData(data?.data);
+      console.log(data?.data);
     } catch (error) {
-      console.log(error);
+      console.error("Error fetching order details:", error);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
-  };
+  }, [id, token]);
   useEffect(() => {
     apiDetialsOrder();
-  }, []);
-
-  const handleLogout = () => {
-    if (token) {
-      logoutApi(token, settoken);
-      setTimeout(() => {
-        router.push("/");
-      });
-    }
+  }, [apiDetialsOrder]);
+  const handleLogout = async () => {
+    if (!token) return;
+    await logoutApi(token, settoken);
+    router.push("/");
   };
+
   const handleback = () => {
     router.push("/Orders");
   };
