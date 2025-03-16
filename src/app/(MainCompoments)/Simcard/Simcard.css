@@ -62,9 +62,6 @@
   display: block;
 }
 .compatibility-check {
-  margin: 14px auto;
-  padding: 10px;
-  max-width: 500px;
   border-radius: 8px; /* زوايا مستديرة */
 }
 
@@ -95,8 +92,4 @@
     white-space: nowrap; /* يمنع النص من النزول لسطر جديد */
   }
 }
-@media (max-width: 400px) {
-  .custom-checkbox .checkmark {
-    width: 40px !important;
-  }
-}
+

@@ -49,7 +49,7 @@ function SimcardPage() {
               className="img-fluid "
             />
             <div
-              className="bg-white shadow-sm rounded-2  pb-2 pt-1 px-4 mb-2  "
+              className="bg-white shadow-sm rounded-3  pb-2 pt-1 px-4 mb-2  "
               style={{
                 border: isChecked
                   ? "1px solid var(--primary-color)"
@@ -58,8 +58,7 @@ function SimcardPage() {
               }}
             >
               <div className="compatibility-check">
-                <h5 className="title">تأكيد التحقق من توافق هاتفك</h5>
-                <label className="custom-checkbox pt-lg-1 d-flex justify-content-center align-items-center">
+                <label className="custom-checkbox pt-lg-1 d-flex ">
                   <input
                     type="checkbox"
                     checked={isChecked}
@@ -74,18 +73,45 @@ function SimcardPage() {
                       transition: "border 0.3s ease-in-out", // انتقال سلس
                     }}
                   ></span>
-                  <p>
-                    أوافق انني اطلعت على{" "}
-                    <span
-                      style={{
-                        color: "var(--primary-color)",
-                        fontWeight: "600",
-                      }}
-                    >
-                      قائمة الهواتف المتوافقة
-                    </span>
-                    ، وتأكدت من توافق هاتفي.
-                  </p>
+                  <p>أوافق انني اطلعت على </p>
+                </label>
+              </div>
+              <div className="compatibility-check">
+                <label className="custom-checkbox pt-lg-1 d-flex">
+                  <input
+                    type="checkbox"
+                    checked={isChecked}
+                    onChange={() => setIsChecked(!isChecked)}
+                  />
+                  <span
+                    className="checkmark"
+                    style={{
+                      border: isChecked
+                        ? "1px solid var(--primary-color)"
+                        : "1px solid #dc3545", // أخضر عند التحديد - أحمر عند عدم التحديد
+                      transition: "border 0.3s ease-in-out", // انتقال سلس
+                    }}
+                  ></span>
+                  <p>أوافق انني اطلعت على </p>
+                </label>
+              </div>
+              <div className="compatibility-check">
+                <label className="custom-checkbox pt-lg-1 d-flex">
+                  <input
+                    type="checkbox"
+                    checked={isChecked}
+                    onChange={() => setIsChecked(!isChecked)}
+                  />
+                  <span
+                    className="checkmark"
+                    style={{
+                      border: isChecked
+                        ? "1px solid var(--primary-color)"
+                        : "1px solid #dc3545", // أخضر عند التحديد - أحمر عند عدم التحديد
+                      transition: "border 0.3s ease-in-out", // انتقال سلس
+                    }}
+                  ></span>
+                  <p>أوافق انني اطلعت على </p>
                 </label>
               </div>
             </div>
