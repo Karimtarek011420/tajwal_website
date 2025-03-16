@@ -144,14 +144,14 @@ function Ordersdetails({ params: paramsPromise }) {
                       خدمة العملاء
                     </li>
                   </Link>
-                  <Link href={"#"} onClick={handleLogout}>
-                    <li
-                      className="accountInformationlogout"
-                      aria-label="Logout"
-                    >
-                      تسجيل الخروج
-                    </li>
-                  </Link>
+                  <li
+                    className="accountInformationlogout"
+                    aria-label="Logout"
+                    onClick={handleLogout}
+                    style={{ cursor: "pointer" }}
+                  >
+                    تسجيل الخروج
+                  </li>
                 </ul>
               </div>
             </div>
