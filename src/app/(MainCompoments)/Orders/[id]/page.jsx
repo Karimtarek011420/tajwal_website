@@ -34,7 +34,6 @@ function Ordersdetails() {
       console.error("Error parsing user data:", error);
     }
   }, []);
-
   const { token, settoken } = useContext(authtoken);
   const params = useParams();
   const id = params.id; // استقبال ID الطلب من الـ URL
