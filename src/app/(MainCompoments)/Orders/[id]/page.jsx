@@ -329,8 +329,10 @@ function Ordersdetails() {
                           query: {
                             lpa: data?.esims[0]?.esim_installation_data?.lpa,
                             matching_id:
-                              data?.esims[0]?.esim_installation_data?.matching_id,
-                            qrcode: data?.esims[0]?.esim_installation_data?.qrcode,
+                              data?.esims[0]?.esim_installation_data
+                                ?.matching_id,
+                            qrcode:
+                              data?.esims[0]?.esim_installation_data?.qrcode,
                           },
                         }}
                       >
