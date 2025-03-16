@@ -87,7 +87,7 @@ export default function SearchResults() {
       )}
       <div className="px-3 px-md-4 px-lg-5">
         <div
-          className="row row-cols-xl-5 row-cols-lg-3 row-cols-md-3 row-cols-sm-2 row-cols-1 gy-3"
+          className="row row-cols-xl-5 row-cols-lg-3 row-cols-md-3 row-cols-sm-2 row-cols-1 gy-4"
           
         >
           {results.map((country) => (
