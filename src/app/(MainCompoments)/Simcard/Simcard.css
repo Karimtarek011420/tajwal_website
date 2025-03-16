@@ -24,7 +24,7 @@
 /* checkboxx */
 .equal-width {
   width: 100%;
-  max-width: 300px; /* يمكنك تعديلها حسب الحاجة */
+  max-width: 350px; /* يمكنك تعديلها حسب الحاجة */
 }
 .custom-checkbox input[type="checkbox"] {
   display: none;
@@ -63,10 +63,10 @@
 .compatibility-check {
   border-radius: 8px; /* زوايا مستديرة */
 }
-.custom-checkbox p {
+.compatibility-check p {
   font-size: 10px !important;
   font-weight: 300 !important;
-  margin-right: 15px !important;
+
   margin-top: 5px;
 }
 
