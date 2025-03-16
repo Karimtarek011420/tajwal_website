@@ -7,7 +7,7 @@ import withAuth from "@/app/utils/withAuth";
 function SimcardPage() {
   const [selectedOption, setSelectedOption] = useState("qr");
   const [checkedItems, setCheckedItems] = useState([false, false, false]);
-  const checkedCount = checkedItems.filter(Boolean).length; // عدد المحددين
+  const checkedCount = checkedItems.filter(Boolean).length;
   const handleCheckboxChange = (index) => {
     const newCheckedItems = [...checkedItems];
     newCheckedItems[index] = !newCheckedItems[index];
@@ -53,7 +53,7 @@ function SimcardPage() {
           </button>
         </div>
         <div className="row gy-3 justify-content-center align-items-center  px-md-5">
-          <div className="col-12 col-md-5 d-flex flex-column align-items-center text-center">
+          <div className="col-12 col-lg-5 d-flex flex-column align-items-center text-center">
             <div className="equal-width">
               <Image
                 src={Importantwarning}
@@ -62,7 +62,7 @@ function SimcardPage() {
               />
             </div>
             <div
-              className="equal-width bg-white shadow-sm rounded-3 pb-2 pt-1 px-4 my-3"
+              className="equal-width bg-white shadow-sm rounded-3 py-3 px-4 my-3 "
               style={{
                 border:
                   checkedCount === checkedItems.length
@@ -72,7 +72,7 @@ function SimcardPage() {
               }}
             >
               {checkedItems.map((isChecked, index) => (
-                <div className="compatibility-check d-flex " key={index}>
+                <div className="compatibility-check d-flex   " key={index}>
                   <label className="custom-checkbox pt-lg-1 ">
                     <input
                       type="checkbox"
@@ -89,13 +89,13 @@ function SimcardPage() {
                       }}
                     ></span>
                   </label>
-                  <p>{checkboxLabels[index]}</p>
+                  <p className=" pt-2">{checkboxLabels[index]}</p>
                 </div>
               ))}
             </div>
             <div>{checkedItems.every(Boolean) ? <p>llll</p> : <p>kkk</p>}</div>
           </div>
-          <div className="col-12 col-md-7">
+          <div className="col-12 col-lg-7">
             {/* يمكن إضافة محتوى إضافي هنا */}
           </div>
         </div>
