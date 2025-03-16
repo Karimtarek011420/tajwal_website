@@ -22,7 +22,7 @@
   color: var(--primary-btn) !important;
 }
 /* checkboxx */
-.equal-width {
+.Simcard .equal-width {
   width: 100%;
   max-width: 350px; /* يمكنك تعديلها حسب الحاجة */
 }
