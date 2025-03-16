@@ -24,7 +24,7 @@
 /* checkboxx */
 .Simcard .equal-width {
   width: 100%;
-  max-width: 350px; /* يمكنك تعديلها حسب الحاجة */
+  max-width: 360px; /* يمكنك تعديلها حسب الحاجة */
 }
 .custom-checkbox input[type="checkbox"] {
   display: none;
@@ -38,6 +38,7 @@
   border: 2px solid #ccc;
   border-radius: 4px;
   position: relative;
+  margin-left: 10px;
 }
 
 .custom-checkbox input[type="checkbox"]:checked + .checkmark {

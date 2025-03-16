@@ -75,7 +75,7 @@ function SimcardPage() {
               }}
             >
               {checkedItems.map((isChecked, index) => (
-                <div className="compatibility-check d-flex  " key={index}>
+                <div className="compatibility-check d-flex" key={index}>
                   <label className="custom-checkbox">
                     <input
                       type="checkbox"
