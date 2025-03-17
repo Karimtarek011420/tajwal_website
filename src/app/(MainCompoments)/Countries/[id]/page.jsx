@@ -310,7 +310,7 @@ export default function DetailsCountry() {
                   </button>
                 ))}
               </div>
-              <div className=" container-fluid px-3 py-4">
+              <div className=" container-fluid py-4">
                 <div className="row gy-5">
                   {array
                     .filter((pkg) =>
