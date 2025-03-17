@@ -18,7 +18,7 @@
   color: var(--auth-color);
   line-height: 1.5; /* لتحسين قراءة النص */
 }
-@media (min-width: 767px) and (max-width: 995px) {
+@media (min-width: 767px) and (max-width: 1100px) {
   .phone .row {
     display: flex;
     flex-wrap: wrap;

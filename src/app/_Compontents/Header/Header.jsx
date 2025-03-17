@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <>
       <main className="home py-2 pb-5">
-        <Navbar />
+        {/* <Navbar /> */}
         <div className="content-center py-lg-5 py-3">
           <div>
             <h1 className="text-white text-center">
