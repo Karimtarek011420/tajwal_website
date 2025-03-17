@@ -311,7 +311,7 @@ export default function DetailsCountry() {
                 ))}
               </div>
               <div className=" container-fluid px-3 py-4">
-                <div className="row gy-5  ">
+                <div className="row gy-5">
                   {array
                     .filter((pkg) =>
                       selectedDay ? pkg.day === parseInt(selectedDay) : true
