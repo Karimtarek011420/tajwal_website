@@ -399,7 +399,7 @@ export default function DetailsCountry() {
       {Array.isArray(data) &&
         data.map((country) => (
           <div key={country.country_code}>
-            <div className="px-lg-5">
+            <div className=" container-fluid px-lg-5">
               <div className="d-flex flex-wrap justify-content-center align-items-center pt-2 pb-4">
                 {country?.days?.map((day) => (
                   <button

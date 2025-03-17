@@ -376,7 +376,7 @@ export default function DetailsCountry() {
                 </li>
               </ul>
             </div>
-            <div className="px-lg-5">
+            <div className=" container-fluid px-lg-5">
               <div className="d-flex flex-wrap justify-content-center align-items-center pt-2 pb-4">
                 {country?.days?.map((day) => (
                   <button
