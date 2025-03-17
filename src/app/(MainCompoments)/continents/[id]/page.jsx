@@ -396,17 +396,19 @@ export default function DetailsCountry() {
                   </button>
                 ))}
               </div>
-              <div className="row gy-5 py-4 px-3">
-                {array
-                  .filter((pkg) =>
-                    selectedDay ? pkg.day === parseInt(selectedDay) : true
-                  )
-                  .sort((a, b) => {
-                    if (a.amount === -1) return 1; // إذا كانت قيمة a غير محدودة، ضعها في النهاية
-                    if (b.amount === -1) return -1; // إذا كانت قيمة b غير محدودة، ضعها قبل a
-                    return a.amount - b.amount; // ترتيب تصاعدي للقيم المحددة (الجيجا)
-                  })
-                  .map((p) => p.ele)}
+              <div className=" container-fluid py-4">
+                <div className="row gy-5">
+                  {array
+                    .filter((pkg) =>
+                      selectedDay ? pkg.day === parseInt(selectedDay) : true
+                    )
+                    .sort((a, b) => {
+                      if (a.amount === -1) return 1; // إذا كانت قيمة a غير محدودة، ضعها في النهاية
+                      if (b.amount === -1) return -1; // إذا كانت قيمة b غير محدودة، ضعها قبل a
+                      return a.amount - b.amount; // ترتيب تصاعدي للقيم المحددة (الجيجا)
+                    })
+                    .map((p) => p.ele)}
+                </div>
               </div>
             </div>
           </div>
