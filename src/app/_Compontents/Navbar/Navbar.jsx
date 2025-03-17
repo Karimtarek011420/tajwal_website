@@ -258,12 +258,9 @@ export default function Navbar() {
                 </button>
               </li> */}
             </ul>
-
-            <div className="d-flex">
-              <ul className="navbar-nav ms-auto mb-2 mx-lg-5 mb-lg-0">
-                {renderAuthLinks()}
-              </ul>
-            </div>
+            <ul className="navbar-nav ms-auto mb-2  mb-lg-0">
+              {renderAuthLinks()}
+            </ul>
           </div>
         </div>
       </div>
