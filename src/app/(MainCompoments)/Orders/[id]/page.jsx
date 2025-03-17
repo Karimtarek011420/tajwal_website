@@ -165,7 +165,7 @@ function Ordersdetails() {
                   <div className="bg-white shadow-sm text-center  rounded-3">
                     <div className="d-flex justify-content-between align-items-center p-3">
                       <div className="country-flag d-flex justify-content-center align-items-center">
-                        <Skeleton width={200} height={100} />
+                        <Skeleton width={150} height={70} />
                       </div>
                       <Skeleton width={100} className=" me-2 ms-lg-4 px-lg-3" />
                     </div>
@@ -175,7 +175,7 @@ function Ordersdetails() {
                   <div className="bg-white shadow-sm text-center  rounded-3">
                     <div className="d-flex justify-content-between align-items-center p-3">
                       <div className="country-flag d-flex justify-content-center align-items-center">
-                        <Skeleton width={200} height={100} />
+                      <Skeleton width={150} height={70} />
                       </div>
                       <Skeleton width={100} className=" me-2 ms-lg-4 px-lg-3" />
                     </div>
