@@ -155,7 +155,7 @@ export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg py-1">
       <div className="container-fluid">
-        <Link className="navbar-brand px-lg-5" href="/">
+        <Link className="navbar-brand px-xl-5" href="/">
           <Image
             className="logo"
             src={logonavbar}
@@ -258,9 +258,12 @@ export default function Navbar() {
                 </button>
               </li>
             </ul>
-            <ul className="navbar-nav ms-auto mb-2  mb-lg-0">
-              {renderAuthLinks()}
-            </ul>
+
+            <div className="d-flex">
+              <ul className="navbar-nav ms-auto mb-2  mb-lg-0">
+                {renderAuthLinks()}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
