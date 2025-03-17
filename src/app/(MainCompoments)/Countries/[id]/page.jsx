@@ -265,11 +265,7 @@ export default function DetailsCountry() {
   return (
     <div className="countrydetials position-relative py-5">
       <div className="px-3 px-md-4 px-lg-5">
-        {error && (
-          <p className="text-danger text-center" style={{ minHeight: "30vh" }}>
-            {error}
-          </p>
-        )}{" "}
+        {error && <p className="text-danger text-center">{error}</p>}{" "}
         {/* عرض الخطأ إن وجد */}
       </div>
       {Array.isArray(data) &&
@@ -294,7 +290,7 @@ export default function DetailsCountry() {
                 </li>
               </ul>
             </div>
-            <div className="px-lg-5">
+            <div className=" px-lg-5">
               <div className="d-flex flex-wrap justify-content-center align-items-center pt-2 pb-4">
                 {country?.days?.map((day) => (
                   <button
@@ -314,17 +310,19 @@ export default function DetailsCountry() {
                   </button>
                 ))}
               </div>
-              <div className="row gy-5 py-4 px-3">
-                {array
-                  .filter((pkg) =>
-                    selectedDay ? pkg.day === parseInt(selectedDay) : true
-                  )
-                  .sort((a, b) => {
-                    if (a.amount === -1) return 1; // إذا كانت قيمة a غير محدودة، ضعها في النهاية
-                    if (b.amount === -1) return -1; // إذا كانت قيمة b غير محدودة، ضعها قبل a
-                    return a.amount - b.amount; // ترتيب تصاعدي للقيم المحددة (الجيجا)
-                  })
-                  .map((p) => p.ele)}
+              <div className="  container-fluid ">
+                <div className="row gy-5 py-4 px-3">
+                  {array
+                    .filter((pkg) =>
+                      selectedDay ? pkg.day === parseInt(selectedDay) : true
+                    )
+                    .sort((a, b) => {
+                      if (a.amount === -1) return 1; // إذا كانت قيمة a غير محدودة، ضعها في النهاية
+                      if (b.amount === -1) return -1; // إذا كانت قيمة b غير محدودة، ضعها قبل a
+                      return a.amount - b.amount; // ترتيب تصاعدي للقيم المحددة (الجيجا)
+                    })
+                    .map((p) => p.ele)}
+                </div>
               </div>
             </div>
           </div>
