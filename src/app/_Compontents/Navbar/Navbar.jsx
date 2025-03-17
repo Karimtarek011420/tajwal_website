@@ -97,7 +97,7 @@ export default function Navbar() {
   // روابط المستخدم المسجل
   const renderAuthLinks = () =>
     token ? (
-      <li className="nav-item dropdown dropacount offnecmedia">
+      <li className="nav-item dropdown dropacount offnecmedia ms-xl-5">
         <button
           className="nav-link dropdown-toggle d-flex align-items-center justify-content-between"
           role="button"
@@ -143,7 +143,7 @@ export default function Navbar() {
         </li>
         <li className="nav-item btnresgister">
           <Link
-            className="nav-link text-white resgister my-1 mx-lg-5 me-lg-4"
+            className="nav-link text-white resgister my-1 mx-xl-5 me-xl-4 me-2"
             href="/Register"
           >
             تسجيل
@@ -258,12 +258,7 @@ export default function Navbar() {
                 </button>
               </li>
             </ul>
-
-            <div className="d-flex">
-              <ul className="navbar-nav ms-auto mb-2  mb-lg-0">
-                {renderAuthLinks()}
-              </ul>
-            </div>
+            <ul className="navbar-nav  mb-2  mb-lg-0">{renderAuthLinks()}</ul>
           </div>
         </div>
       </div>
