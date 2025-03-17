@@ -241,22 +241,22 @@ export default function Navbar() {
                   اتصل بنا
                 </button>
               </li>
-              {/* <li className="nav-item">
+              <li className="nav-item">
                 <button
                   className="nav-link text-white"
                   aria-label="Switch to English"
                 >
                   English
                 </button>
-              </li> */}
-              {/* <li className="nav-item">
+              </li>
+              <li className="nav-item">
                 <button
                   className="nav-link text-white"
                   aria-label="Switch currency to SAR"
                 >
                   ر.س
                 </button>
-              </li> */}
+              </li>
             </ul>
             <ul className="navbar-nav ms-auto mb-2  mb-lg-0">
               {renderAuthLinks()}
