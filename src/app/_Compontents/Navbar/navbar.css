@@ -9,9 +9,9 @@ li.nav-item a.nav-link {
   font-size: var(--font-largeNavbar) !important;
   font-weight: 300 !important;
 }
-.dropdown.dropacount {
-  margin-left: 200px !important;
-}
+/* .dropdown.dropacount {
+  margin-left: 10px !important;
+} */
 .dropdown-menu {
   border-radius: 10px;
   border: 1px solid gainsboro !important;
