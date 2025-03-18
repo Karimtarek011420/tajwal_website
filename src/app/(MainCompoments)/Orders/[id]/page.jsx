@@ -361,48 +361,52 @@ function Ordersdetails() {
                   </div>
                 </div>
                 <div className="  col-xl-6">
-                  <div className=" bg-white shadow-sm rounded-3 px-2 py-4">
-                    <div className=" px-3">
-                      <h6 className="wayesim">طريقة تثبيت الشريحة</h6>
-                      <p className="wayesimp py-1">
-                        بأمكانك تثبيت الشريحة بأي من الثلاث طرق المذكور في صفحة
-                        “طرق تثبيت الشريحة”
-                      </p>
-                    </div>
-                    <div className=" py-2 px-4 wayslink rounded-3 mx-5">
-                      {console.log(data.esims)}
-                      <Link
-                        href={{
-                          pathname: "/Simcard",
-                          query: {
-                            lpa: data?.esims[0]?.esim_installation_data?.lpa,
-                            matching_id:
-                              data?.esims[0]?.esim_installation_data
-                                ?.matching_id,
-                            qrcode:
-                              data?.esims[0]?.esim_installation_data?.qrcode,
-                          },
-                        }}
-                      >
-                        <div className="d-flex justify-content-between align-items-center ">
-                          <div className="country-flag d-flex justify-content-center align-items-center p-1">
-                            <Image
-                              src={PlaybackSpeed}
-                              width={18}
-                              height={18}
-                              alt="arrow"
-                              loading="lazy"
-                            />
-                            <p className="text-black mb-0 ms-lg-3 px-2 text-white  wayslinkp">
-                              {" "}
-                              طرق تثبيت الشريحة
-                            </p>
+                  {data?.esims?.map((esim, index) => (
+                    <div
+                      key={esim.id}
+                      className=" bg-white shadow-sm rounded-3 px-2 py-4  mb-2"
+                    >
+                      <div className=" px-3">
+                        <h6 className="wayesim">طريقة تثبيت الشريحة</h6>
+                        <p className="wayesimp py-1">
+                          بأمكانك تثبيت الشريحة بأي من الثلاث طرق المذكور في
+                          صفحة “طرق تثبيت الشريحة”
+                        </p>
+                      </div>
+                      <div className=" py-2 px-4 wayslink rounded-3 mx-5">
+                        {console.log(data.esims)}
+                        <Link
+                          href={{
+                            pathname: "/Simcard",
+                            query: {
+                              lpa: esim?.esim_installation_data?.lpa,
+                              matching_id:
+                                esim?.esim_installation_data?.matching_id,
+                              qrcode: esim?.esim_installation_data?.qrcode,
+                            },
+                          }}
+                        >
+                          <div className="d-flex justify-content-between align-items-center ">
+                            <div className="country-flag d-flex justify-content-center align-items-center p-1">
+                              <Image
+                                src={PlaybackSpeed}
+                                width={18}
+                                height={18}
+                                alt="arrow"
+                                loading="lazy"
+                              />
+                              <p className="text-black mb-0 ms-lg-3 px-2 text-white  wayslinkp">
+                                {" "}
+                                طرق تثبيت الشريحة {index + 1}
+                              </p>
+                            </div>
+                            <i className="fa-solid fa-chevron-left text-white p-1"></i>
                           </div>
-                          <i className="fa-solid fa-chevron-left text-white p-1"></i>
-                        </div>
-                      </Link>
+                        </Link>
+                      </div>
                     </div>
-                  </div>
+                  ))}
+
                   <div className=" mt-5">
                     <div className="   d-flex flex-column align-items-center text-center">
                       <h6 className="tajwalh  text-center pb-2">حمل التطبيق</h6>
