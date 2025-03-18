@@ -388,7 +388,10 @@ function Ordersdetails() {
                           صفحة “طرق تثبيت الشريحة”
                         </p>
                       </div>
-                      <div className="d-flex justify-content-between align-items-center text-center px-3 py-2 rounded-3 mx-lg-3 mx-2 mb-3  bg-white shadow-sm ordersucessdetilas">
+                      <div
+                        className="d-flex justify-content-between align-items-center text-center px-3 py-2 rounded-3 mx-lg-3 mx-2 mb-3   shadow-sm ordersucessdetilas"
+                        style={{ backgroundColor: "#F1F3F666" }}
+                      >
                         <div className="d-flex align-items-center justify-content-center ">
                           <Image
                             src={iccid}
@@ -414,7 +417,10 @@ function Ordersdetails() {
                           </button>
                         </div>
                       </div>
-                      <div className="d-flex justify-content-between align-items-center text-center px-3 py-3 rounded-3 mx-lg-3 mx-2 mb-3  bg-white shadow-sm ordersucessdetilas">
+                      <div
+                        className="d-flex justify-content-between align-items-center text-center px-3 py-3 rounded-3 mx-lg-3 mx-2 mb-3   shadow-sm ordersucessdetilas"
+                        style={{ backgroundColor: "#F1F3F666" }}
+                      >
                         <div className="d-flex align-items-center justify-content-center ">
                           <Image
                             src={esimstatus}
