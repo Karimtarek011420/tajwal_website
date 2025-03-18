@@ -19,11 +19,16 @@ import Numberslides from "@/assets/images/Numberslides.svg";
 import PlaybackSpeed from "@/assets/images/wayesim.svg";
 import invoiceways from "@/assets/images/myfatoraorder.svg";
 import dataid from "@/assets/images/Icon2.svg";
+import iccid from "@/assets/images/iccid.svg";
 import appStore1 from "@/assets/images/appStore1.svg";
 import googlePlay2 from "@/assets/images/googlePlay2.svg";
 import { QRCodeCanvas } from "qrcode.react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { faCopy } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import toast from "react-hot-toast";
+
 function Ordersdetails() {
   const [user, setUser] = useState({});
   useEffect(() => {
@@ -73,6 +78,13 @@ function Ordersdetails() {
 
   const handleback = () => {
     router.push("/Orders");
+  };
+  const handleCopy = (text) => {
+    navigator.clipboard.writeText(text);
+    toast.success("تم النسخ بنجاح!", {
+      duration: 1500,
+      style: { backgroundColor: "#4b87a4", color: "white" },
+    });
   };
   const appLink =
     "https://play.google.com/store/apps/details?id=com.sic.tajwaal&pli=1";
@@ -367,13 +379,41 @@ function Ordersdetails() {
                       className=" bg-white shadow-sm rounded-3 px-2 py-4  mb-2"
                     >
                       <div className=" px-3">
-                        <h6 className="wayesim">طريقة تثبيت الشريحة</h6>
+                        <h6 className="wayesim">
+                          طريقة تثبيت الشريحة {index + 1}
+                        </h6>
                         <p className="wayesimp py-1">
                           بأمكانك تثبيت الشريحة بأي من الثلاث طرق المذكور في
                           صفحة “طرق تثبيت الشريحة”
                         </p>
                       </div>
-                      <div className=" py-2 px-4 wayslink rounded-3 mx-5">
+                      <div className="d-flex justify-content-between align-items-center text-center px-3 py-2 rounded-3 mx-lg-3 mx-2 mb-3  bg-white shadow-sm ordersucessdetilas">
+                        <div className="d-flex align-items-center justify-content-center ">
+                          <Image
+                            src={iccid}
+                            width={16}
+                            height={16}
+                            alt="iconcountry"
+                          />
+                          <p className="mx-1 my-0">رقم ICCID</p>
+                        </div>
+
+                        <div className=" d-flex justify-content-center align-items-center text-center">
+                          <p className="my-0">
+                            {esim?.esim_installation_data?.iccid}
+                          </p>
+                          <button
+                            onClick={() =>
+                              handleCopy(esim?.esim_installation_data?.iccid)
+                            }
+                            className="btn  me-2"
+                            title="نسخ"
+                          >
+                            <FontAwesomeIcon icon={faCopy} />
+                          </button>
+                        </div>
+                      </div>
+                      <div className=" py-2 px-4 wayslink rounded-3 mx-lg-3  mx-2">
                         {console.log(data.esims)}
                         <Link
                           href={{
@@ -387,7 +427,7 @@ function Ordersdetails() {
                           }}
                         >
                           <div className="d-flex justify-content-between align-items-center ">
-                            <div className="country-flag d-flex justify-content-center align-items-center p-1">
+                            <div className=" d-flex justify-content-center align-items-center p-1">
                               <Image
                                 src={PlaybackSpeed}
                                 width={18}
@@ -396,8 +436,7 @@ function Ordersdetails() {
                                 loading="lazy"
                               />
                               <p className="text-black mb-0 ms-lg-3 px-2 text-white  wayslinkp">
-                                {" "}
-                                طرق تثبيت الشريحة {index + 1}
+                                طرق تثبيت الشريحة
                               </p>
                             </div>
                             <i className="fa-solid fa-chevron-left text-white p-1"></i>
