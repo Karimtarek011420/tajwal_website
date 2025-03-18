@@ -4,9 +4,11 @@ import "./Simcard.css";
 import Importantwarning from "@/assets/images/Importantwarning.svg";
 import Image from "next/image";
 import withAuth from "@/app/utils/withAuth";
+import { useSearchParams } from "next/navigation";
 function SimcardPage() {
   const [selectedOption, setSelectedOption] = useState("qr");
   const [checkedItems, setCheckedItems] = useState([false, false, false]);
+  const searchParams = useSearchParams();
   const checkedCount = checkedItems.filter(Boolean).length;
   const handleCheckboxChange = (index) => {
     const newCheckedItems = [...checkedItems];
@@ -20,6 +22,9 @@ function SimcardPage() {
     `اتفهم انني 
     <span style="font-weight: 600; text-decoration: underline;">ولن أقوم</span> بتفعيل خيار “تجوال البيانات” الا عند الوصول للدولة المحددة.`,
   ];
+  const lpa = searchParams.get("lpa");
+  const matching_id = searchParams.get("matching_id");
+  const qrcode = searchParams.get("qrcode");
 
   return (
     <div className="Simcard  position-relative py-5">
@@ -102,6 +107,15 @@ function SimcardPage() {
             <div>{checkedItems.every(Boolean) ? <p>llll</p> : <p>kkk</p>}</div>
           </div>
           <div className="col-12 col-lg-7">
+            <li>
+              <strong>LPA:</strong> {lpa}
+            </li>
+            <li>
+              <strong>Matching ID:</strong> {matching_id}
+            </li>
+            <li>
+              <strong>QR Code:</strong> {qrcode}
+            </li>
             {/* يمكن إضافة محتوى إضافي هنا */}
           </div>
         </div>
