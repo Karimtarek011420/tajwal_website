@@ -96,7 +96,7 @@ function Ordersdetails() {
       <div className="container py-2">
         <button
           onClick={handleback}
-          className="  px-4 py-2  rounded-3 me-5 mb-3 btnback"
+          className="  px-4 py-2  rounded-3 me-lg-5 me-2 mb-3 btnback"
         >
           <div className=" d-flex justify-content-center align-items-center text-center">
             <i className="fa-solid fa-arrow-right text-white"></i>
