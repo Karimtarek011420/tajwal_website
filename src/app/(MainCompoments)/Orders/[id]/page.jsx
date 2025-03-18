@@ -202,6 +202,16 @@ function Ordersdetails() {
                       </div>
                     </div>
                   </div>
+                  <div className="bg-white shadow-sm d-flex justify-content-center align-items-center mt-2   rounded-3">
+                    <div className=" p-3">
+                      <div>
+                        <Skeleton width={300} height={70} />
+                      </div>
+                      <div>
+                        <Skeleton width={300} height={40} />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             ) : (
