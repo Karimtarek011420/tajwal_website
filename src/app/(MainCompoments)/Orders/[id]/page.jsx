@@ -20,6 +20,7 @@ import PlaybackSpeed from "@/assets/images/wayesim.svg";
 import invoiceways from "@/assets/images/myfatoraorder.svg";
 import dataid from "@/assets/images/Icon2.svg";
 import iccid from "@/assets/images/iccid.svg";
+import esimstatus from "@/assets/images/esimstatus.svg";
 import appStore1 from "@/assets/images/appStore1.svg";
 import googlePlay2 from "@/assets/images/googlePlay2.svg";
 import { QRCodeCanvas } from "qrcode.react";
@@ -412,6 +413,28 @@ function Ordersdetails() {
                             <FontAwesomeIcon icon={faCopy} />
                           </button>
                         </div>
+                      </div>
+                      <div className="d-flex justify-content-between align-items-center text-center px-3 py-3 rounded-3 mx-lg-3 mx-2 mb-3  bg-white shadow-sm ordersucessdetilas">
+                        <div className="d-flex align-items-center justify-content-center ">
+                          <Image
+                            src={esimstatus}
+                            width={16}
+                            height={16}
+                            alt="iconcountry"
+                          />
+                          <p className="mx-1 my-0"> حالة الشريحة</p>
+                        </div>
+                        {esim?.esim_installation_data?.isInstalled ? (
+                          <p className="my-0">
+                            مثبتة{" "}
+                            <i className="fa-solid fa-check  text-success fa-xl"></i>
+                          </p>
+                        ) : (
+                          <p className="my-0">
+                            غير مثبتة{" "}
+                            <i class="fa-solid fa-xmark fa-xl  text-danger"></i>
+                          </p>
+                        )}
                       </div>
                       <div className=" py-2 px-4 wayslink rounded-3 mx-lg-3  mx-2">
                         {console.log(data.esims)}
