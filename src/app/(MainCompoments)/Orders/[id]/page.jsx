@@ -175,7 +175,7 @@ function Ordersdetails() {
                   <div className="bg-white shadow-sm text-center  rounded-3">
                     <div className="d-flex justify-content-between align-items-center p-3">
                       <div className="country-flag d-flex justify-content-center align-items-center">
-                      <Skeleton width={150} height={70} />
+                        <Skeleton width={150} height={70} />
                       </div>
                       <Skeleton width={100} className=" me-2 ms-lg-4 px-lg-3" />
                     </div>
@@ -267,9 +267,11 @@ function Ordersdetails() {
                     </div>
                     <div>
                       <p className="my-0">
-                        {" "}
-                        {Math.floor(data?.esims[0].package_amount / 1000)} غيغا
-                        بايت
+                        {data?.esims[0].package_amount === -1
+                          ? "لا محدود"
+                          : `${Math.floor(
+                              data?.esims[0].package_amount / 1000
+                            )}غيغا بايت`}
                       </p>
                     </div>
                   </div>
