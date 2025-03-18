@@ -432,7 +432,7 @@ function Ordersdetails() {
                         ) : (
                           <p className="my-0">
                             غير مثبتة{" "}
-                            <i class="fa-solid fa-xmark fa-xl  text-danger"></i>
+                            <i className="fa-solid fa-xmark fa-xl  text-danger"></i>
                           </p>
                         )}
                       </div>
