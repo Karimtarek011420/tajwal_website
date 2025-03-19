@@ -163,17 +163,21 @@ function SimcardPage() {
                     <FontAwesomeIcon icon={faCopy} />
                   </button>
                 </div>
+                <p className=" text-end m-1 checkmanul mt-2 ">رمز التنشيط</p>
+                <div className=" d-flex justify-content-between align-items-center text-center bg-white rounded-3 px-2 py-1 checkmanul">
+                  <p className="my-0 pe-2">{matching_id}</p>
+                  <button
+                    onClick={() => handleCopy(matching_id)}
+                    className="btn  "
+                    title="نسخ"
+                  >
+                    <FontAwesomeIcon icon={faCopy} />
+                  </button>
+                </div>
               </div>
             )}
           </div>
           <div className="col-12 col-lg-7">
-            <li>
-              <strong>LPA:</strong> {lpa}
-            </li>
-            <li>
-              <strong>Matching ID:</strong> {matching_id}
-            </li>
-
             {/* يمكن إضافة محتوى إضافي هنا */}
           </div>
         </div>
