@@ -5,6 +5,7 @@ import Importantwarning from "@/assets/images/Importantwarning.svg";
 import Image from "next/image";
 import withAuth from "@/app/utils/withAuth";
 import { useSearchParams } from "next/navigation";
+import { QRCodeCanvas } from "qrcode.react";
 function SimcardPage() {
   const [selectedOption, setSelectedOption] = useState("qr");
   const [checkedItems, setCheckedItems] = useState([false, false, false]);
@@ -112,18 +113,30 @@ function SimcardPage() {
                 </div>
               ))}
             </div>
-            <div className="divqr equal-width rounded-3 d-flex ">
-              <p className="pqr p-4">
+            <div className="divqr equal-width rounded-3 d-flex justify-content-center  align-items-center p-3 ">
+              <p
+                className="pqr ms-1"
+                style={{
+                  textAlign: "start",
+                  display: "block",
+                  lineHeight: "1.6",
+                }}
+              >
                 امسح رمز QR هذا ضوئياً عن طريق طباعته او عرضه على جهاز اخر، او
                 من خلال التقاط صورة للشاشة. و من ثم اتبع التعليمات في الأسفل.
               </p>
-              <span className="pqr p-4">
-                امسح رمز QR هذا ضوئياً عن طريق طباعته او عرضه على جهاز اخر، او
-                من خلال التقاط صورة للشاشة. و من ثم اتبع التعليمات في الأسفل.
+              <span className="pqr">
+                <QRCodeCanvas
+                  value={qrcode}
+                  size={165}
+                  className="mb-1"
+                  style={{
+                    filter: checkedItems.every(Boolean) ? "none" : "blur(5px)", // ✅ يزيل الضبابية إذا تم تحديد جميع الـ checkboxes
+                    transition: "filter 0.3s ease-in-out", // ✅ تأثير سلس عند التغيير
+                  }}
+                />
               </span>
             </div>
-
-            <div>{checkedItems.every(Boolean) ? <p>llll</p> : <p>kkk</p>}</div>
           </div>
           <div className="col-12 col-lg-7">
             <li>
@@ -132,9 +145,7 @@ function SimcardPage() {
             <li>
               <strong>Matching ID:</strong> {matching_id}
             </li>
-            <li>
-              <strong>QR Code:</strong> {qrcode}
-            </li>
+
             {/* يمكن إضافة محتوى إضافي هنا */}
           </div>
         </div>
