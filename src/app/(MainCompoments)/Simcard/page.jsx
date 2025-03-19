@@ -6,6 +6,9 @@ import Image from "next/image";
 import withAuth from "@/app/utils/withAuth";
 import { useSearchParams } from "next/navigation";
 import { QRCodeCanvas } from "qrcode.react";
+import { faCopy } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import toast from "react-hot-toast";
 function SimcardPage() {
   const [selectedOption, setSelectedOption] = useState("qr");
   const [checkedItems, setCheckedItems] = useState([false, false, false]);
@@ -26,6 +29,13 @@ function SimcardPage() {
   const lpa = searchParams.get("lpa");
   const matching_id = searchParams.get("matching_id");
   const qrcode = searchParams.get("qrcode");
+  const handleCopy = (text) => {
+    navigator.clipboard.writeText(text);
+    toast.success("تم النسخ بنجاح!", {
+      duration: 1500,
+      style: { backgroundColor: "#4b87a4", color: "white" },
+    });
+  };
 
   return (
     <div className="Simcard  position-relative py-5">
@@ -113,30 +123,48 @@ function SimcardPage() {
                 </div>
               ))}
             </div>
-            <div className="divqr equal-width rounded-3 d-flex justify-content-center  align-items-center p-3 ">
-              <p
-                className="pqr ms-1"
-                style={{
-                  textAlign: "start",
-                  display: "block",
-                  lineHeight: "1.6",
-                }}
-              >
-                امسح رمز QR هذا ضوئياً عن طريق طباعته او عرضه على جهاز اخر، او
-                من خلال التقاط صورة للشاشة. و من ثم اتبع التعليمات في الأسفل.
-              </p>
-              <span className="pqr">
-                <QRCodeCanvas
-                  value={qrcode}
-                  size={165}
-                  className="mb-1"
+            {selectedOption === "qr" ? (
+              <div className="divqr equal-width rounded-3 d-flex justify-content-center  align-items-center p-3 ">
+                <p
+                  className="pqr ms-1"
                   style={{
-                    filter: checkedItems.every(Boolean) ? "none" : "blur(5px)", // ✅ يزيل الضبابية إذا تم تحديد جميع الـ checkboxes
-                    transition: "filter 0.3s ease-in-out", // ✅ تأثير سلس عند التغيير
+                    textAlign: "start",
+                    display: "block",
+                    lineHeight: "1.6",
                   }}
-                />
-              </span>
-            </div>
+                >
+                  امسح رمز QR هذا ضوئياً عن طريق طباعته او عرضه على جهاز اخر، او
+                  من خلال التقاط صورة للشاشة. و من ثم اتبع التعليمات في الأسفل.
+                </p>
+                <span className="pqr">
+                  <QRCodeCanvas
+                    value={qrcode}
+                    size={165}
+                    className="mb-1"
+                    style={{
+                      filter: checkedItems.every(Boolean)
+                        ? "none"
+                        : "blur(5px)", // ✅ يزيل الضبابية إذا تم تحديد جميع الـ checkboxes
+                      transition: "filter 0.3s ease-in-out", // ✅ تأثير سلس عند التغيير
+                    }}
+                  />
+                </span>
+              </div>
+            ) : (
+              <div className="divqr equal-width rounded-3 p-3   checkmanul ">
+                <p className=" text-end m-1 checkmanul ">عنوان SM-DP+</p>
+                <div className=" d-flex justify-content-between align-items-center text-center bg-white rounded-3 px-2 py-1 checkmanul">
+                  <p className="my-0 pe-2">{lpa}</p>
+                  <button
+                    onClick={() => handleCopy(lpa)}
+                    className="btn  "
+                    title="نسخ"
+                  >
+                    <FontAwesomeIcon icon={faCopy} />
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
           <div className="col-12 col-lg-7">
             <li>
