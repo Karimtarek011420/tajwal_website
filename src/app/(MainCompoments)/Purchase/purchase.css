@@ -1,8 +1,8 @@
-.custom-checkbox input[type="checkbox"] {
+.Purchasedateils .custom-checkbox input[type="checkbox"] {
   display: none;
 }
 
-.custom-checkbox .checkmark {
+.Purchasedateils .custom-checkbox .checkmark {
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -12,16 +12,16 @@
   position: relative;
 }
 
-.custom-checkbox input[type="checkbox"]:checked + .checkmark {
+.Purchasedateils .custom-checkbox input[type="checkbox"]:checked + .checkmark {
   background-color: #f9f9f9; /* اللون الذي تريده */
 }
-.payement {
+.Purchasedateils .payement {
   padding: 0px !important;
   margin: 0px !important;
   gap: 0 !important;
 }
 
-.custom-checkbox .checkmark::after {
+.Purchasedateils .custom-checkbox .checkmark::after {
   content: "";
   position: absolute;
   display: none;
@@ -34,11 +34,14 @@
   transform: rotate(45deg);
 }
 
-.custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+.Purchasedateils
+  .custom-checkbox
+  input[type="checkbox"]:checked
+  + .checkmark::after {
   display: block;
 }
 
-.cardpurchase .countydtailsup {
+.Purchasedateils .cardpurchase .countydtailsup {
   top: -40px;
   width: 95%;
   left: 50%;
@@ -86,7 +89,7 @@
   color: #b6bcc3;
 }
 /* التصميم الأساسي */
-.discount-container {
+.Purchasedateils .discount-container {
   background-color: #f9f9f9;
   border-radius: 8px;
   display: flex;
@@ -99,7 +102,7 @@
   gap: 10px; /* مسافات بين العناصر */
 }
 
-.discount-input {
+.Purchasedateils .discount-input {
   border: none;
   background-color: #fff;
   border-radius: 8px;
@@ -109,19 +112,19 @@
   box-sizing: border-box;
 }
 
-.discount-input::placeholder {
+.Purchasedateils .discount-input::placeholder {
   font-size: 12px;
   font-weight: 300;
   color: #b6bcc3;
   text-align: center;
 }
 
-.discount-input:focus {
+.Purchasedateils .discount-input:focus {
   outline: none;
   box-shadow: none;
 }
 
-.apply-btn {
+.Purchasedateils .apply-btn {
   border-radius: 5px;
   padding: 10px 20px;
   font-size: 12px;
@@ -132,43 +135,43 @@
   white-space: nowrap; /* منع التفاف النص */
 }
 
-.compatibility-check {
+.Purchasedateils .compatibility-check {
   margin: 14px auto;
   padding: 10px;
   max-width: 500px;
   border-radius: 8px; /* زوايا مستديرة */
 }
 
-.custom-checkbox p {
+.Purchasedateils .custom-checkbox p {
   font-size: 10px !important;
   font-weight: 300 !important;
   margin-right: 15px !important;
   margin-top: 5px;
 }
 
-.compatibility-check .title {
+.Purchasedateils .compatibility-check .title {
   font-size: 12px;
   font-weight: 400;
   color: var(--auth-color);
 }
 /* الصور تكون متجاوبة أكثر */
-.responsive-image {
+.Purchasedateils .responsive-image {
   max-width: 100%;
   height: auto;
 }
 /* استجابة للشاشات الصغيرة */
 @media (max-width: 600px) {
-  .discount-container {
+  .Purchasedateils .discount-container {
     flex-direction: column; /* تحويل الاتجاه إلى عمودي */
     align-items: stretch; /* توسيع العناصر لتملأ العرض */
     gap: 15px; /* زيادة المسافة بين العناصر */
   }
 
-  .discount-input {
+  .Purchasedateils .discount-input {
     width: 100%; /* ملء العرض بالكامل */
   }
 
-  .apply-btn {
+  .Purchasedateils .apply-btn {
     width: 100%; /* ملء العرض بالكامل */
     text-align: center; /* توسيط النص */
   }
@@ -176,22 +179,22 @@
 
 /* تحسين التصميم للشاشات الصغيرة */
 @media (max-width: 530px) {
-  .payement img {
+  .Purchasedateils .payement img {
     width: 100% !important; /* الصور تأخذ عرض العنصر بالكامل */
     height: 40px !important;
   }
 }
 /* استجابة للشاشات الأصغر من 350 بكسل */
 @media (max-width: 400px) {
-  .discount-input::placeholder {
+  .Purchasedateils .discount-input::placeholder {
     font-size: 10px;
   }
 
-  .apply-btn {
+  .Purchasedateils .apply-btn {
     font-size: 10px;
     padding: 8px;
   }
-  .custom-checkbox .checkmark {
+  .Purchasedateils .custom-checkbox .checkmark {
     width: 40px !important;
   }
 }
