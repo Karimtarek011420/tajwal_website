@@ -61,10 +61,10 @@
 .Simcard .custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
   display: block;
 }
-.Simcard .compatibility-check {
+.Simcard .compatibility-checkesim {
   border-radius: 8px; /* زوايا مستديرة */
 }
-.Simcard .compatibility-check p {
+.Simcard .compatibility-checkesim p {
   font-size: 10px !important;
   font-weight: 300 !important;
   color: var(--auth-color);

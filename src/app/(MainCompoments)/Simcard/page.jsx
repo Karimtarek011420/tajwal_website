@@ -92,7 +92,7 @@ function SimcardPage() {
             >
               {checkedItems.map((isChecked, index) => (
                 <div
-                  className="compatibility-check d-flex align-items-center"
+                  className="compatibility-checkesim d-flex align-items-center"
                   key={index}
                 >
                   <label className="custom-checkbox d-flex align-items-center my-1">
