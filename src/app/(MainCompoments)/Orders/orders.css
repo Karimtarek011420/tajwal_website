@@ -39,6 +39,11 @@
 }
 .previousOrders .ordername {
   font-size: 12px !important;
-  font-weight: 300;
-  color: var(--auth-color);
+  font-weight: 300 !important;
+  color:#000000;
+}
+.previousOrders .ordername span {
+  font-size: 12px !important;
+  font-weight: 300 !important;
+  color:var(--auth-color);
 }

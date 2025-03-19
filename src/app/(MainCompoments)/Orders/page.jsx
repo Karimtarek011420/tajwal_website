@@ -166,7 +166,7 @@ function Previousorders() {
                         <div className="bg-white shadow-sm text-center rounded-3">
                           <Link href={`/Orders/${order.id}`}>
                             <div className="d-flex justify-content-between align-items-center p-3">
-                              <div className="country-flag d-flex justify-content-center align-items-center">
+                              <div className=" d-flex justify-content-center align-items-center">
                                 <Image
                                   src={order.country.image}
                                   width={45}
@@ -174,22 +174,24 @@ function Previousorders() {
                                   loading="lazy"
                                   alt="img-country"
                                 />
-                                <div>
-                                  <p className="text-black mb-0  ordername me-3">
-                                    رقم الطلب :
-                                    <span className="me-1"> {order.id}</span>
+                                <div className="d-flex flex-column align-items-start me-3 text-start">
+                                  <p className="mb-0 ordername d-flex">
+                                    رقم الطلب:
+                                    <span className="me-3 flex-grow-1 text-start">
+                                      {order.id}
+                                    </span>
                                   </p>
-                                  <p className="text-black mb-0  ordername me-3">
-                                    تاريخ الطلب :
-                                    <span className="me-1">
+                                  <p className="mb-0 ordername d-flex">
+                                    تاريخ الطلب:
+                                    <span className="me-2 flex-grow-1 text-start">
                                       {new Date(
                                         order.created_at
                                       ).toLocaleDateString("EG")}
                                     </span>
                                   </p>
-                                  <p className="text-black mb-0  ordername me-3">
-                                    إجمالى الطلب :
-                                    <span className="me-1">
+                                  <p className="mb-0 ordername d-flex">
+                                    إجمالي الطلب:
+                                    <span className="me-2 flex-grow-1 text-start">
                                       {order.invoice_value} ر.س
                                     </span>
                                   </p>
