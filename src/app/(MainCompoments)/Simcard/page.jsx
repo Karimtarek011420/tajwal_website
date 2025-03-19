@@ -196,6 +196,17 @@ function SimcardPage() {
                     <FontAwesomeIcon icon={faCopy} />
                   </button>
                 </div>
+                <p
+                  className="checkmanul p-2 "
+                  style={{
+                    textAlign: "start",
+                    display: "block",
+                    lineHeight: "1.6",
+                  }}
+                >
+                  يرجى نسخ هذي البيانات و من ثم اتباع التعليمات في الاسفل لتثبيت
+                  الشريحة يدوياً على جهازك.
+                </p>
               </div>
             )}
           </div>
