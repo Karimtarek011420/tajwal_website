@@ -153,23 +153,45 @@ function SimcardPage() {
             ) : (
               <div className="divqr equal-width rounded-3 p-3   checkmanul ">
                 <p className=" text-end m-1 checkmanul ">عنوان SM-DP+</p>
-                <div className=" d-flex justify-content-between align-items-center text-center bg-white rounded-3 px-2 py-1 checkmanul">
+                <div
+                  className=" d-flex justify-content-between align-items-center text-center bg-white rounded-3 px-2 py-1 checkmanul"
+                  style={{
+                    filter: checkedItems.every(Boolean) ? "none" : "blur(5px)", // تفعيل الضبابية إذا لم تكن جميع الـ checkboxes محددة
+                    pointerEvents: checkedItems.every(Boolean)
+                      ? "auto"
+                      : "none", // تعطيل النسخ والتفاعل بالماوس إذا لم تكن جميع الـ checkboxes محددة
+                    userSelect: checkedItems.every(Boolean) ? "text" : "none", // منع تحديد النص عند عدم تحديد جميع الـ checkboxes
+                    transition: "filter 0.3s ease-in-out", // تأثير سلس عند التغيير
+                  }}
+                >
                   <p className="my-0 pe-2">{lpa}</p>
                   <button
                     onClick={() => handleCopy(lpa)}
                     className="btn  "
                     title="نسخ"
+                    disabled={!checkedItems.every(Boolean)}
                   >
                     <FontAwesomeIcon icon={faCopy} />
                   </button>
                 </div>
                 <p className=" text-end m-1 checkmanul mt-2 ">رمز التنشيط</p>
-                <div className=" d-flex justify-content-between align-items-center text-center bg-white rounded-3 px-2 py-1 checkmanul">
+                <div
+                  className=" d-flex justify-content-between align-items-center text-center bg-white rounded-3 px-2 py-1 checkmanul"
+                  style={{
+                    filter: checkedItems.every(Boolean) ? "none" : "blur(5px)", // تفعيل الضبابية إذا لم تكن جميع الـ checkboxes محددة
+                    pointerEvents: checkedItems.every(Boolean)
+                      ? "auto"
+                      : "none", // تعطيل النسخ والتفاعل بالماوس إذا لم تكن جميع الـ checkboxes محددة
+                    userSelect: checkedItems.every(Boolean) ? "text" : "none", // منع تحديد النص عند عدم تحديد جميع الـ checkboxes
+                    transition: "filter 0.3s ease-in-out", // تأثير سلس عند التغيير
+                  }}
+                >
                   <p className="my-0 pe-2">{matching_id}</p>
                   <button
                     onClick={() => handleCopy(matching_id)}
                     className="btn  "
                     title="نسخ"
+                    disabled={!checkedItems.every(Boolean)}
                   >
                     <FontAwesomeIcon icon={faCopy} />
                   </button>
