@@ -458,9 +458,9 @@ function pagepurchase() {
                   transition: "border 0.3s ease-in-out", // انتقال سلس
                 }}
               >
-                <div className="compatibility-check">
+                <div className="compatibility-check  ">
                   <h5 className="title">تأكيد التحقق من توافق هاتفك</h5>
-                  <label className="custom-checkbox pt-lg-1 d-flex justify-content-center align-items-center">
+                  <label className="custom-checkbox pt-lg-1 d-flex align-items-center  ">
                     <input
                       type="checkbox"
                       checked={isChecked}
@@ -475,7 +475,14 @@ function pagepurchase() {
                         transition: "border 0.3s ease-in-out", // انتقال سلس
                       }}
                     ></span>
-                    <p>
+                    <p
+                      style={{
+                        textAlign: "start",
+                        display: "block",
+                        lineHeight: "1.6",
+                      }}
+                      className=" pt-2"
+                    >
                       أوافق انني اطلعت على{" "}
                       <span
                         style={{
