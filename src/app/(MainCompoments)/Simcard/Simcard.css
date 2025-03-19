@@ -24,13 +24,13 @@
 /* checkboxx */
 .Simcard .equal-width {
   width: 100%;
-  max-width: 360px; /* يمكنك تعديلها حسب الحاجة */
+  max-width: 350px; /* يمكنك تعديلها حسب الحاجة */
 }
-.custom-checkbox input[type="checkbox"] {
+.Simcard .custom-checkbox input[type="checkbox"] {
   display: none;
 }
 
-.custom-checkbox .checkmark {
+.Simcard .custom-checkbox .checkmark {
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -41,11 +41,11 @@
   margin-left: 10px;
 }
 
-.custom-checkbox input[type="checkbox"]:checked + .checkmark {
+.Simcard .custom-checkbox input[type="checkbox"]:checked + .checkmark {
   background-color: #f9f9f9; /* اللون الذي تريده */
 }
 
-.custom-checkbox .checkmark::after {
+.Simcard .custom-checkbox .checkmark::after {
   content: "";
   position: absolute;
   display: none;
@@ -58,13 +58,13 @@
   transform: rotate(45deg);
 }
 
-.custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+.Simcard .custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
   display: block;
 }
-.compatibility-check {
+.Simcard .compatibility-check {
   border-radius: 8px; /* زوايا مستديرة */
 }
-.compatibility-check p {
+.Simcard .compatibility-check p {
   font-size: 10px !important;
   font-weight: 300 !important;
   color: var(--auth-color);

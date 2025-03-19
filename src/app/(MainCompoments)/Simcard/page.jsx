@@ -70,7 +70,7 @@ function SimcardPage() {
               />
             </div>
             <div
-              className="equal-width bg-white shadow-sm rounded-3 py-3 px-4 my-3 "
+              className="equal-width bg-white shadow-sm rounded-3 py-3 px-3 my-3"
               style={{
                 border:
                   checkedCount === checkedItems.length
@@ -80,8 +80,11 @@ function SimcardPage() {
               }}
             >
               {checkedItems.map((isChecked, index) => (
-                <div className="compatibility-check d-flex" key={index}>
-                  <label className="custom-checkbox">
+                <div
+                  className="compatibility-check d-flex align-items-center"
+                  key={index}
+                >
+                  <label className="custom-checkbox d-flex align-items-center my-1">
                     <input
                       type="checkbox"
                       checked={isChecked}
@@ -98,12 +101,18 @@ function SimcardPage() {
                     ></span>
                   </label>
                   <p
-                    className=" pt-2 "
+                    className="mb-0 ms-2"
+                    style={{
+                      textAlign: "start",
+                      display: "block",
+                      lineHeight: "1.6",
+                    }}
                     dangerouslySetInnerHTML={{ __html: checkboxLabels[index] }}
                   ></p>
                 </div>
               ))}
             </div>
+
             <div>{checkedItems.every(Boolean) ? <p>llll</p> : <p>kkk</p>}</div>
           </div>
           <div className="col-12 col-lg-7">
