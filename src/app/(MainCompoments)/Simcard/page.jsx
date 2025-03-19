@@ -112,6 +112,16 @@ function SimcardPage() {
                 </div>
               ))}
             </div>
+            <div className="divqr equal-width rounded-3 d-flex ">
+              <p className="pqr p-4">
+                امسح رمز QR هذا ضوئياً عن طريق طباعته او عرضه على جهاز اخر، او
+                من خلال التقاط صورة للشاشة. و من ثم اتبع التعليمات في الأسفل.
+              </p>
+              <span className="pqr p-4">
+                امسح رمز QR هذا ضوئياً عن طريق طباعته او عرضه على جهاز اخر، او
+                من خلال التقاط صورة للشاشة. و من ثم اتبع التعليمات في الأسفل.
+              </span>
+            </div>
 
             <div>{checkedItems.every(Boolean) ? <p>llll</p> : <p>kkk</p>}</div>
           </div>

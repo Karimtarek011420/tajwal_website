@@ -69,6 +69,14 @@
   font-weight: 300 !important;
   color: var(--auth-color);
 }
+.Simcard .divqr {
+  background-color: var(--background);
+}
+.Simcard .pqr{
+  font-size: 12px !important;
+  font-weight: 300 !important;
+  color: var(--secondary-color);
+}
 
 @media (min-width: 526px) and (max-width: 995px) {
   .Simcarchoose {
