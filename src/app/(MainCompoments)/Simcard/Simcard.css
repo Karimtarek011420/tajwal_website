@@ -82,6 +82,11 @@
   font-weight: 300 !important;
   color: var(--secondary-color);
 }
+.Simcard .checkmanulbtn {
+  background-color: var(--primary-btn);
+  font-size: 10px !important;
+  font-weight: 600 !important;
+}
 
 @media (min-width: 526px) and (max-width: 995px) {
   .Simcarchoose {

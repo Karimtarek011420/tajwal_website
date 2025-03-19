@@ -124,7 +124,7 @@ function SimcardPage() {
               ))}
             </div>
             {selectedOption === "qr" ? (
-              <div className="divqr equal-width rounded-3 d-flex justify-content-center  align-items-center p-3 ">
+              <div className="divqr equal-width rounded-3 d-flex justify-content-center  align-items-center p-3  ">
                 <p
                   className="pqr ms-1"
                   style={{
@@ -207,6 +207,11 @@ function SimcardPage() {
                   يرجى نسخ هذي البيانات و من ثم اتباع التعليمات في الاسفل لتثبيت
                   الشريحة يدوياً على جهازك.
                 </p>
+                <div className="  text-white d-flex justify-content-center align-items-center">
+                  <button className="checkmanulbtn px-5  py-2  rounded-2 shadow-sm  text-white border-0  w-75">
+                    مشاركة التعليمات
+                  </button>
+                </div>
               </div>
             )}
           </div>
