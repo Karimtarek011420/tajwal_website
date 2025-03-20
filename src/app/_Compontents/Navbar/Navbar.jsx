@@ -190,7 +190,7 @@ export default function Navbar() {
               aria-label="Close"
             ></button>
           </div>
-          <div className="offcanvas-body  me-xl-5">
+          <div className="offcanvas-body ">
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <button
