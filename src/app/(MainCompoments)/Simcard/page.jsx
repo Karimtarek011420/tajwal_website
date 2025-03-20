@@ -152,7 +152,7 @@ function SimcardPage() {
                 </span>
               </div>
             ) : (
-              <div className="divqr equal-width rounded-3 p-3   checkmanul ">
+              <div className="divqr equal-width rounded-3 p-3   checkmanul  mb-4">
                 <p className=" text-end m-1 checkmanul ">عنوان SM-DP+</p>
                 <div
                   className=" d-flex justify-content-between align-items-center text-center bg-white rounded-3 px-2 py-1 checkmanul"
