@@ -233,16 +233,21 @@ function SimcardPage() {
                 قراءة التعليمات
               </button>
             </div>
-            <div>
-              <p className="pt-5 checkmanul text-black">
-                الرجاء الإطلاع على الفيديو كاملاً لتفادي اي اخطاء قد تؤثر على
-                تثبيت الشريحة بالشكل الصحيح.
-              </p>
+            {selectedWatch === "video" ? (
               <div>
-                <p>kkk</p>
+                <p className="pt-5 checkmanul text-black">
+                  الرجاء الإطلاع على الفيديو كاملاً لتفادي اي اخطاء قد تؤثر على
+                  تثبيت الشريحة بالشكل الصحيح.
+                </p>
+                <div>
+                  <p>kkk</p>
+                </div>
               </div>
-            </div>
-            <div>information</div>
+            ) : selectedOption === "qr" ? (
+              <div>information ka rim</div>
+            ) : (
+              <div>information شمم</div>
+            )}
           </div>
         </div>
       </div>
