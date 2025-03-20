@@ -155,9 +155,9 @@ export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg py-1">
       <div className="container-fluid">
-        <Link className="navbar-brand px-xl-5" href="/">
+        <Link className="navbar-brand  " href="/">
           <Image
-            className="logo"
+            className="logo "
             src={logonavbar}
             width={200}
             height={100}
