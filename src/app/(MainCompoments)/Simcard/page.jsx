@@ -53,7 +53,7 @@ function SimcardPage() {
           </li>
         </ul>
       </div>
-      <div className="container pt-5 pb-2 bg-white shadow-sm rounded-3 position-relative mt-5">
+      <div className="container pt-5 pb-3 bg-white shadow-sm rounded-3 position-relative mt-5">
         <div className="position-absolute Simcarchoose  d-flex justify-content-center align-items-center">
           <button
             className={`Simcard-list-links ${
@@ -235,7 +235,7 @@ function SimcardPage() {
             </div>
             {selectedWatch === "video" ? (
               <div>
-                <p className="py-5 checkmanul text-black">
+                <p className="py-lg-5 py-3  checkmanul text-black">
                   الرجاء الإطلاع على الفيديو كاملاً لتفادي اي اخطاء قد تؤثر على
                   تثبيت الشريحة بالشكل الصحيح.
                 </p>
