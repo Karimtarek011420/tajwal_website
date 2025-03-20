@@ -11,8 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import toast from "react-hot-toast";
 function SimcardPage() {
   const [selectedOption, setSelectedOption] = useState("qr");
-  // const [selectedWatch, setSelectedWatch] = useState("video");
-  const [selectedWatch, setSelectedWatch] = useState("info");
+  const [selectedWatch, setSelectedWatch] = useState("video");
   const [checkedItems, setCheckedItems] = useState([false, false, false]);
   const searchParams = useSearchParams();
   const checkedCount = checkedItems.filter(Boolean).length;
@@ -285,6 +284,37 @@ function SimcardPage() {
                       اضغط “متابعة”.
                     </li>
                   </ol>
+                  <span>الخطوة الثانية:</span>
+                  <ol className="mt-2 pe-3 list-decimal list-inside leading-relaxed ">
+                    <li>
+                      من اعدادات الجاهز، اتجه الى “البيانات الخلوية” ثم اختر
+                      الشريحة الجديد التي قمت للتو بتفعيلها. فعل الشريحة “بالضغط
+                      على الزر في يمين الشاشة ليكون باللون الأخضر”.
+                    </li>
+                    <li>
+                      حدد شريحة البيانات لتكون الشريحة الاساسية لبيانات
+                      الانترنت، و اخر الشريحة الاساسية للمكالمات كيفما تشاء.
+                    </li>
+                    <li>
+                      اضغط على خيار “اختيار الشبكة” و أوقف الخيار “التبديل
+                      التلقائي للبيانات الخلوية”.
+                    </li>
+                    <li>
+                      اذا كان خيار “اختيار الشبكة تلقائياً” مفعلاً و لكن تم
+                      الاتصال بالشبكة الخطأ، قم بتغير الخيار الى “يدوياً” و من
+                      ثم اختر الشبكة الموضحة في تفاصيل الشريحة.
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            ) : (
+              <div className="mt-5">
+                <p className="instructionsqr px-lg-5 ">
+                  يجب عدم ايقاف او مقاطعة عملية تثبيت الشريحة اثناء اجراءات
+                  تثبيت الشريحة. كما انه يجب التأكد من اتصال الهاتف بالانترنت
+                  طوال خطوات عملية تثبيت الشريحة.
+                </p>
+                <div className="instructionsqrstep text-end mt-4">
                   <span>الخطوة الأولى:</span>
                   <ol className="mt-2 pe-3 list-decimal list-inside leading-relaxed ">
                     <li>
@@ -292,10 +322,10 @@ function SimcardPage() {
                       أو اعداد الخدمة الخلوية &gt; استخدم رمز QR على جهازك.
                     </li>
                     <li>
-                      امسح رمز QR ضوئياً أو التقط الشاشة ثم اضغط على “فتح الصور”
-                      و اختر رمز QR من الألبوم و اضغط على “التالي”، ثم
-                      “المتابعة” مرتين، قد يستغرق ذلك حتى بضع دقائق، و من ثم
-                      اضغط على كلمة “تم”.
+                      اسفل الشاشة اضغط على “ادخال التفاصيل يدوياً” و من ثم قم
+                      بادخال رمز SM-DP+ و رمز التنشيط المكتوبه اعلى هذه الصفحة
+                      ثم اضغط على “التالي”، ثم “المتابعة” مرتين، قد يستغرق ذلك
+                      حتى بضع دقائق، و من ثم اضغط على كلمة “تم”.
                     </li>
                     <li>
                       قم بادخال اسم الشريحة، على سبيل المثال “شريحة تركيا”.{" "}
@@ -303,7 +333,7 @@ function SimcardPage() {
                     <li>
                       حدد الشريحة الجديدة لتكون الشريحة الافتراضية للبيانات و
                       المكالمات (اذا كانت الباقة تشمل مكالمات) و من ثم اضغط
-                      “متابعة”.{" "}
+                      “متابعة”.
                     </li>
                     <li>
                       اختر الشريحة التي تود ان يتم استخدامها لحسابك في iMessage
@@ -315,10 +345,29 @@ function SimcardPage() {
                       اضغط “متابعة”.
                     </li>
                   </ol>
+                  <span>الخطوة الثانية:</span>
+                  <ol className="mt-2 pe-3 list-decimal list-inside leading-relaxed ">
+                    <li>
+                      من اعدادات الجاهز، اتجه الى “البيانات الخلوية” ثم اختر
+                      الشريحة الجديد التي قمت للتو بتفعيلها. فعل الشريحة “بالضغط
+                      على الزر في يمين الشاشة ليكون باللون الأخضر”.
+                    </li>
+                    <li>
+                      حدد شريحة البيانات لتكون الشريحة الاساسية لبيانات
+                      الانترنت، و اخر الشريحة الاساسية للمكالمات كيفما تشاء.
+                    </li>
+                    <li>
+                      اضغط على خيار “اختيار الشبكة” و أوقف الخيار “التبديل
+                      التلقائي للبيانات الخلوية”.
+                    </li>
+                    <li>
+                      اذا كان خيار “اختيار الشبكة تلقائياً” مفعلاً و لكن تم
+                      الاتصال بالشبكة الخطأ، قم بتغير الخيار الى “يدوياً” و من
+                      ثم اختر الشبكة الموضحة في تفاصيل الشريحة.
+                    </li>
+                  </ol>
                 </div>
               </div>
-            ) : (
-              <div>information شمم</div>
             )}
           </div>
         </div>
