@@ -71,7 +71,7 @@ function SimcardPage() {
             يدوي
           </button>
         </div>
-        <div className="row gy-3 justify-content-center align-items-center  px-md-5">
+        <div className="row gy-3">
           <div className="col-12 col-lg-5 d-flex flex-column align-items-center text-center">
             <div className="equal-width">
               <Image
@@ -216,7 +216,7 @@ function SimcardPage() {
             )}
           </div>
           <div className="col-12 col-lg-7">
-            {/* يمكن إضافة محتوى إضافي هنا */}
+            <div>lll</div>
           </div>
         </div>
       </div>
