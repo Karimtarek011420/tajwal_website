@@ -191,7 +191,7 @@ export default function Navbar() {
             ></button>
           </div>
           <div className="offcanvas-body ">
-            <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav mx-auto  mb-lg-0">
               <li className="nav-item">
                 <button
                   className={`nav-link text-white ${
