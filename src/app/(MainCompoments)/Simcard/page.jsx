@@ -54,7 +54,7 @@ function SimcardPage() {
           </li>
         </ul>
       </div>
-      <div className="container py-5 bg-white shadow-sm rounded-3 position-relative mt-5">
+      <div className="container pt-5 pb-2 bg-white shadow-sm rounded-3 position-relative mt-5">
         <div className="position-absolute Simcarchoose  d-flex justify-content-center align-items-center">
           <button
             className={`Simcard-list-links ${
