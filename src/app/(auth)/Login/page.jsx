@@ -181,8 +181,8 @@ const LoginPage = () => {
                 {loading ? (
                   <TailSpin
                     visible={true}
-                    height="35"
-                    width="35"
+                    height="30"
+                    width="30"
                     color="#fff"
                     ariaLabel="tail-spin-loading"
                   />
@@ -241,8 +241,8 @@ const LoginPage = () => {
                 {loading ? (
                   <TailSpin
                     visible={true}
-                    height="35"
-                    width="35"
+                    height="30"
+                    width="30"
                     color="#fff"
                     ariaLabel="tail-spin-loading"
                   />
