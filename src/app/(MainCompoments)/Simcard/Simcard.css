@@ -115,6 +115,11 @@
   font-size: 13px;
   font-weight: 300;
 }
+.Simcard .tajwalh {
+  font-size: 18px !important;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
 
 @media (min-width: 526px) and (max-width: 995px) {
   .Simcarchoose {

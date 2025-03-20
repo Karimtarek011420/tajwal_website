@@ -9,6 +9,8 @@ import { QRCodeCanvas } from "qrcode.react";
 import { faCopy } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import toast from "react-hot-toast";
+import appStore1 from "@/assets/images/appStore1.svg";
+import googlePlay2 from "@/assets/images/googlePlay2.svg";
 function SimcardPage() {
   const [selectedOption, setSelectedOption] = useState("qr");
   const [selectedWatch, setSelectedWatch] = useState("video");
@@ -37,6 +39,10 @@ function SimcardPage() {
       style: { backgroundColor: "#4b87a4", color: "white" },
     });
   };
+  const appLink =
+    "https://play.google.com/store/apps/details?id=com.sic.tajwaal&pli=1";
+  const appLinkApple =
+    "https://apps.apple.com/sa/app/%D8%AA%D8%AC%D9%88%D8%A7%D9%84-%D8%B4%D8%B1%D8%A7%D8%A6%D8%AD-%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA-%D9%88-%D8%A7%D9%86%D8%AA%D8%B1%D9%86%D8%AA/id6553994315";
 
   return (
     <div className="Simcard  position-relative py-5">
@@ -369,6 +375,36 @@ function SimcardPage() {
                 </div>
               </div>
             )}
+          </div>
+        </div>
+      </div>
+      <div className="  d-flex flex-column align-items-center text-center">
+        <h6 className="tajwalh  text-center pb-2">حمل التطبيق</h6>
+        <div className="d-flex align-content-center align-items-center  text-center ">
+          <div className="d-flex flex-column align-items-center">
+            <QRCodeCanvas value={appLink} size={60} className="mb-1" />
+            <a
+              href="https://play.google.com/store/apps/details?id=com.sic.tajwaal&pli=1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src={googlePlay2}
+                width={100}
+                height={30}
+                alt="Google Play"
+              />
+            </a>
+          </div>
+          <div className="d-flex flex-column align-items-center">
+            <QRCodeCanvas value={appLinkApple} size={60} className="mb-1" />
+            <a
+              href="https://apps.apple.com/sa/app/%D8%AA%D8%AC%D9%88%D8%A7%D9%84-%D8%B4%D8%B1%D8%A7%D8%A6%D8%AD-%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA-%D9%88-%D8%A7%D9%86%D8%AA%D8%B1%D9%86%D8%AA/id6553994315"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image src={appStore1} width={100} height={30} alt="App Store" />
+            </a>
           </div>
         </div>
       </div>
