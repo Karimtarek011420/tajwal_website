@@ -215,7 +215,7 @@ function SimcardPage() {
               </div>
             )}
           </div>
-          <div className="col-12 col-lg-7 d-flex flex-column align-items-center text-center">
+          <div className="col-12 col-lg-7 d-flex flex-column align-items-center text-center ">
             <div className=" d-flex">
               <button
                 className={` px-5  py-2  rounded-2 shadow-sm  text-white border-0  ms-2 ${
@@ -249,11 +249,27 @@ function SimcardPage() {
               </div>
             ) : selectedOption === "qr" ? (
               <div className="my-5">
-                <p className="instructionsqr px-5">
+                <p className="instructionsqr px-lg-5 ">
                   يجب عدم ايقاف او مقاطعة عملية تثبيت الشريحة اثناء اجراءات
                   تثبيت الشريحة. كما انه يجب التأكد من اتصال الهاتف بالانترنت
                   طوال خطوات عملية تثبيت الشريحة.
                 </p>
+                <div className="instructionsqrstep text-end mt-5">
+                  <span>الخطوة الأولى:</span>
+                  <ol className="mt-2 pe-3 list-decimal list-inside leading-relaxed">
+                    <li>
+                      انتقل إلى الاعدادات &gt; البيانات الخلوية &gt; اضافة خطة أو
+                      اعداد الخدمة الخلوية &gt; استخدم رمز QR على جهازك.
+                    </li>
+                    <li>
+                      ضع الشريحة الجديدة في المكان المخصص لها وانتظر حتى يتعرف
+                      عليها الهاتف.
+                    </li>
+                    <li>
+                      اتبع التعليمات الظاهرة على الشاشة لإكمال التثبيت بنجاح.
+                    </li>
+                  </ol>
+                </div>
               </div>
             ) : (
               <div>information شمم</div>

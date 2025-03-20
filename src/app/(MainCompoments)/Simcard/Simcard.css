@@ -99,11 +99,21 @@
   color: var(--auth-color) !important;
   border: 0.5px solid #d9dee4 !important;
 }
-.Simcard .instructionsqr{
+.Simcard .instructionsqr {
   font-size: 13px !important;
   font-weight: 500;
-  color: #BB7676;
-
+  color: #bb7676;
+}
+.Simcard .instructionsqrstep {
+  color: var(--secondary-color);
+}
+.Simcard .instructionsqrstep span {
+  font-size: 14px;
+  font-weight: 600;
+}
+.Simcard .instructionsqrstep ol li {
+  font-size: 13px;
+  font-weight: 300;
 }
 
 @media (min-width: 526px) and (max-width: 995px) {
