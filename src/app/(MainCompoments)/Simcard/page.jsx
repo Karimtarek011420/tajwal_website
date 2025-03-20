@@ -11,7 +11,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import toast from "react-hot-toast";
 function SimcardPage() {
   const [selectedOption, setSelectedOption] = useState("qr");
-  const [selectedWatch, setSelectedWatch] = useState("video");
+  // const [selectedWatch, setSelectedWatch] = useState("video");
+  const [selectedWatch, setSelectedWatch] = useState("info");
   const [checkedItems, setCheckedItems] = useState([false, false, false]);
   const searchParams = useSearchParams();
   const checkedCount = checkedItems.filter(Boolean).length;
@@ -247,7 +248,13 @@ function SimcardPage() {
                 </div>
               </div>
             ) : selectedOption === "qr" ? (
-              <div>information ka rim</div>
+              <div className="my-5">
+                <p className="instructionsqr px-5">
+                  يجب عدم ايقاف او مقاطعة عملية تثبيت الشريحة اثناء اجراءات
+                  تثبيت الشريحة. كما انه يجب التأكد من اتصال الهاتف بالانترنت
+                  طوال خطوات عملية تثبيت الشريحة.
+                </p>
+              </div>
             ) : (
               <div>information شمم</div>
             )}

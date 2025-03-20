@@ -99,6 +99,12 @@
   color: var(--auth-color) !important;
   border: 0.5px solid #d9dee4 !important;
 }
+.Simcard .instructionsqr{
+  font-size: 13px !important;
+  font-weight: 500;
+  color: #BB7676;
+
+}
 
 @media (min-width: 526px) and (max-width: 995px) {
   .Simcarchoose {
