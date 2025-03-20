@@ -235,12 +235,15 @@ function SimcardPage() {
             </div>
             {selectedWatch === "video" ? (
               <div>
-                <p className="pt-5 checkmanul text-black">
+                <p className="py-5 checkmanul text-black">
                   الرجاء الإطلاع على الفيديو كاملاً لتفادي اي اخطاء قد تؤثر على
                   تثبيت الشريحة بالشكل الصحيح.
                 </p>
                 <div>
-                  <p>kkk</p>
+                  <video width="100%" height="auto" controls>
+                    <source src="/video.mp4" type="video/mp4" />
+                    متصفحك لا يدعم تشغيل الفيديو.
+                  </video>
                 </div>
               </div>
             ) : selectedOption === "qr" ? (
