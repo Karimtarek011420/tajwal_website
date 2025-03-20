@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import toast from "react-hot-toast";
 function SimcardPage() {
   const [selectedOption, setSelectedOption] = useState("qr");
+  const [selectedWatch, setSelectedWatch] = useState("video");
   const [checkedItems, setCheckedItems] = useState([false, false, false]);
   const searchParams = useSearchParams();
   const checkedCount = checkedItems.filter(Boolean).length;
@@ -215,13 +216,33 @@ function SimcardPage() {
           </div>
           <div className="col-12 col-lg-7 d-flex flex-column align-items-center text-center">
             <div className=" d-flex">
-              <button className="checkwatchbtn px-5  py-2  rounded-2 shadow-sm  text-white border-0  ">
+              <button
+                className={` px-5  py-2  rounded-2 shadow-sm  text-white border-0  ms-2 ${
+                  selectedWatch === "video" ? "checkwatchbtn" : "checkinfobtn"
+                }`}
+                onClick={() => setSelectedWatch("video")}
+              >
                 مشاهدة الفيديو
               </button>
-              <button className="checkinfobtn px-5  py-2  rounded-2 shadow-sm   border-0  ">
+              <button
+                className={`  px-5  py-2  rounded-2 shadow-sm  text-white border-0  ms-2  ${
+                  selectedWatch === "info" ? "checkwatchbtn" : "checkinfobtn"
+                }`}
+                onClick={() => setSelectedWatch("info")}
+              >
                 قراءة التعليمات
               </button>
             </div>
+            <div>
+              <p className="pt-5 checkmanul text-black">
+                الرجاء الإطلاع على الفيديو كاملاً لتفادي اي اخطاء قد تؤثر على
+                تثبيت الشريحة بالشكل الصحيح.
+              </p>
+              <div>
+                <p>kkk</p>
+              </div>
+            </div>
+            <div>information</div>
           </div>
         </div>
       </div>

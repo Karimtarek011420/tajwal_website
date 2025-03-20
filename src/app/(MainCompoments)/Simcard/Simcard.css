@@ -97,6 +97,7 @@
   font-size: 10px !important;
   font-weight: 400 !important;
   color: var(--auth-color) !important;
+  border: 0.5px solid #d9dee4 !important;
 }
 
 @media (min-width: 526px) and (max-width: 995px) {
