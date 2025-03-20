@@ -207,16 +207,21 @@ function SimcardPage() {
                   يرجى نسخ هذي البيانات و من ثم اتباع التعليمات في الاسفل لتثبيت
                   الشريحة يدوياً على جهازك.
                 </p>
-                <div className="  text-white d-flex justify-content-center align-items-center">
-                  <button className="checkmanulbtn px-5  py-2  rounded-2 shadow-sm  text-white border-0  w-75">
-                    مشاركة التعليمات
-                  </button>
-                </div>
+                <button className="checkmanulbtn px-5  py-2  rounded-2 shadow-sm  text-white border-0  w-75">
+                  مشاركة التعليمات
+                </button>
               </div>
             )}
           </div>
-          <div className="col-12 col-lg-7">
-            <div>lll</div>
+          <div className="col-12 col-lg-7 d-flex flex-column align-items-center text-center">
+            <div className=" d-flex">
+              <button className="checkwatchbtn px-5  py-2  rounded-2 shadow-sm  text-white border-0  ">
+                مشاهدة الفيديو
+              </button>
+              <button className="checkinfobtn px-5  py-2  rounded-2 shadow-sm   border-0  ">
+                قراءة التعليمات
+              </button>
+            </div>
           </div>
         </div>
       </div>
