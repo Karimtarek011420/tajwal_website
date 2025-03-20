@@ -218,7 +218,7 @@ function SimcardPage() {
           <div className="col-12 col-lg-7 d-flex flex-column align-items-center text-center ">
             <div className=" d-flex">
               <button
-                className={` px-5  py-2  rounded-2 shadow-sm  text-white border-0  ms-2 ${
+                className={` px-lg-5 px-4  py-2  rounded-2 shadow-sm  text-white border-0  ms-2 ${
                   selectedWatch === "video" ? "checkwatchbtn" : "checkinfobtn"
                 }`}
                 onClick={() => setSelectedWatch("video")}
@@ -226,7 +226,7 @@ function SimcardPage() {
                 مشاهدة الفيديو
               </button>
               <button
-                className={`  px-5  py-2  rounded-2 shadow-sm  text-white border-0  ms-2  ${
+                className={`  px-lg-5 px-4  py-2  rounded-2 shadow-sm  text-white border-0  ms-2  ${
                   selectedWatch === "info" ? "checkwatchbtn" : "checkinfobtn"
                 }`}
                 onClick={() => setSelectedWatch("info")}
@@ -248,25 +248,71 @@ function SimcardPage() {
                 </div>
               </div>
             ) : selectedOption === "qr" ? (
-              <div className="my-5">
+              <div className="mt-5">
                 <p className="instructionsqr px-lg-5 ">
                   يجب عدم ايقاف او مقاطعة عملية تثبيت الشريحة اثناء اجراءات
                   تثبيت الشريحة. كما انه يجب التأكد من اتصال الهاتف بالانترنت
                   طوال خطوات عملية تثبيت الشريحة.
                 </p>
-                <div className="instructionsqrstep text-end mt-5">
+                <div className="instructionsqrstep text-end mt-4">
                   <span>الخطوة الأولى:</span>
-                  <ol className="mt-2 pe-3 list-decimal list-inside leading-relaxed">
+                  <ol className="mt-2 pe-3 list-decimal list-inside leading-relaxed ">
                     <li>
-                      انتقل إلى الاعدادات &gt; البيانات الخلوية &gt; اضافة خطة أو
-                      اعداد الخدمة الخلوية &gt; استخدم رمز QR على جهازك.
+                      انتقل إلى الاعدادات &gt; البيانات الخلوية &gt; اضافة خطة
+                      أو اعداد الخدمة الخلوية &gt; استخدم رمز QR على جهازك.
                     </li>
                     <li>
-                      ضع الشريحة الجديدة في المكان المخصص لها وانتظر حتى يتعرف
-                      عليها الهاتف.
+                      امسح رمز QR ضوئياً أو التقط الشاشة ثم اضغط على “فتح الصور”
+                      و اختر رمز QR من الألبوم و اضغط على “التالي”، ثم
+                      “المتابعة” مرتين، قد يستغرق ذلك حتى بضع دقائق، و من ثم
+                      اضغط على كلمة “تم”.
                     </li>
                     <li>
-                      اتبع التعليمات الظاهرة على الشاشة لإكمال التثبيت بنجاح.
+                      قم بادخال اسم الشريحة، على سبيل المثال “شريحة تركيا”.{" "}
+                    </li>
+                    <li>
+                      حدد الشريحة الجديدة لتكون الشريحة الافتراضية للبيانات و
+                      المكالمات (اذا كانت الباقة تشمل مكالمات) و من ثم اضغط
+                      “متابعة”.{" "}
+                    </li>
+                    <li>
+                      اختر الشريحة التي تود ان يتم استخدامها لحسابك في iMessage
+                      و Facetime (ينصح بتركها على الشريحة القديمة الخاصه بك)
+                      “متابعة”.
+                    </li>
+                    <li>
+                      حدد الشريحة الجديد كالخيار الاساسي للبيانات الخلوية، ثم
+                      اضغط “متابعة”.
+                    </li>
+                  </ol>
+                  <span>الخطوة الأولى:</span>
+                  <ol className="mt-2 pe-3 list-decimal list-inside leading-relaxed ">
+                    <li>
+                      انتقل إلى الاعدادات &gt; البيانات الخلوية &gt; اضافة خطة
+                      أو اعداد الخدمة الخلوية &gt; استخدم رمز QR على جهازك.
+                    </li>
+                    <li>
+                      امسح رمز QR ضوئياً أو التقط الشاشة ثم اضغط على “فتح الصور”
+                      و اختر رمز QR من الألبوم و اضغط على “التالي”، ثم
+                      “المتابعة” مرتين، قد يستغرق ذلك حتى بضع دقائق، و من ثم
+                      اضغط على كلمة “تم”.
+                    </li>
+                    <li>
+                      قم بادخال اسم الشريحة، على سبيل المثال “شريحة تركيا”.{" "}
+                    </li>
+                    <li>
+                      حدد الشريحة الجديدة لتكون الشريحة الافتراضية للبيانات و
+                      المكالمات (اذا كانت الباقة تشمل مكالمات) و من ثم اضغط
+                      “متابعة”.{" "}
+                    </li>
+                    <li>
+                      اختر الشريحة التي تود ان يتم استخدامها لحسابك في iMessage
+                      و Facetime (ينصح بتركها على الشريحة القديمة الخاصه بك)
+                      “متابعة”.
+                    </li>
+                    <li>
+                      حدد الشريحة الجديد كالخيار الاساسي للبيانات الخلوية، ثم
+                      اضغط “متابعة”.
                     </li>
                   </ol>
                 </div>
