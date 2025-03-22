@@ -223,7 +223,7 @@ function SimcardPage() {
           <div className="col-12 col-lg-7 d-flex flex-column align-items-center text-center ">
             <div className=" d-flex">
               <button
-                className={` px-lg-5 px-4  py-2  rounded-2 shadow-sm  text-white border-0  ms-2 ${
+                className={` px-5   py-2  rounded-2 shadow-sm  text-white border-0 ms-2 ${
                   selectedWatch === "video" ? "checkwatchbtn" : "checkinfobtn"
                 }`}
                 onClick={() => setSelectedWatch("video")}
@@ -231,7 +231,7 @@ function SimcardPage() {
                 مشاهدة الفيديو
               </button>
               <button
-                className={`  px-lg-5 px-4  py-2  rounded-2 shadow-sm  text-white border-0  ms-2  ${
+                className={`  px-5  py-2  rounded-2 shadow-sm  text-white border-0   ${
                   selectedWatch === "info" ? "checkwatchbtn" : "checkinfobtn"
                 }`}
                 onClick={() => setSelectedWatch("info")}
