@@ -134,4 +134,8 @@
     padding: 10px 50px !important;
     white-space: nowrap; /* يمنع النص من النزول لسطر جديد */
   }
+  .Simcard .tajwalh {
+    font-size: 16px !important;
+   
+  }
 }
