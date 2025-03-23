@@ -1,0 +1,49 @@
+/* General Styles */
+
+.previousOrders .cardinfo li.active {
+  font-weight: 500;
+}
+
+.previousOrders .accountInformationp {
+  color: var(--primary-color);
+}
+.previousOrders .cardinfo span {
+  font-size: 12px !important;
+  font-weight: 300 !important;
+  color: var(--auth-color);
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.previousOrders .cardinfo h6 {
+  font-weight: 700 !important;
+  color: var(--auth-color);
+  font-size: 17px !important;
+}
+.previousOrders .cardinfo ul li {
+  padding-bottom: 10px;
+  color: var(--auth-color) !important ;
+  font-size: 17px !important;
+  font-weight: 300 !important;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+.previousOrders .cardinfo ul li.accountInformationlogout {
+  color: #e14f72 !important;
+}
+
+.previousOrders .cardinfo .active {
+  font-weight: 500 !important;
+  color: var(--auth-color) !important;
+}
+.previousOrders .cardinfo ul li:hover {
+  font-weight: 500 !important;
+}
+.previousOrders .ordername {
+  font-size: 12px !important;
+  font-weight: 300 !important;
+  color: #000000;
+}
+.previousOrders .ordername span {
+  font-size: 12px !important;
+  font-weight: 300 !important;
+  color: var(--auth-color);
+}
