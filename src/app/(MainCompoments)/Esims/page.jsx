@@ -11,6 +11,7 @@ import Image from "next/image";
 import { API_BASE_URL } from "@/app/utils/config";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import numberorder from "@/assets/images/numberorder.svg";
 function PreviousEsims() {
   const { token } = useContext(authtoken);
   const router = useRouter();
@@ -82,7 +83,7 @@ function PreviousEsims() {
             </p>
           </div>
         ) : (
-          <div className="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-3 row-cols-sm-2 row-cols-1 gy-4">
+          <div className="row row-cols-xxl-4 row-cols-xl-4 row-cols-lg-3 row-cols-sm-2 row-cols-1 gy-4">
             {data?.map((order) => {
               return (
                 <div key={order.id} className="col">
@@ -97,6 +98,27 @@ function PreviousEsims() {
                             loading="lazy"
                             alt="img-country"
                           />
+                        </div>
+                        <div className="row gy-2">
+                          <div className=" col-md-6">
+                            <div className="d-flex justify-content-between align-items-center text-center p-3 rounded-3 mx-2  bg-white shadow-sm ordersucessdetilas">
+                              <div className="d-flex align-items-center justify-content-center ">
+                                <Image
+                                  src={numberorder}
+                                  width={13}
+                                  height={16}
+                                  alt="iconcountry"
+                                />
+                                <p className="mb-0 ordername d-flex">رقم الطلب</p>
+                              </div>
+
+                              <div>
+                              <span className="me-3">
+                              {order.id}
+                            </span>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                         <div className="d-flex flex-column align-items-start  text-start mt-3">
                           <p className="mb-0 ordername d-flex">
