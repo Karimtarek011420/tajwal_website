@@ -18,7 +18,7 @@ function PreviousEsims() {
   const [data, setdata] = useState(null);
   const [error, setError] = useState(null); // تخزين الخطأ
   const [loading, setLoading] = useState(false);
-  const apiOrders = async () => {
+  const apiEsims = async () => {
     setLoading(true);
     try {
       const { data } = await axios.get(`${API_BASE_URL}/get_order`, {
@@ -36,11 +36,11 @@ function PreviousEsims() {
     setLoading(false);
   };
   useEffect(() => {
-    apiOrders();
+    apiEsims();
   }, []);
 
   return (
-    <div className="previousOrders position-relative py-5">
+    <div className="PreviousEsims position-relative py-5">
       <div className="position-absolute country-listbeginall w-100">
         <ul className="list-unstyled d-flex justify-content-center align-items-center">
           <li
@@ -54,9 +54,9 @@ function PreviousEsims() {
           </li>
         </ul>
       </div>
-      <div className=" px-5 py-3 container-fluid">
+      <div className=" px-lg-5 p-3 container-fluid">
         {loading ? (
-          <div  className="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-3 row-cols-sm-2 row-cols-1 gy-4">
+          <div className="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-3 row-cols-sm-2 row-cols-1 gy-4">
             {Array.from({ length: 50 }).map((_, index) => (
               <div key={index} className="col">
                 <div className="bg-white shadow-sm text-center">
@@ -78,7 +78,7 @@ function PreviousEsims() {
         ) : data?.length === 0 ? (
           <div className="d-flex justify-content-center">
             <p className=" text-danger fs-6 text-center py-5">
-              لا يوجد طلبات سابقة.
+              لا يوجد شؤائح سابقة.
             </p>
           </div>
         ) : (
@@ -86,41 +86,40 @@ function PreviousEsims() {
             {data?.map((order) => {
               return (
                 <div key={order.id} className="col">
-                  <div className="bg-white shadow-sm text-center rounded-3">
+                  <div className="bg-white shadow-sm text-center rounded-3 position-relative">
                     <Link href={`/Orders/${order.id}`}>
-                      <div className="d-flex justify-content-between align-items-center p-3">
-                        <div className=" d-flex justify-content-center align-items-center">
+                      <div className="p-3">
+                        <div className=" position-absolute esimflag  end-25  ">
                           <Image
                             src={order.country.image}
-                            width={45}
-                            height={30}
+                            width={50}
+                            height={40}
                             loading="lazy"
                             alt="img-country"
                           />
-                          <div className="d-flex flex-column align-items-start me-3 text-start">
-                            <p className="mb-0 ordername d-flex">
-                              رقم الطلب:
-                              <span className="me-3 flex-grow-1 text-start">
-                                {order.id}
-                              </span>
-                            </p>
-                            <p className="mb-0 ordername d-flex">
-                              تاريخ الطلب:
-                              <span className="me-2 flex-grow-1 text-start">
-                                {new Date(order.created_at).toLocaleDateString(
-                                  "EG"
-                                )}
-                              </span>
-                            </p>
-                            <p className="mb-0 ordername d-flex">
-                              إجمالي الطلب:
-                              <span className="me-2 flex-grow-1 text-start">
-                                {order.invoice_value} ر.س
-                              </span>
-                            </p>
-                          </div>
                         </div>
-                        <Image src={arrow} width={8} height={15} alt="arrow" />
+                        <div className="d-flex flex-column align-items-start  text-start mt-3">
+                          <p className="mb-0 ordername d-flex">
+                            رقم الطلب:
+                            <span className="me-3 flex-grow-1 text-start">
+                              {order.id}
+                            </span>
+                          </p>
+                          <p className="mb-0 ordername d-flex">
+                            تاريخ الطلب:
+                            <span className="me-2 flex-grow-1 text-start">
+                              {new Date(order.created_at).toLocaleDateString(
+                                "EG"
+                              )}
+                            </span>
+                          </p>
+                          <p className="mb-0 ordername d-flex">
+                            إجمالي الطلب:
+                            <span className="me-2 flex-grow-1 text-start">
+                              {order.invoice_value} ر.س
+                            </span>
+                          </p>
+                        </div>
                       </div>
                     </Link>
                   </div>
