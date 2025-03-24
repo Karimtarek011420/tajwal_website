@@ -13,6 +13,8 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import numberorder from "@/assets/images/numberorder.svg";
 import dataorder from "@/assets/images/dataorder.svg";
+import Validity from "@/assets/images/icon3dark.svg";
+
 function PreviousEsims() {
   const { token } = useContext(authtoken);
   const router = useRouter();
@@ -196,20 +198,19 @@ function PreviousEsims() {
                             <div className="order-content">
                               <div className="d-flex align-items-center">
                                 <Image
-                                  src={dataorder}
+                                  src={Validity}
                                   width={16}
                                   height={16}
                                   alt="iconcountry"
                                 />
                                 <p className="me-1 mb-0 ordername">
-                                  تاريخ الطلب:
+                                   المدة:
                                 </p>
                               </div>
                               <div>
                                 <span className="me-3 ordernameid">
-                                  {new Date(esim.created_at).toLocaleDateString(
-                                    "EG"
-                                  )}
+                                {esim.esims[0].package.day}{" "}
+                                {esim.esims[0].package.day <= 10 ? "أيام" : "يوم"}
                                 </span>
                               </div>
                             </div>
