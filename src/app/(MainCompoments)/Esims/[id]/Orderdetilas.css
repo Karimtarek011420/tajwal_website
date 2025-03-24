@@ -1,0 +1,80 @@
+.Ordersdetails .cardinfo li.active {
+  font-weight: 500;
+}
+
+.Ordersdetails .accountInformationp {
+  color: var(--primary-color);
+}
+.Ordersdetails .cardinfo span {
+  font-size: 12px !important;
+  font-weight: 300 !important;
+  color: var(--auth-color);
+  margin: 0 !important;
+  padding: 0 !important;
+}
+button.btnback {
+  background-color: var(--primary-btn) !important;
+  /* filter: brightness(1.5) saturate(0.8); */
+  border: none !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}
+.Ordersdetails .cardinfo h6 {
+  font-weight: 700 !important;
+  color: var(--auth-color);
+  font-size: 17px !important;
+}
+.Ordersdetails .cardinfo ul li {
+  padding-bottom: 10px;
+  color: var(--auth-color) !important ;
+  font-size: 17px !important;
+  font-weight: 300 !important;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+.Ordersdetails .cardinfo ul li.accountInformationlogout {
+  color: #e14f72 !important;
+}
+
+.Ordersdetails .cardinfo .active {
+  font-weight: 500 !important;
+  color: var(--auth-color) !important;
+}
+.Ordersdetails .cardinfo ul li:hover {
+  font-weight: 500 !important;
+}
+.Ordersdetails .ordername {
+  font-size: 12px !important;
+  font-weight: 300;
+  color: var(--auth-color);
+}
+.Ordersdetails .ordersucessdetilas {
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  color: var(--auth-color);
+}
+.Ordersdetails .wayesim {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: var(--auth-color) !important;
+}
+.Ordersdetails .wayesimp {
+  font-size: 10px !important;
+  font-weight: 300 !important;
+  color: var(--auth-color) !important;
+}
+.Ordersdetails .wayslink {
+  background-color: var(--primary-btn) !important  ;
+}
+.Ordersdetails .wayslink .wayslinkp {
+  font-size: 13px !important;
+  font-weight: 200 !important;
+}
+.Ordersdetails .wayslink .wayslinkppin {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+}
+.Ordersdetails .tajwalh {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: var(--secondary-color);
+}

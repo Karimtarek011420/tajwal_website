@@ -118,7 +118,7 @@ function PreviousEsims() {
                 return (
                   <div key={esim.id} className="col">
                     <div className="bg-white shadow-sm text-center rounded-3 position-relative ">
-                      <Link href={`/Orders/${esim.id}`}>
+                      <Link href={`/Esims/${esim.id}`}>
                         <div className="py-2">
                           <div className=" position-absolute esimflag">
                             <Image
