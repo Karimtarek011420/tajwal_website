@@ -116,8 +116,8 @@ function PreviousEsims() {
                 <div key={esim.id} className="col">
                   <div className="bg-white shadow-sm text-center rounded-3 position-relative">
                     <Link href={`/Orders/${esim.id}`}>
-                      <div className="py-3 px-1">
-                        <div className=" position-absolute esimflag  end-25">
+                      <div className="py-2">
+                        <div className=" position-absolute esimflag">
                           <Image
                             src={`https://api.tajwal.co${esim.esims[0].country_data.flag}`}
                             width={50}

@@ -1,38 +1,37 @@
 .PreviousEsims .esimflag {
   top: -17px !important;
+  right: 20px;
 }
-.PreviousEsims .ordername {
+.PreviousEsims .ordername,
+.PreviousEsims .ordernameid {
   font-size: 12px !important;
   font-weight: 300 !important;
   color: #000000;
 }
 .PreviousEsims .ordernameid {
-  font-size: 12px !important;
-  font-weight: 300 !important;
   color: var(--auth-color);
 }
-.orders-container {
+.PreviousEsims .orders-container {
   display: flex;
   justify-content: center; /* يجعل العناصر في المنتصف */
   align-items: center; /* محاذاة رأسية صحيحة */
   flex-wrap: nowrap; /* منع النزول لأسفل */
   gap: 8px; /* مسافة صغيرة بين العناصر */
-  padding: 10px; /* مسافة خارجية للحواف */
-
+  padding: 8px; /* مسافة خارجية للحواف */
 }
 
-.order-box {
+.PreviousEsims .order-box {
   flex: 1;
-  min-width: 48%; /* يجعل كل عنصر يأخذ نصف الشاشة */
+  min-width: 49%; /* يجعل كل عنصر يأخذ نصف الشاشة */
 }
 
-.order-content {
+.PreviousEsims .order-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
   padding: 10px;
-  border-radius: 8px;
+  border-radius: 5px;
   background: var(--background);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
