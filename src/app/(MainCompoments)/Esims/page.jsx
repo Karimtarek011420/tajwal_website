@@ -8,10 +8,11 @@ import arrow from "@/assets/images/arrow.svg";
 import axios from "axios";
 import withAuth from "@/app/utils/withAuth";
 import Image from "next/image";
-import { API_BASE_URL } from "@/app/utils/config";
+import { API_V2_BASE_URL } from "@/app/utils/config";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import numberorder from "@/assets/images/numberorder.svg";
+import dataorder from "@/assets/images/dataorder.svg";
 function PreviousEsims() {
   const { token } = useContext(authtoken);
   const router = useRouter();
@@ -22,7 +23,7 @@ function PreviousEsims() {
   const apiEsims = async () => {
     setLoading(true);
     try {
-      const { data } = await axios.get(`${API_BASE_URL}/get_order`, {
+      const { data } = await axios.get(`${API_V2_BASE_URL}/get_my_esims`, {
         headers: {
           Authorization: `Bearer ${token}`,
           Accept: "application/json",
@@ -58,15 +59,42 @@ function PreviousEsims() {
       <div className=" px-lg-4 p-3 container-fluid">
         {loading ? (
           <div className="row row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-sm-1 row-cols-1 gy-4">
-            {Array.from({ length: 50 }).map((_, index) => (
+            {Array.from({ length: 8 }).map((_, index) => (
               <div key={index} className="col">
-                <div className="bg-white shadow-sm text-center">
-                  <div className="d-flex justify-content-between align-items-center p-3">
-                    <div className=" d-flex justify-content-center align-items-center">
-                      <Skeleton width={60} height={40} />
-                      <Skeleton width={80} className="me-1 ms-lg-4 px-lg-3" />
+                <div className="bg-white shadow-sm text-center rounded-3 position-relative p-3">
+                  <div className="esimflag position-absolute end-25">
+                    <Skeleton width={50} height={40} />
+                  </div>
+                  <div className="orders-container mt-3">
+                    <div className="order-box">
+                      <div className="order-content d-flex justify-content-between align-items-center">
+                        <Skeleton width={20} height={20} />
+                        <Skeleton width={100} height={20} />
+                      </div>
                     </div>
-                   
+                    <div className="order-box">
+                      <div className="order-content d-flex justify-content-between align-items-center">
+                        <Skeleton width={20} height={20} />
+                        <Skeleton width={100} height={20} />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="esimflag position-absolute end-25">
+                    <Skeleton width={50} height={40} />
+                  </div>
+                  <div className="orders-container mt-3">
+                    <div className="order-box">
+                      <div className="order-content d-flex justify-content-between align-items-center">
+                        <Skeleton width={20} height={20} />
+                        <Skeleton width={100} height={20} />
+                      </div>
+                    </div>
+                    <div className="order-box">
+                      <div className="order-content d-flex justify-content-between align-items-center">
+                        <Skeleton width={20} height={20} />
+                        <Skeleton width={100} height={20} />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -84,15 +112,15 @@ function PreviousEsims() {
           </div>
         ) : (
           <div className="row row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-sm-1 row-cols-1 gy-4">
-            {data?.map((order) => {
+            {data?.map((esim) => {
               return (
-                <div key={order.id} className="col">
+                <div key={esim.id} className="col">
                   <div className="bg-white shadow-sm text-center rounded-3 position-relative">
-                    <Link href={`/Orders/${order.id}`}>
+                    <Link href={`/Orders/${esim.id}`}>
                       <div className="py-3 px-2">
                         <div className=" position-absolute esimflag  end-25">
                           <Image
-                            src={order.country.image}
+                            src={`https://api.tajwal.co${esim.esims[0].country_data.flag}`}
                             width={50}
                             height={40}
                             loading="lazy"
@@ -115,12 +143,35 @@ function PreviousEsims() {
                               </div>
                               <div>
                                 <span className="me-3 ordernameid">
-                                  {order.id}
+                                  {esim.id}
                                 </span>
                               </div>
                             </div>
                           </div>
-
+                          <div className="order-box">
+                            <div className="order-content">
+                              <div className="d-flex align-items-center">
+                                <Image
+                                  src={dataorder}
+                                  width={16}
+                                  height={16}
+                                  alt="iconcountry"
+                                />
+                                <p className="me-1 mb-0 ordername">
+                                  تاريخ الطلب:
+                                </p>
+                              </div>
+                              <div>
+                                <span className="me-3 ordernameid">
+                                  {new Date(esim.created_at).toLocaleDateString(
+                                    "EG"
+                                  )}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="orders-container">
                           <div className="order-box">
                             <div className="order-content">
                               <div className="d-flex align-items-center">
@@ -131,39 +182,38 @@ function PreviousEsims() {
                                   alt="iconcountry"
                                 />
                                 <p className="me-1 mb-0 ordername">
-                                  رقم الطلب :
+                                  عدد الشرائح :
                                 </p>
                               </div>
                               <div>
                                 <span className="me-3 ordernameid">
-                                  {order.id}
+                                  {esim?.esims_count}
                                 </span>
                               </div>
                             </div>
                           </div>
-                        </div>
-
-                        <div className="d-flex flex-column align-items-start  text-start mt-3">
-                          <p className="mb-0 ordername d-flex">
-                            رقم الطلب:
-                            <span className="me-3 flex-grow-1 text-start">
-                              {order.id}
-                            </span>
-                          </p>
-                          <p className="mb-0 ordername d-flex">
-                            تاريخ الطلب:
-                            <span className="me-2 flex-grow-1 text-start">
-                              {new Date(order.created_at).toLocaleDateString(
-                                "EG"
-                              )}
-                            </span>
-                          </p>
-                          <p className="mb-0 ordername d-flex">
-                            إجمالي الطلب:
-                            <span className="me-2 flex-grow-1 text-start">
-                              {order.invoice_value} ر.س
-                            </span>
-                          </p>
+                          <div className="order-box">
+                            <div className="order-content">
+                              <div className="d-flex align-items-center">
+                                <Image
+                                  src={dataorder}
+                                  width={16}
+                                  height={16}
+                                  alt="iconcountry"
+                                />
+                                <p className="me-1 mb-0 ordername">
+                                  تاريخ الطلب:
+                                </p>
+                              </div>
+                              <div>
+                                <span className="me-3 ordernameid">
+                                  {new Date(esim.created_at).toLocaleDateString(
+                                    "EG"
+                                  )}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </Link>
