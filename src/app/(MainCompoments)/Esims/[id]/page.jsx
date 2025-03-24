@@ -31,19 +31,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import toast from "react-hot-toast";
 
 function Ordersdetails() {
-  const [user, setUser] = useState({});
-  useEffect(() => {
-    try {
-      const storedUser = JSON.parse(localStorage.getItem("user"));
-      if (storedUser) setUser(storedUser);
-    } catch (error) {
-      console.error("Error parsing user data:", error);
-    }
-  }, []);
-  const { token, settoken } = useContext(authtoken);
+  const { token } = useContext(authtoken);
   const params = useParams();
   const id = params.id; // استقبال ID الطلب من الـ URL
-  const router = useRouter();
   const pathName = usePathname();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -71,15 +61,7 @@ function Ordersdetails() {
   useEffect(() => {
     apiDetialsOrder();
   }, [apiDetialsOrder]);
-  const handleLogout = async () => {
-    if (!token) return;
-    await logoutApi(token, settoken);
-    router.push("/");
-  };
 
-  const handleback = () => {
-    router.push("/Orders");
-  };
   const handleCopy = (text) => {
     navigator.clipboard.writeText(text);
     toast.success("تم النسخ بنجاح!", {
@@ -102,76 +84,13 @@ function Ordersdetails() {
               backgroundColor: "var(--background)",
             }}
           >
-            <span className="p-4"> طلب رقم {id}</span>
+            <span className="p-4">شرائح الطلب</span>
           </li>
         </ul>
       </div>
-      <div className="container py-2">
-        <button
-          onClick={handleback}
-          className="  px-4 py-2  rounded-3 me-lg-5 me-2 mb-3 btnback"
-        >
-          <div className=" d-flex justify-content-center align-items-center text-center">
-            <i className="fa-solid fa-arrow-right text-white"></i>
-            <p className=" p-2 mb-0  text-white   "> العودة للطلبات</p>
-          </div>
-        </button>
+      <div className="container  py-2">
         <div className="row gy-3">
-          <div className="col-md-4">
-            <div className="cardinfo bg-info py-3 bg-white shadow-sm rounded-4 ps-5">
-              <div className="px-3">
-                <h6>{user?.first_name}</h6>
-                <span dir="ltr">{user?.phone_number}</span>
-              </div>
-              <hr
-                style={{ borderColor: "gray", margin: "10px", width: "100%" }}
-              />
-              <div>
-                <ul className="list-unstyled px-3">
-                  <Link href="/accountInformation">
-                    <li
-                      className={
-                        pathName === "/accountInformation" ? "active" : ""
-                      }
-                    >
-                      معلومات الحساب
-                    </li>
-                  </Link>
-                  <Link href="/Orders">
-                    <li
-                      className={pathName === `/Orders/${id}` ? "active" : ""}
-                    >
-                      الطلبات السابقة
-                    </li>
-                  </Link>
-                  <Link href="/Helpcenter">
-                    <li className={pathName === "/Helpcenter" ? "active" : ""}>
-                      مركز المساعدة
-                    </li>
-                  </Link>
-                  <Link href="/Customerservice">
-                    <li
-                      className={
-                        pathName === "/Customerservice" ? "active" : ""
-                      }
-                    >
-                      خدمة العملاء
-                    </li>
-                  </Link>
-                  <li
-                    className="accountInformationlogout"
-                    aria-label="Logout"
-                    onClick={handleLogout}
-                    style={{ cursor: "pointer" }}
-                  >
-                    تسجيل الخروج
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-md-8">
+          <div className="col-md-12">
             {loading ? (
               <div className=" row gy-2">
                 <div className=" col-xl-6">
