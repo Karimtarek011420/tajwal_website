@@ -14,13 +14,13 @@
   color: var(--auth-color) !important;
 }
 .ordersucess .wayslink {
-  background-color: var(--primary-color);
+  background-color: var(--primary-btn);
 }
 .ordersucess .wayslink .wayslinkp {
   font-size: 10px !important;
   font-weight: 400 !important;
 }
-.ordersucess .tajwalh{
+.ordersucess .tajwalh {
   font-size: 12px !important;
   font-weight: 600 !important;
   color: var(--secondary-color);

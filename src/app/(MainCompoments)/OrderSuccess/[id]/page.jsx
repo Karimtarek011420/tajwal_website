@@ -1,5 +1,5 @@
 "use client";
-import { API_V2_BASE_URL } from "@/app/utils/config";
+import { API_BASE_URL, API_V2_BASE_URL } from "@/app/utils/config";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./ordersucess.css";
@@ -173,8 +173,53 @@ function pagesucess() {
                 </div>
               </div>
             </div>
-            <div className=" col-md-4 offset-2 py-5">
-              <div className=" bg-white shadow-sm rounded-2 px-4 py-3">
+            <div className=" col-md-4 offset-2 py-4">
+              {data?.esims?.map((esim, index) => (
+                <div
+                  key={esim.id}
+                  className=" bg-white shadow-sm rounded-3 px-2 py-4  mb-2"
+                >
+                  <div className=" px-3">
+                    <h6 className="wayesim">طريقة تثبيت الشريحة {index + 1}</h6>
+                    <p className="wayesimp py-1">
+                      بأمكانك تثبيت الشريحة بأي من الثلاث طرق المذكور في صفحة
+                      “طرق تثبيت الشريحة”
+                    </p>
+                  </div>
+                  <div className=" p-2 wayslink rounded-3 mx-5">
+                    <Link
+                      href={{
+                        pathname: "/Simcard",
+                        query: {
+                          lpa: esim?.esim_installation_data?.lpa,
+                          matching_id:
+                            esim?.esim_installation_data?.matching_id,
+                          qrcode: esim?.esim_installation_data?.qrcode,
+                        },
+                      }}
+                    >
+                      <div className="d-flex justify-content-between align-items-center ">
+                        <div className="country-flag d-flex justify-content-center align-items-center p-1">
+                          <Image
+                            src={PlaybackSpeed}
+                            width={16}
+                            height={16}
+                            alt="arrow"
+                            loading="lazy"
+                          />
+                          <p className="text-black mb-0 ms-lg-4 px-3 text-white  wayslinkp">
+                            {" "}
+                            طرق تثبيت الشريحة
+                          </p>
+                        </div>
+                        <i className="fa-solid fa-chevron-left text-white p-1"></i>
+                      </div>
+                    </Link>
+                  </div>
+                 
+                </div>
+              ))}
+              {/* <div className=" bg-white shadow-sm rounded-2 px-4 py-3">
                 <h6 className="wayesim">طريقة تثبيت الشريحة</h6>
                 <p className="wayesimp py-1">
                   بأمكانك تثبيت الشريحة بأي من الثلاث طرق المذكور في صفحة “طرق
@@ -200,10 +245,13 @@ function pagesucess() {
                     </div>
                   </Link>
                 </div>
-              </div>
+              </div> */}
               <div className=" d-flex mt-5  ">
                 <div className=" px-5 py-2 wayslink rounded-3 ms-3  w-50 ">
-                  <Link href="">
+                  <Link
+                    href={`${API_BASE_URL}/invoice_view/${id}`}
+                    target=" _blank"
+                  >
                     <div className="">
                       <div className=" d-flex justify-content-center align-items-center text-center">
                         <Image
@@ -223,7 +271,7 @@ function pagesucess() {
                   </Link>
                 </div>
                 <div className=" px-5 py-2 wayslink rounded-3 ms-3  w-50 ">
-                  <Link href="">
+                  <Link href="/Esims">
                     <div className="">
                       <div className=" d-flex justify-content-center align-items-center text-center">
                         <Image
