@@ -151,7 +151,7 @@ function PreviousEsims() {
                               </div>
                             </div>
                             <div className="order-box">
-                              <div className="order-content">
+                              <div className="order-content ">
                                 <div className="d-flex align-items-center">
                                   <Image
                                     src={dataorder}

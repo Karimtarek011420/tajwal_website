@@ -35,3 +35,10 @@
   background: var(--background);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+@media (max-width: 370px) {
+  .PreviousEsims .order-content {
+  
+    padding: 10px 5px;
+    
+  }
+}
