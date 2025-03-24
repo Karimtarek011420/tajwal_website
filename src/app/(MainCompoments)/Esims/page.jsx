@@ -64,9 +64,6 @@ function PreviousEsims() {
             {Array.from({ length: 8 }).map((_, index) => (
               <div key={index} className="col">
                 <div className="bg-white shadow-sm text-center rounded-3 position-relative p-3">
-                  <div className="esimflag position-absolute end-25">
-                    <Skeleton width={50} height={40} />
-                  </div>
                   <div className="orders-container mt-3">
                     <div className="order-box">
                       <div className="order-content d-flex justify-content-between align-items-center">
@@ -119,7 +116,7 @@ function PreviousEsims() {
                 <div key={esim.id} className="col">
                   <div className="bg-white shadow-sm text-center rounded-3 position-relative">
                     <Link href={`/Orders/${esim.id}`}>
-                      <div className="py-3 px-2">
+                      <div className="py-3 px-1">
                         <div className=" position-absolute esimflag  end-25">
                           <Image
                             src={`https://api.tajwal.co${esim.esims[0].country_data.flag}`}
@@ -203,14 +200,14 @@ function PreviousEsims() {
                                   height={16}
                                   alt="iconcountry"
                                 />
-                                <p className="me-1 mb-0 ordername">
-                                   المدة:
-                                </p>
+                                <p className="me-1 mb-0 ordername">المدة:</p>
                               </div>
                               <div>
                                 <span className="me-3 ordernameid">
-                                {esim.esims[0].package.day}{" "}
-                                {esim.esims[0].package.day <= 10 ? "أيام" : "يوم"}
+                                  {esim.esims[0].package.day}{" "}
+                                  {esim.esims[0].package.day <= 10
+                                    ? "أيام"
+                                    : "يوم"}
                                 </span>
                               </div>
                             </div>
