@@ -373,17 +373,17 @@ function Ordersdetails() {
                       </div>
                     </Link>
                   </div> */}
-                  <div className="d-flex  justify-content-center align-items-center    flex-wrap">
-                    <div className="py-2 px-5 wayslink rounded-3 shadow-sm m-2 mt-lg-4">
+                  <div className="d-flex  justify-content-center align-items-center  my-3  ">
+                    <div className=" wayslink rounded-3 shadow-sm ms-1">
                       <Link
                         href={`${API_BASE_URL}/invoice_view/${id}`}
                         target="_blank"
-                        className="d-flex justify-content-between align-items-center w-100"
+                        className="d-flex justify-content-between align-items-center "
                       >
-                        <p className="p-1 mb-0 text-white wayslinkppin text-center flex-grow-1">
+                        <p className="p-1 mb-0 text-white wayslinkppin text-center ">
                           الفاتورة
                         </p>
-                        <div className=" ms-2">
+                        <div>
                           <Image
                             src={invoiceways}
                             width={21}
@@ -393,15 +393,15 @@ function Ordersdetails() {
                         </div>
                       </Link>
                     </div>
-                    <div className="py-2  px-5 wayslink rounded-3 shadow-sm m-2 mt-lg-4">
+                    <div className="  wayslink rounded-3 shadow-sm  ">
                       <Link
                         href={`/Esims`}
-                        className="d-flex justify-content-between align-items-center w-100"
+                        className="d-flex justify-content-between align-items-center "
                       >
-                        <p className="p-1 mb-0 text-white wayslinkppin text-center flex-grow-1">
+                        <p className="p-1 mb-0 text-white wayslinkppin text-center ">
                           شرائحى
                         </p>
-                        <div className=" ms-2">
+                        <div>
                           <Image
                             src={TravelBag}
                             width={21}

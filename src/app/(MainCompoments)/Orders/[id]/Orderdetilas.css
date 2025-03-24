@@ -64,10 +64,11 @@ button.btnback {
 }
 .Ordersdetails .wayslink {
   background-color: var(--primary-btn) !important  ;
+  padding: 5px 60px;
 }
 .Ordersdetails .wayslink .wayslinkp {
   font-size: 13px !important;
-  font-weight: 200 !important;
+  font-weight: 300 !important;
 }
 .Ordersdetails .wayslink .wayslinkppin {
   font-size: 16px !important;
@@ -77,4 +78,10 @@ button.btnback {
   font-size: 12px !important;
   font-weight: 600 !important;
   color: var(--secondary-color);
+}
+@media (max-width:500px) {
+  .Ordersdetails .wayslink {
+    background-color: var(--primary-btn) !important  ;
+    padding: 4px 40px;
+  }
 }
