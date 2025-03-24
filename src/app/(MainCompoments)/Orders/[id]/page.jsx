@@ -20,6 +20,7 @@ import PlaybackSpeed from "@/assets/images/wayesim.svg";
 import invoiceways from "@/assets/images/myfatoraorder.svg";
 import dataid from "@/assets/images/Icon2.svg";
 import iccid from "@/assets/images/iccid.svg";
+import TravelBag from "@/assets/images/TravelBag.svg";
 import esimstatus from "@/assets/images/esimstatus.svg";
 import appStore1 from "@/assets/images/appStore1.svg";
 import googlePlay2 from "@/assets/images/googlePlay2.svg";
@@ -353,7 +354,7 @@ function Ordersdetails() {
                       )}
                     </div>
                   </div>
-                  <div className="p-2 wayslink rounded-3 shadow-sm m-2 mt-4">
+                  {/* <div className="p-2 wayslink rounded-3 shadow-sm m-2 mt-4">
                     <Link
                       href={`${API_BASE_URL}/invoice_view/${id}`}
                       target="_blank"
@@ -371,6 +372,45 @@ function Ordersdetails() {
                         />
                       </div>
                     </Link>
+                  </div> */}
+                  <div className="d-flex  justify-content-center align-items-center    flex-wrap">
+                    <div className="py-2 px-5 wayslink rounded-3 shadow-sm m-2 mt-lg-4">
+                      <Link
+                        href={`${API_BASE_URL}/invoice_view/${id}`}
+                        target="_blank"
+                        className="d-flex justify-content-between align-items-center w-100"
+                      >
+                        <p className="p-1 mb-0 text-white wayslinkppin text-center flex-grow-1">
+                          الفاتورة
+                        </p>
+                        <div className=" ms-2">
+                          <Image
+                            src={invoiceways}
+                            width={21}
+                            height={22}
+                            alt="arrow"
+                          />
+                        </div>
+                      </Link>
+                    </div>
+                    <div className="py-2  px-5 wayslink rounded-3 shadow-sm m-2 mt-lg-4">
+                      <Link
+                        href={`/Esims`}
+                        className="d-flex justify-content-between align-items-center w-100"
+                      >
+                        <p className="p-1 mb-0 text-white wayslinkppin text-center flex-grow-1">
+                          شرائحى
+                        </p>
+                        <div className=" ms-2">
+                          <Image
+                            src={TravelBag}
+                            width={21}
+                            height={22}
+                            alt="arrow"
+                          />
+                        </div>
+                      </Link>
+                    </div>
                   </div>
                 </div>
                 <div className="  col-xl-6">
