@@ -55,18 +55,18 @@ function PreviousEsims() {
           </li>
         </ul>
       </div>
-      <div className=" px-lg-5 p-3 container-fluid">
+      <div className=" px-lg-4 p-3 container-fluid">
         {loading ? (
-          <div className="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-3 row-cols-sm-2 row-cols-1 gy-4">
+          <div className="row row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-sm-1 row-cols-1 gy-4">
             {Array.from({ length: 50 }).map((_, index) => (
               <div key={index} className="col">
                 <div className="bg-white shadow-sm text-center">
                   <div className="d-flex justify-content-between align-items-center p-3">
-                    <div className="country-flag d-flex justify-content-center align-items-center">
+                    <div className=" d-flex justify-content-center align-items-center">
                       <Skeleton width={60} height={40} />
                       <Skeleton width={80} className="me-1 ms-lg-4 px-lg-3" />
                     </div>
-                    <Skeleton width={20} height={20} />
+                   
                   </div>
                 </div>
               </div>
@@ -83,14 +83,14 @@ function PreviousEsims() {
             </p>
           </div>
         ) : (
-          <div className="row row-cols-xxl-4 row-cols-xl-4 row-cols-lg-3 row-cols-sm-2 row-cols-1 gy-4">
+          <div className="row row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-sm-1 row-cols-1 gy-4">
             {data?.map((order) => {
               return (
                 <div key={order.id} className="col">
                   <div className="bg-white shadow-sm text-center rounded-3 position-relative">
                     <Link href={`/Orders/${order.id}`}>
-                      <div className="p-3">
-                        <div className=" position-absolute esimflag  end-25  ">
+                      <div className="py-3 px-2">
+                        <div className=" position-absolute esimflag  end-25">
                           <Image
                             src={order.country.image}
                             width={50}
@@ -99,27 +99,50 @@ function PreviousEsims() {
                             alt="img-country"
                           />
                         </div>
-                        <div className="row gy-2">
-                          <div className=" col-md-6">
-                            <div className="d-flex justify-content-between align-items-center text-center p-3 rounded-3 mx-2  bg-white shadow-sm ordersucessdetilas">
-                              <div className="d-flex align-items-center justify-content-center ">
+                        <div className="orders-container mt-3">
+                          <div className="order-box">
+                            <div className="order-content">
+                              <div className="d-flex align-items-center">
                                 <Image
                                   src={numberorder}
                                   width={13}
                                   height={16}
                                   alt="iconcountry"
                                 />
-                                <p className="mb-0 ordername d-flex">رقم الطلب</p>
+                                <p className="me-1 mb-0 ordername">
+                                  رقم الطلب :
+                                </p>
                               </div>
-
                               <div>
-                              <span className="me-3">
-                              {order.id}
-                            </span>
+                                <span className="me-3 ordernameid">
+                                  {order.id}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="order-box">
+                            <div className="order-content">
+                              <div className="d-flex align-items-center">
+                                <Image
+                                  src={numberorder}
+                                  width={13}
+                                  height={16}
+                                  alt="iconcountry"
+                                />
+                                <p className="me-1 mb-0 ordername">
+                                  رقم الطلب :
+                                </p>
+                              </div>
+                              <div>
+                                <span className="me-3 ordernameid">
+                                  {order.id}
+                                </span>
                               </div>
                             </div>
                           </div>
                         </div>
+
                         <div className="d-flex flex-column align-items-start  text-start mt-3">
                           <p className="mb-0 ordername d-flex">
                             رقم الطلب:
