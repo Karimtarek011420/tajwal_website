@@ -58,46 +58,48 @@ function PreviousEsims() {
           </li>
         </ul>
       </div>
-      <div className=" px-lg-4 p-1 container-fluid">
+      <div className="px-lg-4">
         {loading ? (
-          <div className="row row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-sm-1 row-cols-1 gy-4">
-            {Array.from({ length: 8 }).map((_, index) => (
-              <div key={index} className="col">
-                <div className="bg-white shadow-sm text-center rounded-3 position-relative p-3">
-                  <div className="orders-container mt-3">
-                    <div className="order-box">
-                      <div className="order-content d-flex justify-content-between align-items-center">
-                        <Skeleton width={20} height={20} />
-                        <Skeleton width={100} height={20} />
+          <div className=" container-fluid">
+            <div className="row row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-sm-1 row-cols-1 gy-4">
+              {Array.from({ length: 8 }).map((_, index) => (
+                <div key={index} className="col">
+                  <div className="bg-white shadow-sm text-center rounded-3 position-relative p-3">
+                    <div className="orders-container mt-3">
+                      <div className="order-box">
+                        <div className="order-content d-flex justify-content-between align-items-center">
+                          <Skeleton width={20} height={20} />
+                          <Skeleton width={100} height={20} />
+                        </div>
+                      </div>
+                      <div className="order-box">
+                        <div className="order-content d-flex justify-content-between align-items-center">
+                          <Skeleton width={20} height={20} />
+                          <Skeleton width={100} height={20} />
+                        </div>
                       </div>
                     </div>
-                    <div className="order-box">
-                      <div className="order-content d-flex justify-content-between align-items-center">
-                        <Skeleton width={20} height={20} />
-                        <Skeleton width={100} height={20} />
-                      </div>
+                    <div className="esimflag position-absolute end-25">
+                      <Skeleton width={50} height={40} />
                     </div>
-                  </div>
-                  <div className="esimflag position-absolute end-25">
-                    <Skeleton width={50} height={40} />
-                  </div>
-                  <div className="orders-container mt-3">
-                    <div className="order-box">
-                      <div className="order-content d-flex justify-content-between align-items-center">
-                        <Skeleton width={20} height={20} />
-                        <Skeleton width={100} height={20} />
+                    <div className="orders-container mt-3">
+                      <div className="order-box">
+                        <div className="order-content d-flex justify-content-between align-items-center">
+                          <Skeleton width={20} height={20} />
+                          <Skeleton width={100} height={20} />
+                        </div>
                       </div>
-                    </div>
-                    <div className="order-box">
-                      <div className="order-content d-flex justify-content-between align-items-center">
-                        <Skeleton width={20} height={20} />
-                        <Skeleton width={100} height={20} />
+                      <div className="order-box">
+                        <div className="order-content d-flex justify-content-between align-items-center">
+                          <Skeleton width={20} height={20} />
+                          <Skeleton width={100} height={20} />
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         ) : error ? (
           <div className="d-flex justify-content-center">
@@ -110,115 +112,117 @@ function PreviousEsims() {
             </p>
           </div>
         ) : (
-          <div className="row row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-sm-1 row-cols-1 gy-4">
-            {data?.map((esim) => {
-              return (
-                <div key={esim.id} className="col">
-                  <div className="bg-white shadow-sm text-center rounded-3 position-relative">
-                    <Link href={`/Orders/${esim.id}`}>
-                      <div className="py-2">
-                        <div className=" position-absolute esimflag">
-                          <Image
-                            src={`https://api.tajwal.co${esim.esims[0].country_data.flag}`}
-                            width={50}
-                            height={40}
-                            loading="lazy"
-                            alt="img-country"
-                          />
+          <div className=" container-fluid">
+            <div className="row row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-sm-1 row-cols-1 gy-4">
+              {data?.map((esim) => {
+                return (
+                  <div key={esim.id} className="col">
+                    <div className="bg-white shadow-sm text-center rounded-3 position-relative ">
+                      <Link href={`/Orders/${esim.id}`}>
+                        <div className="py-2">
+                          <div className=" position-absolute esimflag">
+                            <Image
+                              src={`https://api.tajwal.co${esim.esims[0].country_data.flag}`}
+                              width={50}
+                              height={40}
+                              loading="lazy"
+                              alt="img-country"
+                            />
+                          </div>
+                          <div className="orders-container mt-3">
+                            <div className="order-box">
+                              <div className="order-content">
+                                <div className="d-flex align-items-center">
+                                  <Image
+                                    src={numberorder}
+                                    width={13}
+                                    height={16}
+                                    alt="iconcountry"
+                                  />
+                                  <p className="me-1 mb-0 ordername">
+                                    رقم الطلب :
+                                  </p>
+                                </div>
+                                <div>
+                                  <span className="me-3 ordernameid">
+                                    {esim.id}
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="order-box">
+                              <div className="order-content">
+                                <div className="d-flex align-items-center">
+                                  <Image
+                                    src={dataorder}
+                                    width={16}
+                                    height={16}
+                                    alt="iconcountry"
+                                  />
+                                  <p className="me-1 mb-0 ordername">
+                                    تاريخ الطلب:
+                                  </p>
+                                </div>
+                                <div>
+                                  <span className=" ordernameid">
+                                    {new Date(
+                                      esim.created_at
+                                    ).toLocaleDateString("EG")}
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="orders-container">
+                            <div className="order-box">
+                              <div className="order-content">
+                                <div className="d-flex align-items-center">
+                                  <Image
+                                    src={numberorder}
+                                    width={13}
+                                    height={16}
+                                    alt="iconcountry"
+                                  />
+                                  <p className="me-1 mb-0 ordername">
+                                    عدد الشرائح :
+                                  </p>
+                                </div>
+                                <div>
+                                  <span className=" ordernameid">
+                                    {esim?.esims_count}
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="order-box">
+                              <div className="order-content">
+                                <div className="d-flex align-items-center">
+                                  <Image
+                                    src={Validity}
+                                    width={16}
+                                    height={16}
+                                    alt="iconcountry"
+                                  />
+                                  <p className="me-1 mb-0 ordername">المدة:</p>
+                                </div>
+                                <div>
+                                  <span className=" ordernameid">
+                                    {esim.esims[0].package.day}{" "}
+                                    {esim.esims[0].package.day <= 10
+                                      ? "أيام"
+                                      : "يوم"}
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div className="orders-container mt-3">
-                          <div className="order-box">
-                            <div className="order-content">
-                              <div className="d-flex align-items-center">
-                                <Image
-                                  src={numberorder}
-                                  width={13}
-                                  height={16}
-                                  alt="iconcountry"
-                                />
-                                <p className="me-1 mb-0 ordername">
-                                  رقم الطلب :
-                                </p>
-                              </div>
-                              <div>
-                                <span className="me-3 ordernameid">
-                                  {esim.id}
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="order-box">
-                            <div className="order-content">
-                              <div className="d-flex align-items-center">
-                                <Image
-                                  src={dataorder}
-                                  width={16}
-                                  height={16}
-                                  alt="iconcountry"
-                                />
-                                <p className="me-1 mb-0 ordername">
-                                  تاريخ الطلب:
-                                </p>
-                              </div>
-                              <div>
-                                <span className=" ordernameid">
-                                  {new Date(esim.created_at).toLocaleDateString(
-                                    "EG"
-                                  )}
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="orders-container">
-                          <div className="order-box">
-                            <div className="order-content">
-                              <div className="d-flex align-items-center">
-                                <Image
-                                  src={numberorder}
-                                  width={13}
-                                  height={16}
-                                  alt="iconcountry"
-                                />
-                                <p className="me-1 mb-0 ordername">
-                                  عدد الشرائح :
-                                </p>
-                              </div>
-                              <div>
-                                <span className=" ordernameid">
-                                  {esim?.esims_count}
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="order-box">
-                            <div className="order-content">
-                              <div className="d-flex align-items-center">
-                                <Image
-                                  src={Validity}
-                                  width={16}
-                                  height={16}
-                                  alt="iconcountry"
-                                />
-                                <p className="me-1 mb-0 ordername">المدة:</p>
-                              </div>
-                              <div>
-                                <span className=" ordernameid">
-                                  {esim.esims[0].package.day}{" "}
-                                  {esim.esims[0].package.day <= 10
-                                    ? "أيام"
-                                    : "يوم"}
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
+                      </Link>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         )}
       </div>
