@@ -58,7 +58,7 @@ function PreviousEsims() {
           </li>
         </ul>
       </div>
-      <div className=" px-lg-4 p-3 container-fluid">
+      <div className=" px-lg-4 p-1 container-fluid">
         {loading ? (
           <div className="row row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-sm-1 row-cols-1 gy-4">
             {Array.from({ length: 8 }).map((_, index) => (
@@ -161,7 +161,7 @@ function PreviousEsims() {
                                 </p>
                               </div>
                               <div>
-                                <span className="me-3 ordernameid">
+                                <span className=" ordernameid">
                                   {new Date(esim.created_at).toLocaleDateString(
                                     "EG"
                                   )}
@@ -185,7 +185,7 @@ function PreviousEsims() {
                                 </p>
                               </div>
                               <div>
-                                <span className="me-3 ordernameid">
+                                <span className=" ordernameid">
                                   {esim?.esims_count}
                                 </span>
                               </div>
@@ -203,7 +203,7 @@ function PreviousEsims() {
                                 <p className="me-1 mb-0 ordername">المدة:</p>
                               </div>
                               <div>
-                                <span className="me-3 ordernameid">
+                                <span className=" ordernameid">
                                   {esim.esims[0].package.day}{" "}
                                   {esim.esims[0].package.day <= 10
                                     ? "أيام"
